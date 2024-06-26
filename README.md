@@ -1,1 +1,1 @@
-# paper-plane
+# paper-panel
