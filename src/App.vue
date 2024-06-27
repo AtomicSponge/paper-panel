@@ -13,14 +13,14 @@ import { RouterLink } from 'vue-router'
     <header>
       <span class="left">
         <nav>
-          <RouterLink to="/">username</RouterLink> >
+          <RouterLink to="/user">username</RouterLink> >
           <RouterLink to="/servers">Servers</RouterLink> >
           <RouterLink to="/worlds">Worlds</RouterLink> >
           World name
         </nav>
       </span>
       <span class="right">
-        <a href="">Paper Panel</a> v0.0.1
+        <a href="https://github.com/AtomicSponge">Paper Panel</a> v0.0.1
       </span>
     </header>
 

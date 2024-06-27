@@ -1,6 +1,7 @@
 import { createRouter, createMemoryHistory } from 'vue-router'
 
 const Login = () => import('./routes/Login.vue')
+const User = () => import ('./routes/User.vue')
 const ServerList = () => import('./routes/ServerList.vue')
 const WorldList = () => import('./routes/WorldList.vue')
 
@@ -8,6 +9,7 @@ const isAuthenticated = false
 
 const routes = [
   { path: '/', component: ServerList },
+  { path: '/user', component: User },
   { path: '/login', component: Login },
   { path: '/worlds', component: WorldList }
 ]
