@@ -18,11 +18,11 @@ a {
   color: rgb(100, 108, 255);
   text-decoration: inherit;
 }
-a:hover {
-  color: rgb(83, 91, 242);
-}
 a:visited {
   color: rgb(100, 108, 255);
+}
+a:hover {
+  color: rgb(83, 91, 242);
 }
 
 body {
@@ -63,10 +63,12 @@ button:focus-visible {
 input[type=text] {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
+  cursor: pointer;
 }
 input[type=password] {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
+  cursor: pointer;
 }
 
 #app {
@@ -74,13 +76,20 @@ input[type=password] {
   margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
-    color: rgb(150, 113, 23);
+    color: rgb(29, 41, 81);
     background-color: rgb(245, 245, 220);
   }
+
+  a {
+    color: rgb(100, 108, 255);
+  }
+  a:visited {
+    color: rgb(100, 108, 255);
+  }
   a:hover {
-    color: rgb(116, 123, 255);
+    color: rgb(0, 51, 153);
   }
 
   button {
@@ -91,11 +100,11 @@ input[type=password] {
   }
 
   input[type=text] {
-    color: rgb(150, 113, 23);
+    color: rgb(35, 41, 122);
     background-color: rgb(245, 245, 220);
   }
   input[type=password] {
-    color: rgb(150, 113, 23);
+    color: rgb(35, 41, 122);
     background-color: rgb(245, 245, 220);
   }
 }
