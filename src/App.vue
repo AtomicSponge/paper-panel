@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
+
 
 </script>
 
@@ -6,7 +8,10 @@
   <section>
     <header>
       <span class="left">
-        username > server > <a href="">menu</a>
+        <nav>
+          username >
+          <RouterLink to="/worlds">Worlds</RouterLink> >
+        </nav>
       </span>
       <span class="right">
         <a href="">Paper Panel</a> v0.0.1

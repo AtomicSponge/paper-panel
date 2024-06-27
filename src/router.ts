@@ -5,7 +5,7 @@ const WorldList = () => import('./routes/WorldList.vue')
 
 const routes = [
   { path: '/', component: Login },
-  { path: '/servers', component: WorldList }
+  { path: '/worlds', component: WorldList }
 ]
 
 const router = createRouter({
