@@ -3,6 +3,9 @@
 </script>
 
 <template>
+<header>
+  <h2>Paper Panel Login</h2>
+</header>
 <section>
   <div class="row">
     <div class="col">
@@ -24,13 +27,19 @@
 </template>
 
 <style scoped>
+header {
+  text-align: center;
+}
 section {
-  display: table
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
 }
 div .row {
   display: table-row;
 }
 div .col {
   display: table-cell;
+  padding: 4px;
 }
 </style>
