@@ -8,8 +8,9 @@ export default defineConfig({
   plugins: [ vue() ],
   server: {
     https: {
-      key: fs.readFileSync('RootCA-key.pem'),
-      cert: fs.readFileSync('RootCA.pem')
+      key: fs.readFileSync('./certs/RootCA-key.pem'),
+      cert: fs.readFileSync('./certs/RootCA.pem'),
+      passphrase: fs.readFileSync('./certs/passphrase').toString()
     }
   }
 })
