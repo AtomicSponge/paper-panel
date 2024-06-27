@@ -18,11 +18,12 @@ const ssrManifest = isProduction
   : undefined
 
 // Create http server
-const privateKey = fs.readFileSync(path.join('certs', 'RootCA-key.pem')).toString()
-const certificate = fs.readFileSync(path.join('certs', 'RootCA.pem')).toString()
-const passphrase = fs.readFileSync(path.join('certs', 'passphrase')).toString()
 const app = express()
-const server = https.createServer({ key: privateKey, cert: certificate, passphrase: passphrase }, app)
+const server = https.createServer({
+  key: fs.readFileSync(path.join('certs', 'RootCA-key.pem')),
+  cert: fs.readFileSync(path.join('certs', 'RootCA.pem')),
+  passphrase: fs.readFileSync(path.join('certs', 'passphrase')).toString()
+}, app)
 
 // Add Vite or respective production middlewares
 let vite
