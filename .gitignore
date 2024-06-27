@@ -1,5 +1,8 @@
+#  Build artifacts
 node_modules
 dist
 
+#  Development files
+certs
 .env
 dev.db

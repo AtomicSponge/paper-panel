@@ -1,7 +1,15 @@
+import fs from 'node:fs'
+
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  plugins: [ vue() ],
+  server: {
+    https: {
+      key: fs.readFileSync('RootCA-key.pem'),
+      cert: fs.readFileSync('RootCA.pem')
+    }
+  }
 })

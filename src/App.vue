@@ -14,7 +14,7 @@ import { RouterLink } from 'vue-router'
       <span class="left">
         <nav>
           <RouterLink to="/user">username</RouterLink> >
-          <RouterLink to="/servers">Servers</RouterLink> >
+          <RouterLink to="/">Servers</RouterLink> >
           <RouterLink to="/worlds">Worlds</RouterLink> >
           World name
         </nav>
