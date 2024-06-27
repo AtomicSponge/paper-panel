@@ -2,14 +2,38 @@
   "name": "paper-panel",
   "private": true,
   "version": "0.0.0",
+  "description": "",
+  "author": "Matthew Evans",
+  "license": "MIT",
+  "url": "",
+  "homepage": "https://github.com/AtomicSponge/paper-panel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomicSponge/paper-panel.git"
+  },
+  "keywords": [
+    "Vue",
+    "Vuejs",
+    "Vue3"
+  ],
+  "bugs": {
+    "url": "https://github.com/AtomicSponge/paper-panel/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "node server -https",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node server"
+    "preview": "cross-env NODE_ENV=production node server",
+
+    "certs": "openssl req -x509 -newkey rsa:4096 -keyout RootCA-key.pem -out RootCA.pem -sha256 -days 365"
   },
+  "files": [
+    "./dist",
+    "LICENSE.md",
+    "README.md"
+  ],
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.19.2",
@@ -24,7 +48,7 @@
     "cross-env": "^7.0.3",
     "prisma": "^5.16.1",
     "typescript": "^5.5.2",
-    "vite": "^5.3.1",
+    "vite": "^5.3.2",
     "vue-tsc": "^2.0.22"
   }
 }
