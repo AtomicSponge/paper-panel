@@ -11,6 +11,7 @@ const routes = [
   { path: '/', component: ServerList },
   { path: '/user', component: User },
   { path: '/login', component: Login },
+  { path: '/servers', component: ServerList },
   { path: '/worlds', component: WorldList }
 ]
 
