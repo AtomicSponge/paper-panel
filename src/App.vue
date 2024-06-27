@@ -12,9 +12,16 @@
         <a href="">Paper Panel</a> v0.0.1
       </span>
     </header>
+
     <main>
       <RouterView/>
     </main>
+
+    <footer>
+      <span class="right">
+        ...
+      </span>
+    </footer>
   </section>
 </template>
 
@@ -23,6 +30,7 @@ section {
   display: flex;
   flex-flow: column;
   align-items: stretch;
+  height: 100vh;
 }
 header {
   padding-bottom: 6px;
@@ -30,6 +38,9 @@ header {
 main {
   flex: auto;
   overflow: auto;
+}
+footer {
+  padding-top: 4px;
 }
 .left {
   float: left;
