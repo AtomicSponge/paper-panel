@@ -16,7 +16,7 @@ const ssrManifest = isProduction
   ? await fs.readFile('./dist/client/.vite/ssr-manifest.json', 'utf-8')
   : undefined
 
-// Create http server
+// Create https server
 const app = express()
 const server = https.createServer({
   key: await fs.readFile(path.join('certs', 'RootCA-key.pem')),
