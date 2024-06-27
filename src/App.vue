@@ -5,7 +5,12 @@
 <template>
   <section>
     <header>
-      username > server > menu
+      <span class="left">
+        username > server > <a href="">menu</a>
+      </span>
+      <span class="right">
+        <a href="">Paper Panel</a> v0.0.1
+      </span>
     </header>
     <main>
       <RouterView/>
@@ -20,11 +25,16 @@ section {
   align-items: stretch;
 }
 header {
-  padding: 2px;
   padding-bottom: 6px;
 }
 main {
   flex: auto;
   overflow: auto;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
 }
 </style>

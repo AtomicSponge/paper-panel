@@ -3,30 +3,40 @@
 </script>
 
 <template>
-<header>
-  <h2>Paper Panel Login</h2>
-</header>
-<section>
-  <div class="row">
-    <div class="col">
-      <label for="username">Username: </label>
+<span>
+  <header>
+    <h2>Paper Panel Login</h2>
+  </header>
+  <section>
+    <div class="row">
+      <div class="col">
+        <label for="username">Username: </label>
+      </div>
+      <div class="col">
+        <input id="username" type="text"/>
+      </div>
     </div>
-    <div class="col">
-      <input id="username" type="text"/>
+    <div class="row">
+      <div class="col">
+        <label for="userpwd" type="userpwd">Password: </label>
+      </div>
+      <div class="col">
+        <input id="userpwd" type="password"/>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <label for="userpwd" type="userpwd">Password: </label>
-    </div>
-    <div class="col">
-      <input id="userpwd" type="password"/>
-    </div>
-  </div>
-</section>
+  </section>
+  <button>Login</button>
+</span>
 </template>
 
 <style scoped>
+span {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+}
 header {
   text-align: center;
 }
@@ -41,5 +51,8 @@ div .row {
 div .col {
   display: table-cell;
   padding: 4px;
+}
+button {
+  margin: 12px;
 }
 </style>

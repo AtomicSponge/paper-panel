@@ -36,6 +36,10 @@ h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+h2 {
+  font-size: 1.6em;
+  line-height: 0.4;
+}
 
 button {
   border-radius: 8px;
@@ -56,13 +60,13 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.card {
-  padding: 2em;
-}
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 @media (prefers-color-scheme: light) {
