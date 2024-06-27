@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  username > server > menu
   <main>
     <RouterView/>
   </main>

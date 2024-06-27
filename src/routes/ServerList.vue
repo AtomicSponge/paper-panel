@@ -3,7 +3,7 @@
 </script>
 
 <template>
-login
+server list
 </template>
 
 <style scoped>
