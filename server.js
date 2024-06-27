@@ -1,5 +1,4 @@
-import fsp from 'node:fs/promises'
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
 import https from 'node:https'
 import express from 'express'
@@ -20,9 +19,9 @@ const ssrManifest = isProduction
 // Create http server
 const app = express()
 const server = https.createServer({
-  key: fs.readFileSync(path.join('certs', 'RootCA-key.pem')),
-  cert: fs.readFileSync(path.join('certs', 'RootCA.pem')),
-  passphrase: fs.readFileSync(path.join('certs', 'passphrase')).toString()
+  key: await fs.readFile(path.join('certs', 'RootCA-key.pem')),
+  cert: await fs.readFile(path.join('certs', 'RootCA.pem')),
+  passphrase: (await fs.readFile(path.join('certs', 'passphrase'))).toString()
 }, app)
 
 // Add Vite or respective production middlewares
@@ -51,7 +50,7 @@ app.use('*', async (req, res) => {
     let render
     if (!isProduction) {
       // Always read fresh template in development
-      template = await fsp.readFile('./index.html', 'utf-8')
+      template = await fs.readFile('./index.html', 'utf-8')
       template = await vite.transformIndexHtml(url, template)
       render = (await vite.ssrLoadModule('/src/entry-server.ts')).render
     } else {
