@@ -31,6 +31,8 @@ section {
   flex-flow: column;
   align-items: stretch;
   height: 100vh;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 header {
   padding-bottom: 6px;
