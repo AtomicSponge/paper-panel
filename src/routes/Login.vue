@@ -11,7 +11,7 @@
 <template>
 <span>
   <header>
-    <h2>Paper Panel Login</h2>
+    <h3>Paper Panel Login</h3>
   </header>
   <section>
     <div class="row">

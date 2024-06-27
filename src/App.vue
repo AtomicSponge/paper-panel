@@ -5,9 +5,7 @@
 -->
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-
-
+import { RouterLink } from 'vue-router'
 </script>
 
 <template>
@@ -15,8 +13,10 @@ import { RouterLink } from 'vue-router';
     <header>
       <span class="left">
         <nav>
-          username >
+          <RouterLink to="/">username</RouterLink> >
+          <RouterLink to="/servers">Servers</RouterLink> >
           <RouterLink to="/worlds">Worlds</RouterLink> >
+          World name
         </nav>
       </span>
       <span class="right">
