@@ -11,16 +11,16 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement())
-  name String
+  id      Int     @id     @default(autoincrement())
+  name    String
 }
 
 model Servers {
-  id Int @id @default(autoincrement())
-  name String
+  id      Int     @id     @default(autoincrement())
+  name    String
 }
 
 model Worlds {
-  id Int @id @default(autoincrement())
-  name String
+  id      Int     @id     @default(autoincrement())
+  name    String
 }
