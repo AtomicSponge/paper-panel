@@ -1,3 +1,9 @@
+<!--
+  paper-panel
+  By:  Matthew Evans
+  See LICENSE.md
+-->
+
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 

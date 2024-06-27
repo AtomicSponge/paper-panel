@@ -9,7 +9,7 @@
 </script>
 
 <template>
-world list
+server list
 </template>
 
 <style scoped>
