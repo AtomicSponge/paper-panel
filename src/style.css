@@ -60,12 +60,21 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+input[type=text] {
+  color: rgba(242, 243, 244, 0.87);
+  background-color: rgb(59, 68, 75);
+}
+input[type=password] {
+  color: rgba(242, 243, 244, 0.87);
+  background-color: rgb(59, 68, 75);
+}
+
 #app {
   max-width: 1920px;
   margin: 0 auto;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: rgb(150, 113, 23);
     background-color: rgb(245, 245, 220);
@@ -79,5 +88,14 @@ button:focus-visible {
   }
   button:hover {
     border-color: rgb(25, 25, 112);
+  }
+
+  input[type=text] {
+    color: rgb(150, 113, 23);
+    background-color: rgb(245, 245, 220);
+  }
+  input[type=password] {
+    color: rgb(150, 113, 23);
+    background-color: rgb(245, 245, 220);
   }
 }
