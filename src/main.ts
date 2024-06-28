@@ -7,8 +7,8 @@ import router from './router.ts'
 // that creates a fresh app instance. If using Vuex, we'd also be creating a
 // fresh store here.
 export function createApp() {
-  const app = createSSRApp(App)
   const pinia = createPinia()
+  const app = createSSRApp(App)
   app.use(pinia)
   app.use(router)
   return { app }
