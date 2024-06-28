@@ -16,14 +16,14 @@
 
 a {
   font-weight: 500;
-  color: rgb(100, 108, 255);
+  color: rgb(150, 114, 23);
   text-decoration: inherit;
 }
 a:visited {
-  color: rgb(100, 108, 255);
+  color: rgb(150, 114, 23);
 }
 a:hover {
-  color: rgb(83, 91, 242);
+  color: rgb(160, 128, 46);
 }
 
 body {
@@ -81,17 +81,17 @@ input[type=password] {
   margin: 0 auto;
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: dark) {
   :root {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
 
   a {
-    color: rgb(100, 108, 255);
+    color: rgb(23, 123, 150);
   }
   a:visited {
-    color: rgb(100, 108, 255);
+    color: rgb(23, 123, 150);
   }
   a:hover {
     color: rgb(0, 51, 153);
