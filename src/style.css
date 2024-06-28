@@ -83,7 +83,7 @@ input[type=password] {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: rgb(29, 41, 81);
+    color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
 
@@ -105,11 +105,11 @@ input[type=password] {
   }
 
   input[type=text] {
-    color: rgb(35, 41, 122);
+    color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
   input[type=password] {
-    color: rgb(35, 41, 122);
+    color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
 }
