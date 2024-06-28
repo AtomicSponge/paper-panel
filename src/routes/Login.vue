@@ -6,6 +6,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 import { authStore } from '@/stores/authStore'
 
@@ -15,14 +18,13 @@ const password = ref()
 const isAuthenticated = authStore()
 
 const handleLogin = () => {
-  console.log(username.value)
-  console.log(password.value)
   if (username.value === 'matt' && password.value === 'matt') {
     isAuthenticated.set(true)
+    router.push('/')
   } else {
-    alert('Incorrect username or password')
     username.value = ''
     password.value = ''
+    alert('Incorrect username or password')
   }
 }
 </script>
@@ -38,7 +40,7 @@ const handleLogin = () => {
         <label for="username">Username: </label>
       </div>
       <div class="col">
-        <input id="username" ref="username" type="text" @keydown.enter="handleLogin"/>
+        <input id="username" v-model="username" type="text" @keydown.enter="handleLogin"/>
       </div>
     </div>
     <div class="row">
@@ -46,7 +48,7 @@ const handleLogin = () => {
         <label for="userpwd" type="userpwd">Password: </label>
       </div>
       <div class="col">
-        <input id="userpwd" ref="password" type="password" @keydown.enter="handleLogin"/>
+        <input id="userpwd" v-model="password" type="password" @keydown.enter="handleLogin"/>
       </div>
     </div>
   </section>
