@@ -2,10 +2,10 @@ import { createRouter, createMemoryHistory } from 'vue-router'
 
 import { authStore } from './stores/authStore'
 
-const Login = () => import('@/routes/Login.vue')
-const User = () => import ('@/routes/User.vue')
-const ServerList = () => import('@/routes/ServerList.vue')
-const WorldList = () => import('@/routes/WorldList.vue')
+const Login = () => import('./routes/Login.vue')
+const User = () => import ('./routes/User.vue')
+const ServerList = () => import('./routes/ServerList.vue')
+const WorldList = () => import('./routes/WorldList.vue')
 
 const routes = [
   { path: '/', component: ServerList },
