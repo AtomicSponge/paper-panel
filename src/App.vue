@@ -24,7 +24,7 @@ const auth = authStore()
         </nav>
       </span>
       <span class="right">
-        <a href="https://github.com/AtomicSponge">Paper Panel</a> v0.0.1
+        <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a> v0.0.1
       </span>
     </header>
 
@@ -33,7 +33,7 @@ const auth = authStore()
     </main>
 
     <footer>
-      <span class="right">
+      <span class="right" v-show="auth.isAuthenticated">
         Some text here
       </span>
     </footer>

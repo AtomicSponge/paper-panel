@@ -1,5 +1,6 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: medium;
   line-height: 1.5;
   font-weight: 400;
 
@@ -52,7 +53,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgb(150, 50, 23);
+  background-color: rgb(150, 114, 23);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -97,7 +98,7 @@ input[type=password] {
   }
 
   button {
-    background-color: rgb(150, 50, 23);
+    background-color: rgb(23, 123, 150);
   }
   button:hover {
     border-color: rgb(25, 25, 112);
