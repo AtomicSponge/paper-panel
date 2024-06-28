@@ -81,7 +81,7 @@ input[type=password] {
   margin: 0 auto;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   :root {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
