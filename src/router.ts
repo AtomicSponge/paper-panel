@@ -21,9 +21,9 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to, _from) => {
-  const isAuthenticated = authStore()
+  const auth = authStore()
   //to.meta.requiresAuth
-  if(!isAuthenticated.value && to.path !== '/login') {
+  if(!auth.isAuthenticated && to.path !== '/login') {
     return { path: '/login' }
   }
 })

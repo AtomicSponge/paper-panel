@@ -6,14 +6,18 @@
 
 <script setup lang="ts">
 import { RouterLink } from 'vue-router'
+
+import { authStore } from '@/stores/authStore'
+
+const auth = authStore()
 </script>
 
 <template>
   <section>
     <header>
-      <span class="left">
+      <span class="left" v-show="auth.isAuthenticated">
         <nav>
-          <RouterLink to="/user">username</RouterLink> >
+          <RouterLink to="/user">{{ auth.user }}</RouterLink> >
           <RouterLink to="/servers">Servers</RouterLink> >
           <RouterLink to="/worlds">Worlds</RouterLink> >
           World name

@@ -8,9 +8,9 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-const router = useRouter()
-
 import { authStore } from '@/stores/authStore'
+
+const router = useRouter()
 
 const username = ref()
 const password = ref()
@@ -19,7 +19,7 @@ const isAuthenticated = authStore()
 
 const handleLogin = () => {
   if (username.value === 'matt' && password.value === 'matt') {
-    isAuthenticated.set(true)
+    isAuthenticated.setAuthed(username.value)
     router.push('/')
   } else {
     username.value = ''
