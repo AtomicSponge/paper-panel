@@ -24,7 +24,7 @@ const handleLogin = () => {
   } else {
     username.value = ''
     password.value = ''
-    alert('Incorrect username or password')
+    alert('Incorrect username or password!')
   }
 }
 </script>
