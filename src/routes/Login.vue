@@ -5,6 +5,26 @@
 -->
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+import { authStore } from '@/stores/authStore'
+
+const username = ref()
+const password = ref()
+
+const isAuthenticated = authStore()
+
+const handleLogin = () => {
+  console.log(username.value)
+  console.log(password.value)
+  if (username.value === 'matt' && password.value === 'matt') {
+    isAuthenticated.set(true)
+  } else {
+    alert('Incorrect username or password')
+    username.value = ''
+    password.value = ''
+  }
+}
 </script>
 
 <template>
@@ -18,7 +38,7 @@
         <label for="username">Username: </label>
       </div>
       <div class="col">
-        <input id="username" type="text"/>
+        <input id="username" ref="username" type="text" @keydown.enter="handleLogin"/>
       </div>
     </div>
     <div class="row">
@@ -26,11 +46,11 @@
         <label for="userpwd" type="userpwd">Password: </label>
       </div>
       <div class="col">
-        <input id="userpwd" type="password"/>
+        <input id="userpwd" ref="password" type="password" @keydown.enter="handleLogin"/>
       </div>
     </div>
   </section>
-  <button>Login</button>
+  <button @click="handleLogin">Login</button>
 </span>
 </template>
 

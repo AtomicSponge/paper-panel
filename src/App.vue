@@ -30,7 +30,7 @@ import { RouterLink } from 'vue-router'
 
     <footer>
       <span class="right">
-        ...
+        Some text here
       </span>
     </footer>
   </section>

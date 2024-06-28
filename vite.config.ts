@@ -8,5 +8,11 @@ export default defineConfig({
       { find: "@", replacement: path.resolve(__dirname, "./src") }
     ]
   },
-  plugins: [ vue() ]
+  plugins: [ vue() ],
+  server: {
+      hmr: {
+          host: "localhost",
+          protocol: "ws"
+      },
+  }
 })
