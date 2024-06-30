@@ -30,7 +30,9 @@
       </div>
     </div>
   </main>
-  <button>Login</button>
+  <footer>
+    <button>Login</button>
+  </footer>
 </section>
 </template>
 
