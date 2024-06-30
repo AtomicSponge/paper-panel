@@ -63,7 +63,7 @@ async function startServer() {
   app.get('*', async (req, res, next) => {
     const userid = 1234
     const username = 'matt'
-    const usertype = ''
+    const usertype = 'admin'
 
     const pageContextInit = {
       urlOriginal: req.originalUrl,

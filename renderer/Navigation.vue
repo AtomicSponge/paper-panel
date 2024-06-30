@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import type { Data } from './+data'
+import type { Data } from './+data.navigation'
 import { useData } from './useData'
 const data = useData<Data>()
 </script>
