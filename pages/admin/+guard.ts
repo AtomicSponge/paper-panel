@@ -1,8 +1,8 @@
-import { render, redirect } from 'vike/abort'
+import { redirect } from 'vike/abort'
  
 export const guard = (pageContext:any) => {
-  const { user } = pageContext
-  if (user === null) {
+  const { userid } = pageContext
+  if (userid === null) {
     throw redirect('/login')
   }
 }
