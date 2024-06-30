@@ -1,3 +1,6 @@
+<script lang="ts" setup>
+</script>
+
 <template>
   <a href="/user/matt/">user</a> >
   <a href="/servers">Servers</a> >
