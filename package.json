@@ -5,17 +5,11 @@
   "description": "",
   "author": "Matthew Evans",
   "license": "MIT",
-  "url": "",
   "homepage": "https://github.com/AtomicSponge/paper-panel#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AtomicSponge/paper-panel.git"
   },
-  "keywords": [
-    "Vue",
-    "Vuejs",
-    "Vue3"
-  ],
   "bugs": {
     "url": "https://github.com/AtomicSponge/paper-panel/issues"
   },
