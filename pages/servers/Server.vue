@@ -47,6 +47,9 @@ div .cell {
 }
 
 @media (prefers-color-scheme: light) {
-  /** */
+  section {
+    border: 3px solid rgb(255, 239, 213);
+    background-color: rgb(253, 245, 230);
+  }
 }
 </style>
