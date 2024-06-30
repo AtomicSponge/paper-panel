@@ -5,11 +5,17 @@
 -->
 
 <script lang="ts" setup>
+defineProps<{
+  name:string
+  address:string
+  port:number
+}>()
 </script>
 
 <template>
   <section>
-    Server
+    <div>{{ name }}</div>
+    <div>{{ address }}: {{ port }}</div>
   </section>
 </template>
 

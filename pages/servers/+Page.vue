@@ -5,6 +5,10 @@
 -->
 
 <script lang="ts" setup>
+import type { Data } from './+data'
+import { useData } from '../../renderer/useData'
+const data = useData<Data>()
+
 import Server from './Server.vue'
 </script>
 
@@ -14,7 +18,9 @@ import Server from './Server.vue'
       <h1>Servers</h1>
     </header>
     <main>
-      <Server/>
+      <div v-for="server in data.servers">
+        <Server :name="server.name" :address="server.address" :port="server.port"/>
+      </div>
     </main>
   </section>
 </template>
