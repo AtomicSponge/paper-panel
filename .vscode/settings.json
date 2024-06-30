@@ -5,6 +5,7 @@
     "**/node_modules": true,
     "package-lock.json": true,
 
-    "**/certs": true
+    "**/certs": true,
+    "dev.db": true
   }
 }
