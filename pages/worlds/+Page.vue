@@ -13,7 +13,9 @@ import World from './World.vue'
     <header>
       <h1>Worlds</h1>
     </header>
-    <World/>
+    <main>
+      <World/>
+    </main>
   </section>
 </template>
 

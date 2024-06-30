@@ -13,7 +13,9 @@ import Server from './Server.vue'
     <header>
       <h1>Servers</h1>
     </header>
-    <Server/>
+    <main>
+      <Server/>
+    </main>
   </section>
 </template>
 
