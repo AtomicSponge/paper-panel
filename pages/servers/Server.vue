@@ -33,9 +33,9 @@ section {
   display: table;
   margin: 1em;
   padding: 1em;
-  border: 1px solid rgb(65, 74, 76);
+  border: 3px solid rgb(85, 85, 85);
   border-radius: 32px;
-  background-color: rgb(65, 74, 76);
+  background-color: rgb(55, 55, 55);
 }
 div .row {
   display: table-row
