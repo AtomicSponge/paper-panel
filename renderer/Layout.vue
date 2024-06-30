@@ -5,7 +5,6 @@
 -->
 
 <script lang="ts" setup>
-import Link from './Link.vue'
 import './css/index.css'
 </script>
 
@@ -14,10 +13,9 @@ import './css/index.css'
     <header>
       <!--<span class="left" v-show="auth.isAuthenticated">-->
       <nav class="left">
-        <!--<a href ="/user">{{ auth.user }}</a> >-->
-        <a href ="/user">user</a> >
-        <a href ="/servers">Servers</a> >
-        <a href ="/worlds">Worlds</a> >
+        <a href="/user/matt/">user</a> >
+        <a href="/servers">Servers</a> >
+        <a href="/worlds">Worlds</a> >
         World name
       </nav>
       <nav class="right">
@@ -32,7 +30,7 @@ import './css/index.css'
     <footer>
       <!--<span class="right" v-show="auth.isAuthenticated">-->
       <span class="right">
-        Some text here
+        <a href="/admin">Admin Panel</a>
       </span>
     </footer>
   </section>
@@ -44,10 +42,11 @@ section {
   flex-flow: column;
   align-items: stretch;
   height: 100vh;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 header {
+  padding-top: 6px;
   padding-bottom: 6px;
 }
 main {
@@ -55,7 +54,8 @@ main {
   overflow: auto;
 }
 footer {
-  padding-top: 4px;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 .left {
   float: left;

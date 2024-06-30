@@ -4,9 +4,9 @@
   See LICENSE.md
 -->
 
-<template>
-  admin panel
-</template>
-
 <script lang="ts" setup>
 </script>
+
+<template>
+  user: ?
+</template>
