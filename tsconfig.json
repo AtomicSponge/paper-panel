@@ -1,31 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "skipLibCheck": true,
-
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "preserve",
-
-    /* Linting */
     "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-
-    /* Path resolution */
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [ "./src/*" ]
-    }
+    "module": "ES2020",
+    "target": "ES2020",
+    // Doesn't apply to server/, see ts-node config down below and server/tsconfig.json
+    "moduleResolution": "Bundler",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*.ts", "src/**/*.vue"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "ts-node": {
+    "transpileOnly": true,
+    "esm": true,
+    "compilerOptions": {
+      "module": "Node16",
+      "moduleResolution": "Node16"
+    }
+  }
 }
