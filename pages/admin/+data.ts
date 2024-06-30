@@ -10,7 +10,7 @@ export { data }
 export type Data = Awaited<ReturnType<typeof data>>
 
 const data = async (pageContext: PageContextServer) => {
-  const username = pageContext.routeParams.user
+  const username = pageContext.routeParams.username
   return {
     username
   }
