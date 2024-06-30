@@ -1,3 +1,9 @@
+<!--
+  paper-panel
+  By:  Matthew Evans
+  See LICENSE.md
+-->
+
 <template>
   <h1>Welcome</h1>
   This page is:
