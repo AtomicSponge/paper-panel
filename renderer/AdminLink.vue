@@ -7,7 +7,7 @@ const { usertype } = pageContext.value
 </script>
 
 <template>
-  <div v-if="usertype === 'admin'">
+  <div v-show="usertype === 'admin'">
     <a href="/admin">Admin Panel</a>
   </div>
 </template>
