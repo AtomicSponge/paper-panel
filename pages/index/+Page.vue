@@ -8,11 +8,11 @@
 </script>
 
 <template>
-<span>
+<section>
   <header>
     <h3>Paper Panel Login</h3>
   </header>
-  <section>
+  <main>
     <div class="row">
       <div class="col">
         <label for="username">Username: </label>
@@ -29,13 +29,13 @@
         <input id="userpwd" type="password"/>
       </div>
     </div>
-  </section>
+  </main>
   <button>Login</button>
-</span>
+</section>
 </template>
 
 <style scoped>
-span {
+section {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -45,7 +45,7 @@ span {
 header {
   text-align: center;
 }
-section {
+main {
   display: table;
   margin-left: auto;
   margin-right: auto;
