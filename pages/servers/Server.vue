@@ -8,4 +8,14 @@
 </script>
 
 <template>
+  <section>
+    Server
+  </section>
 </template>
+
+<style scoped>
+
+@media (prefers-color-scheme: light) {
+  /** */
+}
+</style>

@@ -5,8 +5,26 @@
 -->
 
 <script lang="ts" setup>
+import World from './World.vue'
 </script>
 
 <template>
-  World list
+  <section>
+    <header>
+      <h1>Worlds</h1>
+    </header>
+    <World/>
+  </section>
 </template>
+
+<style scoped>
+section {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  text-align: center;
+}
+</style>
