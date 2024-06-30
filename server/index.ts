@@ -56,10 +56,12 @@ async function startServer() {
   // catch-all middleware superseding any middleware placed after it).
   app.get('*', async (req, res, next) => {
     const userid = 1234
+    const username = 'matt'
 
     const pageContextInit = {
       urlOriginal: req.originalUrl,
-      userid
+      userid,
+      username
     }
     const pageContext = await renderPage(pageContextInit)
     if (pageContext.errorWhileRendering) {
