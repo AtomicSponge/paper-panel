@@ -1,3 +1,9 @@
+/**
+ * paper-panel
+ * By:  Matthew Evans
+ * See LICENSE.md
+ */
+
 // This file isn't processed by Vite, see https://github.com/vikejs/vike/issues/562
 // Consequently:
 //  - When changing this file, you needed to manually restart your server for your changes to take effect.
@@ -55,13 +61,15 @@ async function startServer() {
   // Vike middleware. It should always be our last middleware (because it's a
   // catch-all middleware superseding any middleware placed after it).
   app.get('*', async (req, res, next) => {
-    const userid = 1234
+    const userid = null
     const username = 'matt'
+    const usertype = ''
 
     const pageContextInit = {
       urlOriginal: req.originalUrl,
-      userid,
-      username
+      userid: userid,
+      username: username,
+      usertype: usertype
     }
     const pageContext = await renderPage(pageContextInit)
     if (pageContext.errorWhileRendering) {

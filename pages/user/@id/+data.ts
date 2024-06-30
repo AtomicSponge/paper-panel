@@ -1,3 +1,9 @@
+/**
+ * paper-panel
+ * By:  Matthew Evans
+ * See LICENSE.md
+ */
+
 import type { PageContextServer } from 'vike/types'
 
 export { data }
