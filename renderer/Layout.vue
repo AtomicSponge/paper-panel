@@ -11,12 +11,12 @@ import './css/index.css'
 <template>
   <section>
     <header>
-      <!--<span class="left" v-show="auth.isAuthenticated">-->
+      <!--<nav class="left" v-show="auth.isAuthenticated">-->
       <nav class="left">
         <a href="/user/matt/">user</a> >
         <a href="/servers">Servers</a> >
         <a href="/worlds">Worlds</a> >
-        World name
+        <a href="/world/world">World name</a>
       </nav>
       <nav class="right">
         <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a> v0.0.1
@@ -28,10 +28,10 @@ import './css/index.css'
     </main>
 
     <footer>
-      <!--<span class="right" v-show="auth.isAuthenticated">-->
-      <span class="right">
+      <!--<nav class="right" v-show="auth.isAuthenticated">-->
+      <nav class="right">
         <a href="/admin">Admin Panel</a>
-      </span>
+      </nav>
     </footer>
   </section>
 </template>
