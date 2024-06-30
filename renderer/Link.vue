@@ -11,16 +11,10 @@ const isActive = computed(() => {
 </script>
 
 <template>
-  <a :class="{ active: isActive }">
-    <slot></slot>
-  </a>
+  <a :class="{ active: isActive }"><slot></slot></a>
 </template>
 
 <style scoped>
-a {
-  padding: 2px 10px;
-  margin-left: -10px;
-}
 a.active {
   background-color: #eee;
 }

@@ -15,10 +15,10 @@ import './css/index.css'
       <!--<span class="left" v-show="auth.isAuthenticated">-->
         <span class="left">
         <nav>
-          <!--<RouterLink to="/user">{{ auth.user }}</RouterLink> >-->
-          <Link to="/user">user</Link> >
-          <Link to="/servers">Servers</Link> >
-          <Link to="/worlds">Worlds</Link> >
+          <!--<a href ="/user">{{ auth.user }}</a> >-->
+          <a href ="/user">user</a> >
+          <a href ="/servers">Servers</a> >
+          <a href ="/worlds">Worlds</a> >
           World name
         </nav>
       </span>
