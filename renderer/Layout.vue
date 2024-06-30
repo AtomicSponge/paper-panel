@@ -13,18 +13,16 @@ import './css/index.css'
   <section>
     <header>
       <!--<span class="left" v-show="auth.isAuthenticated">-->
-        <span class="left">
-        <nav>
-          <!--<a href ="/user">{{ auth.user }}</a> >-->
-          <a href ="/user">user</a> >
-          <a href ="/servers">Servers</a> >
-          <a href ="/worlds">Worlds</a> >
-          World name
-        </nav>
-      </span>
-      <span class="right">
+      <nav class="left">
+        <!--<a href ="/user">{{ auth.user }}</a> >-->
+        <a href ="/user">user</a> >
+        <a href ="/servers">Servers</a> >
+        <a href ="/worlds">Worlds</a> >
+        World name
+      </nav>
+      <nav class="right">
         <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a> v0.0.1
-      </span>
+      </nav>
     </header>
 
     <main>
