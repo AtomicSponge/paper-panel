@@ -6,8 +6,8 @@
 
 import { redirect } from 'vike/abort'
  
-export const guard = (pageContext:PageContext) => {
-  const { userid } = pageContext
+export const guard = (pageContext:UserContext) => {
+  const { userid, username } = pageContext
   if (userid === null) {
     throw redirect('/')
   }

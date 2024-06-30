@@ -6,11 +6,13 @@
 
 import type { PageContextServer } from 'vike/types'
 
+type Context = PageContextServer & UserContext
+
 export { data }
 export type Data = Awaited<ReturnType<typeof data>>
 
-const data = async (pageContext: PageContextServer) => {
-  const username = pageContext.routeParams.username
+const data = async (pageContext: Context) => {
+  const username = pageContext.username
   return {
     username
   }

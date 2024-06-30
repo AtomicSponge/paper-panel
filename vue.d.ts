@@ -9,8 +9,7 @@ declare module '*.vue' {
   export default Component
 }
 
-interface PageContext {
-  urlOriginal:string
+interface UserContext {
   userid:number
   username:string
   usertype:string
