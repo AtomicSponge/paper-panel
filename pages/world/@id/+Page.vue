@@ -5,12 +5,15 @@
 -->
 
 <script lang="ts" setup>
+import type { Data } from './+data'
+import { useData } from '../../../renderer/useData'
+const data = useData<Data>()
 </script>
 
 <template>
   <section>
     <header>
-      <h1>Worldname</h1>
+      <h1>{{ data.worldname }}</h1>
     </header>
   </section>
   <main>
