@@ -12,6 +12,6 @@ declare module '*.vue' {
 interface PageContext {
   urlOriginal:string
   userid:number
-  user:string
+  username:string
   usertype:string
 }
