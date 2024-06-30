@@ -5,20 +5,6 @@
 -->
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-
-const username = ref()
-const password = ref()
-
-const handleLogin = () => {
-  if (username.value === 'matt' && password.value === 'matt') {
-    //
-  } else {
-    username.value = ''
-    password.value = ''
-    alert('Incorrect username or password!')
-  }
-}
 </script>
 
 <template>
@@ -32,7 +18,7 @@ const handleLogin = () => {
         <label for="username">Username: </label>
       </div>
       <div class="col">
-        <input id="username" v-model="username" type="text" @keydown.enter="handleLogin"/>
+        <input id="username" type="text"/>
       </div>
     </div>
     <div class="row">
@@ -40,11 +26,11 @@ const handleLogin = () => {
         <label for="userpwd" type="userpwd">Password: </label>
       </div>
       <div class="col">
-        <input id="userpwd" v-model="password" type="password" @keydown.enter="handleLogin"/>
+        <input id="userpwd" type="password"/>
       </div>
     </div>
   </section>
-  <button @click="handleLogin">Login</button>
+  <button>Login</button>
 </span>
 </template>
 
