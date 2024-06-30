@@ -17,23 +17,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: rgb(150, 114, 23);
-  text-decoration: inherit;
-}
-a:visited {
-  color: rgb(150, 114, 23);
-}
-a:hover {
-  color: rgb(160, 128, 46);
-}
-
 body {
   padding: 0;
   margin: 0;
   min-width: 640px;
   min-height: 100vh;
+}
+
+#app {
+  max-width: 1920px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -47,6 +40,18 @@ h2 {
 h3 {
   font-size: 1.2em;
   font-weight: 600;
+}
+
+a {
+  font-weight: 500;
+  color: rgb(150, 114, 23);
+  text-decoration: inherit;
+}
+a:visited {
+  color: rgb(150, 114, 23);
+}
+a:hover {
+  color: rgb(160, 128, 46);
 }
 
 button {
@@ -77,11 +82,6 @@ input[type=password] {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
   cursor: pointer;
-}
-
-#app {
-  max-width: 1920px;
-  margin: 0 auto;
 }
 
 @media (prefers-color-scheme: light) {
