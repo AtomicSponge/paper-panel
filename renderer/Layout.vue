@@ -17,8 +17,8 @@ import './css/index.css'
         <nav>
           <!--<RouterLink to="/user">{{ auth.user }}</RouterLink> >-->
           <Link to="/user">user</Link> >
-          <Link to="/server">Servers</Link> >
-          <Link to="/world">Worlds</Link> >
+          <Link to="/servers">Servers</Link> >
+          <Link to="/worlds">Worlds</Link> >
           World name
         </nav>
       </span>

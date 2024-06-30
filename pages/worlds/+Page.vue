@@ -8,4 +8,5 @@
 </script>
 
 <template>
+  World list
 </template>

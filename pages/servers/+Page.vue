@@ -8,4 +8,5 @@
 </script>
 
 <template>
+  server list
 </template>
