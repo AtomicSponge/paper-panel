@@ -6,6 +6,8 @@
 
 <script lang="ts" setup>
 import './css/index.css'
+
+const version = 'v0.0.1'
 </script>
 
 <template>
@@ -19,7 +21,8 @@ import './css/index.css'
         <a href="/world/world">World name</a>
       </nav>
       <nav class="right">
-        <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a> v0.0.1
+        <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a>
+        {{ version }}
       </nav>
     </header>
 
