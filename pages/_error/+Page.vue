@@ -1,9 +1,3 @@
-<template>
-  <div class="center">
-    <p>{{ abortReason }}</p>
-  </div>
-</template>
-
 <script lang="ts" setup>
 import { usePageContext } from '../../renderer/usePageContext'
 
@@ -13,6 +7,12 @@ if (!abortReason) {
   abortReason = is404 ? 'Page not found.' : 'Something went wrong.'
 }
 </script>
+
+<template>
+  <div class="center">
+    <p>{{ abortReason }}</p>
+  </div>
+</template>
 
 <style>
 .center {

@@ -4,8 +4,8 @@
   See LICENSE.md
 -->
 
-<template>
-</template>
-
 <script lang="ts" setup>
 </script>
+
+<template>
+</template>
