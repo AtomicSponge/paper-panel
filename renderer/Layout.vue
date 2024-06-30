@@ -5,6 +5,8 @@
 -->
 
 <script lang="ts" setup>
+import Navigation from './Navigation.vue'
+import AdminLink from './AdminLink.vue'
 import './css/index.css'
 
 const version = 'v0.0.1'
@@ -13,12 +15,8 @@ const version = 'v0.0.1'
 <template>
   <section>
     <header>
-      <!--<nav class="left" v-show="auth.isAuthenticated">-->
       <nav class="left">
-        <a href="/user/matt/">user</a> >
-        <a href="/servers">Servers</a> >
-        <a href="/worlds">Worlds</a> >
-        <a href="/world/world">World name</a>
+        <Navigation/>
       </nav>
       <nav class="right">
         <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a>
@@ -31,9 +29,8 @@ const version = 'v0.0.1'
     </main>
 
     <footer>
-      <!--<nav class="right" v-show="auth.isAuthenticated">-->
       <nav class="right">
-        <a href="/admin">Admin Panel</a>
+        <AdminLink/>
       </nav>
     </footer>
   </section>
