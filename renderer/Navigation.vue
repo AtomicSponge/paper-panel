@@ -1,11 +1,8 @@
 <script lang="ts" setup>
-import type { Data } from './+data.navigation'
-import { useData } from './useData'
-const data = useData<Data>()
 </script>
 
 <template>
-  <a href="/user">{{ data.username }}</a> >
+  <a href="/user">matt</a> >
   <a href="/servers">Servers</a> >
   <a href="/worlds">Worlds</a> >
   <a href="/world/world">World name</a>

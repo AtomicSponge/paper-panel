@@ -9,10 +9,6 @@ import Navigation from './Navigation.vue'
 import AdminLink from './AdminLink.vue'
 import './css/index.css'
 
-import type { Data } from './+data.layout'
-import { useData } from './useData'
-const data = useData<Data>()
-
 const appURL = 'https://github.com/AtomicSponge/paper-panel'
 const version = 'v0.0.1'
 </script>
