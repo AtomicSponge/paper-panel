@@ -22,7 +22,7 @@
     "server:prod": "cross-env NODE_ENV=production npm run server",
 
     "certs": "openssl req -x509 -newkey rsa:4096 -keyout RootCA-key.pem -out RootCA.pem -sha256 -days 365",
-    "adduser": "npx ts-node ./scripts/adduser.ts"
+    "adduser": "node --loader ts-node/esm ./scripts/adduser.ts"
   },
   "dependencies": {
     "@types/compression": "^1.7.5",

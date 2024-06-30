@@ -7,4 +7,4 @@
  * Script for adding users to the database
  */
 
-console.log('adduser')
+console.log('adduser script')
