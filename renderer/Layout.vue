@@ -9,6 +9,7 @@ import Navigation from './Navigation.vue'
 import AdminLink from './AdminLink.vue'
 import './css/index.css'
 
+const appURL = 'https://github.com/AtomicSponge/paper-panel'
 const version = 'v0.0.1'
 </script>
 
@@ -19,7 +20,7 @@ const version = 'v0.0.1'
         <Navigation/>
       </nav>
       <nav class="right">
-        <a href="https://github.com/AtomicSponge/paper-panel">Paper Panel</a>
+        <a :href="appURL">Paper Panel</a>
         {{ version }}
       </nav>
     </header>
