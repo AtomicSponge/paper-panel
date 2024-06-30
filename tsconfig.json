@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "ES2020",
-    "target": "ES2020",
+    "module": "es2022",
+    "target": "es2022",
     // Doesn't apply to server/, see ts-node config down below and server/tsconfig.json
     "moduleResolution": "Bundler",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "types": ["vite/client"],
+    "lib": [ "DOM", "DOM.Iterable", "ESNext" ],
+    "types": [ "vite/client" ],
     "skipLibCheck": true,
     "esModuleInterop": true
   },
@@ -14,8 +14,8 @@
     "transpileOnly": true,
     "esm": true,
     "compilerOptions": {
-      "module": "Node16",
-      "moduleResolution": "Node16"
+      "module": "nodenext",
+      "moduleResolution": "nodenext"
     }
   }
 }

@@ -20,7 +20,9 @@
     "server": "node --loader ts-node/esm ./server/index.ts",
     "server:dev": "npm run server",
     "server:prod": "cross-env NODE_ENV=production npm run server",
-    "certs": "openssl req -x509 -newkey rsa:4096 -keyout RootCA-key.pem -out RootCA.pem -sha256 -days 365"
+
+    "certs": "openssl req -x509 -newkey rsa:4096 -keyout RootCA-key.pem -out RootCA.pem -sha256 -days 365",
+    "adduser": "npx ts-node ./scripts/adduser.ts"
   },
   "dependencies": {
     "@types/compression": "^1.7.5",
@@ -43,6 +45,9 @@
     "vue": "^3.4.31",
     "vue-tsc": "^2.0.24",
     "ws": "^8.17.1"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   },
   "type": "module"
 }
