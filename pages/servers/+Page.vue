@@ -20,6 +20,7 @@ import Server from './Server.vue'
     <main>
       <div v-for="server in data.servers">
         <Server
+          :id="server.id"
           :name="server.name"
           :address="server.address"
           :port="server.port"/>

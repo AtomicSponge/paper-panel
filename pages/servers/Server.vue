@@ -6,6 +6,7 @@
 
 <script lang="ts" setup>
 defineProps<{
+  id:number
   name:string
   address:string
   port:number
@@ -16,7 +17,7 @@ defineProps<{
   <section>
     <div class="row">
       <div class="cell">
-        {{ name }}
+        <a :href="`/world/${id}`">{{ name }}</a>
       </div>
     </div>
     <div class="row">
@@ -32,9 +33,9 @@ section {
   display: table;
   margin: 1em;
   padding: 1em;
-  border: 1px solid rgb(84, 90, 44);
+  border: 1px solid rgb(65, 74, 76);
   border-radius: 32px;
-  background-color: rgb(84, 90, 44);
+  background-color: rgb(65, 74, 76);
 }
 div .row {
   display: table-row
