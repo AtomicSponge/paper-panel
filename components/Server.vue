@@ -17,7 +17,7 @@ defineProps<{
   <section>
     <div class="row">
       <div class="cell">
-        <a :href="`/world/${id}`">{{ name }}</a>
+        <a :href="`/worlds/${id}`">{{ name }}</a>
       </div>
     </div>
     <div class="row">
