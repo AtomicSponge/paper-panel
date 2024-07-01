@@ -5,6 +5,10 @@
 -->
 
 <script lang="ts" setup>
+import type { Data } from './+data'
+import { useData } from 'vike-vue/useData'
+const data = useData<Data>()
+
 import World from './World.vue'
 </script>
 
@@ -14,7 +18,11 @@ import World from './World.vue'
       <h1>Worlds</h1>
     </header>
     <main>
-      <World/>
+      <div v-for="world in data.worlds">
+        <World
+          :id="world.id"
+          :name="world.name"/>
+      </div>
     </main>
   </section>
 </template>

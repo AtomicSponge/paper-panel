@@ -5,11 +5,15 @@
 -->
 
 <script lang="ts" setup>
+defineProps<{
+  id:number
+  name:string
+}>()
 </script>
 
 <template>
   <section>
-    World
+    {{ name }}
   </section>
 </template>
 
