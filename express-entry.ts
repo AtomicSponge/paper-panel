@@ -3,10 +3,11 @@ import { fileURLToPath } from "node:url";
 import {
   authjsHandler,
   authjsSessionMiddleware,
-} from "./server/authjs-handler";
+} from "@/server/authjs-handler";
 
-//import { createTodoHandler } from "./server/create-todo-handler";
-import { vikeHandler } from "./server/vike-handler";
+import { vikeHandler } from "@/server/vike-handler";
+import { appRouter } from "@/trpc/server";
+import * as trpcExpress from "@trpc/server/adapters/express";
 import { createMiddleware } from "@universal-middleware/express";
 import express from "express";
 
@@ -87,7 +88,15 @@ async function startServer() {
    **/
   app.all("/api/auth/*", handlerAdapter(authjsHandler));
 
-  //app.post("/api/todo/create", handlerAdapter(createTodoHandler));
+  app.use(
+    "/api/trpc",
+    trpcExpress.createExpressMiddleware({
+      router: appRouter,
+      createContext({ req, res }: trpcExpress.CreateExpressContextOptions) {
+        return { req, res };
+      },
+    }),
+  );
 
   /**
    * Vike route
