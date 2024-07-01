@@ -5,11 +5,16 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 //import { trpc } from '@/trpc/client'
+
+const username = ref('')
+const password = ref('')
 
 const submitLogin = async () => {
   try {
-    //
+    username.value = ''
+    password.value = ''
   } catch (error:any) {
     //
   }
@@ -17,18 +22,18 @@ const submitLogin = async () => {
 </script>
 
 <template>
+<form @submit.prevent="submitLogin()">
 <section>
   <header>
     <h3>Paper Panel Login</h3>
   </header>
   <main>
-  <form @submit.prevent="submitLogin()">
     <div class="row">
       <div class="col">
         <label for="username">Username: </label>
       </div>
       <div class="col">
-        <input id="username" type="text"/>
+        <input id="username" type="text" v-model="username"/>
       </div>
     </div>
     <div class="row">
@@ -36,15 +41,15 @@ const submitLogin = async () => {
         <label for="userpwd" type="userpwd">Password: </label>
       </div>
       <div class="col">
-        <input id="userpwd" type="password"/>
+        <input id="userpwd" type="password" v-model="password"/>
       </div>
     </div>
-  </form>
   </main>
   <footer>
-    <button>Login</button>
+    <button type="submit">Login</button>
   </footer>
 </section>
+</form>
 </template>
 
 <style scoped>
