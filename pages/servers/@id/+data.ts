@@ -36,13 +36,15 @@ const data = async (pageContext:any) => {
     }
   ]
 
-  const servers = data.map(server => {
-    server.users.filter(user => user === userId)
+  const servers = data.filter(server => {
+    let found = false
+    server.users.forEach(user => {
+      if(user === userId) found = true
+    })
+    return found
   })
 
-  console.log(servers)
-
   return {
-    data
+    servers
   }
 }
