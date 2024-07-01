@@ -1,9 +1,10 @@
-import vue from '@vitejs/plugin-vue'
-import vike from 'vike/plugin'
-import { UserConfig } from 'vite'
+import md from "unplugin-vue-markdown/vite";
+import vue from "@vitejs/plugin-vue";
+import ssr from "vike/plugin";
+import { defineConfig } from "vite";
 
-const config: UserConfig = {
-  plugins: [ vue(), vike() ]
-}
-
-export default config
+export default defineConfig({
+  plugins: [ssr(), vue({
+    include: [/\.vue$/, /\.md$/],
+  }), md({})],
+});

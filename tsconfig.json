@@ -1,21 +1,30 @@
 {
   "compilerOptions": {
     "strict": true,
-    "module": "es2022",
-    "target": "es2022",
-    // Doesn't apply to server/, see ts-node config down below and server/tsconfig.json
-    "moduleResolution": "Bundler",
-    "lib": [ "DOM", "DOM.Iterable", "ESNext" ],
-    "types": [ "vite/client" ],
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
     "skipLibCheck": true,
-    "esModuleInterop": true
+    "sourceMap": true,
+    "module": "ESNext",
+    "noEmit": true,
+    "moduleResolution": "Bundler",
+    "target": "ES2022",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "types": [
+      "vite/client",
+      "vike-vue"
+    ],
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
   },
-  "ts-node": {
-    "transpileOnly": true,
-    "esm": true,
-    "compilerOptions": {
-      "module": "nodenext",
-      "moduleResolution": "nodenext"
-    }
-  }
+  "exclude": [
+    "dist"
+  ]
 }

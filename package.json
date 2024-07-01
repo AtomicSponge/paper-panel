@@ -1,53 +1,43 @@
 {
-  "name": "paper-panel",
-  "private": true,
-  "version": "0.0.0",
+  "name": "my-app",
+  "version": "0.0.1",
   "description": "",
-  "author": "Matthew Evans",
-  "license": "MIT",
-  "homepage": "https://github.com/AtomicSponge/paper-panel#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AtomicSponge/paper-panel.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AtomicSponge/paper-panel/issues"
-  },
+  "type": "module",
   "scripts": {
-    "dev": "npm run server:dev",
-    "prod": "npm run build && npm run server:prod",
+    "dev": "tsx ./express-entry.ts",
     "build": "vite build",
-    "server": "node --loader ts-node/esm ./server/index.ts",
-    "server:dev": "npm run server",
-    "server:prod": "cross-env NODE_ENV=production npm run server",
-
-    "certs": "openssl req -x509 -newkey rsa:4096 -keyout RootCA-key.pem -out RootCA.pem -sha256 -days 365",
-    "adduser": "node --loader ts-node/esm ./scripts/adduser.ts"
+    "preview": "NODE_ENV=production tsx ./express-entry.ts",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue .",
+    "prisma:studio": "prisma studio",
+    "prisma:generate": "prisma generate"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "typescript": "^5.5.2",
+    "eslint": "^8.57.0",
+    "@typescript-eslint/parser": "^7.14.1",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@types/express": "^4.17.21",
+    "prisma": "^5.15.1",
+    "eslint-plugin-vue": "^9.26.0"
   },
   "dependencies": {
-    "@types/compression": "^1.7.5",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.14.9",
-    "@types/ws": "^8.5.10",
-    "@vitejs/plugin-vue": "^5.0.5",
-    "@vue/compiler-sfc": "^3.4.31",
-    "@vue/server-renderer": "^3.4.31",
-    "compression": "^1.7.4",
-    "cross-env": "^7.0.3",
+    "@universal-middleware/express": "^0.0.2",
     "express": "^4.19.2",
-    "node-fetch": "^3.3.2",
-    "prisma": "^5.16.1",
-    "sirv": "^2.0.4",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.2",
+    "tsx": "^4.15.7",
+    "vite": "^5.3.1",
     "vike": "^0.4.177",
-    "vite": "^5.3.2",
-    "vue": "^3.4.31",
-    "vue-tsc": "^2.0.24",
-    "ws": "^8.17.1"
-  },
-  "engines": {
-    "node": ">=20.0.0"
-  },
-  "type": "module"
+    "@auth/core": "^0.34.1",
+    "dotenv": "^16.4.5",
+    "@prisma/client": "^5.15.1",
+    "lowdb": "^7.0.1",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "@vue/compiler-sfc": "^3.4.30",
+    "@vue/server-renderer": "^3.4.30",
+    "cross-fetch": "^4.0.0",
+    "unplugin-vue-markdown": "^0.26.2",
+    "vike-vue": "^0.7.6",
+    "vue": "^3.4.30"
+  }
 }

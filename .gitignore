@@ -1,8 +1,5 @@
-#  Build artifacts
 node_modules
 dist
 
-#  Development files
-certs
+pnpm-lock.yaml
 .env
-dev.db
