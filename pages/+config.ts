@@ -9,8 +9,8 @@ export default {
   Head,
   // <title>
   //# BATI.has("auth0") || BATI.has("firebase-auth") || BATI.has("authjs")
-  passToClient: ["user"],
-  title: "My Vike App",
+  passToClient: [ 'user' ],
+  title: 'Paper Panel',
   extends: vikeVue,
-  stream: "web",
+  stream: 'web',
 } satisfies Config;

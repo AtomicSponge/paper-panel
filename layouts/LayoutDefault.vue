@@ -8,7 +8,7 @@
 import Navigation from './Navigation.vue'
 import AdminLink from './AdminLink.vue'
 
-const appURL = 'https://github.com/AtomicSponge/paper-panel'
+const appURL = 'https://github.com/AtomicSponge/paper-panel#readme'
 const version = 'v0.0.1'
 </script>
 
