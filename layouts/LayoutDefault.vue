@@ -1,54 +1,66 @@
-<template>
-  <div class="layout">
-    <Sidebar>
-      <Logo />
-      <Link href="/"> Welcome </Link>
-      <Link href="/todo"> Todo </Link>
-      <Link href="/star-wars"> Data Fetching </Link>
-    </Sidebar>
-    <Content><slot /></Content>
-  </div>
-</template>
+<!--
+  paper-panel
+  By:  Matthew Evans
+  See LICENSE.md
+-->
 
 <script lang="ts" setup>
-  import Content from "../components/Content.vue";
-  import Link from "../components/Link.vue";
-  import Logo from "../components/Logo.vue";
-  import Sidebar from "../components/Sidebar.vue";
+import Navigation from './Navigation.vue'
+import AdminLink from './AdminLink.vue'
+
+const appURL = 'https://github.com/AtomicSponge/paper-panel'
+const version = 'v0.0.1'
 </script>
 
-<style>
+<template>
+  <section>
+    <header>
+      <nav class="left">
+        <Navigation />
+      </nav>
+      <nav class="right">
+        <a :href="appURL">Paper Panel</a>
+        {{ version }}
+      </nav>
+    </header>
 
-  body {
-    margin: 0;
-    font-family: sans-serif;
-  }
-  * {
-    box-sizing: border-box;
-  }
-  a {
-    text-decoration: none;
-  }
-</style>
+    <main>
+      <slot></slot>
+    </main>
+
+    <footer>
+      <nav class="right">
+        <AdminLink />
+      </nav>
+    </footer>
+  </section>
+</template>
 
 <style scoped>
-  .layout {
-    display: flex;
-    max-width: 900px;
-    margin: auto;
-  }
-  .content {
-    padding: 20px;
-    padding-bottom: 50px;
-    min-height: 100vh;
-    flex-grow: 1;
-  }
-  /* Page Transition Animation */
-  #page-content {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-  }
-  body.page-is-transitioning #page-content {
-    opacity: 0;
-  }
+section {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  height: 100vh;
+  padding-left: 6px;
+  padding-right: 6px;
+}
+header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+main {
+  flex: auto;
+  overflow: auto;
+}
+footer {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
 </style>
