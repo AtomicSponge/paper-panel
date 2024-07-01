@@ -61,7 +61,6 @@ const data = async (pageContext:any) => {
   ]
 
   const world = data.filter(world => world.id === worldId)[0]
-  console.log(world)
 
   return {
     world
