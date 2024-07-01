@@ -1,8 +1,12 @@
-<!-- Default <head> (can be overridden by pages) -->
+<!--
+  paper-panel
+  By:  Matthew Evans
+  See LICENSE.md
+-->
 
 <script setup lang="ts">
   import './css/index.css'
-  import logoUrl from "../assets/logo.svg"
+  import logoUrl from "@/assets/logo.svg"
 </script>
 
 <template>
