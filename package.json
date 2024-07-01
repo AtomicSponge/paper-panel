@@ -1,7 +1,18 @@
 {
-  "name": "my-app",
-  "version": "0.0.1",
+  "name": "paper-panel",
+  "private": true,
+  "version": "0.0.0",
   "description": "",
+  "author": "Matthew Evans",
+  "license": "MIT",
+  "homepage": "https://github.com/AtomicSponge/paper-panel#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomicSponge/paper-panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AtomicSponge/paper-panel/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "tsx ./express-entry.ts",
@@ -11,8 +22,6 @@
     "prisma:studio": "prisma studio",
     "prisma:generate": "prisma generate"
   },
-  "keywords": [],
-  "author": "",
   "devDependencies": {
     "typescript": "^5.5.2",
     "eslint": "^8.57.0",
