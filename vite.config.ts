@@ -9,9 +9,8 @@ export default defineConfig({
   plugins: [
     trpc(),
     ssr(),
-    vue({
-      include: [/\.vue$/, /\.md$/],
-    }), md({})
+    vue({ include: [/\.vue$/, /\.md$/], }),
+    md({})
   ],
   resolve: {
     alias: {
