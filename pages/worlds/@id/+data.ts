@@ -8,8 +8,9 @@ export { data }
 export type Data = Awaited<ReturnType<typeof data>>
 
 const data = async (pageContext:any) => {
+  const serverId = Number(pageContext.routeParams.id)
 
-  const worlds = [
+  const data = [
     {
       id: 1,
       server: 1,
@@ -56,6 +57,8 @@ const data = async (pageContext:any) => {
       name: 'This Land'
     }
   ]
+
+  const worlds = data.filter(world => world.server === serverId)
 
   return {
     worlds

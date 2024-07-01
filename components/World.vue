@@ -13,7 +13,7 @@ defineProps<{
 
 <template>
   <section>
-    {{ name }}
+    <a :href="`/world/${id}`">{{ name }}</a>
   </section>
 </template>
 

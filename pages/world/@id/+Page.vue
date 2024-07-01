@@ -13,7 +13,7 @@ const data = useData<Data>()
 <template>
   <section>
     <header>
-      <h1>{{ data.worldname }}</h1>
+      <h1>{{ data.world.name }}</h1>
     </header>
   </section>
   <main>
