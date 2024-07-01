@@ -22,7 +22,11 @@
       "vike-vue"
     ],
     "jsx": "preserve",
-    "jsxImportSource": "vue"
+    "jsxImportSource": "vue",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [ "./*" ],
+    }
   },
   "exclude": [
     "dist"

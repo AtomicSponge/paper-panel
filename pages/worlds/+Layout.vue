@@ -5,8 +5,8 @@
 -->
 
 <script lang="ts" setup>
-import Navigation from '../../components/Navigation.vue'
-import AdminLink from '../../components/AdminLink.vue'
+import Navigation from '@/components/Navigation.vue'
+import AdminLink from '@/components/AdminLink.vue'
 
 const appURL = 'https://github.com/AtomicSponge/paper-panel#readme'
 const version = 'v0.0.1'
