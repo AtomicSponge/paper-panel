@@ -5,7 +5,7 @@ import {
   authjsSessionMiddleware,
 } from "./server/authjs-handler";
 
-import { createTodoHandler } from "./server/create-todo-handler";
+//import { createTodoHandler } from "./server/create-todo-handler";
 import { vikeHandler } from "./server/vike-handler";
 import { createMiddleware } from "@universal-middleware/express";
 import express from "express";
@@ -87,7 +87,7 @@ async function startServer() {
    **/
   app.all("/api/auth/*", handlerAdapter(authjsHandler));
 
-  app.post("/api/todo/create", handlerAdapter(createTodoHandler));
+  //app.post("/api/todo/create", handlerAdapter(createTodoHandler));
 
   /**
    * Vike route
