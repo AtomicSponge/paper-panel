@@ -13,7 +13,11 @@ defineProps<{
 
 <template>
   <section>
-    <a :href="`/world/${id}`">{{ name }}</a>
+    <div class="row">
+      <div class="cell">
+        <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -32,7 +36,7 @@ div .row {
 div .cell {
   display: table-cell;
   text-align: start;
-  padding: 1em;
+  padding: 0.8em;
 }
 
 @media (prefers-color-scheme: light) {
