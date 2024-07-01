@@ -7,20 +7,17 @@
 <script lang="ts" setup>
 import Navigation from '@/components/Navigation.vue'
 import AdminLink from '@/components/AdminLink.vue'
-
-const appURL = 'https://github.com/AtomicSponge/paper-panel#readme'
-const version = 'v0.0.1'
+import AppInfo from '@/components/AppInfo.vue'
 </script>
 
 <template>
   <section>
     <header>
       <nav class="left">
-        <Navigation />
+        <Navigation/>
       </nav>
       <nav class="right">
-        <a :href="appURL">Paper Panel</a>
-        {{ version }}
+        <AppInfo/>
       </nav>
     </header>
 
@@ -30,7 +27,7 @@ const version = 'v0.0.1'
 
     <footer>
       <nav class="right">
-        <AdminLink />
+        <AdminLink/>
       </nav>
     </footer>
   </section>

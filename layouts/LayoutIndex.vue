@@ -5,16 +5,14 @@
 -->
 
 <script lang="ts" setup>
-const appURL = 'https://github.com/AtomicSponge/paper-panel#readme'
-const version = 'v0.0.1'
+import AppInfo from '@/components/AppInfo.vue'
 </script>
 
 <template>
   <section>
     <header>
       <nav class="right">
-        <a :href="appURL">Paper Panel</a>
-        {{ version }}
+        <AppInfo/>
       </nav>
     </header>
 
