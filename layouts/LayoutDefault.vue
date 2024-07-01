@@ -5,8 +5,19 @@
 -->
 
 <script lang="ts" setup>
+import { usePageContext } from 'vike-vue/usePageContext'
+import { useAttrs } from 'vue'
+
 import Navigation from './Navigation.vue'
 import AdminLink from './AdminLink.vue'
+
+const pageContext = usePageContext()
+const { urlPathname } = pageContext
+
+const { href } = useAttrs()
+
+console.log(urlPathname)
+console.log(href)
 
 const appURL = 'https://github.com/AtomicSponge/paper-panel#readme'
 const version = 'v0.0.1'
