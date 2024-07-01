@@ -13,10 +13,12 @@ const password = ref('')
 
 const submitLogin = async () => {
   try {
-    username.value = ''
-    password.value = ''
+    //
   } catch (error:any) {
     //
+  } finally {
+    username.value = ''
+    password.value = ''
   }
 }
 </script>
