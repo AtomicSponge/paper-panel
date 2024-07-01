@@ -5,6 +5,15 @@
 -->
 
 <script lang="ts" setup>
+//import { trpc } from '@/trpc/client'
+
+const submitLogin = async () => {
+  try {
+    //
+  } catch (error:any) {
+    //
+  }
+}
 </script>
 
 <template>
@@ -13,6 +22,7 @@
     <h3>Paper Panel Login</h3>
   </header>
   <main>
+  <form @submit.prevent="submitLogin()">
     <div class="row">
       <div class="col">
         <label for="username">Username: </label>
@@ -29,6 +39,7 @@
         <input id="userpwd" type="password"/>
       </div>
     </div>
+  </form>
   </main>
   <footer>
     <button>Login</button>
