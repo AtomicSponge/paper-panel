@@ -11,22 +11,11 @@ export type Data = Awaited<ReturnType<typeof data>>
 
 const data = async (pageContext:any) => {
   const username = pageContext.username
-  //const server = pageContext.routeParams.id
-
-  const worlds = [
-    {
-      worldname: 'Worldname Here'
-    },
-    {
-      worldname: 'Another'
-    },
-    {
-      worldname: 'This Land'
-    }
-  ]
-
+  const world = pageContext.routeParams.id
+  const worldname = 'Worldname Here'
   return {
     username,
-    worlds
+    world,
+    worldname
   }
 }
