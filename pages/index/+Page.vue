@@ -15,7 +15,7 @@ const submitLogin = async () => {
   try {
     //
   } catch (error:any) {
-    //
+    window.alert('Incorrect username or password')
   } finally {
     username.value = ''
     password.value = ''
