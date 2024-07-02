@@ -5,9 +5,13 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+
 import Navigation from '@/components/layout/Navigation.vue'
 import AdminLink from '@/components/layout/AdminLink.vue'
 import AppInfo from '@/components/layout/AppInfo.vue'
+
+const showAdminLink = ref(true)
 </script>
 
 <template>
@@ -26,7 +30,7 @@ import AppInfo from '@/components/layout/AppInfo.vue'
       <nav class="left">
         <AppInfo/>
       </nav>
-      <nav class="right">
+      <nav class="right" v-show="showAdminLink">
         <AdminLink/>
       </nav>
     </footer>
