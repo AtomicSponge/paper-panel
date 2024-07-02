@@ -5,6 +5,10 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+
+const configWindow = ref('Config window')
+
 const saveConfig = () => {
   window.alert('Config saved')
 }
@@ -12,7 +16,7 @@ const saveConfig = () => {
 
 <template>
   <div>
-    <textarea>Config window</textarea>
+    <textarea v-model="configWindow"></textarea>
   </div>
   <div>
     <button @click="saveConfig">Save Config</button>
