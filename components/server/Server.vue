@@ -27,10 +27,6 @@ const toggleConfig = () => {
     <div class="row">
       <div class="cell">
         <h2><a :href="`/worlds/${id}`">{{ name }}</a></h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="cell">
         {{ address }}:{{ port }}
       </div>
     </div>
@@ -63,6 +59,10 @@ div .cell {
   display: table-cell;
   text-align: center;
   padding: 0.8em;
+}
+h2 {
+  display: inline-block;
+  padding-right: 1em;
 }
 
 @media (prefers-color-scheme: light) {
