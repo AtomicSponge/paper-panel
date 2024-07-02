@@ -11,9 +11,6 @@ import AppInfo from '@/components/AppInfo.vue'
 <template>
   <section>
     <header>
-      <nav class="right">
-        <AppInfo/>
-      </nav>
     </header>
 
     <main>
@@ -21,6 +18,9 @@ import AppInfo from '@/components/AppInfo.vue'
     </main>
 
     <footer>
+      <nav class="left">
+        <AppInfo/>
+      </nav>
     </footer>
   </section>
 </template>

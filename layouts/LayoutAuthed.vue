@@ -16,9 +16,6 @@ import AppInfo from '@/components/AppInfo.vue'
       <nav class="left">
         <Navigation/>
       </nav>
-      <nav class="right">
-        <AppInfo/>
-      </nav>
     </header>
 
     <main>
@@ -26,6 +23,9 @@ import AppInfo from '@/components/AppInfo.vue'
     </main>
 
     <footer>
+      <nav class="left">
+        <AppInfo/>
+      </nav>
       <nav class="right">
         <AdminLink/>
       </nav>
