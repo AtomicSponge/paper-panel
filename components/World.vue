@@ -5,10 +5,19 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+import WorldConfig from '@/components/WorldConfig.vue'
+
 defineProps<{
   id:number
   name:string
 }>()
+
+const showConfig = ref(false)
+
+const toggleConfig = () => {
+  showConfig.value = showConfig.value ? false : true
+}
 </script>
 
 <template>
@@ -16,6 +25,16 @@ defineProps<{
     <div class="row">
       <div class="cell">
         <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <button @click="toggleConfig()">Edit Config</button>
+      </div>
+    </div>
+    <div class="row" v-show="showConfig">
+      <div class="cell">
+        <WorldConfig/>
       </div>
     </div>
   </section>
@@ -35,7 +54,7 @@ div .row {
 }
 div .cell {
   display: table-cell;
-  text-align: start;
+  text-align: center;
   padding: 0.8em;
 }
 

@@ -61,7 +61,7 @@ div .row {
 }
 div .cell {
   display: table-cell;
-  text-align: start;
+  text-align: center;
   padding: 0.8em;
 }
 
