@@ -5,9 +5,9 @@
 -->
 
 <script lang="ts" setup>
-import Navigation from '@/components/Navigation.vue'
-import AdminLink from '@/components/AdminLink.vue'
-import AppInfo from '@/components/AppInfo.vue'
+import Navigation from '@/components/layout/Navigation.vue'
+import AdminLink from '@/components/layout/AdminLink.vue'
+import AppInfo from '@/components/layout/AppInfo.vue'
 </script>
 
 <template>

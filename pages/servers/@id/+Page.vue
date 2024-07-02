@@ -9,7 +9,7 @@ import type { Data } from './+data'
 import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
 
-import Server from '@/components/Server.vue'
+import Server from '@/components/server/Server.vue'
 </script>
 
 <template>

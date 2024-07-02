@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts" setup>
-import AppInfo from '@/components/AppInfo.vue'
+import AppInfo from '@/components/layout/AppInfo.vue'
 </script>
 
 <template>

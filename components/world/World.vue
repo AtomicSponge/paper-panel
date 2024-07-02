@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import WorldConfig from '@/components/WorldConfig.vue'
+import WorldConfig from '@/components/world/WorldConfig.vue'
 
 defineProps<{
   id:number

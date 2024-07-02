@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import ServerConfig from '@/components/ServerConfig.vue'
+import ServerConfig from '@/components/server/ServerConfig.vue'
 
 defineProps<{
   id:number
