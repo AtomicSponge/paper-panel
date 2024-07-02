@@ -28,7 +28,7 @@ div {
   padding: 2px;
 }
 textarea {
-  width: 80vw;
-  height: 50vh;
+  width: 84vw;
+  height: 54vh;
 }
 </style>
