@@ -5,12 +5,21 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+import ServerConfig from '@/components/ServerConfig.vue'
+
 defineProps<{
   id:number
   name:string
   address:string
   port:number
 }>()
+
+const showConfig = ref(false)
+
+const toggleConfig = () => {
+  showConfig.value = showConfig.value ? false : true
+}
 </script>
 
 <template>
@@ -23,6 +32,16 @@ defineProps<{
     <div class="row">
       <div class="cell">
         {{ address }}:{{ port }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+        <button @click="toggleConfig()">Edit Config</button>
+      </div>
+    </div>
+    <div class="row" v-show="showConfig">
+      <div class="cell">
+        <ServerConfig/>
       </div>
     </div>
   </section>
