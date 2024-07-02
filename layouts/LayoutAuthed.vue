@@ -6,12 +6,14 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+//import { usePageContext } from 'vike-vue/usePageContext'
 
 import Navigation from '@/components/layout/Navigation.vue'
 import AdminLink from '@/components/layout/AdminLink.vue'
 import AppInfo from '@/components/layout/AppInfo.vue'
 
-const showAdminLink = ref(true)
+//const pageContext = usePageContext()
+const showAdminLink = ref(false)
 </script>
 
 <template>
@@ -27,11 +29,11 @@ const showAdminLink = ref(true)
     </main>
 
     <footer>
-      <nav class="left">
-        <AppInfo/>
-      </nav>
-      <nav class="right" v-show="showAdminLink">
+      <nav class="left" v-show="showAdminLink">
         <AdminLink/>
+      </nav>
+      <nav class="right">
+        <AppInfo/>
       </nav>
     </footer>
   </section>

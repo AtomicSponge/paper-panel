@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-/*import { usePageContext } from './usePageContext'
+import { usePageContext } from 'vike-vue/usePageContext'
 
 const pageContext = usePageContext()
 
-const { username } = pageContext.value*/
+const { urlPathname } = pageContext
+
+console.log(urlPathname)
 </script>
 
 <template>
