@@ -32,7 +32,7 @@ const toggleConfig = () => {
       <button @click="toggleConfig()">Edit Config</button>
     </div>
     <div v-show="showConfig">
-      <ServerConfig/>
+      <ServerConfig :id/>
     </div>
   </section>
 </template>

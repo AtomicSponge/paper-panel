@@ -7,6 +7,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+defineProps<{
+  id:number
+}>()
+
 const configWindow = ref('Config window')
 
 const saveConfig = () => {
