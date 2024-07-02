@@ -25,10 +25,11 @@ const saveConfig = () => {
 
 <style scoped>
 div {
+  text-align: center;
   padding: 2px;
 }
 textarea {
-  width: 84vw;
-  height: 54vh;
+  width: 86vw;
+  height: 56vh;
 }
 </style>

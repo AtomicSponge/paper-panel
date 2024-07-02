@@ -22,40 +22,31 @@ const toggleConfig = () => {
 
 <template>
   <section>
-    <div class="row">
-      <div class="cell">
-        <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
-      </div>
+    <div>
+      <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
     </div>
-    <div class="row">
-      <div class="cell">
-        <button @click="toggleConfig()">Edit Config</button>
-      </div>
+    <div>
+      <button @click="toggleConfig()">Edit Config</button>
     </div>
-    <div class="row" v-show="showConfig">
-      <div class="cell">
-        <WorldConfig/>
-      </div>
+    <div v-show="showConfig">
+      <WorldConfig/>
     </div>
   </section>
 </template>
 
 <style scoped>
 section {
-  display: table;
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
   margin: 1em;
   padding: 1em;
   border: 3px solid rgb(85, 85, 85);
   border-radius: 32px;
   background-color: rgb(55, 55, 55);
 }
-div .row {
-  display: table-row
-}
-div .cell {
-  display: table-cell;
-  text-align: center;
-  padding: 0.8em;
+div {
+  padding: 0.4em;
 }
 
 @media (prefers-color-scheme: light) {
