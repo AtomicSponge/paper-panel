@@ -64,8 +64,10 @@ const data = async (pageContext:PageContextServer) => {
     if(serverId === 0)
       return data
     else
-      return data.filter(world => world.id === serverId)[0]
+      return data.filter(world => world.server === serverId)
   })()
+
+  console.log(worlds)
 
   return {
     worlds
