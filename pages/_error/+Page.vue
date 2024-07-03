@@ -1,7 +1,8 @@
-<template>
-  <h1>{{ heading }}</h1>
-  <p>{{ abortReason }}</p>
-</template>
+<!--
+  paper-panel
+  By:  Matthew Evans
+  See LICENSE.md
+-->
 
 <script lang="ts" setup>
 import { usePageContext } from 'vike-vue/usePageContext'
@@ -13,3 +14,8 @@ if (!abortReason) {
 }
 const heading = is404 ? '404 Page Not Found' : '500 Internal Server Error'
 </script>
+
+<template>
+  <h1>{{ heading }}</h1>
+  <p>{{ abortReason }}</p>
+</template>
