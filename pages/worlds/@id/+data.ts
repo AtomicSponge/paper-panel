@@ -60,7 +60,12 @@ const data = async (pageContext:PageContextServer) => {
     }
   ]
 
-  const worlds = data.filter(world => world.server === serverId)
+  const worlds = (() => {
+    if(serverId === 0)
+      return data
+    else
+      return data.filter(world => world.id === serverId)[0]
+  })()
 
   return {
     worlds

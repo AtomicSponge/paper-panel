@@ -12,7 +12,7 @@ export type Data = Awaited<ReturnType<typeof data>>
 const data = async (pageContext:PageContextServer) => {
   const userId = Number(pageContext.routeParams.id)
 
-  const data = [
+  const servers = [
     {
       id: 1,
       users: [ 1, 2 ],
@@ -38,14 +38,6 @@ const data = async (pageContext:PageContextServer) => {
       version: '1'
     }
   ]
-
-  const servers = data.filter(server => {
-    let found = false
-    server.users.forEach(user => {
-      if(user === userId) found = true
-    })
-    return found
-  })
 
   return {
     servers
