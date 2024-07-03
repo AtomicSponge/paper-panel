@@ -18,24 +18,21 @@ const data = async (pageContext:PageContextServer) => {
       users: [ 1, 2 ],
       name: 'some name',
       address: 'localhost',
-      port: 2345,
-      version: '1'
+      port: 2345
     },
     {
       id: 2,
       users: [ 1 ],
       name: 'another',
       address: '10.0.0.100',
-      port: 4532,
-      version: '1'
+      port: 4532
     },
     {
       id: 3,
       users: [ 2 ],
       name: 'server three',
       address: '10.10.42.200',
-      port: 4532,
-      version: '1'
+      port: 4532
     }
   ]
 
