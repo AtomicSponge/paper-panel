@@ -6,6 +6,6 @@
 
 <template>
   <span><a href="/user">matt</a></span>
-  <span> > <a href="/servers">Servers</a></span>
-  <span> > <a href="/worlds/0">Worlds</a></span>
+  <span> > <a href="/server">Server</a></span>
+  <span> > <a href="/worlds">Worlds</a></span>
 </template>

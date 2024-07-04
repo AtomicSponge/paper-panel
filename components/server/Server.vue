@@ -25,7 +25,7 @@ const toggleConfig = () => {
 <template>
   <section>
     <div>
-      <h2><a :href="`/worlds/${id}`">{{ name }}</a></h2>
+      <h2><a :href="`/worlds`">{{ name }}</a></h2>
       {{ address }}:{{ port }}
     </div>
     <div>      

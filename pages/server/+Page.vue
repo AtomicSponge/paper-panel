@@ -15,16 +15,14 @@ import Server from '@/components/server/Server.vue'
 <template>
   <section>
     <header>
-      <h1>Servers</h1>
+      <h1>Server</h1>
     </header>
     <main>
-      <div v-for="server in data.servers">
-        <Server
-          :id="server.id"
-          :name="server.name"
-          :address="server.address"
-          :port="server.port"/>
-      </div>
+      <Server
+        :id="data.server.id"
+        :name="data.server.name"
+        :address="data.server.address"
+        :port="data.server.port"/>
     </main>
   </section>
 </template>
