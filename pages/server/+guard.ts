@@ -4,11 +4,14 @@
  * See LICENSE.md
  */
 
+export { guard }
+ 
+import type { GuardAsync } from 'vike/types'
 import { redirect } from 'vike/abort'
  
-export const guard = (pageContext:any) => {
-  const { userid } = pageContext
-  if (userid === null) {
+const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
+  const { user } = pageContext
+  if (user === undefined) {
     throw redirect('/')
   }
 }
