@@ -5,7 +5,18 @@ export async function vikeHandler<Context extends Record<string | number | symbo
   request: Request,
   context?: Context,
 ): Promise<Response> {
-  const pageContextInit = { ...context, urlOriginal: request.url };
+
+  const user = {
+    id: 5423,
+    name: 'Matt',
+    admin: false
+  }
+  
+  const pageContextInit = {
+    ...context,
+    urlOriginal: request.url,
+    user
+  };
   const pageContext = await renderPage(pageContextInit);
   const response = pageContext.httpResponse;
 

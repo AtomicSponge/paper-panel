@@ -5,15 +5,24 @@
 -->
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-//import { usePageContext } from 'vike-vue/usePageContext'
+import { ref, onMounted } from 'vue'
+import { usePageContext } from 'vike-vue/usePageContext'
 
 import Navigation from '@/components/layout/Navigation.vue'
 import AdminLink from '@/components/layout/AdminLink.vue'
 import AppInfo from '@/components/layout/AppInfo.vue'
 
-//const pageContext = usePageContext()
+const pageContext = usePageContext()
+const { user } = pageContext
 const showAdminLink = ref(false)
+
+console.log(user)
+
+onMounted(() => {
+  if(user !== undefined && user.admin) {
+    showAdminLink.value = true
+  }
+})
 </script>
 
 <template>
