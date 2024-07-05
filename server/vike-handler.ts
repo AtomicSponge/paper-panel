@@ -9,9 +9,10 @@ export async function vikeHandler<Context extends Record<string | number | symbo
   const user = {
     id: 5423,
     name: 'Matt',
-    admin: true
+    admin: true,
+    serveradmin: true
   }
-  
+
   const pageContextInit = {
     ...context,
     urlOriginal: request.url,
