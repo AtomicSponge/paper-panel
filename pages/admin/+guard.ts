@@ -11,7 +11,7 @@ import { render } from 'vike/abort'
  
 const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
   const { user } = pageContext
-  if (user === undefined || !user.admin) {
+  if (user === undefined) {
     throw render('/')
   }
   if (!user.admin) {
