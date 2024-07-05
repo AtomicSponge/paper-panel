@@ -28,6 +28,9 @@ const toggleConfig = () => {
       <h2><a :href="`/worlds`">{{ name }}</a></h2>
       {{ address }}:{{ port }}
     </div>
+    <div>
+      <h3>Version: 1.21</h3><button>Check for updates</button>
+    </div>
     <div>      
       <button @click="toggleConfig()">Edit Config</button>
     </div>
@@ -52,6 +55,10 @@ div {
   padding: 0.4em;
 }
 h2 {
+  display: inline-block;
+  padding-right: 1em;
+}
+h3 {
   display: inline-block;
   padding-right: 1em;
 }
