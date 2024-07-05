@@ -9,7 +9,7 @@ export async function vikeHandler<Context extends Record<string | number | symbo
   const user = {
     id: 5423,
     name: 'Matt',
-    admin: false
+    admin: true
   }
   
   const pageContextInit = {

@@ -16,8 +16,6 @@ const pageContext = usePageContext()
 const { user } = pageContext
 const showAdminLink = ref(false)
 
-console.log(user)
-
 onMounted(() => {
   if(user !== undefined && user.admin) {
     showAdminLink.value = true
