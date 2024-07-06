@@ -14,13 +14,13 @@ import WorldScan from '@/components/admin/WorldScan.vue'
       <h1>Admin Panel</h1>
     </header>
     <main>
-      <div class="right">
+      <span class="right">
         <WorldScan/>
-      </div>
-      <div>
+      </span>
+      <span>
         <label for="serverpath">Server path:</label>
         <input id="serverpath" type="text"/>
-      </div>
+      </span>
     </main>
   </section>
 </template>
