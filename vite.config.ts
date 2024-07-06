@@ -1,20 +1,32 @@
 import path from 'path'
-import md from 'unplugin-vue-markdown/vite'
-import vue from '@vitejs/plugin-vue'
-import ssr from 'vike/plugin'
-import trpc from '@/trpc/vite-plugin'
-import { defineConfig } from 'vite'
+import md from "unplugin-vue-markdown/vite";
+import vue from "@vitejs/plugin-vue";
+import {telefunc} from "telefunc/vite";
+import devServer from "@hono/vite-dev-server";
+import { defineConfig } from "vite";
+import vike from "vike/plugin";
 
 export default defineConfig({
-  plugins: [
-    trpc(),
-    ssr(),
-    vue({ include: [/\.vue$/, /\.md$/], }),
-    md({})
-  ],
+  plugins: [vike({}), devServer({
+    entry: "hono-entry.ts",
+
+    exclude: [
+      /^\/@.+$/,
+      /.*\.(ts|tsx|vue)($|\?)/,
+      /.*\.(s?css|less)($|\?)/,
+      /^\/favicon\.ico$/,
+      /.*\.(svg|png)($|\?)/,
+      /^\/(public|assets|static)\/.+/,
+      /^\/node_modules\/.*/,
+    ],
+
+    injectClientScript: false,
+  }), telefunc(), vue({
+    include: [/\.vue$/, /\.md$/],
+  }), md({})],
   resolve: {
     alias: {
       '@': path.resolve(__dirname)
     }
   }
-})
+});

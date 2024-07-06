@@ -1,43 +1,30 @@
 {
-  "name": "paper-panel",
-  "private": true,
+  "name": "my-app",
   "version": "0.0.1",
   "description": "",
-  "author": "Matthew Evans",
-  "license": "MIT",
-  "homepage": "https://github.com/AtomicSponge/paper-panel#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AtomicSponge/paper-panel.git"
-  },
-  "bugs": {
-    "url": "https://github.com/AtomicSponge/paper-panel/issues"
-  },
   "type": "module",
   "scripts": {
-    "dev": "tsx ./express-entry.ts",
+    "dev": "vite",
     "build": "vite build",
-    "preview": "NODE_ENV=production tsx ./express-entry.ts",
-    "prisma:studio": "prisma studio",
-    "prisma:generate": "prisma generate"
+    "preview": "cross-env NODE_ENV=production tsx ./hono-entry.node.ts"
   },
+  "keywords": [],
+  "author": "",
   "devDependencies": {
     "typescript": "^5.5.3",
-    "@types/express": "^4.17.21",
-    "prisma": "^5.16.1"
+    "@hono/vite-dev-server": "^0.13.0",
+    "@types/node": "^20.14.10"
   },
   "dependencies": {
-    "@universal-middleware/express": "^0.0.2",
-    "express": "^4.19.2",
+    "@hono/node-server": "^1.12.0",
+    "cross-env": "^7.0.3",
+    "hono": "^4.4.12",
     "tsx": "^4.16.2",
     "vite": "^5.3.3",
-    "vike": "^0.4.178",
+    "vike": "^0.4.179",
     "@auth/core": "^0.34.1",
     "dotenv": "^16.4.5",
-    "@prisma/client": "^5.16.1",
-    "lowdb": "^7.0.1",
-    "@trpc/server": "^10.45.2",
-    "@trpc/client": "^10.45.2",
+    "telefunc": "^0.1.76",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/compiler-sfc": "^3.4.31",
     "@vue/server-renderer": "^3.4.31",

@@ -1,18 +1,16 @@
 /// <reference lib="webworker" />
 import { renderPage } from "vike/server";
 
-export async function vikeHandler<Context extends Record<string | number | symbol, unknown>>(
-  request: Request,
-  context?: Context,
-): Promise<Response> {
-
+export async function vikeHandler<
+  Context extends Record<string | number | symbol, unknown>,
+>(request: Request, context?: Context): Promise<Response> {
   const user = {
     id: 5423,
     name: 'Matt',
     admin: true,
     serveradmin: true
   }
-
+  
   const pageContextInit = {
     ...context,
     urlOriginal: request.url,
