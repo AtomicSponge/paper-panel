@@ -31,7 +31,6 @@ import World from '@/components/world/World.vue'
 section {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
 }
 header {

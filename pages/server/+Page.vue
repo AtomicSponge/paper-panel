@@ -31,7 +31,6 @@ import Server from '@/components/server/Server.vue'
 section {
   display: flex;
   flex-flow: column;
-  justify-content: center;
   align-items: center;
 }
 header {

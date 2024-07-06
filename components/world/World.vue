@@ -15,8 +15,14 @@ defineProps<{
 
 const showConfig = ref(false)
 
+/** Toggle showing the config window */
 const toggleConfig = () => {
   showConfig.value = showConfig.value ? false : true
+}
+
+/** Backup world files */
+const doBackup = () => {
+  //
 }
 </script>
 
@@ -30,6 +36,9 @@ const toggleConfig = () => {
     </div>
     <div v-show="showConfig">
       <WorldConfig :id/>
+    </div>
+    <div>
+      <button @click="doBackup">Backup</button>
     </div>
   </section>
 </template>
