@@ -18,7 +18,8 @@ import WorldScan from '@/components/admin/WorldScan.vue'
         <WorldScan/>
       </div>
       <div>
-        test
+        <label for="serverpath">Server path:</label>
+        <input id="serverpath" type="text"/>
       </div>
     </main>
   </section>
