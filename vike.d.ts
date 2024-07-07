@@ -7,7 +7,6 @@ declare global {
         admin:boolean
         serveradmin:boolean
       }
-      //Page: () => VUE.Element
     }
   }
 }
