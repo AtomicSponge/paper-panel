@@ -89,6 +89,11 @@ input[type=password] {
   cursor: pointer;
 }
 
+textarea {
+  color: rgba(242, 243, 244, 0.87);
+  background-color: rgb(59, 68, 75);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -111,6 +116,11 @@ input[type=password] {
     background-color: rgb(245, 245, 220);
   }
   input[type=password] {
+    color: rgba(29, 41, 81, 0.87);
+    background-color: rgb(245, 245, 220);
+  }
+
+  textarea {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
