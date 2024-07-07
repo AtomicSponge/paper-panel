@@ -15,6 +15,17 @@ import EditWorld from '@/components/admin/EditWorld.vue'
       <h1>Admin Panel</h1>
     </header>
     <main>
+
+      <div class="subbox">
+        <span>
+          <h2>User Management</h2>
+        </span>
+        <hr/>
+        <span>
+          ...
+        </span>
+      </div>
+
       <div class="subbox">
         <span>
           <h2>Server Management</h2>
@@ -25,6 +36,7 @@ import EditWorld from '@/components/admin/EditWorld.vue'
           <input id="serverpath" type="text"/>
         </span>
       </div>
+
       <div class="subbox">
         <span>
           <h2>World Management</h2>
@@ -38,6 +50,7 @@ import EditWorld from '@/components/admin/EditWorld.vue'
           <EditWorld/>
         </span>
       </div>
+
     </main>
   </section>
 </template>
