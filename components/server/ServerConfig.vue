@@ -7,12 +7,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-defineProps<{
-  id:number
-}>()
+/** Reference to the config text area */
+const configTextArea = ref('Config window')
 
-const configWindow = ref('Config window')
-
+/** Save the server configuration */
 const saveConfig = () => {
   window.alert('Config saved')
 }
@@ -20,7 +18,7 @@ const saveConfig = () => {
 
 <template>
   <div>
-    <textarea v-model="configWindow"></textarea>
+    <textarea v-model="configTextArea"></textarea>
   </div>
   <div>
     <button @click="saveConfig">Save Config</button>

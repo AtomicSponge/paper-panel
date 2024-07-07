@@ -7,18 +7,37 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import ServerConfig from '@/components/server/ServerConfig.vue'
+import { onUpdate } from './Server.telefunc'
 
 defineProps<{
-  id:number
+  /** Server name */
   name:string
+  /** Server address */
   address:string
+  /** Server port */
   port:number
 }>()
 
+/** Reference for showing the config edit box */
 const showConfig = ref(false)
+/** Reference for displaying the update message */
+const showUpdate = ref(false)
 
+/** Toggle displaying the config edit box */
 const toggleConfig = () => {
   showConfig.value = showConfig.value ? false : true
+}
+
+/** Check for updates */
+const checkUpdates = async () => {
+  showUpdate.value = true
+  try {
+    await onUpdate()
+    window.alert('Update complete!')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
+  showUpdate.value = false
 }
 </script>
 
@@ -29,13 +48,17 @@ const toggleConfig = () => {
       {{ address }}:{{ port }}
     </div>
     <div>
-      <h3>Version: 1.21</h3><button>Check for updates</button>
+      <h3>Version: 1.21</h3>
+      <button @click="checkUpdates()">Check for updates</button>
+    </div>
+    <div v-show="showUpdate">
+      Checking for updates, please wait...
     </div>
     <div>      
       <button @click="toggleConfig()">Edit Config</button>
     </div>
     <div v-show="showConfig">
-      <ServerConfig :id/>
+      <ServerConfig/>
     </div>
   </section>
 </template>

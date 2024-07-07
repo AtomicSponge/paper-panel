@@ -10,11 +10,15 @@ import WorldConfig from '@/components/worlds/WorldConfig.vue'
 import { onBackup } from './World.telefunc'
 
 defineProps<{
+  /** World ID */
   id:number
+  /** World name */
   name:string
 }>()
 
+/** Reference for showing the config edit box */
 const showConfig = ref(false)
+/** Reference for displaying the backing wait message */
 const showBackup = ref(false)
 
 /** Toggle showing the config window */

@@ -9,11 +9,14 @@ import { ref } from 'vue'
 import { onSave } from './WorldConfig.telefunc'
 
 defineProps<{
+  /** World ID */
   id:number
 }>()
 
-const configWindow = ref('Config window')
+/** Reference to the config text area */
+const configTextArea = ref('Config window')
 
+/** Save the world configuration */
 const saveConfig = async () => {
   try {
     await onSave()
@@ -26,7 +29,7 @@ const saveConfig = async () => {
 
 <template>
   <div>
-    <textarea v-model="configWindow"></textarea>
+    <textarea v-model="configTextArea"></textarea>
   </div>
   <div>
     <button @click="saveConfig">Save Config</button>
