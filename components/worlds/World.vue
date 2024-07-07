@@ -28,14 +28,15 @@ const toggleConfig = () => {
 
 /** Backup world files */
 const doBackup = async () => {
-  showBackup.value = true
   try {
+    showBackup.value = true
     const test = await onBackup()
     window.alert(test)
   } catch (error:any) {
     window.alert(error.message)
+  } finally {
+    showBackup.value = false
   }
-  showBackup.value = false
 }
 </script>
 
