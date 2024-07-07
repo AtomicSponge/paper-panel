@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
   import './css/index.css'
-  import logoUrl from "@/assets/logo.svg"
+  import logoUrl from "@/assets/paper-panel-logo-512-512.png"
 </script>
 
 <template>
