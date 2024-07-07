@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import WorldConfig from '@/components/world/WorldConfig.vue'
-import { runBackup } from './World.telefunc'
+import { onBackup } from './World.telefunc'
 
 defineProps<{
   id:number
@@ -22,8 +22,9 @@ const toggleConfig = () => {
 }
 
 /** Backup world files */
-const doBackup = () => {
-  runBackup()
+const doBackup = async () => {
+  await onBackup()
+  window.alert('Backup done!')
 }
 </script>
 
