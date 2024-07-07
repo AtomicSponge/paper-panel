@@ -6,13 +6,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { onSave } from './ServerConfig.telefunc'
 
 /** Reference to the config text area */
 const configTextArea = ref('Config window')
 
 /** Save the server configuration */
-const saveConfig = () => {
-  window.alert('Config saved')
+const saveConfig = async () => {
+  try {
+    await onSave()
+    window.alert('Config saved')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
 }
 </script>
 
