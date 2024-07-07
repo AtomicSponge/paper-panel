@@ -22,7 +22,7 @@ const addNewWorld = ():void => {
 
 /** Remove a new world form after successful submission */
 const removeWorldForm = (id:number):void => {
-  newWorlds.value.splice(id, 1)
+  newWorlds.value.splice(newWorlds.value.indexOf(id), 1)
 }
 </script>
 
