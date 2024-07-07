@@ -9,7 +9,7 @@
 
 <template>
   <div>
-    <h3>Remove Worlds</h3>
+    <h3>Edit Worlds</h3>
   </div>
 </template>
 

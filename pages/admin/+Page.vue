@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import AddWorld from '@/components/admin/AddWorld.vue'
-import RemoveWorld from '@/components/admin/RemoveWorld.vue'
+import EditWorld from '@/components/admin/EditWorld.vue'
 </script>
 
 <template>
@@ -35,7 +35,7 @@ import RemoveWorld from '@/components/admin/RemoveWorld.vue'
         </span>
         <hr/>
         <span>
-          <RemoveWorld/>
+          <EditWorld/>
         </span>
       </div>
     </main>
