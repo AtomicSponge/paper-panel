@@ -17,7 +17,7 @@ defineProps<{
 const configTextArea = ref('Config window')
 
 /** Save the world configuration */
-const saveConfig = async () => {
+const saveConfig = async ():Promise<void> => {
   try {
     await onSave()
     window.alert('Config saved')

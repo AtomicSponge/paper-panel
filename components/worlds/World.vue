@@ -22,12 +22,12 @@ const showConfig = ref(false)
 const showBackup = ref(false)
 
 /** Toggle showing the config window */
-const toggleConfig = () => {
+const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
 }
 
 /** Backup world files */
-const doBackup = async () => {
+const doBackup = async ():Promise<void> => {
   try {
     showBackup.value = true
     const test = await onBackup()

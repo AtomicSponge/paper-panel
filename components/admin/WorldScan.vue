@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { onScan } from './WorldScan.telefunc'
 
-const doWorldScan = async () => {
+const doWorldScan = async ():Promise<void> => {
   try {
     await onScan()
     window.alert('Scan complete')

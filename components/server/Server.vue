@@ -24,12 +24,12 @@ const showConfig = ref(false)
 const showUpdate = ref(false)
 
 /** Toggle displaying the config edit box */
-const toggleConfig = () => {
+const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
 }
 
 /** Check for updates */
-const checkUpdates = async () => {
+const checkUpdates = async ():Promise<void> => {
   if(window.confirm('This will restart the server!  Are you sure you want to continue?')) {
     try {
       showUpdate.value = true

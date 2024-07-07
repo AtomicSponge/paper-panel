@@ -16,7 +16,7 @@ const emit = defineEmits<{
   (e: 'remove', id:number):void
 }>()
 
-const saveNewWorld = async () => {
+const saveNewWorld = async ():Promise<void> => {
   try {
     await onSaveNewWorld()
     window.alert('World added!')

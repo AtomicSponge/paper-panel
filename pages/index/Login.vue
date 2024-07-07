@@ -12,7 +12,7 @@ import { onLogin } from './Login.telefunc'
 const username = ref('')
 const password = ref('')
 
-const submitLogin = async () => {
+const submitLogin = async ():Promise<void> => {
   try {
     await onLogin({
       username: username.value,
