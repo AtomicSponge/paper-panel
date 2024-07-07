@@ -5,8 +5,18 @@
 -->
 
 <script lang="ts" setup>
+import { onScan } from './WorldScan.telefunc'
+
+const doWorldScan = async () => {
+  try {
+    await onScan()
+    window.alert('Scan complete')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
+}
 </script>
 
 <template>
-  <button>Scan for worlds</button>
+  <button @click="doWorldScan">Scan for worlds</button>
 </template>
