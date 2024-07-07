@@ -6,6 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { navigate } from 'vike/client/router'
 import { onLogin } from './Login.telefunc'
 
 const username = ref('')
@@ -17,6 +18,8 @@ const submitLogin = async () => {
       username: username.value,
       password: password.value
     })
+    const navigationPromise = navigate('/worlds')
+    await navigationPromise
   } catch (error:any) {
     window.alert('Incorrect username or password')
   } finally {
