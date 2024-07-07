@@ -63,6 +63,10 @@ label {
   padding-right: 0.4em;
 }
 
+hr {
+  border: 2px solid rgb(85, 85, 85);
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -98,7 +102,7 @@ textarea {
   background-color: rgb(59, 68, 75);
 }
 
-section .subbox {
+.subbox {
   border: 3px solid rgb(85, 85, 85);
   border-radius: 32px;
   background-color: rgb(55, 55, 55);
@@ -112,6 +116,10 @@ section .subbox {
 
   a:hover {
     color: rgb(116, 123, 255);
+  }
+
+  hr {
+    border: 2px solid rgb(176, 224, 230);
   }
 
   button {
@@ -135,8 +143,8 @@ section .subbox {
     background-color: rgb(245, 245, 220);
   }
 
-  section .subbox {
-    border: 3px solid rgb(255, 239, 213);
+  .subbox {
+    border: 3px solid rgb(176, 224, 230);
     background-color: rgb(253, 245, 230);
   }
 }

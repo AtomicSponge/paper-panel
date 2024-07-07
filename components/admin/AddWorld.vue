@@ -9,12 +9,19 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import AddWorldForm from '@/components/admin/AddWorldForm.vue'
 
+const newWorldCount = ref(0)
 /** */
-const newWorlds:Ref<string[]> = ref([])
+const newWorlds:Ref<number[]> = ref([])
 
 /** */
-const addNewWorld = () => {
-  newWorlds.value.push('test')
+const addNewWorld = ():void => {
+  newWorlds.value.push(newWorldCount.value)
+  ++newWorldCount.value
+}
+
+/** */
+const removeWorldForm = (id:number):void => {
+  newWorlds.value.splice(id, 1)
 }
 </script>
 
@@ -22,8 +29,8 @@ const addNewWorld = () => {
   <div>
     <button @click="addNewWorld()">Add a world</button>
   </div>
-  <div v-for="world in newWorlds">
-    <AddWorldForm/>
+  <div v-for="worldId in newWorlds">
+    <AddWorldForm :id="worldId" @remove="(n) => removeWorldForm(n)"/>
   </div>
 </template>
 

@@ -19,9 +19,12 @@ import WorldScan from '@/components/admin/WorldScan.vue'
         <label for="serverpath">Server path:</label>
         <input id="serverpath" type="text"/>
       </div>
-      <div>
+      <div class="subbox">
         <span class="right">
           <WorldScan/>
+        </span>
+        <span>
+          <h2>World Management</h2>
         </span>
         <span>
           <AddWorld/>
@@ -42,6 +45,9 @@ header {
 }
 div {
   padding: 0.4em 0;
+}
+.subbox {
+  padding: 1.2em;
 }
 .left {
   float: left;
