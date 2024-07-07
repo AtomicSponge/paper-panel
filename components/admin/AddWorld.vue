@@ -38,7 +38,7 @@ const removeWorldForm = (id:number):void => {
     <button @click="addNewWorld()">Add a world</button>
   </div>
   <div v-for="worldId in newWorlds">
-    <AddWorldForm :id="worldId" @remove="(n) => removeWorldForm(n)"/>
+    <AddWorldForm :id="worldId" @remove="(id) => removeWorldForm(id)"/>
   </div>
 </template>
 
