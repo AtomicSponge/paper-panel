@@ -1,10 +1,10 @@
 import path from 'path'
-import md from "unplugin-vue-markdown/vite";
-import vue from "@vitejs/plugin-vue";
-import {telefunc} from "telefunc/vite";
-import devServer from "@hono/vite-dev-server";
-import { defineConfig } from "vite";
-import vike from "vike/plugin";
+import md from 'unplugin-vue-markdown/vite'
+import vue from '@vitejs/plugin-vue'
+import {telefunc} from 'telefunc/vite'
+import devServer from '@hono/vite-dev-server'
+import { defineConfig } from 'vite'
+import vike from 'vike/plugin'
 
 export default defineConfig({
   plugins: [vike({}), devServer({
@@ -29,4 +29,4 @@ export default defineConfig({
       '@': path.resolve(__dirname)
     }
   }
-});
+})

@@ -1,5 +1,5 @@
 /// <reference lib="webworker" />
-import { renderPage } from "vike/server";
+import { renderPage } from 'vike/server'
 
 export async function vikeHandler<
   Context extends Record<string | number | symbol, unknown>,
@@ -10,18 +10,18 @@ export async function vikeHandler<
     admin: true,
     serveradmin: true
   }
-  
+
   const pageContextInit = {
     ...context,
     urlOriginal: request.url,
     user
-  };
-  const pageContext = await renderPage(pageContextInit);
-  const response = pageContext.httpResponse;
+  }
+  const pageContext = await renderPage(pageContextInit)
+  const response = pageContext.httpResponse
 
-  const { readable, writable } = new TransformStream();
+  const { readable, writable } = new TransformStream()
 
-  response?.pipe(writable);
+  response?.pipe(writable)
 
   return new Response(readable, {
     status: response?.statusCode,

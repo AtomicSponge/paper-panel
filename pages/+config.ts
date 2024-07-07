@@ -10,4 +10,4 @@ export default {
   // <title>
   title: 'Paper Panel',
   extends: vikeVue,
-} satisfies Config;
+} satisfies Config

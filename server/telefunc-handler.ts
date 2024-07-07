@@ -1,4 +1,4 @@
-import { telefunc } from "telefunc";
+import { telefunc } from 'telefunc';
 
 export async function telefuncHandler<Context extends Record<string | number | symbol, unknown>>(
   request: Request,
