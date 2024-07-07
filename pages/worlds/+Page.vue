@@ -9,7 +9,7 @@ import type { Data } from './+data'
 import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
 
-import World from '@/components/world/World.vue'
+import World from '@/components/worlds/World.vue'
 </script>
 
 <template>

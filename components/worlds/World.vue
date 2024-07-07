@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import WorldConfig from '@/components/world/WorldConfig.vue'
+import WorldConfig from '@/components/worlds/WorldConfig.vue'
 import { onBackup } from './World.telefunc'
 
 defineProps<{
