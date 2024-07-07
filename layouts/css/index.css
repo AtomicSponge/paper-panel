@@ -89,12 +89,10 @@ button:focus-visible {
 input[type=text] {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
-  cursor: pointer;
 }
 input[type=password] {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
-  cursor: pointer;
 }
 
 textarea {
