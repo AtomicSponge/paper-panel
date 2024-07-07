@@ -110,7 +110,7 @@ textarea {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: rgb(33, 53, 71);
+    color: rgba(33, 53, 71, 0.87);
     background-color: rgb(255, 255, 255);
   }
 
