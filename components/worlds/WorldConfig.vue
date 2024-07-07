@@ -15,8 +15,12 @@ defineProps<{
 const configWindow = ref('Config window')
 
 const saveConfig = async () => {
-  await onSave()
-  window.alert('Config saved')
+  try {
+    await onSave()
+    window.alert('Config saved')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
 }
 </script>
 
