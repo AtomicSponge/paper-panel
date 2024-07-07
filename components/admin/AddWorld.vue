@@ -9,17 +9,18 @@ import { ref } from 'vue'
 import type { Ref } from 'vue'
 import AddWorldForm from '@/components/admin/AddWorldForm.vue'
 
+/** Reference to the count of new worlds being added */
 const newWorldCount = ref(0)
-/** */
+/** Reference to the new world form array */
 const newWorlds:Ref<number[]> = ref([])
 
-/** */
+/** Add a new world form */
 const addNewWorld = ():void => {
   newWorlds.value.push(newWorldCount.value)
   ++newWorldCount.value
 }
 
-/** */
+/** Remove a new world form after successful submission */
 const removeWorldForm = (id:number):void => {
   newWorlds.value.splice(id, 1)
 }
