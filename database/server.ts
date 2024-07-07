@@ -4,16 +4,13 @@
  * See LICENSE.md
  */
 
-import type { LowSync } from 'lowdb'
-import { JSONFileSyncPreset } from 'lowdb/node'
-
 interface Server {
   name:string
 }
 
-const lowDb:LowSync<{ server:Server[] }> = JSONFileSyncPreset<{ server:Server[] }>('db.json', {
+const servers = {
   server: [],
-})
+}
 
-export { lowDb }
+export { servers }
 export type { Server }

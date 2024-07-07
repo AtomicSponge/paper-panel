@@ -4,18 +4,15 @@
  * See LICENSE.md
  */
 
-import type { LowSync } from 'lowdb'
-import { JSONFileSyncPreset } from 'lowdb/node'
-
 interface Worlds {
   id:number
   users:Array<number>
   name:string
 }
 
-const lowDb:LowSync<{ worlds:Worlds[] }> = JSONFileSyncPreset<{ worlds:Worlds[] }>('db.json', {
+const worlds = {
   worlds: [],
-})
+}
 
-export { lowDb }
+export { worlds }
 export type { Worlds }

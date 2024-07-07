@@ -4,9 +4,6 @@
  * See LICENSE.md
  */
 
-import type { LowSync } from 'lowdb'
-import { JSONFileSyncPreset } from 'lowdb/node'
-
 interface Users {
   id:number
   name:string
@@ -16,7 +13,7 @@ interface Users {
   admin:boolean
 }
 
-const lowDb:LowSync<{ users:Users[] }> = JSONFileSyncPreset<{ users:Users[] }>('db.json', {
+const users = {
   users: [
     {
       id: 0,
@@ -27,7 +24,7 @@ const lowDb:LowSync<{ users:Users[] }> = JSONFileSyncPreset<{ users:Users[] }>('
       admin: true
     }
   ],
-})
+}
 
-export { lowDb }
+export { users }
 export type { Users }
