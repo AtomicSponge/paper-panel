@@ -31,14 +31,15 @@ const toggleConfig = () => {
 /** Check for updates */
 const checkUpdates = async () => {
   if(window.confirm('This will restart the server!  Are you sure you want to continue?')) {
-    showUpdate.value = true
     try {
+      showUpdate.value = true
       await onUpdate()
       window.alert('Update complete!')
     } catch (error:any) {
       window.alert(error.message)
+    } finally {
+      showUpdate.value = false
     }
-    showUpdate.value = false
   }
 }
 </script>
