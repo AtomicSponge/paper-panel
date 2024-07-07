@@ -15,6 +15,7 @@ defineProps<{
 }>()
 
 const showConfig = ref(false)
+const showBackup = ref(false)
 
 /** Toggle showing the config window */
 const toggleConfig = () => {
@@ -23,8 +24,10 @@ const toggleConfig = () => {
 
 /** Backup world files */
 const doBackup = async () => {
+  showBackup.value = true
   const test = await onBackup()
   window.alert(test)
+  showBackup.value = false
 }
 </script>
 
@@ -41,6 +44,9 @@ const doBackup = async () => {
     </div>
     <div>
       <button @click="doBackup">Backup</button>
+    </div>
+    <div v-show="showBackup">
+      Running backup, please wait...
     </div>
   </section>
 </template>
