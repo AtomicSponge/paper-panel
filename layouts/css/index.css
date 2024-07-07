@@ -98,6 +98,12 @@ textarea {
   background-color: rgb(59, 68, 75);
 }
 
+section .subbox {
+  border: 3px solid rgb(85, 85, 85);
+  border-radius: 32px;
+  background-color: rgb(55, 55, 55);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -127,5 +133,10 @@ textarea {
   textarea {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
+  }
+
+  section .subbox {
+    border: 3px solid rgb(255, 239, 213);
+    background-color: rgb(253, 245, 230);
   }
 }

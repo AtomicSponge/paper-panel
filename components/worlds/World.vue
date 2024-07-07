@@ -41,7 +41,7 @@ const doBackup = async () => {
 </script>
 
 <template>
-  <section>
+  <section class="subbox">
     <div>
       <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
     </div>
@@ -67,18 +67,8 @@ section {
   align-items: stretch;
   margin: 1em;
   padding: 1em;
-  border: 3px solid rgb(85, 85, 85);
-  border-radius: 32px;
-  background-color: rgb(55, 55, 55);
 }
 div {
   padding: 0.4em;
-}
-
-@media (prefers-color-scheme: light) {
-  section {
-    border: 3px solid rgb(255, 239, 213);
-    background-color: rgb(253, 245, 230);
-  }
 }
 </style>
