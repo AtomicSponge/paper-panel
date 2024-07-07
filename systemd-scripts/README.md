@@ -1,5 +1,8 @@
-Place files in `/etc/systemd/system/`
-then run `systemctl enable minecraft`
+Create user account `minecraft` and place Paper server in `/home/minecraft/paper`
+
+Name Paper server executable file `server.jar`
+
+Place files in `/etc/systemd/system/` then run `systemctl enable minecraft`
 
 Run commands:
 ```
