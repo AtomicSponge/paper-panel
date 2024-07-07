@@ -5,6 +5,7 @@
 -->
 
 <script lang="ts" setup>
+import AddWorld from '@/components/admin/AddWorld.vue'
 import WorldScan from '@/components/admin/WorldScan.vue'
 </script>
 
@@ -23,7 +24,7 @@ import WorldScan from '@/components/admin/WorldScan.vue'
           <WorldScan/>
         </span>
         <span>
-          <button>Add a world</button>
+          <AddWorld/>
         </span>
       </div>
     </main>
