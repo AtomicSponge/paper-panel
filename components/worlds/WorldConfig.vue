@@ -6,6 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { onSave } from './WorldConfig.telefunc'
 
 defineProps<{
   id:number
@@ -13,7 +14,8 @@ defineProps<{
 
 const configWindow = ref('Config window')
 
-const saveConfig = () => {
+const saveConfig = async () => {
+  await onSave()
   window.alert('Config saved')
 }
 </script>
