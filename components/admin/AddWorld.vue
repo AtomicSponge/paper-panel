@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import WorldScan from '@/components/admin/WorldScan.vue'
 import AddWorldForm from '@/components/admin/AddWorldForm.vue'
 
 /** Reference to the count of new worlds being added */
@@ -27,6 +28,12 @@ const removeWorldForm = (id:number):void => {
 </script>
 
 <template>
+  <div class="right">
+    <WorldScan/>
+  </div>
+  <div>
+    <h3>Add Worlds</h3>
+  </div>
   <div>
     <button @click="addNewWorld()">Add a world</button>
   </div>
@@ -38,5 +45,8 @@ const removeWorldForm = (id:number):void => {
 <style scoped>
 div {
   padding: 0.4em 0;
+}
+.right {
+  float: right;
 }
 </style>

@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import AddWorld from '@/components/admin/AddWorld.vue'
-import WorldScan from '@/components/admin/WorldScan.vue'
+import RemoveWorld from '@/components/admin/RemoveWorld.vue'
 </script>
 
 <template>
@@ -15,19 +15,27 @@ import WorldScan from '@/components/admin/WorldScan.vue'
       <h1>Admin Panel</h1>
     </header>
     <main>
-      <div>
-        <label for="serverpath">Server path:</label>
-        <input id="serverpath" type="text"/>
+      <div class="subbox">
+        <span>
+          <h2>Server Management</h2>
+        </span>
+        <hr/>
+        <span>
+          <label for="serverpath">Server path:</label>
+          <input id="serverpath" type="text"/>
+        </span>
       </div>
       <div class="subbox">
-        <span class="right">
-          <WorldScan/>
-        </span>
         <span>
           <h2>World Management</h2>
         </span>
+        <hr/>
         <span>
           <AddWorld/>
+        </span>
+        <hr/>
+        <span>
+          <RemoveWorld/>
         </span>
       </div>
     </main>
@@ -48,11 +56,6 @@ div {
 }
 .subbox {
   padding: 1.2em;
-}
-.left {
-  float: left;
-}
-.right {
-  float: right;
+  margin: 1em 0;
 }
 </style>
