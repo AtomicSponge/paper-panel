@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import WorldConfig from '@/components/worlds/WorldConfig.vue'
-import { onBackup } from './World.telefunc'
+import { onExport } from './World.telefunc'
 
 defineProps<{
   /** World ID */
@@ -26,11 +26,11 @@ const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
 }
 
-/** Backup world files */
-const doBackup = async ():Promise<void> => {
+/** Export world files */
+const doExport = async ():Promise<void> => {
   try {
     showBackup.value = true
-    const test = await onBackup()
+    const test = await onExport()
     window.alert(test)
   } catch (error:any) {
     window.alert(error.message)
@@ -52,10 +52,10 @@ const doBackup = async ():Promise<void> => {
       <WorldConfig :id/>
     </div>
     <div>
-      <button @click="doBackup">Backup</button>
+      <button @click="doExport">Export</button>
     </div>
     <div v-show="showBackup">
-      Running backup, please wait...
+      Running export, please wait...
     </div>
   </section>
 </template>

@@ -4,9 +4,9 @@
  * See LICENSE.md
  */
 
-export const onBackup = async ():Promise<string> => {
-  console.log('running backup!')
+export const onExport = async ():Promise<string> => {
+  console.log('running export!')
   await new Promise(r => setTimeout(r, 3000))
-  console.log('backup simulation wait done!')
-  return 'test data'
+  console.log('export simulation wait done!')
+  return 'export test data'
 }
