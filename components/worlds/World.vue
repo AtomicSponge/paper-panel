@@ -18,8 +18,8 @@ defineProps<{
 
 /** Reference for showing the config edit box */
 const showConfig = ref(false)
-/** Reference for displaying the backing wait message */
-const showBackup = ref(false)
+/** Reference for displaying the export wait message */
+const showExportMsg = ref(false)
 
 /** Toggle showing the config window */
 const toggleConfig = ():void => {
@@ -29,13 +29,13 @@ const toggleConfig = ():void => {
 /** Export world files */
 const doExport = async ():Promise<void> => {
   try {
-    showBackup.value = true
+    showExportMsg.value = true
     const test = await onExport()
     window.alert(test)
   } catch (error:any) {
     window.alert(error.message)
   } finally {
-    showBackup.value = false
+    showExportMsg.value = false
   }
 }
 </script>
@@ -54,7 +54,7 @@ const doExport = async ():Promise<void> => {
     <div>
       <button @click="doExport">Export</button>
     </div>
-    <div v-show="showBackup">
+    <div v-show="showExportMsg">
       Running export, please wait...
     </div>
   </section>
