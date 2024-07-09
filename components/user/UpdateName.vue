@@ -9,6 +9,8 @@ import { ref } from 'vue'
 import { onNameUpdate } from './UpdateName.telefunc'
 
 const props = defineProps<{
+  /** User ID */
+  id:number
   /** User name */
   name:string
 }>()
@@ -19,7 +21,10 @@ const uernameInput = ref(props.name)
 /** Update the user's name */
 const updateName = async ():Promise<void> => {
   try {
-    await onNameUpdate({ username: uernameInput.value })
+    await onNameUpdate({
+      id: props.id,
+      username: uernameInput.value
+    })
     window.alert('Name updated')
   } catch (error:any) {
     window.alert(error.message)

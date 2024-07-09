@@ -18,7 +18,9 @@ const data = useData<Data>()
       <h1>Edit User Profile</h1>
     </header>
     <main>
-      <UpdateName :name="data.user.name"/>
+      <UpdateName
+        :id="data.user.id"
+        :name="data.user.name"/>
     </main>
     <footer>
     </footer>

@@ -4,6 +4,6 @@
  * See LICENSE.md
  */
 
-export const onNameUpdate = async ({ username }:{ username:string }):Promise<void> => {
-  console.log('Updating user name...')
+export const onNameUpdate = async ({ id, username }:{ id:number, username:string }):Promise<void> => {
+  console.log(`Updating user name ${username}...`)
 }
