@@ -15,6 +15,6 @@ const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
     throw render('/')
   }
   if (!user.admin) {
-    throw render(404, '<h1>404 Page Not Found</h1><p>This page could not be found.</p>')
+    throw render(404)
   }
 }
