@@ -12,7 +12,6 @@ interface Server {
 }
 
 const server = {
-  users: [ 1, 2 ],
   name: 'some name',
   address: '10.1.1.20',
   port: 2345
