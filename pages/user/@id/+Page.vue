@@ -11,5 +11,5 @@ const data = useData<Data>()
 </script>
 
 <template>
-  user: {{ data.username }}
+  user: {{ data.user.name }}
 </template>

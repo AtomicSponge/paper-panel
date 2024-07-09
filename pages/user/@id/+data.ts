@@ -4,12 +4,17 @@
  * See LICENSE.md
  */
 
+import { users } from '@/database/users'
+
 import type { PageContextServer } from 'vike/types'
 
 export const data = async (pageContext:PageContextServer) => {
-  const username = pageContext.routeParams.id
+  const userId = Number(pageContext.routeParams.id)
+
+  const user = users.users.filter(user => user.id === userId)[0]
+
   return {
-    username
+    user
   }
 }
 
