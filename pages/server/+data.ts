@@ -6,10 +6,7 @@
 
 import type { PageContextServer } from 'vike/types'
 
-export { data }
-export type Data = Awaited<ReturnType<typeof data>>
-
-const data = async (pageContext:PageContextServer) => {
+export const data = async (pageContext:PageContextServer) => {
   //const userId = Number(pageContext.routeParams.id)
 
   const server = {
@@ -23,3 +20,5 @@ const data = async (pageContext:PageContextServer) => {
     server
   }
 }
+
+export type Data = Awaited<ReturnType<typeof data>>
