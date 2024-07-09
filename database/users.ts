@@ -15,7 +15,7 @@ export interface Users {
 }
 
 export const users = {
-  users: [
+  user: [
     {
       id: 0,
       name: 'Administrator',

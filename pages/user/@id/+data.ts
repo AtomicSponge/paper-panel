@@ -11,7 +11,7 @@ import type { PageContextServer } from 'vike/types'
 export const data = async (pageContext:PageContextServer) => {
   const userId = Number(pageContext.routeParams.id)
 
-  const user = users.users.filter(user => user.id === userId)[0]
+  const user = users.user.filter(user => user.id === userId)[0]
 
   return {
     user

@@ -9,11 +9,11 @@ import { worlds } from '@/database/worlds'
 import type { PageContextServer } from 'vike/types'
 
 export const data = async (pageContext:PageContextServer) => {
-  //const isAdmin = Number(pageContext.routeParams.admin)
-  //console.log(isAdmin)
+  const isAdmin = pageContext.user?.admin
+  console.log(isAdmin)
 
   return {
-    worlds: worlds.worlds
+    worlds: worlds.world
   }
 }
 

@@ -11,7 +11,7 @@ export interface Worlds {
 }
 
 export const worlds = {
-  worlds: [
+  world: [
     {
       id: 1,
       users: [ 1, 2 ],
