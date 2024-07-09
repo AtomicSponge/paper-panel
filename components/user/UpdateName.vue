@@ -19,7 +19,7 @@ const uernameInput = ref(props.name)
 /** Update the user's name */
 const updateName = async ():Promise<void> => {
   try {
-    await onNameUpdate()
+    await onNameUpdate({ username: uernameInput.value })
     window.alert('Name updated')
   } catch (error:any) {
     window.alert(error.message)
