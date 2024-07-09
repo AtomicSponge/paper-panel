@@ -6,6 +6,7 @@ export async function vikeHandler<
 >(request: Request, context?: Context): Promise<Response> {
   const user = {
     id: 0,
+    name: 'Administrator',
     admin: true,
     serveradmin: true
   }
