@@ -4,13 +4,13 @@
  * See LICENSE.md
  */
 
-interface Worlds {
+export interface Worlds {
   id:number
   users:Array<number>
   name:string
 }
 
-const worlds = {
+export const worlds = {
   worlds: [
     {
       id: 1,
@@ -29,6 +29,3 @@ const worlds = {
     }
   ],
 }
-
-export { worlds }
-export type { Worlds }

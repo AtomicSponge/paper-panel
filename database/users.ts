@@ -4,7 +4,7 @@
  * See LICENSE.md
  */
 
-interface Users {
+export interface Users {
   id:number
   name:string
   password:string
@@ -13,7 +13,7 @@ interface Users {
   admin:boolean
 }
 
-const users = {
+export const users = {
   users: [
     {
       id: 0,
@@ -26,5 +26,3 @@ const users = {
   ],
 }
 
-export { users }
-export type { Users }
