@@ -18,7 +18,7 @@ import AppInfo from '@/components/layout/AppInfo.vue'
     </main>
 
     <footer>
-      <nav class="left">
+      <nav class="right">
         <AppInfo/>
       </nav>
     </footer>
