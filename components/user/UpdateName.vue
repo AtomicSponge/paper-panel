@@ -5,12 +5,15 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { onNameUpdate } from './UpdateName.telefunc'
 
 const props = defineProps<{
   /** User name */
   name:string
 }>()
+
+const uernameInput = ref(props.name)
 
 const updateName = async ():Promise<void> => {
   try {
@@ -25,7 +28,7 @@ const updateName = async ():Promise<void> => {
 <template>
   <div class="subbox">
     <label for="username"><h3>Name:</h3></label>
-    <input id="username" type="text" :defaultValue="props.name"/>
+    <input id="username" type="text" v-model="uernameInput"/>
     <button @click="updateName()">Update</button>
   </div>
 </template>
