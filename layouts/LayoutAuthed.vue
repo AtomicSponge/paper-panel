@@ -5,9 +5,18 @@
 -->
 
 <script lang="ts" setup>
+import { reload } from 'vike/client/router'
+
 import Navigation from '@/components/layout/Navigation.vue'
 import AdminLink from '@/components/layout/AdminLink.vue'
 import AppInfo from '@/components/layout/AppInfo.vue'
+
+const logOut = async ():Promise<void> => {
+  if(window.confirm('Log out?')) {
+    await fetch('/logout', { method: 'POST' })
+    await reload()
+  }
+}
 </script>
 
 <template>
@@ -15,6 +24,9 @@ import AppInfo from '@/components/layout/AppInfo.vue'
     <header>
       <nav class="left">
         <Navigation/>
+      </nav>
+      <nav class="right">
+        <a href="#" @click="logOut()">Log Out</a>
       </nav>
     </header>
 
