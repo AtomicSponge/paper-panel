@@ -5,8 +5,7 @@ export async function vikeHandler<
   Context extends Record<string | number | symbol, unknown>,
 >(request: Request, context?: Context): Promise<Response> {
   const user = {
-    id: 5423,
-    name: 'Matt',
+    id: 0,
     admin: true,
     serveradmin: true
   }

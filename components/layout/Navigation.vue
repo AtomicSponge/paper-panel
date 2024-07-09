@@ -20,7 +20,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <span><a href="/user">matt</a></span>
+  <span><a :href="`/user/${user!.id}`">matt</a></span>
   <span v-show="showServerLink"> > <a href="/server">Server</a></span>
   <span> > <a href="/worlds">Worlds</a></span>
 </template>
