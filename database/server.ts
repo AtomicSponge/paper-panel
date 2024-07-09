@@ -14,5 +14,6 @@ export interface Server {
 export const server = {
   name: 'some name',
   address: '10.1.1.20',
-  port: 2345
+  port: 2345,
+  path: '/path/to/server'
 }
