@@ -13,8 +13,10 @@ const props = defineProps<{
   name:string
 }>()
 
+/** Reference to the username input field */
 const uernameInput = ref(props.name)
 
+/** Update the user's name */
 const updateName = async ():Promise<void> => {
   try {
     await onNameUpdate()
