@@ -4,7 +4,7 @@
  * See LICENSE.md
  */
 
-import fs, { existsSync } from 'node:fs'
+import fs from 'node:fs'
 import path from 'node:path'
 import { JSONFilePreset } from 'lowdb/node'
 
