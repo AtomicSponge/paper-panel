@@ -14,11 +14,14 @@ const props = defineProps<{
   path:string
 }>()
 
+/** Reference to the server path input field */
 const serverPath = ref(props.path)
 
+/** Update the server path */
 const updatePath = async () => {
   try {
     onUpdateServerPath({ path: serverPath.value })
+    window.alert('Server path updated!')
   } catch (error:any) {
     window.alert(error.message)
   }
