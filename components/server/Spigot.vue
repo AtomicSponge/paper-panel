@@ -24,6 +24,7 @@ section {
   padding: 1em;
 }
 div {
+  text-align: center;
   padding: 0.4em;
 }
 </style>

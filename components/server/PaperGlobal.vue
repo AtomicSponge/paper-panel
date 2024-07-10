@@ -26,6 +26,9 @@ const saveConfig = async ():Promise<void> => {
   <section class="subbox">
     <div>
       <h2>Paper Global Config</h2>
+      <a href="https://docs.papermc.io/paper/reference/global-configuration">
+        https://docs.papermc.io/paper/reference/global-configuration
+      </a>
     </div>
     <div>
       <textarea v-model="configTextArea"></textarea>

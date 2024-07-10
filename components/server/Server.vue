@@ -69,6 +69,7 @@ section {
 }
 div {
   padding: 0.4em;
+  text-align: center;
 }
 h2 {
   display: inline-block;

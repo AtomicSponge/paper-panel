@@ -11,6 +11,9 @@
   <section class="subbox">
     <div>
       <h2>Paper World Defaults</h2>
+      <a href=" https://docs.papermc.io/paper/reference/world-configuration">
+        https://docs.papermc.io/paper/reference/world-configuration
+      </a>
     </div>
   </section>
 </template>
@@ -24,6 +27,7 @@ section {
   padding: 1em;
 }
 div {
+  text-align: center;
   padding: 0.4em;
 }
 </style>
