@@ -10,6 +10,13 @@ import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
 
 import Server from '@/components/server/Server.vue'
+import BannedIps from '@/components/server/BannedIps.vue'
+import BannedPlayers from '@/components/server/BannedPlayers.vue'
+import PaperGlobal from '@/components/server/PaperGlobal.vue'
+import PaperWorldDefaults from '@/components/server/PaperWorldDefaults.vue'
+import Bukkit from '@/components/server/Bukkit.vue'
+import Spigot from '@/components/server/Spigot.vue'
+
 </script>
 
 <template>
@@ -22,6 +29,13 @@ import Server from '@/components/server/Server.vue'
         :name="data.server!.name"
         :address="data.server!.address"
         :port="data.server!.port"/>
+
+      <BannedIps/>
+      <BannedPlayers/>
+      <PaperGlobal/>
+      <PaperWorldDefaults/>
+      <Bukkit/>
+      <Spigot/>
     </main>
   </section>
 </template>

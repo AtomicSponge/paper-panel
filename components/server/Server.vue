@@ -6,7 +6,6 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import PaperGlobal from '@/components/server/PaperGlobal.vue'
 import { onUpdate } from './Server.telefunc'
 
 defineProps<{
@@ -56,12 +55,6 @@ const checkUpdates = async ():Promise<void> => {
     </div>
     <div v-show="showUpdate">
       Checking for updates, please wait...
-    </div>
-    <div>      
-      <button @click="toggleConfig()">Edit Config</button>
-    </div>
-    <div v-show="showConfig">
-      <PaperGlobal/>
     </div>
   </section>
 </template>
