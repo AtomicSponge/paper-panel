@@ -23,18 +23,30 @@ const saveConfig = async ():Promise<void> => {
 </script>
 
 <template>
-  <div>
-    <textarea v-model="configTextArea"></textarea>
-  </div>
-  <div>
-    <button @click="saveConfig">Save Config</button>
-  </div>
+  <section class="subbox">
+    <div>
+      <h2>Paper Global Config</h2>
+    </div>
+    <div>
+      <textarea v-model="configTextArea"></textarea>
+    </div>
+    <div>
+      <button @click="saveConfig">Save Config</button>
+    </div>
+  </section>
 </template>
 
 <style scoped>
+section {
+  display: flex;
+  flex-flow: column;
+  align-items: stretch;
+  margin: 1em;
+  padding: 1em;
+}
 div {
   text-align: center;
-  padding: 2px;
+  padding: 0.4em;
 }
 textarea {
   width: 86vw;
