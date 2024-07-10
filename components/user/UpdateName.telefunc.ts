@@ -19,7 +19,7 @@ export const onNameUpdate = async ({ id, name }:{ id:number, name:string }):Prom
 
   const db = await JSONFilePreset('db.json', users)
   await db.update(({ user }) => {
-    const elem = <Users>user.find(user => user.id === id)
-    elem.name = name
+    const elem = user.find(user => user.id === id)
+    if(elem !== undefined) elem.name = name
   })
 }
