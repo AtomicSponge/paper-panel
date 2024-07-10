@@ -8,10 +8,14 @@
 import { ref } from 'vue'
 import { onSave } from './PaperGlobal.telefunc'
 
+const props = defineProps<{
+  data:Object
+}>()
+
 /** Save the server configuration */
 const saveConfig = async ():Promise<void> => {
   try {
-    await onSave()
+    await onSave(props.data)
     window.alert('Config saved')
   } catch (error:any) {
     window.alert(error.message)

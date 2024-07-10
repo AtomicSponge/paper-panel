@@ -7,6 +7,7 @@
 /**
  * Save Spigot configuration
  */
-export const onSave = async ():Promise<void> => {
+export const onSave = async (data:any):Promise<void> => {
   console.log('Saving Spigot config...')
+  console.log(data)
 }

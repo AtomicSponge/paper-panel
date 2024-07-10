@@ -7,10 +7,14 @@
 <script lang="ts" setup>
 import { onSave } from './PaperWorldDefaults.telefunc'
 
+const props = defineProps<{
+  data:Object
+}>()
+
 /** Save the World Defaults configuration */
 const saveConfig = async ():Promise<void> => {
   try {
-    await onSave()
+    await onSave(props.data)
     window.alert('Config saved')
   } catch (error:any) {
     window.alert(error.message)

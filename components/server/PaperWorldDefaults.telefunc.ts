@@ -7,6 +7,7 @@
 /**
  * Save World defaults
  */
-export const onSave = async ():Promise<void> => {
+export const onSave = async (data:any):Promise<void> => {
   console.log('Saving Paper world defaults...')
+  console.log(data)
 }
