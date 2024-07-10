@@ -18,5 +18,5 @@ const doWorldScan = async ():Promise<void> => {
 </script>
 
 <template>
-  <button @click="doWorldScan">Scan for worlds</button>
+  <button @click="doWorldScan()">Scan for worlds</button>
 </template>

@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+import WorldImport from '@/components/admin/WorldImport.vue'
 import WorldScan from '@/components/admin/WorldScan.vue'
 import AddWorldForm from '@/components/admin/AddWorldForm.vue'
 
@@ -29,6 +30,7 @@ const removeWorldForm = (id:number):void => {
 
 <template>
   <div class="right">
+    <WorldImport/>
     <WorldScan/>
   </div>
   <div>

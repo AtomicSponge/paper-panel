@@ -37,7 +37,7 @@ import EditWorld from '@/components/admin/EditWorld.vue'
         </span>
         <hr/>
         <span>
-          <ServerPath :path="data.server.path"/>
+          <ServerPath :path="data.server!.path"/>
         </span>
       </div>
 
