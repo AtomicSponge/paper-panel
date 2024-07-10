@@ -8,25 +8,23 @@
 import { ref } from 'vue'
 import { onWorldImport } from './WorldImport.telefunc'
 
-const filePicker = ref()
+const filePicker = ref<HTMLInputElement | null>(null)
 
-const importWorld = async (event:any) => {
-  if(window.confirm('Import world?')) {
+const importWorld = async () => {
+  if (filePicker.value !== null &&
+      filePicker.value.files !== null &&
+      window.confirm('Import world?')) {
     try {
-      const form = event.currentTarget
-      console.log(form)
-      const url = new URL(form.action)
-      await onWorldImport({ url: await fetch(url) })
+      await onWorldImport({ file: filePicker.value.files[0] })
       window.alert('World imported!')
     } catch (error:any) {
       window.alert(error.message)
     }
   }
-  event.preventDefault()
 }
 </script>
 
 <template>
   <label for="worldimport">Import world:</label>
-  <input id="worldimport" type="file" accept=".zip" :onchange="importWorld"/>
+  <input id="worldimport" type="file" accept=".zip" ref="filePicker" @change="importWorld()"/>
 </template>
