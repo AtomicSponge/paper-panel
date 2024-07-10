@@ -12,6 +12,9 @@
     <div>
       <h2>Banned IPs</h2>
     </div>
+    <div>
+      <button @click="saveConfig">Update</button>
+    </div>
   </section>
 </template>
 

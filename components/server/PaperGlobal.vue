@@ -28,7 +28,7 @@ const saveConfig = async ():Promise<void> => {
       </a>
     </div>
     <div>
-      <button @click="saveConfig">Save Config</button>
+      <button @click="saveConfig">Save Configuration</button>
     </div>
   </section>
 </template>

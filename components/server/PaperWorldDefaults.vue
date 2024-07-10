@@ -15,6 +15,9 @@
         https://docs.papermc.io/paper/reference/world-configuration
       </a>
     </div>
+    <div>
+      <button @click="saveConfig">Save Configuration</button>
+    </div>
   </section>
 </template>
 
