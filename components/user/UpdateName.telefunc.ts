@@ -18,5 +18,6 @@ export const onNameUpdate = async ({ id, name }:{ id:number, name:string }):Prom
   await db.update(({ user }) => {
     const elem = user.find(user => user.id === id)
     if(elem !== undefined) elem.name = name
+    else throw Error('User data not found!')
   })
 }
