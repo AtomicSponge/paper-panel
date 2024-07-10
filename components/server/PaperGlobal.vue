@@ -28,6 +28,11 @@ const saveConfig = async ():Promise<void> => {
       </a>
     </div>
     <div>
+      <input type="radio" name="test">
+      <input type="radio" name="test">
+      <input type="radio" name="test">
+    </div>
+    <div>
       <button @click="saveConfig">Save Configuration</button>
     </div>
   </section>

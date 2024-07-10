@@ -86,11 +86,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-input[type=text] {
+input {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
 }
-input[type=password] {
+
+select {
   color: rgba(242, 243, 244, 0.87);
   background-color: rgb(59, 68, 75);
 }
@@ -127,11 +128,12 @@ textarea {
     border-color: rgb(25, 25, 112);
   }
 
-  input[type=text] {
+  input {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
-  input[type=password] {
+
+  select {
     color: rgba(29, 41, 81, 0.87);
     background-color: rgb(245, 245, 220);
   }
