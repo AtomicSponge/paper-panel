@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onSave } from './ServerConfig.telefunc'
+import { onSave } from './PaperGlobal.telefunc'
 
 /** Reference to the config text area */
 const configTextArea = ref('Config window')

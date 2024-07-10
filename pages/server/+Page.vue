@@ -19,9 +19,9 @@ import Server from '@/components/server/Server.vue'
     </header>
     <main>
       <Server
-        :name="data.server.name"
-        :address="data.server.address"
-        :port="data.server.port"/>
+        :name="data.server!.name"
+        :address="data.server!.address"
+        :port="data.server!.port"/>
     </main>
   </section>
 </template>
