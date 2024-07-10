@@ -21,10 +21,10 @@ import Whitelist from '@/components/players/Whitelist.vue'
       <h1>Players</h1>
     </header>
     <main>
-      <Operators/>
-      <BannedIps/>
-      <BannedPlayers/>
-      <Whitelist/>
+      <Operators :data="data.operators"/>
+      <BannedIps :data="data.bannedIps"/>
+      <BannedPlayers :data="data.bannedPlayers"/>
+      <Whitelist :data="data.whitelist"/>
     </main>
   </section>
 </template>

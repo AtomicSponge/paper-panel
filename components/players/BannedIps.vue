@@ -7,10 +7,14 @@
 <script lang="ts" setup>
 import { onUpdate } from './BannedIps.telefunc'
 
+const props = defineProps<{
+  data:Object
+}>()
+
 /** Update the Banned IPs */
 const updateConfig = async ():Promise<void> => {
   try {
-    await onUpdate()
+    await onUpdate(props.data)
     window.alert('Banned IPs updated!')
   } catch (error:any) {
     window.alert(error.message)

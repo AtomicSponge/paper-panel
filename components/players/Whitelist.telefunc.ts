@@ -7,6 +7,7 @@
 /**
  * Update the Whitelist
  */
-export const onUpdate = async ():Promise<void> => {
+export const onUpdate = async (data:any):Promise<void> => {
   console.log('Upadting whitelist...')
+  console.log(data)
 }
