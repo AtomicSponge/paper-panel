@@ -11,6 +11,9 @@
   <section class="subbox">
     <div>
       <h2>Spigot Config</h2>
+      <a href="https://docs.papermc.io/paper/reference/spigot-configuration">
+        https://docs.papermc.io/paper/reference/spigot-configuration
+      </a>
     </div>
   </section>
 </template>

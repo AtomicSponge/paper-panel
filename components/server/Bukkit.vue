@@ -11,6 +11,9 @@
   <section class="subbox">
     <div>
       <h2>Bukkit Config</h2>
+      <a href="https://docs.papermc.io/paper/reference/bukkit-configuration">
+        https://docs.papermc.io/paper/reference/bukkit-configuration
+      </a>
     </div>
   </section>
 </template>

@@ -12,6 +12,7 @@ const data = useData<Data>()
 import Server from '@/components/server/Server.vue'
 import BannedIps from '@/components/server/BannedIps.vue'
 import BannedPlayers from '@/components/server/BannedPlayers.vue'
+import Whitelist from '@/components/server/Whitelist.vue'
 import PaperGlobal from '@/components/server/PaperGlobal.vue'
 import PaperWorldDefaults from '@/components/server/PaperWorldDefaults.vue'
 import Bukkit from '@/components/server/Bukkit.vue'
@@ -25,17 +26,26 @@ import Spigot from '@/components/server/Spigot.vue'
       <h1>Server</h1>
     </header>
     <main>
+
       <Server
         :name="data.server!.name"
         :address="data.server!.address"
         :port="data.server!.port"/>
 
       <BannedIps/>
+
       <BannedPlayers/>
+
+      <Whitelist/>
+
       <PaperGlobal/>
+
       <PaperWorldDefaults/>
+
       <Bukkit/>
+
       <Spigot/>
+
     </main>
   </section>
 </template>

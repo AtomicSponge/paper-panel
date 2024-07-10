@@ -8,9 +8,6 @@
 import { ref } from 'vue'
 import { onSave } from './PaperGlobal.telefunc'
 
-/** Reference to the config text area */
-const configTextArea = ref('Config window')
-
 /** Save the server configuration */
 const saveConfig = async ():Promise<void> => {
   try {
@@ -29,9 +26,6 @@ const saveConfig = async ():Promise<void> => {
       <a href="https://docs.papermc.io/paper/reference/global-configuration">
         https://docs.papermc.io/paper/reference/global-configuration
       </a>
-    </div>
-    <div>
-      <textarea v-model="configTextArea"></textarea>
     </div>
     <div>
       <button @click="saveConfig">Save Config</button>
