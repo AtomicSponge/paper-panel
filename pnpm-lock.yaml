@@ -59,6 +59,9 @@ importers:
       vue:
         specifier: ^3.4.31
         version: 3.4.31(typescript@5.5.3)
+      yaml:
+        specifier: ^2.4.5
+        version: 2.4.5
     devDependencies:
       '@hono/vite-dev-server':
         specifier: ^0.13.0
@@ -1166,6 +1169,11 @@ packages:
       utf-8-validate:
         optional: true
 
+  yaml@2.4.5:
+    resolution: {integrity: sha512-aBx2bnqDzVOyNKfsysjA2ms5ZlnjSAW2eG3/L5G/CSujfjLJTJsEw1bGw8kCf04KodQWk1pxlGnZ56CRxiawmg==}
+    engines: {node: '>= 14'}
+    hasBin: true
+
   youch@3.3.3:
     resolution: {integrity: sha512-qSFXUk3UZBLfggAW3dJKg0BMblG5biqSF8M34E06o5CSsZtH92u9Hqmj2RzGiHDi64fhe83+4tENFP2DB6t6ZA==}
 
@@ -2095,6 +2103,8 @@ snapshots:
       '@cloudflare/workerd-windows-64': 1.20240701.0
 
   ws@8.18.0: {}
+
+  yaml@2.4.5: {}
 
   youch@3.3.3:
     dependencies:
