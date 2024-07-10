@@ -9,10 +9,10 @@ import type { Data } from './+data'
 import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
 
-import Operators from '@/components/server/Operators.vue'
-import BannedIps from '@/components/server/BannedIps.vue'
-import BannedPlayers from '@/components/server/BannedPlayers.vue'
-import Whitelist from '@/components/server/Whitelist.vue'
+import Operators from '@/components/players/Operators.vue'
+import BannedIps from '@/components/players/BannedIps.vue'
+import BannedPlayers from '@/components/players/BannedPlayers.vue'
+import Whitelist from '@/components/players/Whitelist.vue'
 </script>
 
 <template>
