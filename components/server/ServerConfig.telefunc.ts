@@ -4,6 +4,9 @@
  * See LICENSE.md
  */
 
+/**
+ * Save server configuration
+ */
 export const onSave = async ():Promise<void> => {
   console.log('Saving server config...')
 }
