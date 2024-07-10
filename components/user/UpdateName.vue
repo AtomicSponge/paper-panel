@@ -23,7 +23,7 @@ const updateName = async ():Promise<void> => {
   try {
     await onNameUpdate({
       id: props.id,
-      username: uernameInput.value
+      name: uernameInput.value
     })
     window.alert('Name updated')
   } catch (error:any) {
