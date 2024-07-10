@@ -9,11 +9,13 @@ import { worlds } from '@/database/worlds'
 import type { PageContextServer } from 'vike/types'
 
 export const data = async (pageContext:PageContextServer) => {
-  const isAdmin = pageContext.user?.admin
-  console.log(isAdmin)
+  const isAdmin = Boolean(pageContext.user?.admin)
+  const userId = Number(pageContext.user?.id)
+
+  const data = isAdmin ? worlds.world : worlds.world.filter(world => world.users.includes(userId))
 
   return {
-    worlds: worlds.world
+    worlds: data
   }
 }
 
