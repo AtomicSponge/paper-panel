@@ -5,6 +5,17 @@
 -->
 
 <script lang="ts" setup>
+import { onUpdate } from './BannedPlayers.telefunc'
+
+/** Update the Banned IPs */
+const updateConfig = async ():Promise<void> => {
+  try {
+    await onUpdate()
+    window.alert('Banned Players updated!')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
+}
 </script>
 
 <template>
@@ -13,7 +24,7 @@
       <h2>Banned Players</h2>
     </div>
     <div>
-      <button @click="saveConfig">Update</button>
+      <button @click="updateConfig">Update</button>
     </div>
   </section>
 </template>
