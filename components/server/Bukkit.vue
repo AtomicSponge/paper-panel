@@ -5,6 +5,17 @@
 -->
 
 <script lang="ts" setup>
+import { onSave } from './Bukkit.telefunc'
+
+/** Save the Bukkit configuration */
+const saveConfig = async ():Promise<void> => {
+  try {
+    await onSave()
+    window.alert('Config saved')
+  } catch (error:any) {
+    window.alert(error.message)
+  }
+}
 </script>
 
 <template>

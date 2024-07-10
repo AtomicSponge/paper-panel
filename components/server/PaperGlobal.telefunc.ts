@@ -8,5 +8,5 @@
  * Save server configuration
  */
 export const onSave = async ():Promise<void> => {
-  console.log('Saving server config...')
+  console.log('Saving Paper Global config...')
 }
