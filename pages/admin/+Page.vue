@@ -5,6 +5,11 @@
 -->
 
 <script lang="ts" setup>
+import type { Data } from './+data'
+import { useData } from 'vike-vue/useData'
+const data = useData<Data>()
+
+import ServerPath from '@/components/admin/ServerPath.vue'
 import AddWorld from '@/components/admin/AddWorld.vue'
 import EditWorld from '@/components/admin/EditWorld.vue'
 </script>
@@ -32,8 +37,7 @@ import EditWorld from '@/components/admin/EditWorld.vue'
         </span>
         <hr/>
         <span>
-          <label for="serverpath">Server path:</label>
-          <input id="serverpath" type="text"/>
+          <ServerPath :path="data.server.path"/>
         </span>
       </div>
 
