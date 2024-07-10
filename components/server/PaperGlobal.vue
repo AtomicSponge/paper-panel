@@ -27,10 +27,9 @@ const saveConfig = async ():Promise<void> => {
         https://docs.papermc.io/paper/reference/global-configuration
       </a>
     </div>
-    <div>
-      <input type="radio" name="test">
-      <input type="radio" name="test">
-      <input type="radio" name="test">
+    <div class="unsupported">
+      <h3>Unsupported Settings</h3>
+      ...
     </div>
     <div>
       <button @click="saveConfig">Save Configuration</button>
@@ -50,8 +49,8 @@ div {
   text-align: center;
   padding: 0.4em;
 }
-textarea {
-  width: 86vw;
-  height: 56vh;
+.unsupported {
+  border-radius: 16px;
+  background-color: rgb(178,34,34);
 }
 </style>
