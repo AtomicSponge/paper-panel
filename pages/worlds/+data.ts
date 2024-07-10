@@ -4,6 +4,8 @@
  * See LICENSE.md
  */
 
+import { JSONFilePreset } from 'lowdb/node'
+
 import { worlds } from '@/database/worlds'
 
 import type { PageContextServer } from 'vike/types'
@@ -12,7 +14,8 @@ export const data = async (pageContext:PageContextServer) => {
   const isAdmin = Boolean(pageContext.user?.admin) || Boolean(pageContext.user?.serveradmin)
   const userId = Number(pageContext.user?.id)
 
-  const data = isAdmin ? worlds.world : worlds.world.filter(world => world.users.includes(userId))
+  const db = await JSONFilePreset('db.json', worlds)
+  const data = isAdmin ? db.data.world : db.data.world.filter(world => world.users.includes(userId))
 
   return {
     worlds: data
