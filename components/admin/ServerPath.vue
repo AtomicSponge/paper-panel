@@ -7,6 +7,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
+import { onUpdateServerPath } from './ServerPath.telefunc'
+
 const props = defineProps<{
   /** Path to server */
   path:string
@@ -15,7 +17,11 @@ const props = defineProps<{
 const serverPath = ref(props.path)
 
 const updatePath = async () => {
-  //
+  try {
+    onUpdateServerPath({ path: serverPath.value })
+  } catch (error:any) {
+    window.alert(error.message)
+  }
 }
 </script>
 

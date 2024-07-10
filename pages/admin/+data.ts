@@ -15,8 +15,6 @@ export const data = async () => {
   const usersDb = await JSONFilePreset('db.json', users)
   const worldsDb = await JSONFilePreset('db.json', worlds)
 
-  console.log(serverDb.data.server.at(0))
-
   return {
     server: serverDb.data.server.at(0),
     users: usersDb.data,
