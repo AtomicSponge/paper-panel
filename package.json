@@ -1,15 +1,25 @@
 {
-  "name": "my-app",
+  "name": "paper-panel",
+  "private": true,
   "version": "0.0.1",
   "description": "",
+  "author": "Matthew Evans",
+  "license": "MIT",
+  "homepage": "https://github.com/AtomicSponge/paper-panel",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AtomicSponge/paper-panel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AtomicSponge/paper-panel/issues"
+  },
+  "keywords": [],
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "cross-env NODE_ENV=production tsx ./hono-entry.node.ts"
   },
-  "keywords": [],
-  "author": "",
   "devDependencies": {
     "@hono/vite-dev-server": "^0.13.0",
     "@types/node": "^20.14.10",
