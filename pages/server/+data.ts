@@ -23,19 +23,15 @@ export const data = async (pageContext:PageContextServer) => {
   let spigotConfig = null
 
   if(data !== undefined && fs.existsSync(data.path)) {
-    try {
-      paperConfig = fs.readFileSync(path.join(data.path, 'config', 'paper-global.yml'))
-      paperWorldDefaults = fs.readFileSync(path.join(data.path, 'config', 'paper-world-defaults.yml'))
-      bukkitConfig = fs.readFileSync(path.join(data.path, 'bukkit.yml'))
-      spigotConfig = fs.readFileSync(path.join(data.path, 'spigot.yml'))
+    paperConfig = fs.readFileSync(path.join(data.path, 'config', 'paper-global.yml'))
+    paperWorldDefaults = fs.readFileSync(path.join(data.path, 'config', 'paper-world-defaults.yml'))
+    bukkitConfig = fs.readFileSync(path.join(data.path, 'bukkit.yml'))
+    spigotConfig = fs.readFileSync(path.join(data.path, 'spigot.yml'))
 
-      paperConfig = YAML.parse(paperConfig.toString())
-      paperWorldDefaults = YAML.parse(paperWorldDefaults.toString())
-      bukkitConfig = YAML.parse(bukkitConfig.toString())
-      spigotConfig = YAML.parse(spigotConfig.toString())
-    } catch (error:any) {
-      throw error
-    }
+    paperConfig = YAML.parse(paperConfig.toString())
+    paperWorldDefaults = YAML.parse(paperWorldDefaults.toString())
+    bukkitConfig = YAML.parse(bukkitConfig.toString())
+    spigotConfig = YAML.parse(spigotConfig.toString())
   }
 
   return {
