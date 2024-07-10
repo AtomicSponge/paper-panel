@@ -11,9 +11,4 @@ export interface Server {
   path:string
 }
 
-export const server = {
-  name: 'some name',
-  address: '10.1.1.20',
-  port: 2345,
-  path: '/path/to/server'
-}
+export const server:{ server:Array<Server> } = { server: [] }

@@ -4,15 +4,17 @@
  * See LICENSE.md
  */
 
+import { JSONFilePreset } from 'lowdb/node'
+
 import { server } from '@/database/server'
 
 import type { PageContextServer } from 'vike/types'
 
 export const data = async (pageContext:PageContextServer) => {
-  //const userId = Number(pageContext.routeParams.id)
+  const db = await JSONFilePreset('db.json', server)
 
   return {
-    server
+    server: db.data.server.at(0)
   }
 }
 
