@@ -28,5 +28,6 @@ onMounted(async () => {
 <template>
   <span><a :href="`/user/${user!.id}`">{{ user!.name }}</a></span>
   <span v-show="showServerLink"> > <a href="/server">Server</a></span>
+  <span v-show="showServerLink"> > <a href="/players">Players</a></span>
   <span> > <a href="/worlds">Worlds</a></span>
 </template>
