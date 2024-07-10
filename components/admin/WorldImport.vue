@@ -6,11 +6,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { onWorldImport } from './WorldImport.telefunc'
 
 const filePicker = ref()
 
 const importWorld = async (event:any) => {
-  window.alert('changed')
+  if(window.confirm('Import world?')) {
+    try {
+      await onWorldImport()
+      window.alert('World imported!')
+    } catch (error:any) {
+      window.alert(error.message)
+    }
+  }
 }
 </script>
 
