@@ -11,9 +11,7 @@ import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
 
-import type { PageContextServer } from 'vike/types'
-
-export const data = async (pageContext:PageContextServer) => {
+export const data = async () => {
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
