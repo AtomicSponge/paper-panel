@@ -7,6 +7,9 @@
 /**
  * Adds a world to the database
  */
-export const onSaveNewWorld = async ():Promise<void> => {
+export const onSaveNewWorld = async () => {
   console.log('Adding new world...')
+  if(false) {
+    return { errorMessage: '' }
+  }
 }

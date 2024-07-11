@@ -13,12 +13,9 @@ const props = defineProps<{
 
 /** Update the Banned IPs */
 const updateConfig = async ():Promise<void> => {
-  try {
-    await onUpdate(props.data)
-    window.alert('Whitelist updated!')
-  } catch (error:any) {
-    window.alert(error.message)
-  }
+  const res = await onUpdate(props.data)
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else window.alert('Whitelist updated!')
 }
 </script>
 

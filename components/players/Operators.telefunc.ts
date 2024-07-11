@@ -7,7 +7,11 @@
 /**
  * Update the Banned IPs
  */
-export const onUpdate = async (data:any):Promise<void> => {
+export const onUpdate = async (data:any) => {
   console.log('Updating operators...')
   console.log(data)
+
+  if(false) {
+    return { errorMessage: '' }
+  }
 }

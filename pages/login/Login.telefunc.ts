@@ -9,7 +9,11 @@
  * @param username Username
  * @param password Password
  */
-export const onLogin = async ({ username, password }:{ username:string, password:string }):Promise<void> => {
+export const onLogin = async ({ username, password }:{ username:string, password:string }):Promise<{ errorMessage:string } | undefined> => {
   console.log(username)
   console.log(password)
+
+  if(username !== password) {
+    return { errorMessage: 'Incorrect username or password!'}
+  }
 }

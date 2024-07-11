@@ -17,12 +17,11 @@ const emit = defineEmits<{
 }>()
 
 const saveNewWorld = async ():Promise<void> => {
-  try {
-    await onSaveNewWorld()
+  const res = await onSaveNewWorld()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else {
     window.alert('World added!')
     emit('remove', props.id)
-  } catch (error:any) {
-    window.alert(error.message)
   }
 }
 </script>

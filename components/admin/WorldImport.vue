@@ -14,12 +14,9 @@ const importWorld = async () => {
   if (filePicker.value !== null &&
       filePicker.value.files !== null &&
       window.confirm('Import world?')) {
-    try {
-      await onWorldImport({ file: filePicker.value.files[0] })
-      window.alert('World imported!')
-    } catch (error:any) {
-      window.alert(error.message)
-    }
+    const res = await onWorldImport({ file: filePicker.value.files[0] })
+    if(res?.errorMessage) window.alert(res.errorMessage)
+    else window.alert('World imported!')
   }
 }
 </script>

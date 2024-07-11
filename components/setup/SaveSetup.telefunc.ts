@@ -7,7 +7,7 @@
 /**
  * Save first time configuration
  */
-export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }):Promise<{errorMessage:string} | undefined> => {
+export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }) => {
   console.log('saving initial config')
   console.log(adminData)
   console.log(serverConfig)

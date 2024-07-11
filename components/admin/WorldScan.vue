@@ -8,12 +8,9 @@
 import { onScan } from './WorldScan.telefunc'
 
 const doWorldScan = async ():Promise<void> => {
-  try {
-    await onScan()
-    window.alert('Scan complete')
-  } catch (error:any) {
-    window.alert(error.message)
-  }
+  const res = await onScan()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else window.alert('Scan complete')
 }
 </script>
 
