@@ -63,11 +63,11 @@ const saveConfig = async ():Promise<void> => {
         </div>
         <div class="tab">
           player-max-concurrent-chunk-generates
-          <input type="number" v-model="config['chunk-loading-advanced']['player-max-concurrent-chunk-generates']">
+          <input type="number" v-model.number="config['chunk-loading-advanced']['player-max-concurrent-chunk-generates']">
         </div>
         <div class="tab">
           player-max-concurrent-chunk-loads
-          <input type="number" v-model="config['chunk-loading-advanced']['player-max-concurrent-chunk-loads']">
+          <input type="number" v-model.number="config['chunk-loading-advanced']['player-max-concurrent-chunk-loads']">
         </div>
       </div>
 
@@ -75,15 +75,15 @@ const saveConfig = async ():Promise<void> => {
         <div>chunk-loading-basic</div>
         <div class="tab">
           player-max-chunk-generate-rate
-          <input type="number" v-model="config['chunk-loading-basic']['player-max-chunk-generate-rate']">
+          <input type="number" v-model.number="config['chunk-loading-basic']['player-max-chunk-generate-rate']">
         </div>
         <div class="tab">
           player-max-chunk-load-rate
-          <input type="number" v-model="config['chunk-loading-basic']['player-max-chunk-load-rate']">
+          <input type="number" v-model.number="config['chunk-loading-basic']['player-max-chunk-load-rate']">
         </div>
         <div class="tab">
           player-max-chunk-send-rate
-          <input type="number" v-model="config['chunk-loading-basic']['player-max-chunk-send-rate']">
+          <input type="number" v-model.number="config['chunk-loading-basic']['player-max-chunk-send-rate']">
         </div>
       </div>
 
@@ -142,19 +142,27 @@ const saveConfig = async ():Promise<void> => {
           book
           <div class="tab">
             author
-            <input type="number" v-model="config['item-validation']['book']['author']">
+            <input type="number" v-model.number="config['item-validation']['book']['author']">
           </div>
           <div class="tab">
             page
-            <input type="number" v-model="config['item-validation']['book']['page']">
+            <input type="number" v-model.number="config['item-validation']['book']['page']">
           </div>
           <div class="tab">
             title
-            <input type="number" v-model="config['item-validation']['book']['title']">
+            <input type="number" v-model.number="config['item-validation']['book']['title']">
           </div>
         </div>
         <div class="tab">
           book-size
+          <div class="tab">
+            page-max
+            <input type="number" v-model.number="config['item-validation']['book-size']['page-max']">
+          </div>
+          <div class="tab">
+            total-multiplier
+            <input type="number" v-model.number="config['item-validation']['book-size']['total-multiplier']">
+          </div>
         </div>
       </div>
 
