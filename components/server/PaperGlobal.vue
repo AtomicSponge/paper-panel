@@ -13,11 +13,13 @@ const props = defineProps<{
 }>()
 
 const showConfig = ref(false)
+const label = ref('Edit')
 
 const config = ref(props.data)
 
-const show = ():void => {
+const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
+  label.value = showConfig.value ? 'Hide' : 'Edit'
 }
 
 /** Save the server configuration */
@@ -40,7 +42,7 @@ const saveConfig = async ():Promise<void> => {
           https://docs.papermc.io/paper/reference/global-configuration
         </a>
       </div>
-      <div><button @click="show">Edit</button></div>
+      <div><button @click="toggleConfig">{{ label }}</button></div>
     </header>
 
     <main v-show="showConfig">
