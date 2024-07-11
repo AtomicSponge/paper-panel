@@ -61,6 +61,30 @@ const saveConfig = async ():Promise<void> => {
           auto-config-send-distance
           <input type="checkbox" v-model="config['chunk-loading-advanced']['auto-config-send-distance']">
         </div>
+        <div class="tab">
+          player-max-concurrent-chunk-generates
+          <input type="text" v-model="config['chunk-loading-advanced']['player-max-concurrent-chunk-generates']">
+        </div>
+        <div class="tab">
+          player-max-concurrent-chunk-loads
+          <input type="text" v-model="config['chunk-loading-advanced']['player-max-concurrent-chunk-loads']">
+        </div>
+      </div>
+
+      <div>
+        <div>chunk-loading-basic</div>
+        <div class="tab">
+          player-max-chunk-generate-rate
+          <input type="text" v-model="config['chunk-loading-basic']['player-max-chunk-generate-rate']">
+        </div>
+        <div class="tab">
+          player-max-chunk-load-rate
+          <input type="text" v-model="config['chunk-loading-basic']['player-max-chunk-load-rate']">
+        </div>
+        <div class="tab">
+          player-max-chunk-send-rate
+          <input type="text" v-model="config['chunk-loading-basic']['player-max-chunk-send-rate']">
+        </div>
       </div>
 
       <div class="unsupported">
@@ -91,6 +115,9 @@ main {
 }
 div {
   padding: 0.4em;
+}
+input[type=text] {
+  width: 5em;
 }
 .tab {
   margin-left: 2em;
