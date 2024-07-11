@@ -157,6 +157,7 @@ input[type=text] {
 .unsupported {
   margin: 0.4em;
   border-radius: 16px;
+  color: rgba(255, 255, 255, 0.87);
   background-color: rgb(178,34,34);
 }
 </style>
