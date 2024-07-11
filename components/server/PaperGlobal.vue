@@ -121,6 +121,18 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>console</div>
+        <div class="tab">
+          enable-brigadier-completions
+          <input type="checkbox" v-model="config['console']['enable-brigadier-completions']">
+        </div>
+        <div class="tab">
+          enable-brigadier-highlighting
+          <input type="checkbox" v-model="config['console']['enable-brigadier-highlighting']">
+        </div>
+        <div class="tab">
+          has-all-permissions
+          <input type="checkbox" v-model="config['console']['has-all-permissions']">
+        </div>
       </div>
 
       <div class="unsupported">
