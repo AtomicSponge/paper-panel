@@ -296,6 +296,30 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>packet-limiter</div>
+      </div>
+
+      <div>
+        <div>player-auto-save</div>
+      </div>
+
+      <div>
+        <div>proxies</div>
+      </div>
+
+      <div>
+        <div>scoreboards</div>
+      </div>
+
+      <div>
+        <div>spam-limiter</div>
+      </div>
+
+      <div>
+        <div>timings</div>
+      </div>
+
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
         <div class="tab">
