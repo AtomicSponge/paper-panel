@@ -17,15 +17,8 @@ defineProps<{
   port:number
 }>()
 
-/** Reference for showing the config edit box */
-const showConfig = ref(false)
 /** Reference for displaying the update message */
 const showUpdate = ref(false)
-
-/** Toggle displaying the config edit box */
-const toggleConfig = ():void => {
-  showConfig.value = showConfig.value ? false : true
-}
 
 /** Check for updates */
 const checkUpdates = async ():Promise<void> => {
