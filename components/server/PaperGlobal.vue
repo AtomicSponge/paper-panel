@@ -45,6 +45,14 @@ const saveConfig = async ():Promise<void> => {
           disable-mushroom-block-updates
           <input type="checkbox" v-model="config['block-updates']['disable-mushroom-block-updates']">
         </div>
+        <div class="tab">
+          disable-noteblock-updates
+          <input type="checkbox" v-model="config['block-updates']['disable-noteblock-updates']">
+        </div>
+        <div class="tab">
+          disable-tripwire-updates
+          <input type="checkbox" v-model="config['block-updates']['disable-tripwire-updates']">
+        </div>
       </div>
 
       <div class="unsupported">
