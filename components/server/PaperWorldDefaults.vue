@@ -24,15 +24,16 @@ const saveConfig = async ():Promise<void> => {
 
 <template>
   <section class="subbox">
-    <div>
+    <header>
       <h2>Paper World Defaults</h2>
       <a href=" https://docs.papermc.io/paper/reference/world-configuration">
         https://docs.papermc.io/paper/reference/world-configuration
       </a>
-    </div>
-    <div>
+    </header>
+    <main></main>
+    <footer>
       <button @click="saveConfig">Save Configuration</button>
-    </div>
+    </footer>
   </section>
 </template>
 
@@ -44,8 +45,22 @@ section {
   margin: 1em;
   padding: 1em;
 }
-div {
+header {
   text-align: center;
+}
+main {
   padding: 0.4em;
+}
+div {
+  padding: 0.4em;
+}
+input[type=text] {
+  width: 5em;
+}
+input[type=number] {
+  width: 5em;
+}
+.tab {
+  margin-left: 2em;
 }
 </style>
