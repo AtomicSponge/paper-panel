@@ -5,11 +5,27 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { onSave } from './Spigot.telefunc'
 
 const props = defineProps<{
-  data:Object
+  /** Data loaded from file */
+  data:any
 }>()
+
+/** Label for the toggle button */
+const label = ref('Edit')
+/** Reference for showing the config display */
+const showConfig = ref(false)
+
+/** Reference for config data */
+const config = ref(props.data)
+
+/** Toggle showing the config display */
+const toggleConfig = ():void => {
+  showConfig.value = showConfig.value ? false : true
+  label.value = showConfig.value ? 'Hide' : 'Edit'
+}
 
 /** Save the Spigot configuration */
 const saveConfig = async ():Promise<void> => {
@@ -24,15 +40,21 @@ const saveConfig = async ():Promise<void> => {
 
 <template>
   <section class="subbox">
-    <div>
-      <h2>Spigot Config</h2>
-      <a href="https://docs.papermc.io/paper/reference/spigot-configuration">
-        https://docs.papermc.io/paper/reference/spigot-configuration
-      </a>
-    </div>
-    <div>
+    <header>
+      <div><h2>Spigot Config</h2></div>
+      <div>
+        <a href="https://docs.papermc.io/paper/reference/spigot-configuration">
+          https://docs.papermc.io/paper/reference/spigot-configuration
+        </a>
+      </div>
+      <div><button @click="toggleConfig">{{ label }}</button></div>
+    </header>
+    <main v-show="showConfig">
+      ...
+    </main>
+    <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
-    </div>
+    </footer>
   </section>
 </template>
 
@@ -44,8 +66,22 @@ section {
   margin: 1em;
   padding: 1em;
 }
-div {
+header {
   text-align: center;
+}
+main {
   padding: 0.4em;
+}
+div {
+  padding: 0.4em;
+}
+input[type=text] {
+  width: 5em;
+}
+input[type=number] {
+  width: 5em;
+}
+.tab {
+  margin-left: 2em;
 }
 </style>
