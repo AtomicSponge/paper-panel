@@ -12,13 +12,19 @@ const props = defineProps<{
   data:any
 }>()
 
+const showConfig = ref(false)
+
 const config = ref(props.data)
+
+const show = ():void => {
+  showConfig.value = showConfig.value ? false : true
+}
 
 /** Save the server configuration */
 const saveConfig = async ():Promise<void> => {
   try {
     await onSave(props.data)
-    window.alert('Config saved')
+    window.alert('Paper Global Configuration saved!')
   } catch (error:any) {
     window.alert(error.message)
   }
@@ -28,13 +34,16 @@ const saveConfig = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <header>
-      <h2>Paper Global Config</h2>
-      <a href="https://docs.papermc.io/paper/reference/global-configuration">
-        https://docs.papermc.io/paper/reference/global-configuration
-      </a>
+      <div><h2>Paper Global Configuration</h2></div>
+      <div>
+        <a href="https://docs.papermc.io/paper/reference/global-configuration">
+          https://docs.papermc.io/paper/reference/global-configuration
+        </a>
+      </div>
+      <div><button @click="show">Edit</button></div>
     </header>
 
-    <main>
+    <main v-show="showConfig">
       <div>
         <div>block-updates</div>
         <div class="tab">
@@ -204,7 +213,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
     </main>
 
-    <footer>
+    <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
     </footer>
   </section>
