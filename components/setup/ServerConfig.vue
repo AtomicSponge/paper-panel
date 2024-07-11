@@ -5,6 +5,13 @@
 -->
 
 <script setup lang="ts">
+import type { ModelRef } from 'vue'
+
+interface Data {
+  path:string
+}
+
+const data:ModelRef<Data | undefined> = defineModel()
 </script>
 
 <template>
@@ -13,7 +20,10 @@
       <h2>Server config</h2>
     </header>
     <main>
-      ...
+      <div>
+        <label for="path">Path:</label>
+        <input type="text" id="path" v-model="data!.path">
+      </div>
     </main>
   </section>
 </template>

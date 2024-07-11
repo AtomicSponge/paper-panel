@@ -9,6 +9,7 @@ import type { ModelRef } from 'vue'
 
 interface Data {
   username:string
+  display:string
   password:string
   confirm:string
 }
@@ -25,6 +26,10 @@ const data:ModelRef<Data | undefined> = defineModel()
       <div>
         <label for="username">Username:</label>
         <input type="text" id="username" v-model="data!.username">
+      </div>
+      <div>
+        <label for="username">Display Name:</label>
+        <input type="text" id="username" v-model="data!.display">
       </div>
       <div>
         <label for="password">Password:</label>
