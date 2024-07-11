@@ -11,7 +11,12 @@ import AdminConfig from '@/components/setup/AdminSetup.vue'
 import ServerConfig from '@/components/setup/ServerSetup.vue'
 import SaveSetup from '@/components/setup/SaveSetup.vue'
 
-const adminData = ref({ username: 'admin', display: 'Administrator', password: '', confirm: '' })
+const adminData = ref({
+  username: 'admin',
+  display: 'Administrator',
+  password: '',
+  confirm: ''
+})
 const serverData = ref({ path: '/home/minecraft/paper' })
 </script>
 
