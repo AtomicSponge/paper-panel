@@ -9,6 +9,17 @@ declare global {
       }
     }
   }
+
+  interface AdminSetupData {
+    username:string
+    display:string
+    password:string
+    confirm:string
+  }
+
+  interface ServerSetupData {
+    path:string
+  }
 }
 
 export {}

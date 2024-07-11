@@ -7,14 +7,7 @@
 <script setup lang="ts">
 import type { ModelRef } from 'vue'
 
-interface Data {
-  username:string
-  display:string
-  password:string
-  confirm:string
-}
-
-const data:ModelRef<Data> = defineModel({ required: true })
+const data:ModelRef<AdminSetupData> = defineModel({ required: true })
 </script>
 
 <template>

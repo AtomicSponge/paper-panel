@@ -7,8 +7,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 
-import AdminConfig from '@/components/setup/AdminConfig.vue'
-import ServerConfig from '@/components/setup/ServerConfig.vue'
+import AdminConfig from '@/components/setup/AdminSetup.vue'
+import ServerConfig from '@/components/setup/ServerSetup.vue'
 import SaveSetup from '@/components/setup/SaveSetup.vue'
 
 const adminData = ref({ username: 'admin', display: 'Administrator', password: '', confirm: '' })

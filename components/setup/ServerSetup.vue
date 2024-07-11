@@ -7,11 +7,7 @@
 <script setup lang="ts">
 import type { ModelRef } from 'vue'
 
-interface Data {
-  path:string
-}
-
-const data:ModelRef<Data> = defineModel({ required: true })
+const data:ModelRef<ServerSetupData> = defineModel({ required: true })
 </script>
 
 <template>
