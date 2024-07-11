@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 import AdminConfig from '@/components/setup/AdminConfig.vue'
 import ServerConfig from '@/components/setup/ServerConfig.vue'
+import SaveSetup from '@/components/setup/SaveSetup.vue'
 </script>
 
 <template>
@@ -17,6 +18,9 @@ import ServerConfig from '@/components/setup/ServerConfig.vue'
     <AdminConfig/>
     <ServerConfig/>
   </main>
+  <footer>
+    <SaveSetup/>
+  </footer>
 </template>
 
 <style scoped>
@@ -27,5 +31,9 @@ section {
 }
 header {
   text-align: center;
+}
+footer {
+  text-align: right;
+  margin-right: 3em;
 }
 </style>
