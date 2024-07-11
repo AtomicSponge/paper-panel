@@ -24,7 +24,9 @@ const serverData = ref({ path: '/home/minecraft/paper' })
     <ServerConfig v-model="serverData"/>
   </main>
   <footer>
-    <SaveSetup/>
+    <SaveSetup
+      v-model:admin="adminData"
+      v-model:server="serverData"/>
   </footer>
 </template>
 

@@ -7,7 +7,8 @@
 <script setup lang="ts">
 import { onSave } from './SaveSetup.telefunc'
 
-const data  = defineModel()
+const adminConfig = defineModel('admin', { required: true })
+const serverConfig = defineModel('server', { required: true })
 
 const saveConfig = async () => {
   try {

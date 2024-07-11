@@ -14,7 +14,7 @@ interface Data {
   confirm:string
 }
 
-const data:ModelRef<Data | undefined> = defineModel()
+const data:ModelRef<Data> = defineModel({ required: true })
 </script>
 
 <template>
@@ -25,19 +25,19 @@ const data:ModelRef<Data | undefined> = defineModel()
     <main>
       <div>
         <label for="username">Username:</label>
-        <input type="text" id="username" v-model="data!.username">
+        <input type="text" id="username" v-model="data.username">
       </div>
       <div>
         <label for="username">Display Name:</label>
-        <input type="text" id="username" v-model="data!.display">
+        <input type="text" id="username" v-model="data.display">
       </div>
       <div>
         <label for="password">Password:</label>
-        <input type="password" id="password" v-model="data!.password">
+        <input type="password" id="password" v-model="data.password">
       </div>
       <div>
         <label for="cpassword">Confirm Password:</label>
-        <input type="password" id="cpassword" v-model="data!.confirm">
+        <input type="password" id="cpassword" v-model="data.confirm">
       </div>
     </main>
   </section>

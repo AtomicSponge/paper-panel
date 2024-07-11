@@ -11,7 +11,7 @@ interface Data {
   path:string
 }
 
-const data:ModelRef<Data | undefined> = defineModel()
+const data:ModelRef<Data> = defineModel({ required: true })
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const data:ModelRef<Data | undefined> = defineModel()
     <main>
       <div>
         <label for="path">Path:</label>
-        <input type="text" id="path" v-model="data!.path">
+        <input type="text" id="path" v-model="data.path">
       </div>
     </main>
   </section>
