@@ -209,6 +209,38 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>logging</div>
+        <div class="tab">
+          deobfuscate-stacktraces
+          <input type="checkbox" v-model="config['logging']['deobfuscate-stacktraces']">
+        </div>
+      </div>
+
+      <div>
+        <div>messages</div>
+        <div class="tab">
+          kick
+          <div class="tab">
+            authentication-servers-down<br/>
+            <textarea v-model="config['messages']['kick']['authentication-servers-down']"></textarea>
+          </div>
+          <div class="tab">
+            connection-throttle<br/>
+            <textarea v-model="config['messages']['kick']['connection-throttle']"></textarea>
+          </div>
+
+          <div class="tab">
+            flying-player<br/>
+            <textarea v-model="config['messages']['kick']['flying-player']"></textarea>
+          </div>
+          <div class="tab">
+            flying-vehicle<br/>
+            <textarea v-model="config['messages']['kick']['flying-vehicle']"></textarea>
+          </div>
+        </div>
+      </div>
+
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
         <div class="tab">
@@ -278,6 +310,13 @@ input[type=text] {
 }
 input[type=number] {
   width: 5em;
+}
+select {
+  width: 8em;
+}
+textarea {
+  width: 46vw;
+  height: 1.4em;
 }
 .tab {
   margin-left: 2em;
