@@ -261,38 +261,38 @@ const saveConfig = async ():Promise<void> => {
             chat-executor-max-size
             <input type="number" v-model.number="config['misc']['chat-threads']['chat-executor-max-size']">
           </div>
-          <div>
-            compression-level
-            <input type="text" v-model="config['misc']['compression-level']">
-          </div>
-          <div>
-            fix-entity-position-desync
-            <input type="checkbox" v-model="config['misc']['fix-entity-position-desync']">
-          </div>
-          <div>
-            load-permissions-yml-before-plugins
-            <input type="checkbox" v-model="config['misc']['load-permissions-yml-before-plugins']">
-          </div>
-          <div>
-            max-joins-per-tick
-            <input type="number" v-model.number="config['misc']['max-joins-per-tick']">
-          </div>
-          <div>
-            region-file-cache-size
-            <input type="number" v-model.number="config['misc']['region-file-cache-size']">
-          </div>
-          <div>
-            strict-advancement-dimension-check
-            <input type="checkbox" v-model="config['misc']['strict-advancement-dimension-check']">
-          </div>
-          <div>
-            use-alternative-luck-formula
-            <input type="checkbox" v-model="config['misc']['use-alternative-luck-formula']">
-          </div>
-          <div>
-            use-dimension-type-for-custom-spawners
-            <input type="checkbox" v-model="config['misc']['use-dimension-type-for-custom-spawners']">
-          </div>
+        </div>
+        <div class="tab">
+          compression-level
+          <input type="text" v-model="config['misc']['compression-level']">
+        </div>
+        <div class="tab">
+          fix-entity-position-desync
+          <input type="checkbox" v-model="config['misc']['fix-entity-position-desync']">
+        </div>
+        <div class="tab">
+          load-permissions-yml-before-plugins
+          <input type="checkbox" v-model="config['misc']['load-permissions-yml-before-plugins']">
+        </div>
+        <div class="tab">
+          max-joins-per-tick
+          <input type="number" v-model.number="config['misc']['max-joins-per-tick']">
+        </div>
+        <div class="tab">
+          region-file-cache-size
+          <input type="number" v-model.number="config['misc']['region-file-cache-size']">
+        </div>
+        <div class="tab">
+          strict-advancement-dimension-check
+          <input type="checkbox" v-model="config['misc']['strict-advancement-dimension-check']">
+        </div>
+        <div class="tab">
+          use-alternative-luck-formula
+          <input type="checkbox" v-model="config['misc']['use-alternative-luck-formula']">
+        </div>
+        <div class="tab">
+          use-dimension-type-for-custom-spawners
+          <input type="checkbox" v-model="config['misc']['use-dimension-type-for-custom-spawners']">
         </div>
       </div>
 
@@ -334,6 +334,10 @@ const saveConfig = async ():Promise<void> => {
           skip-vanilla-damage-tick-when-shield-blocked
           <input type="checkbox" v-model="config['unsupported-settings']['skip-vanilla-damage-tick-when-shield-blocked']">
         </div>
+      </div>
+
+      <div>
+        <div>watchdog</div>
       </div>
     </main>
 
