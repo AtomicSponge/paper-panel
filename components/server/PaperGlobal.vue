@@ -105,7 +105,22 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>chunk-system</div>
-        <!-- finish me -->
+        <div class="tab">
+          gen-parallelism
+          <select v-model="config['chunk-system']['gen-parallelism']">
+            <option>on</option>
+            <option>off</option>
+            <option>default</option>
+          </select>
+        </div>
+        <div class="tab">
+          player-max-chunk-send-rate
+          <input type="number" v-model.number="config['chunk-system']['io-threads']">
+        </div>
+        <div class="tab">
+          player-max-chunk-send-rate
+          <input type="number" v-model.number="config['chunk-system']['worker-threads']">
+        </div>
       </div>
 
       <div>
@@ -179,6 +194,18 @@ const saveConfig = async ():Promise<void> => {
             total-multiplier
             <input type="number" v-model.number="config['item-validation']['book-size']['total-multiplier']">
           </div>
+        </div>
+        <div class="tab">
+          display-name
+            <input type="number" v-model.number="config['item-validation']['display-name']">
+        </div>
+        <div class="tab">
+          lore-line
+            <input type="number" v-model.number="config['item-validation']['lore-line']">
+        </div>
+        <div class="tab">
+          resolve-selectors-in-books
+          <input type="checkbox" v-model="config['item-validation']['resolve-selectors-in-books']">
         </div>
       </div>
 
