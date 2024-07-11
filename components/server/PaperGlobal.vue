@@ -89,6 +89,38 @@ const saveConfig = async ():Promise<void> => {
 
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
+        <div class="tab">
+          allow-headless-pistons
+          <input type="checkbox" v-model="config['unsupported-settings']['allow-headless-pistons']">
+        </div>
+
+        <div class="tab">
+          allow-permanent-block-break-exploits
+          <input type="checkbox" v-model="config['unsupported-settings']['allow-permanent-block-break-exploits']">
+        </div>
+        <div class="tab">
+          allow-piston-duplication
+          <input type="checkbox" v-model="config['unsupported-settings']['allow-piston-duplication']">
+        </div>
+        <div class="tab">
+          allow-tripwire-disarming-exploits
+          <input type="checkbox" v-model="config['unsupported-settings']['allow-tripwire-disarming-exploits']">
+        </div>
+        <div class="tab">
+          allow-unsafe-end-portal-teleportation
+          <input type="checkbox" v-model="config['unsupported-settings']['allow-unsafe-end-portal-teleportation']">
+        </div>
+        <div class="tab">
+          compression-format
+        </div>
+        <div class="tab">
+          perform-username-validation
+          <input type="checkbox" v-model="config['unsupported-settings']['perform-username-validation']">
+        </div>
+        <div class="tab">
+          skip-vanilla-damage-tick-when-shield-blocked
+          <input type="checkbox" v-model="config['unsupported-settings']['skip-vanilla-damage-tick-when-shield-blocked']">
+        </div>
       </div>
     </main>
 
