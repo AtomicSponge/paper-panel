@@ -8,9 +8,12 @@
  * Compresses a world folder and sends for saving
  * @returns Compressed world data
  */
-export const onExport = async ():Promise<string> => {
+export const onExport = async () => {
   console.log('running export!')
   await new Promise(r => setTimeout(r, 3000))
   console.log('export simulation wait done!')
-  return 'export test data'
+  if(false) {
+    return { errorMessage: '' }
+  }
+  return { data: 'export test data' }
 }

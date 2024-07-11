@@ -7,6 +7,9 @@
 /**
  * Save world configuration
  */
-export const onSave = async ():Promise<void> => {
+export const onSave = async () => {
   console.log('Saving world config...')
+  if(false) {
+    return { errorMessage: '' }
+  }
 }

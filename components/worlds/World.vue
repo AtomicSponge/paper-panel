@@ -28,15 +28,11 @@ const toggleConfig = ():void => {
 
 /** Export world files */
 const doExport = async ():Promise<void> => {
-  try {
-    showExportMsg.value = true
-    const test = await onExport()
-    window.alert(test)
-  } catch (error:any) {
-    window.alert(error.message)
-  } finally {
-    showExportMsg.value = false
-  }
+  showExportMsg.value = true
+  const res = await onExport()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else window.alert(res.data)
+  showExportMsg.value = false
 }
 </script>
 

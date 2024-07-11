@@ -18,12 +18,9 @@ const configTextArea = ref('Config window')
 
 /** Save the world configuration */
 const saveConfig = async ():Promise<void> => {
-  try {
-    await onSave()
-    window.alert('Config saved')
-  } catch (error:any) {
-    window.alert(error.message)
-  }
+  const res = await onSave()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else window.alert('Config saved')
 }
 </script>
 
