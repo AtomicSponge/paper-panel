@@ -5,17 +5,18 @@
 -->
 
 <script setup lang="ts">
+import type { ModelRef } from 'vue'
 import { onSave } from './SaveSetup.telefunc'
 
-const adminConfig = defineModel('admin', { required: true })
-const serverConfig = defineModel('server', { required: true })
+const adminData:ModelRef<AdminSetupData> = defineModel('admin', { required: true })
+const serverConfig:ModelRef<ServerSetupData> = defineModel('server', { required: true })
 
 const saveConfig = async () => {
-  try {
-    await onSave()
-  } catch (error:any) {
-    window.alert(error.message)
-  }
+  const res = await onSave({
+    adminData: adminData.value,
+    serverConfig: serverConfig.value
+  })
+  if(res?.errorMessage) window.alert(res.errorMessage)
 }
 </script>
 

@@ -7,6 +7,12 @@
 /**
  * Save first time configuration
  */
-export const onSave = async ():Promise<void> => {
+export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }):Promise<{errorMessage:string} | undefined> => {
   console.log('saving initial config')
+  console.log(adminData)
+  console.log(serverConfig)
+
+  if(adminData.password !== adminData.confirm) {
+    return { errorMessage: 'Admin passwords do not match!' }
+  }
 }
