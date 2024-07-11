@@ -28,6 +28,9 @@ const updatePassword = async ():Promise<void> => {
 
 <template>
   <section class="subbox">
+    <header>
+      <h2>Change Password</h2>
+    </header>
     <div class="table">
       <div class="row">
         <div class="cell">
