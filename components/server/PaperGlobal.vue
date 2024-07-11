@@ -231,11 +231,14 @@ const saveConfig = async ():Promise<void> => {
           allow-unsafe-end-portal-teleportation
           <input type="checkbox" v-model="config['unsupported-settings']['allow-unsafe-end-portal-teleportation']">
         </div>
-
         <div class="tab">
-          compression-format<!-- finish me -->
+          compression-format
+          <select v-model="config['unsupported-settings']['compression-format']">
+            <option>ZLIB</option>
+            <option>GZIP</option>
+            <option>NONE</option>
+          </select>
         </div>
-
         <div class="tab">
           perform-username-validation
           <input type="checkbox" v-model="config['unsupported-settings']['perform-username-validation']">
