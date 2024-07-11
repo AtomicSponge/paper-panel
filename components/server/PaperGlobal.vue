@@ -238,14 +238,14 @@ const saveConfig = async ():Promise<void> => {
             flying-vehicle<br/>
             <textarea v-model="config['messages']['kick']['flying-vehicle']"></textarea>
           </div>
-        </div>
-        <div>
-          no-permission<br/>
-          <textarea v-model="config['messages']['no-permission']"></textarea>
-        </div>
-        <div>
-          use-display-name-in-quit-message
-          <input type="checkbox" v-model="config['messages']['use-display-name-in-quit-message']">
+          <div>
+            no-permission<br/>
+            <textarea v-model="config['messages']['no-permission']"></textarea>
+          </div>
+          <div>
+            use-display-name-in-quit-message
+            <input type="checkbox" v-model="config['messages']['use-display-name-in-quit-message']">
+          </div>
         </div>
       </div>
 
@@ -325,6 +325,7 @@ select {
 textarea {
   width: 46vw;
   height: 1.4em;
+  margin-top: 3px;
 }
 .tab {
   margin-left: 2em;
