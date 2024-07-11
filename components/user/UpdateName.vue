@@ -20,7 +20,7 @@ const uernameInput = ref(props.name)
 
 /** Update the user's name */
 const updateName = async ():Promise<void> => {
-  const res:any = await onNameUpdate({
+  const res = await onNameUpdate({
     id: props.id,
     name: uernameInput.value
   })
