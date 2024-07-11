@@ -239,6 +239,14 @@ const saveConfig = async ():Promise<void> => {
             <textarea v-model="config['messages']['kick']['flying-vehicle']"></textarea>
           </div>
         </div>
+        <div>
+          no-permission<br/>
+          <textarea v-model="config['messages']['no-permission']"></textarea>
+        </div>
+        <div>
+          use-display-name-in-quit-message
+          <input type="checkbox" v-model="config['messages']['use-display-name-in-quit-message']">
+        </div>
       </div>
 
       <div class="unsupported">
