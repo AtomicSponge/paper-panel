@@ -4,12 +4,10 @@
  * See LICENSE.md
  */
 
-export { guard }
- 
 import type { GuardAsync } from 'vike/types'
 import { render } from 'vike/abort'
  
-const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
+export const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
   const { user } = pageContext
   if (user === undefined) {
     throw render('/login')
