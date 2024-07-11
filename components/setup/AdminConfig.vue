@@ -5,6 +5,7 @@
 -->
 
 <script setup lang="ts">
+const data  = defineModel()
 </script>
 
 <template>

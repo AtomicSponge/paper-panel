@@ -5,9 +5,14 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
+
 import AdminConfig from '@/components/setup/AdminConfig.vue'
 import ServerConfig from '@/components/setup/ServerConfig.vue'
 import SaveSetup from '@/components/setup/SaveSetup.vue'
+
+const adminData = ref({ username: 'admin', password: ''})
+const serverData = ref({ path: '/home/minecraft/paper' })
 </script>
 
 <template>
@@ -15,8 +20,8 @@ import SaveSetup from '@/components/setup/SaveSetup.vue'
     <h1>Paper Panel Setup</h1>
   </section>
   <main>
-    <AdminConfig/>
-    <ServerConfig/>
+    <AdminConfig v-model="adminData"/>
+    <ServerConfig v-model="serverData"/>
   </main>
   <footer>
     <SaveSetup/>
