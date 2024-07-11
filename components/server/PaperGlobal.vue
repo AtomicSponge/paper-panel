@@ -190,7 +190,7 @@ const saveConfig = async ():Promise<void> => {
         </div>
 
         <div class="tab">
-          compression-format
+          compression-format<!-- finish me -->
         </div>
 
         <div class="tab">
