@@ -25,12 +25,16 @@ const saveConfig = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <header>
-      <h2>Paper World Defaults</h2>
-      <a href=" https://docs.papermc.io/paper/reference/world-configuration">
-        https://docs.papermc.io/paper/reference/world-configuration
-      </a>
+      <div><h2>Paper World Defaults</h2></div>
+      <div>
+        <a href=" https://docs.papermc.io/paper/reference/world-configuration">
+          https://docs.papermc.io/paper/reference/world-configuration
+        </a>
+      </div>
     </header>
-    <main></main>
+    <main>
+      ...
+    </main>
     <footer>
       <button @click="saveConfig">Save Configuration</button>
     </footer>

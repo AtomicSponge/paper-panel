@@ -9,14 +9,19 @@ import { ref } from 'vue'
 import { onSave } from './PaperGlobal.telefunc'
 
 const props = defineProps<{
+  /** Data loaded from file */
   data:any
 }>()
 
-const showConfig = ref(false)
+/** Label for the toggle button */
 const label = ref('Edit')
+/** Reference for showing the config display */
+const showConfig = ref(false)
 
+/** Reference for config data */
 const config = ref(props.data)
 
+/** Toggle showing the config display */
 const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
   label.value = showConfig.value ? 'Hide' : 'Edit'
