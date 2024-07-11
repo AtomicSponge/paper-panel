@@ -249,6 +249,53 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>misc</div>
+        <div class="tab">
+          chat-threads
+          <div class="tab">
+            chat-executor-core-size
+            <input type="number" v-model.number="config['misc']['chat-threads']['chat-executor-core-size']">
+          </div>
+          <div class="tab">
+            chat-executor-max-size
+            <input type="number" v-model.number="config['misc']['chat-threads']['chat-executor-max-size']">
+          </div>
+          <div>
+            compression-level
+            <input type="text" v-model="config['misc']['compression-level']">
+          </div>
+          <div>
+            fix-entity-position-desync
+            <input type="checkbox" v-model="config['misc']['fix-entity-position-desync']">
+          </div>
+          <div>
+            load-permissions-yml-before-plugins
+            <input type="checkbox" v-model="config['misc']['load-permissions-yml-before-plugins']">
+          </div>
+          <div>
+            max-joins-per-tick
+            <input type="number" v-model.number="config['misc']['max-joins-per-tick']">
+          </div>
+          <div>
+            region-file-cache-size
+            <input type="number" v-model.number="config['misc']['region-file-cache-size']">
+          </div>
+          <div>
+            strict-advancement-dimension-check
+            <input type="checkbox" v-model="config['misc']['strict-advancement-dimension-check']">
+          </div>
+          <div>
+            use-alternative-luck-formula
+            <input type="checkbox" v-model="config['misc']['use-alternative-luck-formula']">
+          </div>
+          <div>
+            use-dimension-type-for-custom-spawners
+            <input type="checkbox" v-model="config['misc']['use-dimension-type-for-custom-spawners']">
+          </div>
+        </div>
+      </div>
+
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
         <div class="tab">
