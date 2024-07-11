@@ -5,11 +5,27 @@
 -->
 
 <script lang="ts" setup>
+import { ref } from 'vue'
 import { onSave } from './PaperWorldDefaults.telefunc'
 
 const props = defineProps<{
-  data:Object
+  /** Data loaded from file */
+  data:any
 }>()
+
+/** Label for the toggle button */
+const label = ref('Edit')
+/** Reference for showing the config display */
+const showConfig = ref(false)
+
+/** Reference for config data */
+const config = ref(props.data)
+
+/** Toggle showing the config display */
+const toggleConfig = ():void => {
+  showConfig.value = showConfig.value ? false : true
+  label.value = showConfig.value ? 'Hide' : 'Edit'
+}
 
 /** Save the World Defaults configuration */
 const saveConfig = async ():Promise<void> => {
@@ -31,11 +47,12 @@ const saveConfig = async ():Promise<void> => {
           https://docs.papermc.io/paper/reference/world-configuration
         </a>
       </div>
+      <div><button @click="toggleConfig">{{ label }}</button></div>
     </header>
-    <main>
+    <main v-show="showConfig">
       ...
     </main>
-    <footer>
+    <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
     </footer>
   </section>
