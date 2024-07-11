@@ -9,7 +9,7 @@ import { ref } from 'vue'
 import { onSave } from './PaperGlobal.telefunc'
 
 const props = defineProps<{
-  data:Object
+  data:any
 }>()
 
 /** Save the server configuration */
@@ -31,10 +31,18 @@ const saveConfig = async ():Promise<void> => {
         https://docs.papermc.io/paper/reference/global-configuration
       </a>
     </div>
-    <div class="unsupported">
-      <h3>Unsupported Settings</h3>
-      ...
-    </div>
+
+    <main>
+      <span>
+        {{ data['block-updates']['disable-chorus-plant-updates'] }}
+      </span>
+
+      <div class="unsupported">
+        <h3>Unsupported Settings</h3>
+        ...
+      </div>
+    </main>
+
     <div>
       <button @click="saveConfig">Save Configuration</button>
     </div>
@@ -49,11 +57,18 @@ section {
   margin: 1em;
   padding: 1em;
 }
+main {
+  padding: 0.4em;
+}
 div {
   text-align: center;
   padding: 0.4em;
 }
+span {
+  text-align: left;
+}
 .unsupported {
+  margin: 0.4em;
   border-radius: 16px;
   background-color: rgb(178,34,34);
 }
