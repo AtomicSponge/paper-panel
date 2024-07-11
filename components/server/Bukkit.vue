@@ -30,7 +30,7 @@ const toggleConfig = ():void => {
 /** Save the Bukkit configuration */
 const saveConfig = async ():Promise<void> => {
   try {
-    await onSave(props.data)
+    await onSave(config.value)
     window.alert('Bukkit Configuration saved!')
   } catch (error:any) {
     window.alert(error.message)

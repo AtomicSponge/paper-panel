@@ -30,7 +30,7 @@ const toggleConfig = ():void => {
 /** Save the server configuration */
 const saveConfig = async ():Promise<void> => {
   try {
-    await onSave(props.data)
+    await onSave(config.value)
     window.alert('Paper Global Configuration saved!')
   } catch (error:any) {
     window.alert(error.message)
