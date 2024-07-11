@@ -59,7 +59,7 @@ section {
   align-items: stretch;
   margin: 1em;
   padding: 1em;
-  min-width: 86vw;
+  min-width: 80vw;
 }
 div {
   padding: 0.4em;
