@@ -8,7 +8,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 import type { GuardAsync } from 'vike/types'
-import { render } from 'vike/abort'
+import { render, redirect } from 'vike/abort'
  
 export const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
   if(!fs.existsSync(path.join(process.cwd(), 'db.json'))) {
@@ -20,5 +20,5 @@ export const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
     throw render('/login')
   }
 
-  throw render('/worlds')
+  throw redirect('/worlds')
 }
