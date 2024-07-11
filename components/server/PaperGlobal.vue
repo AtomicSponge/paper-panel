@@ -338,6 +338,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>watchdog</div>
+        <div class="tab">
+          early-warning-delay
+          <input type="number" v-model.number="config['watchdog']['early-warning-delay']">
+        </div>
+        <div class="tab">
+          early-warning-every
+          <input type="number" v-model.number="config['watchdog']['early-warning-every']">
+        </div>
       </div>
     </main>
 
