@@ -19,7 +19,7 @@ const serverPath = ref(props.path)
 
 /** Update the server path */
 const updatePath = async () => {
-    const res:any = await onUpdateServerPath({ path: serverPath.value })
+    const res = await onUpdateServerPath({ path: serverPath.value })
     if(res?.errorMessage) window.alert(res.errorMessage)
     window.alert('Server path updated!')
 }
