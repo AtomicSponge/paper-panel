@@ -10,7 +10,22 @@ import ServerConfig from '@/components/setup/ServerConfig.vue'
 </script>
 
 <template>
-  setup
-  <AdminConfig/>
-  <ServerConfig/>
+  <section>
+    <h1>Paper Panel Setup</h1>
+  </section>
+  <main>
+    <AdminConfig/>
+    <ServerConfig/>
+  </main>
 </template>
+
+<style scoped>
+section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+header {
+  text-align: center;
+}
+</style>
