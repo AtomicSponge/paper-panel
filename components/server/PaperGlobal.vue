@@ -93,7 +93,6 @@ const saveConfig = async ():Promise<void> => {
           allow-headless-pistons
           <input type="checkbox" v-model="config['unsupported-settings']['allow-headless-pistons']">
         </div>
-
         <div class="tab">
           allow-permanent-block-break-exploits
           <input type="checkbox" v-model="config['unsupported-settings']['allow-permanent-block-break-exploits']">
@@ -110,9 +109,11 @@ const saveConfig = async ():Promise<void> => {
           allow-unsafe-end-portal-teleportation
           <input type="checkbox" v-model="config['unsupported-settings']['allow-unsafe-end-portal-teleportation']">
         </div>
+
         <div class="tab">
           compression-format
         </div>
+
         <div class="tab">
           perform-username-validation
           <input type="checkbox" v-model="config['unsupported-settings']['perform-username-validation']">
