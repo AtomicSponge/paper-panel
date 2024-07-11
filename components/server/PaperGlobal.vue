@@ -12,6 +12,8 @@ const props = defineProps<{
   data:any
 }>()
 
+const config = ref(props.data)
+
 /** Save the server configuration */
 const saveConfig = async ():Promise<void> => {
   try {
@@ -25,27 +27,30 @@ const saveConfig = async ():Promise<void> => {
 
 <template>
   <section class="subbox">
-    <div>
+    <header>
       <h2>Paper Global Config</h2>
       <a href="https://docs.papermc.io/paper/reference/global-configuration">
         https://docs.papermc.io/paper/reference/global-configuration
       </a>
-    </div>
+    </header>
 
     <main>
-      <span>
-        {{ data['block-updates']['disable-chorus-plant-updates'] }}
-      </span>
+      <div>
+        <div>block-updates</div>
+        <div class="tab">
+          disable-chorus-plant-updates
+          <input type="checkbox" v-model="config['block-updates']['disable-chorus-plant-updates']">
+        </div>
+      </div>
 
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
-        ...
       </div>
     </main>
 
-    <div>
+    <footer>
       <button @click="saveConfig">Save Configuration</button>
-    </div>
+    </footer>
   </section>
 </template>
 
@@ -57,15 +62,17 @@ section {
   margin: 1em;
   padding: 1em;
 }
+header {
+  text-align: center;
+}
 main {
   padding: 0.4em;
 }
 div {
-  text-align: center;
   padding: 0.4em;
 }
-span {
-  text-align: left;
+.tab {
+  margin-left: 1em;
 }
 .unsupported {
   margin: 0.4em;
