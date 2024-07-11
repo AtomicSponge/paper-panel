@@ -4,12 +4,16 @@
  * See LICENSE.md
  */
 
-export { guard }
- 
+import fs from 'node:fs'
+
 import type { GuardAsync } from 'vike/types'
 import { render } from 'vike/abort'
  
-const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
+export const guard:GuardAsync = async (pageContext):ReturnType<GuardAsync> => {
+  if(!fs.existsSync('db.json')) {
+    throw render('/setup')
+  }
+
   const { user } = pageContext
   if (user === undefined) {
     throw render('/login')
