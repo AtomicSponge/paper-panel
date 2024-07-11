@@ -41,4 +41,7 @@ main {
 div {
   padding: 0.4em;
 }
+input {
+  width: 20em;
+}
 </style>
