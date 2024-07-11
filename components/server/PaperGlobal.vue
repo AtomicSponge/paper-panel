@@ -407,7 +407,7 @@ select {
 }
 textarea {
   width: 46vw;
-  height: 1.4em;
+  height: 2.8em;
   margin-top: 3px;
 }
 .tab {
