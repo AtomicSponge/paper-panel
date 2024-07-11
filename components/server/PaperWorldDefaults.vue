@@ -31,7 +31,7 @@ const toggleConfig = ():void => {
 const saveConfig = async ():Promise<void> => {
   try {
     await onSave(props.data)
-    window.alert('Config saved')
+    window.alert('Paper World Defaults saved!')
   } catch (error:any) {
     window.alert(error.message)
   }

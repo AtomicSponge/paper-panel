@@ -31,7 +31,7 @@ const toggleConfig = ():void => {
 const saveConfig = async ():Promise<void> => {
   try {
     await onSave(props.data)
-    window.alert('Config saved')
+    window.alert('Bukkit Configuration saved!')
   } catch (error:any) {
     window.alert(error.message)
   }
@@ -41,7 +41,7 @@ const saveConfig = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <header>
-      <div><h2>Bukkit Config</h2></div>
+      <div><h2>Bukkit Configuration</h2></div>
       <div>
         <a href="https://docs.papermc.io/paper/reference/bukkit-configuration">
           https://docs.papermc.io/paper/reference/bukkit-configuration
