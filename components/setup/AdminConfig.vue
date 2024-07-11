@@ -5,7 +5,15 @@
 -->
 
 <script setup lang="ts">
-const data  = defineModel()
+import type { ModelRef } from 'vue'
+
+interface Data {
+  username:string
+  password:string
+  confirm:string
+}
+
+const data:ModelRef<Data | undefined> = defineModel()
 </script>
 
 <template>
@@ -16,15 +24,15 @@ const data  = defineModel()
     <main>
       <div>
         <label for="username">Username:</label>
-        <input type="text" id="username">
+        <input type="text" id="username" v-model="data!.username">
       </div>
       <div>
         <label for="password">Password:</label>
-        <input type="password" id="password">
+        <input type="password" id="password" v-model="data!.password">
       </div>
       <div>
         <label for="cpassword">Confirm Password:</label>
-        <input type="password" id="cpassword">
+        <input type="password" id="cpassword" v-model="data!.confirm">
       </div>
     </main>
   </section>
