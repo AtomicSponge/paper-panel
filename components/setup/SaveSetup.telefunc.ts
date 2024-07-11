@@ -8,5 +8,5 @@
  * Save first time configuration
  */
 export const onSave = async ():Promise<void> => {
-  console.log('saving new data')
+  console.log('saving initial config')
 }

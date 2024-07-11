@@ -19,5 +19,5 @@ const saveConfig = async () => {
 </script>
 
 <template>
-  <button>Save</button>
+  <button @click="saveConfig">Save</button>
 </template>
