@@ -23,15 +23,11 @@ const showUpdate = ref(false)
 /** Check for updates */
 const checkUpdates = async ():Promise<void> => {
   if(window.confirm('This will restart the server!  Are you sure you want to continue?')) {
-    try {
-      showUpdate.value = true
-      await onUpdate()
-      window.alert('Update complete!')
-    } catch (error:any) {
-      window.alert(error.message)
-    } finally {
-      showUpdate.value = false
-    }
+    showUpdate.value = true
+    const res = await onUpdate()
+    if(res?.errorMessage) window.alert(res.errorMessage)
+    else window.alert('Update complete!')
+    showUpdate.value = false
   }
 }
 </script>
