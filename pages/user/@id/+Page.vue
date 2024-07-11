@@ -5,11 +5,12 @@
 -->
 
 <script lang="ts" setup>
-import UpdateName from '@/components/user/UpdateName.vue'
-
 import type { Data } from './+data'
 import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
+
+import UpdateName from '@/components/user/UpdateName.vue'
+import UpdatePassword from '@/components/user/UpdatePassword.vue'
 </script>
 
 <template>
@@ -21,6 +22,7 @@ const data = useData<Data>()
       <UpdateName
         :id="data.user.id"
         :name="data.user.name"/>
+      <UpdatePassword :id="data.user.id"/>
     </main>
     <footer>
     </footer>

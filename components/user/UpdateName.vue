@@ -43,6 +43,7 @@ div {
   flex-flow: row;
   align-items: center;
   padding: 2em;
+  margin: 1em;
 }
 label {
   margin-right: 1em;
