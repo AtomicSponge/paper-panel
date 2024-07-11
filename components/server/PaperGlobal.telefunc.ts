@@ -23,6 +23,7 @@ export const onSave = async (data:any):Promise<void> => {
 
   if (serverSettings !== undefined && fs.existsSync(serverSettings.path)) {
     if (data === undefined) throw new Error('Unable to save!  Missing data!')
+    fs.writeFileSync(path.join(serverSettings.path, 'config', 'paper-global.yml'), YAML.stringify(data))
   } else {
     throw new Error('Unable to find server path!')
   }
