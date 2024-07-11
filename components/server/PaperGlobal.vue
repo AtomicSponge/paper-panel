@@ -41,6 +41,10 @@ const saveConfig = async ():Promise<void> => {
           disable-chorus-plant-updates
           <input type="checkbox" v-model="config['block-updates']['disable-chorus-plant-updates']">
         </div>
+        <div class="tab">
+          disable-mushroom-block-updates
+          <input type="checkbox" v-model="config['block-updates']['disable-mushroom-block-updates']">
+        </div>
       </div>
 
       <div class="unsupported">
@@ -72,7 +76,7 @@ div {
   padding: 0.4em;
 }
 .tab {
-  margin-left: 1em;
+  margin-left: 2em;
 }
 .unsupported {
   margin: 0.4em;
