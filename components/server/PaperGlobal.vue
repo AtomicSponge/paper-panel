@@ -55,6 +55,14 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>chunk-loading-advanced</div>
+        <div class="tab">
+          auto-config-send-distance
+          <input type="checkbox" v-model="config['chunk-loading-advanced']['auto-config-send-distance']">
+        </div>
+      </div>
+
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
       </div>
@@ -73,6 +81,7 @@ section {
   align-items: stretch;
   margin: 1em;
   padding: 1em;
+  min-width: 80vw;
 }
 header {
   text-align: center;
