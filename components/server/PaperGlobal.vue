@@ -87,6 +87,42 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>chunk-system</div>
+      </div>
+
+      <div>
+        <div>collisions</div>
+        <div class="tab">
+          enable-player-collisions
+          <input type="checkbox" v-model="config['collisions']['enable-player-collisions']">
+        </div>
+        <div class="tab">
+          send-full-pos-for-hard-colliding-entities
+          <input type="checkbox" v-model="config['collisions']['send-full-pos-for-hard-colliding-entities']">
+        </div>
+      </div>
+
+      <div>
+        <div>commands</div>
+        <div class="tab">
+          fix-target-selector-tag-completion
+          <input type="checkbox" v-model="config['commands']['fix-target-selector-tag-completion']">
+        </div>
+        <div class="tab">
+          suggest-player-names-when-null-tab-completions
+          <input type="checkbox" v-model="config['commands']['suggest-player-names-when-null-tab-completions']">
+        </div>
+        <div class="tab">
+          time-command-affects-all-worlds
+          <input type="checkbox" v-model="config['commands']['time-command-affects-all-worlds']">
+        </div>
+      </div>
+
+      <div>
+        <div>console</div>
+      </div>
+
       <div class="unsupported">
         <h3>Unsupported Settings</h3>
         <div class="tab">
