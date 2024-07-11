@@ -138,7 +138,6 @@ section {
   align-items: stretch;
   margin: 1em;
   padding: 1em;
-  min-width: 80vw;
 }
 header {
   text-align: center;
