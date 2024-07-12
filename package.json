@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "@hono/vite-dev-server": "^0.13.1",
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.14.10",
     "typescript": "^5.5.3"
   },
@@ -31,6 +32,7 @@
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/compiler-sfc": "^3.4.31",
     "@vue/server-renderer": "^3.4.31",
+    "bcrypt": "^5.1.1",
     "cross-env": "^7.0.3",
     "cross-fetch": "^4.0.0",
     "dotenv": "^16.4.5",

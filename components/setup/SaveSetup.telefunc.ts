@@ -5,8 +5,8 @@
  */
 
 import fs, { constants } from 'node:fs'
-import crypto from 'node:crypto'
 import { JSONFilePreset } from 'lowdb/node'
+import bcrypt from 'bcrypt'
 
 /**
  * Save first time configuration
@@ -21,17 +21,14 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Passwords do not match!' }
   }
 
-  const salt = crypto.randomBytes(512).toString('hex')
-  const password = (() => {
-    return adminData.password + salt
-  })()
+  const salt = await bcrypt.genSalt(12)
+  const password = await bcrypt.hash(adminData.password, salt)
 
   const admin = {
     id: 0,
     name: adminData.display,
     login: adminData.username,
     password: password,
-    salt: salt,
     admin: true,
     serveradmin: true
   }
@@ -57,5 +54,4 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
   const db = await JSONFilePreset<Database>('db.json', dbDefaultData)
   await db.update(({ server }) => { server.push({ path: serverConfig.path }) })
   await db.update(({ users }) => { users.push(admin) })
-  //await worldsDb.update(({ world }) => {})
 }
