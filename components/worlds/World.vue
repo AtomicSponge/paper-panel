@@ -39,7 +39,7 @@ const doExport = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <div>
-      <h2><a :href="`/world/${id}`">{{ name }}</a></h2>
+      <h2>{{ name }}</h2>
     </div>
     <div>
       <button @click="toggleConfig()">Edit Config</button>
