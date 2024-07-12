@@ -6,14 +6,13 @@
 
 <script lang="ts" setup>
 import { onUpdate } from './Whitelist.telefunc'
+import type { ModelRef } from 'vue'
 
-const props = defineProps<{
-  data:Object
-}>()
+const data:ModelRef<any> = defineModel({ required: true })
 
 /** Update the Banned IPs */
 const updateConfig = async ():Promise<void> => {
-  const res = await onUpdate(props.data)
+  const res = await onUpdate(data.value)
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('Whitelist updated!')
 }
