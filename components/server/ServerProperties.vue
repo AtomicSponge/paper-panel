@@ -26,7 +26,7 @@ const toggleConfig = ():void => {
 const saveConfig = async ():Promise<void> => {
   const res = await onSave(data.value)
   if(res?.errorMessage) window.alert(res.errorMessage)
-  else window.alert('Paper World Defaults saved!')
+  else window.alert('Paper Server Properties saved!')
 }
 </script>
 
