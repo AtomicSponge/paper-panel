@@ -20,7 +20,7 @@ const saveConfig = async () => {
   })
   if(res?.errorMessage) window.alert(res.errorMessage)
   else {
-    const navigationPromise = navigate('/server')
+    const navigationPromise = navigate('/')
     await navigationPromise
   }
 }
