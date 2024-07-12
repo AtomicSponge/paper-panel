@@ -1,3 +1,7 @@
+import { Server } from '@/database/server'
+import { User } from "@/database/users"
+import { World } from '@/database/worlds'
+
 declare global {
   namespace Vike {
     interface PageContext {
@@ -8,6 +12,12 @@ declare global {
         serveradmin:boolean
       }
     }
+  }
+
+  interface Database {
+    server:Array<Server>
+    users:Array<User>
+    worlds:Array<World>
   }
 
   interface AdminSetupData {
