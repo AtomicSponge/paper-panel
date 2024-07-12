@@ -35,7 +35,7 @@ const saveConfig = async ():Promise<void> => {
     <header>
       <div><h2>Paper World Defaults</h2></div>
       <div>
-        <a href=" https://docs.papermc.io/paper/reference/world-configuration">
+        <a href="https://docs.papermc.io/paper/reference/world-configuration">
           https://docs.papermc.io/paper/reference/world-configuration
         </a>
       </div>

@@ -9,7 +9,7 @@ import path from 'node:path'
 
 export const onSave = async (data:any) => {
   try {
-    //
+    console.log('Saving server properties...')
   } catch (error:any) {
     return { errorMessage: error.message }
   }

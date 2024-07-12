@@ -10,6 +10,7 @@ import { useData } from 'vike-vue/useData'
 const data = useData<Data>()
 
 import Server from '@/components/server/Server.vue'
+import ServerProperties from '@/components/server/ServerProperties.vue'
 import PaperGlobal from '@/components/server/PaperGlobal.vue'
 import PaperWorldDefaults from '@/components/server/PaperWorldDefaults.vue'
 import Bukkit from '@/components/server/Bukkit.vue'
@@ -23,8 +24,9 @@ import Spigot from '@/components/server/Spigot.vue'
     </header>
     <main>
       <Server
-        :hostname="data.server!.hostname"
-        :port="data.server!.port"/>
+        :hostname="data.server.hostname"
+        :port="data.server.port"/>
+      <ServerProperties v-model="data.serverProps"/>
       <PaperGlobal v-model="data.paperConfig"/>
       <PaperWorldDefaults v-model="data.paperWorldDefaults"/>
       <Bukkit v-model="data.bukkitConfig"/>

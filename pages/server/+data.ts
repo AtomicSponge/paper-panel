@@ -24,7 +24,7 @@ export const data = async () => {
     }
   })()
 
-  let port = null
+  let port = ''
   let serverProps = null
   let paperConfig = null
   let paperWorldDefaults = null
@@ -44,7 +44,7 @@ export const data = async () => {
       spigotConfig = YAML.parse(spigotConfig.toString())
 
       serverProps = fs.readFileSync(path.join(data.path, 'server.properties')).toString()
-      port = serverProps.match(/(?<=server-port=).*/m)?.at(0)
+      port = <string>serverProps.match(/(?<=server-port=).*/m)?.at(0)
     } catch (error:any) {
       console.error(error.message)
     }
