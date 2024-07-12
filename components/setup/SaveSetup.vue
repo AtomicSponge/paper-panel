@@ -5,8 +5,10 @@
 -->
 
 <script setup lang="ts">
-import type { ModelRef } from 'vue'
+import { navigate } from 'vike/client/router'
 import { onSave } from './SaveSetup.telefunc'
+
+import type { ModelRef } from 'vue'
 
 const adminData:ModelRef<AdminSetupData> = defineModel('admin', { required: true })
 const serverConfig:ModelRef<ServerSetupData> = defineModel('server', { required: true })
@@ -17,6 +19,10 @@ const saveConfig = async () => {
     serverConfig: serverConfig.value
   })
   if(res?.errorMessage) window.alert(res.errorMessage)
+  else {
+    const navigationPromise = navigate('/')
+    await navigationPromise
+  }
 }
 </script>
 
