@@ -20,15 +20,19 @@ export const data = async () => {
   let whitelist = null
 
   if(data !== undefined && fs.existsSync(data.path)) {
-    operators = fs.readFileSync(path.join(data.path, 'ops.json'))
-    bannedIps = fs.readFileSync(path.join(data.path, 'banned-ips.json'))
-    bannedPlayers = fs.readFileSync(path.join(data.path, 'banned-players.json'))
-    whitelist = fs.readFileSync(path.join(data.path, 'whitelist.json'))
+    try {
+      operators = fs.readFileSync(path.join(data.path, 'ops.json'))
+      bannedIps = fs.readFileSync(path.join(data.path, 'banned-ips.json'))
+      bannedPlayers = fs.readFileSync(path.join(data.path, 'banned-players.json'))
+      whitelist = fs.readFileSync(path.join(data.path, 'whitelist.json'))
 
-    operators = JSON.parse(operators.toString())
-    bannedIps = JSON.parse(bannedIps.toString())
-    bannedPlayers = JSON.parse(bannedPlayers.toString())
-    whitelist = JSON.parse(whitelist.toString())
+      operators = JSON.parse(operators.toString())
+      bannedIps = JSON.parse(bannedIps.toString())
+      bannedPlayers = JSON.parse(bannedPlayers.toString())
+      whitelist = JSON.parse(whitelist.toString())
+    } catch (error:any) {
+      console.error(error.message)
+    }
   }
 
   return {
