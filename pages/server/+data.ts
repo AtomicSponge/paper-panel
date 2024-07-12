@@ -24,8 +24,8 @@ export const data = async () => {
     }
   })()
 
-  const port = '2345'
-
+  let port = null
+  let serverProps = null
   let paperConfig = null
   let paperWorldDefaults = null
   let bukkitConfig = null
@@ -42,6 +42,9 @@ export const data = async () => {
       paperWorldDefaults = YAML.parse(paperWorldDefaults.toString())
       bukkitConfig = YAML.parse(bukkitConfig.toString())
       spigotConfig = YAML.parse(spigotConfig.toString())
+
+      serverProps = fs.readFileSync(path.join(data.path, 'server.properties')).toString()
+      port = serverProps.match(/(?<=server-port=).*/gm)?.at(0)
     } catch (error:any) {
       console.error(error.message)
     }
@@ -51,6 +54,7 @@ export const data = async () => {
     server: {
       hostname, port
     },
+    serverProps,
     paperConfig,
     paperWorldDefaults,
     bukkitConfig,
