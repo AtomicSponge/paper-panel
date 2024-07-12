@@ -9,8 +9,6 @@ import { ref } from 'vue'
 import { onUpdate } from './Server.telefunc'
 
 defineProps<{
-  /** Server name */
-  name:string
   /** Server address */
   address:string
   /** Server port */
@@ -35,11 +33,10 @@ const checkUpdates = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <div>
-      <h2><a href="/worlds">{{ name }}</a></h2>
-      {{ address }}:{{ port }}
+      <h2>{{ address }}:{{ port }}</h2>
     </div>
     <div>
-      <h3>Version: 1.21</h3>
+      <h3>Version: 1.20</h3>
       <button @click="checkUpdates()">Check for updates</button>
     </div>
     <div v-show="showUpdate">

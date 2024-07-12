@@ -5,7 +5,6 @@
  */
 
 export interface Server {
-  name:string
   address:string
   port:number
   path:string
