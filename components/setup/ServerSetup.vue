@@ -13,7 +13,7 @@ const data:ModelRef<ServerSetupData> = defineModel({ required: true })
 <template>
   <section class="subbox">
     <header>
-      <h2>Server config</h2>
+      <h2>Server Settings</h2>
     </header>
     <main>
       <div>

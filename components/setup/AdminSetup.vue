@@ -13,7 +13,7 @@ const data:ModelRef<AdminSetupData> = defineModel({ required: true })
 <template>
   <section class="subbox">
     <header>
-      <h2>Admin config</h2>
+      <h2>Paper Panel Administrator Account</h2>
     </header>
     <main>
       <div class="table">
