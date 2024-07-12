@@ -64,8 +64,8 @@ importers:
         version: 2.4.5
     devDependencies:
       '@hono/vite-dev-server':
-        specifier: ^0.13.0
-        version: 0.13.0(hono@4.4.13)
+        specifier: ^0.13.1
+        version: 0.13.1(hono@4.4.13)
       '@types/node':
         specifier: ^20.14.10
         version: 20.14.10
@@ -439,8 +439,8 @@ packages:
     resolution: {integrity: sha512-e6oHjNiErRxsZRZBmc2KucuvY3btlO/XPncIpP2X75bRdTilF9GLjm3NHvKKunpJbbJJj31/FoPTksTf8djAVw==}
     engines: {node: '>=18.14.1'}
 
-  '@hono/vite-dev-server@0.13.0':
-    resolution: {integrity: sha512-Qy+wEMFb6sphFsOoCSVsgt0tM4rXdNs/9Y9OJSu5kjs+xqNoKzCTXahFQJQYXkQQ1RAOOZxJaPZfdomD14zmwA==}
+  '@hono/vite-dev-server@0.13.1':
+    resolution: {integrity: sha512-AK0yQkGwoQvcbf0MeBDDslVnVvzlKjAT00Z2A4Oqyh0RYhLQyCT1aSJzz3eZj7tYytG0B6EGt92DjrkB0tsy1A==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
@@ -1379,7 +1379,7 @@ snapshots:
 
   '@hono/node-server@1.12.0': {}
 
-  '@hono/vite-dev-server@0.13.0(hono@4.4.13)':
+  '@hono/vite-dev-server@0.13.1(hono@4.4.13)':
     dependencies:
       '@hono/node-server': 1.12.0
       hono: 4.4.13

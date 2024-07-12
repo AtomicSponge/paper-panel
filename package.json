@@ -21,7 +21,7 @@
     "preview": "cross-env NODE_ENV=production tsx ./hono-entry.node.ts"
   },
   "devDependencies": {
-    "@hono/vite-dev-server": "^0.13.0",
+    "@hono/vite-dev-server": "^0.13.1",
     "@types/node": "^20.14.10",
     "typescript": "^5.5.3"
   },
