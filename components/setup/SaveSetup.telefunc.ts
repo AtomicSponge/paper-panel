@@ -38,7 +38,7 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
 
   /** Server configuration */
   if(!fs.existsSync(serverConfig.path)) {
-    return { errorMessage: 'Unable to access path!' }
+    return { errorMessage: 'Unable to access path!  Does it exist?' }
   }
   try {
     fs.accessSync(serverConfig.path, constants.R_OK)
