@@ -21,7 +21,8 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Passwords do not match!' }
   }
 
-  const salt = await bcrypt.genSalt(12)
+  const saltRounds = 12
+  const salt = await bcrypt.genSalt(saltRounds)
   const password = await bcrypt.hash(adminData.password, salt)
 
   const admin = {
