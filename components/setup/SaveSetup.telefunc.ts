@@ -51,8 +51,6 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Unable to write to path!' }
   }
 
-  //return { errorMessage: 'Early stop' }
-
   const dbDefaultData = { server: [], users: [], worlds: []}
 
   /** Create initial database */

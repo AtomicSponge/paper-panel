@@ -1,5 +1,5 @@
 import { Server } from '@/database/server'
-import { User } from "@/database/users"
+import { User } from '@/database/users'
 import { World } from '@/database/worlds'
 
 declare global {
