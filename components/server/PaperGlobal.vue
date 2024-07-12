@@ -306,6 +306,32 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>proxies</div>
+        <div class="tab">
+          bungee-cord
+          <div class="tab">
+            online-mode
+            <input type="checkbox" v-model="data['proxies']['bungee-cord']['online-mode']"/>
+          </div>
+        </div>
+        <div class="tab">
+          proxy-protocol
+          <input type="checkbox" v-model="data['proxies']['proxy-protocol']"/>
+        </div>
+        <div class="tab">
+          velocity
+          <div class="tab">
+            enabled
+            <input type="checkbox" v-model="data['proxies']['velocity']['enabled']"/>
+          </div>
+          <div class="tab">
+            online-mode
+            <input type="checkbox" v-model="data['proxies']['velocity']['online-mode']"/>
+          </div>
+          <div class="tab">
+            secret
+            <input type="text" v-model="data['proxies']['velocity']['secret']"/>
+          </div>
+        </div>
       </div>
 
       <div>
@@ -425,10 +451,10 @@ div {
   padding: 0.4em;
 }
 input[type=text] {
-  width: 5em;
+  width: 8em;
 }
 input[type=number] {
-  width: 5em;
+  width: 6em;
 }
 select {
   width: 8em;
