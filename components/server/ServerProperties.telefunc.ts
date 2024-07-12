@@ -11,6 +11,7 @@ export const onSave = async (data:any) => {
   try {
     console.log('Saving server properties...')
   } catch (error:any) {
+    console.error(error.message)
     return { errorMessage: error.message }
   }
 }

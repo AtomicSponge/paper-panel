@@ -29,6 +29,7 @@ export const onSave = async (data:any) => {
       throw new Error('Unable to find server path!')
     }
   } catch (error:any) {
+    console.error(error.message)
     return { errorMessage: error.message }
   }
 }
