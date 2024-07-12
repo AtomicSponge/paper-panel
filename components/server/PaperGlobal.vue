@@ -294,6 +294,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>player-auto-save</div>
+        <div class="tab">
+          max-per-tick
+          <input type="number" v-model.number="data['player-auto-save']['max-per-tick']"/>
+        </div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['player-auto-save']['rate']"/>
+        </div>
       </div>
 
       <div>
@@ -302,10 +310,38 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>scoreboards</div>
+        <div class="tab">
+          use-dimension-type-for-custom-spawners
+          <input type="checkbox" v-model="data['scoreboards']['save-empty-scoreboard-teams']"/>
+        </div>
+        <div class="tab">
+          use-dimension-type-for-custom-spawners
+          <input type="checkbox" v-model="data['scoreboards']['track-plugin-scoreboards']"/>
+        </div>
       </div>
 
       <div>
         <div>spam-limiter</div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['spam-limiter']['incoming-packet-threshold']"/>
+        </div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['spam-limiter']['recipe-spam-increment']"/>
+        </div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['spam-limiter']['recipe-spam-limit']"/>
+        </div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['spam-limiter']['tab-spam-increment']"/>
+        </div>
+        <div class="tab">
+          rate
+          <input type="number" v-model.number="data['spam-limiter']['tab-spam-limit']"/>
+        </div>
       </div>
 
       <div>
