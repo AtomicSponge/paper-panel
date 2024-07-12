@@ -4,11 +4,11 @@
  * See LICENSE.md
  */
 
-export interface Worlds {
+export interface World {
   id:number
   users:Array<number>
   name:string
   folder:string
 }
 
-export const worlds:{ world:Array<Worlds> } = { world: [] }
+export const worlds:{ world:Array<World> } = { world: [] }

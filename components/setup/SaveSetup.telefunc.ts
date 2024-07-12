@@ -4,7 +4,7 @@
  * See LICENSE.md
  */
 
-import fs from 'node:fs'
+import fs, { constants } from 'node:fs'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
@@ -27,9 +27,29 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
   const salt = ''
   const password = ''
 
+  const admin = {
+    id: 0,
+    name: adminData.display,
+    login: adminData.username,
+    password: password,
+    salt: salt,
+    admin: true,
+    serveradmin: true
+  }
+
   /** Server configuration */
   if(!fs.existsSync(serverConfig.path)) {
     return { errorMessage: 'Unable to access path!' }
+  }
+  try {
+    fs.accessSync(serverConfig.path, constants.R_OK)
+  } catch (error:any) {
+    return { errorMessage: 'Unable to read from path!' }
+  }
+  try {
+    fs.accessSync(serverConfig.path, constants.W_OK)
+  } catch (error:any) {
+    return { errorMessage: 'Unable to write to path!' }
   }
 
   return { errorMessage: 'Early stop' }
@@ -38,17 +58,9 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
   const serverDb = await JSONFilePreset('db.json', server)
   await serverDb.update(({ server }) => { server.push({ path: serverConfig.path }) })
   const usersDb = await JSONFilePreset('db.json', users)
-  await usersDb.update(({ user }) => { user.push(
-    {
-      id: 0,
-      name: adminData.display,
-      login: adminData.username,
-      password: password,
-      salt: salt,
-      admin: true,
-      serveradmin: true
-    }
-  ) })
-  const worldsDb = await JSONFilePreset('db.json', worlds)
-  //await worldsDb.update(() => {})
+  await usersDb.update(({ user }) => { user.push(admin) })
+  //const worldsDb = await JSONFilePreset('db.json', worlds)
+  //await worldsDb.update(({ world }) => {})
+
+  return { errorMessage: 'Early stop' }
 }

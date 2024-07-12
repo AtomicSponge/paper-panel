@@ -4,7 +4,7 @@
  * See LICENSE.md
  */
 
-export interface Users {
+export interface User {
   id:number
   name:string
   login:string
@@ -14,4 +14,4 @@ export interface Users {
   serveradmin:boolean
 }
 
-export const users:{ user:Array<Users> } = { user: [] }
+export const users:{ user:Array<User> } = { user: [] }
