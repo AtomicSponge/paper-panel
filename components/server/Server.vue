@@ -10,9 +10,9 @@ import { onUpdate } from './Server.telefunc'
 
 defineProps<{
   /** Server address */
-  address:string
+  hostname:string
   /** Server port */
-  port:number
+  port:string
 }>()
 
 /** Reference for displaying the update message */
@@ -33,7 +33,7 @@ const checkUpdates = async ():Promise<void> => {
 <template>
   <section class="subbox">
     <div>
-      <h2>{{ address }}:{{ port }}</h2>
+      <h2>{{ hostname }}:{{ port }}</h2>
     </div>
     <div>
       <h3>Version: 1.20</h3>

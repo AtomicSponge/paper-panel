@@ -6,6 +6,7 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
+import { execSync } from 'node:child_process'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
 
@@ -14,6 +15,16 @@ import { server } from '@/database/server'
 export const data = async () => {
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
+
+  const hostname = (() => {
+    try {
+      return execSync('hostname').toString().trim()
+    } catch (error:any) {
+      return 'null'
+    }
+  })()
+
+  const port = '2345'
 
   let paperConfig = null
   let paperWorldDefaults = null
@@ -37,7 +48,9 @@ export const data = async () => {
   }
 
   return {
-    server: data,
+    server: {
+      hostname, port
+    },
     paperConfig,
     paperWorldDefaults,
     bukkitConfig,

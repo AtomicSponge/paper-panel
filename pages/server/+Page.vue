@@ -23,7 +23,7 @@ import Spigot from '@/components/server/Spigot.vue'
     </header>
     <main>
       <Server
-        :address="data.server!.address"
+        :hostname="data.server!.hostname"
         :port="data.server!.port"/>
       <PaperGlobal v-model="data.paperConfig"/>
       <PaperWorldDefaults v-model="data.paperWorldDefaults"/>
