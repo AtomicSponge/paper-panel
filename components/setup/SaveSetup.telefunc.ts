@@ -12,11 +12,10 @@ import bcrypt from 'bcrypt'
  * Save first time configuration
  */
 export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }) => {
-  console.log('saving initial config')
-  console.log(adminData)
-  console.log(serverConfig)
-
   /** Admin configuration */
+  if(adminData.password.length > 32 || adminData.password.length < 6) {
+    return { errorMessage: 'Password needs to be between 6 and 32 charecters!' }
+  }
   if(adminData.password !== adminData.confirm) {
     return { errorMessage: 'Passwords do not match!' }
   }
@@ -49,9 +48,8 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Unable to write to path!' }
   }
 
-  const dbDefaultData = { server: [], users: [], worlds: []}
-
   /** Create initial database */
+  const dbDefaultData = { server: [], users: [], worlds: []}
   const db = await JSONFilePreset<Database>('db.json', dbDefaultData)
   await db.update(({ server }) => { server.push({ path: serverConfig.path }) })
   await db.update(({ users }) => { users.push(admin) })
