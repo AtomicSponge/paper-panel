@@ -14,7 +14,7 @@ export const data = async (pageContext:PageContextServer) => {
   const userId = Number(pageContext.routeParams.id)
 
   const db = await JSONFilePreset('db.json', users)
-  const user = db.data.user.filter(user => user.id === userId)[0]
+  const user = db.data.users.filter(user => user.id === userId)[0]
 
   return {
     user

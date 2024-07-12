@@ -11,4 +11,4 @@ export interface World {
   folder:string
 }
 
-export const worlds:{ world:Array<World> } = { world: [] }
+export const worlds:{ worlds:Array<World> } = { worlds: [] }

@@ -14,4 +14,4 @@ export interface User {
   serveradmin:boolean
 }
 
-export const users:{ user:Array<User> } = { user: [] }
+export const users:{ users:Array<User> } = { users: [] }

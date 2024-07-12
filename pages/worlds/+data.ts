@@ -15,7 +15,7 @@ export const data = async (pageContext:PageContextServer) => {
   const userId = Number(pageContext.user?.id)
 
   const db = await JSONFilePreset('db.json', worlds)
-  const data = isAdmin ? db.data.world : db.data.world.filter(world => world.users.includes(userId))
+  const data = isAdmin ? db.data.worlds : db.data.worlds.filter(world => world.users.includes(userId))
 
   return {
     worlds: data
