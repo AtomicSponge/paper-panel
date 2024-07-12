@@ -5,6 +5,7 @@
  */
 
 import fs, { constants } from 'node:fs'
+import crypto from 'node:crypto'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
@@ -24,8 +25,10 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Passwords do not match!' }
   }
 
-  const salt = ''
-  const password = ''
+  const salt = crypto.randomBytes(512).toString('hex')
+  const password = (() => {
+    return adminData.password + salt
+  })()
 
   const admin = {
     id: 0,
@@ -52,7 +55,7 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
     return { errorMessage: 'Unable to write to path!' }
   }
 
-  return { errorMessage: 'Early stop' }
+  //return { errorMessage: 'Early stop' }
 
   /** Create initial database */
   const serverDb = await JSONFilePreset('db.json', server)
@@ -61,6 +64,4 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
   await usersDb.update(({ user }) => { user.push(admin) })
   //const worldsDb = await JSONFilePreset('db.json', worlds)
   //await worldsDb.update(({ world }) => {})
-
-  return { errorMessage: 'Early stop' }
 }
