@@ -27,9 +27,9 @@ import Spigot from '@/components/server/Spigot.vue'
         :address="data.server!.address"
         :port="data.server!.port"/>
       <PaperGlobal v-model="data.paperConfig"/>
-      <PaperWorldDefaults :data="data.paperWorldDefaults"/>
-      <Bukkit :data="data.bukkitConfig"/>
-      <Spigot :data="data.spigotConfig"/>
+      <PaperWorldDefaults v-model="data.paperWorldDefaults"/>
+      <Bukkit v-model="data.bukkitConfig"/>
+      <Spigot v-model="data.spigotConfig"/>
     </main>
   </section>
 </template>

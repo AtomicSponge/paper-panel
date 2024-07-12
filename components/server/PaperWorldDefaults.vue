@@ -7,19 +7,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './PaperWorldDefaults.telefunc'
+import type { ModelRef } from 'vue'
 
-const props = defineProps<{
-  /** Data loaded from file */
-  data:any
-}>()
+const data:ModelRef<any> = defineModel({ required: true })
 
 /** Label for the toggle button */
 const label = ref('Edit')
 /** Reference for showing the config display */
 const showConfig = ref(false)
-
-/** Reference for config data */
-const config = ref(props.data)
 
 /** Toggle showing the config display */
 const toggleConfig = ():void => {
@@ -29,7 +24,7 @@ const toggleConfig = ():void => {
 
 /** Save the World Defaults configuration */
 const saveConfig = async ():Promise<void> => {
-  const res = await onSave(config.value)
+  const res = await onSave(data.value)
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('Paper World Defaults saved!')
 }
