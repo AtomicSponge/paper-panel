@@ -49,7 +49,7 @@ export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupD
   }
 
   /** Create initial database */
-  const dbDefaultData = { server: [], users: [], worlds: []}
+  const dbDefaultData = { server: [], users: [], worlds: [] }
   const db = await JSONFilePreset<Database>('db.json', dbDefaultData)
   await db.update(({ server }) => { server.push({ path: serverConfig.path }) })
   await db.update(({ users }) => { users.push(admin) })
