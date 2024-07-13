@@ -48,7 +48,7 @@ const doExport = async ():Promise<void> => {
       <PaperWorldConfig :id/>
     </div>
     <div>
-      <button @click="doExport">Export</button>
+      <button @click="doExport">Export World</button>
     </div>
     <div v-show="showExportMsg">
       Running export, please wait...
