@@ -26,5 +26,5 @@ export async function vikeHandler<
   return new Response(readable, {
     status: response?.statusCode,
     headers: response?.headers,
-  });
+  })
 }
