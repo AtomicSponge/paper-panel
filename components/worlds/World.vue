@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import WorldConfig from '@/components/worlds/WorldConfig.vue'
+import PaperWorldConfig from '@/components/worlds/PaperWorldConfig.vue'
 import { onExport } from './World.telefunc'
 
 defineProps<{
@@ -45,7 +45,7 @@ const doExport = async ():Promise<void> => {
       <button @click="toggleConfig()">Edit Config</button>
     </div>
     <div v-show="showConfig">
-      <WorldConfig :id/>
+      <PaperWorldConfig :id/>
     </div>
     <div>
       <button @click="doExport">Export</button>

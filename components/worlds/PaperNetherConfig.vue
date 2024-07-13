@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onSave } from './WorldConfig.telefunc'
+import { onSave } from './PaperNetherConfig.telefunc'
 
 defineProps<{
   /** World ID */
@@ -14,7 +14,7 @@ defineProps<{
 }>()
 
 /** Reference to the config text area */
-const configTextArea = ref('Config window')
+const configTextArea = ref('Nether Config window')
 
 /** Save the world configuration */
 const saveConfig = async ():Promise<void> => {
