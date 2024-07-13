@@ -6,15 +6,15 @@
 
 import fs, { constants } from 'node:fs'
 import { JSONFilePreset } from 'lowdb/node'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 /**
  * Save first time configuration
  */
 export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }) => {
   /** Admin configuration */
-  if(adminData.password.length > 32 || adminData.password.length < 6) {
-    return { errorMessage: 'Password needs to be between 6 and 32 charecters!' }
+  if(adminData.password.length > 18 || adminData.password.length < 6) {
+    return { errorMessage: 'Password needs to be between 6 and 18 charecters!' }
   }
   if(adminData.password !== adminData.confirm) {
     return { errorMessage: 'Passwords do not match!' }
