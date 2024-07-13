@@ -14,7 +14,7 @@ defineProps<{
 }>()
 
 /** Label for the toggle button */
-const label = ref('Edit The End Config')
+const label = ref('Edit The End Configuration')
 /** Reference for showing the config edit box */
 const showConfig = ref(false)
 /** Reference to the config text area */
@@ -23,7 +23,7 @@ const configTextArea = ref('The End Config window')
 /** Toggle showing the config window */
 const toggleConfig = ():void => {
   showConfig.value = showConfig.value ? false : true
-  label.value = showConfig.value ? 'Hide' : 'Edit The End Config'
+  label.value = showConfig.value ? 'Hide' : 'Edit The End Configuration'
 }
 
 /** Save the world configuration */
@@ -39,10 +39,13 @@ const saveConfig = async ():Promise<void> => {
     <button @click="toggleConfig">{{ label }}</button>
   </div>
   <div v-show="showConfig">
+    <h3>Editing The End Configuration</h3>
+  </div>
+  <div v-show="showConfig">
     <textarea v-model="configTextArea"></textarea>
   </div>
   <div v-show="showConfig">
-    <button @click="saveConfig">Save Config</button>
+    <button @click="saveConfig">Save Configuration</button>
   </div>
 </template>
 
