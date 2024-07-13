@@ -43,15 +43,19 @@ const doExport = async ():Promise<void> => {
     <div>
       <h2>{{ name }}</h2>
     </div>
+    <hr/>
     <div>
       <PaperWorldConfig :id/>
     </div>
+    <hr/>
     <div>
       <PaperNetherConfig :id/>
     </div>
+    <hr/>
     <div>
       <PaperTheEndConfig :id/>
     </div>
+    <hr/>
     <div>
       <button @click="doExport">Export World</button>
     </div>
@@ -71,5 +75,8 @@ section {
 }
 div {
   padding: 0.4em;
+}
+hr {
+  width: 100%;
 }
 </style>
