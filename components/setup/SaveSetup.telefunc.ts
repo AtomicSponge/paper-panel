@@ -13,6 +13,18 @@ import bcrypt from 'bcryptjs'
  */
 export const onSave = async ({ adminData, serverConfig }:{ adminData:AdminSetupData, serverConfig:ServerSetupData }) => {
   /** Admin configuration */
+  if(adminData.password.toLowerCase().includes('password')) {
+    return { errorMessage: `Password should not contain the word 'password'!` }
+  }
+  if(adminData.password.toLowerCase().includes(adminData.username)) {
+    return { errorMessage: 'Password should not contain the username!' }
+  }
+  if(adminData.password.toLowerCase().includes('admin')) {
+    return { errorMessage: `Password should not contain the word 'admin'!` }
+  }
+  if(adminData.password.toLowerCase().includes('administrator')) {
+    return { errorMessage: `Password should not contain the word 'administrator'!` }
+  }
   if(adminData.password.length > 18 || adminData.password.length < 6) {
     return { errorMessage: 'Password needs to be between 6 and 18 charecters!' }
   }
