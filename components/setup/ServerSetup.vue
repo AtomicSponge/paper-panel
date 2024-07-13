@@ -18,7 +18,7 @@ const data:ModelRef<ServerSetupData> = defineModel({ required: true })
     <main>
       <div>
         <label for="path">Path:</label>
-        <input type="text" id="path" v-model="data.path">
+        <input type="text" id="path" v-model="data.path"/>
       </div>
     </main>
   </section>

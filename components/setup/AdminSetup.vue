@@ -22,7 +22,7 @@ const data:ModelRef<AdminSetupData> = defineModel({ required: true })
             <label for="username">Username:</label>
           </div>
           <div class="cell">
-            <input type="text" id="username" v-model="data.username">
+            <input type="text" id="username" v-model="data.username"/>
           </div>
         </div>
         <div class="row">
@@ -30,7 +30,7 @@ const data:ModelRef<AdminSetupData> = defineModel({ required: true })
             <label for="username">Display Name:</label>
           </div>
           <div class="cell">
-            <input type="text" id="username" v-model="data.display">
+            <input type="text" id="username" v-model="data.display"/>
           </div>
         </div>
         <div class="row">
@@ -38,7 +38,7 @@ const data:ModelRef<AdminSetupData> = defineModel({ required: true })
             <label for="password">Password:</label>
           </div>
           <div class="cell">
-            <input type="password" id="password" v-model="data.password">
+            <input type="password" id="password" v-model="data.password"/>
           </div>
         </div>
         <div class="row">
@@ -46,7 +46,7 @@ const data:ModelRef<AdminSetupData> = defineModel({ required: true })
             <label for="cpassword">Confirm Password:</label>
           </div>
           <div class="cell">
-            <input type="password" id="cpassword" v-model="data.confirm">
+            <input type="password" id="cpassword" v-model="data.confirm"/>
           </div>
         </div>
       </div>
