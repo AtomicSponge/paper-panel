@@ -18,15 +18,8 @@ defineProps<{
   name:string
 }>()
 
-/** Reference for showing the config edit box */
-const showConfig = ref(false)
 /** Reference for displaying the export wait message */
 const showExportMsg = ref(false)
-
-/** Toggle showing the config window */
-const toggleConfig = ():void => {
-  showConfig.value = showConfig.value ? false : true
-}
 
 /** Export world files */
 const doExport = async ():Promise<void> => {
