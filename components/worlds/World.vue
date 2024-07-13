@@ -7,6 +7,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import PaperWorldConfig from '@/components/worlds/PaperWorldConfig.vue'
+import PaperNetherConfig from './PaperNetherConfig.vue'
+import PaperTheEndConfig from './PaperTheEndConfig.vue'
 import { onExport } from './World.telefunc'
 
 defineProps<{
@@ -42,10 +44,13 @@ const doExport = async ():Promise<void> => {
       <h2>{{ name }}</h2>
     </div>
     <div>
-      <button @click="toggleConfig()">Edit Config</button>
-    </div>
-    <div v-show="showConfig">
       <PaperWorldConfig :id/>
+    </div>
+    <div>
+      <PaperNetherConfig :id/>
+    </div>
+    <div>
+      <PaperTheEndConfig :id/>
     </div>
     <div>
       <button @click="doExport">Export World</button>
