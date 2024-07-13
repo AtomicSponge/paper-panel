@@ -15,7 +15,15 @@ import World from '@/components/worlds/World.vue'
 <template>
   <section>
     <header>
-      <h1>Worlds</h1>
+      <div><h1>Worlds</h1></div>
+      <div>
+        <h3>Per World Override Settings</h3>
+      </div>
+      <div>
+        <a href="https://docs.papermc.io/paper/reference/configuration#per-world-values">
+          https://docs.papermc.io/paper/reference/configuration#per-world-values
+        </a>
+      </div>
     </header>
     <main>
       <div v-for="world in data.worlds">
@@ -35,5 +43,8 @@ section {
 }
 header {
   text-align: center;
+}
+div {
+  margin: 0.4em;
 }
 </style>
