@@ -415,17 +415,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>timings</div>
-
         <div class="tab">
           enabled
           <input type="checkbox" v-model="data['timings']['enabled']"/>
         </div>
-
         <div class="tab">
           hidden-config-entries (seperate with comma)<br/>
           <textarea v-model="data['timings']['hidden-config-entries']"></textarea>
         </div>
-
         <div class="tab">
           history-interval
           <input type="number" v-model.number="data['timings']['history-interval']"/>
@@ -450,7 +447,6 @@ const saveConfig = async ():Promise<void> => {
           verbose
           <input type="checkbox" v-model="data['timings']['verbose']"/>
         </div>
-
       </div>
 
       <div class="unsupported">
