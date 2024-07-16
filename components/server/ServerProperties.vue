@@ -67,4 +67,21 @@ main {
 div {
   padding: 0.4em;
 }
+input[type=text] {
+  width: 12em;
+}
+input[type=number] {
+  width: 6em;
+}
+select {
+  width: 8em;
+}
+textarea {
+  width: 46vw;
+  height: 2.8em;
+  margin-top: 3px;
+}
+.tab {
+  margin-left: 2em;
+}
 </style>
