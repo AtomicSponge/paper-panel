@@ -415,6 +415,41 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>timings</div>
+
+        <div class="tab">
+          enabled
+          <input type="checkbox" v-model="data['timings']['enabled']"/>
+        </div>
+
+        <div class="tab">
+          hidden-config-entries
+        </div>
+
+        <div class="tab">
+          history-interval
+          <input type="number" v-model.number="data['timings']['history-interval']"/>
+        </div>
+        <div class="tab">
+          history-length
+          <input type="number" v-model.number="data['timings']['history-length']"/>
+        </div>
+        <div class="tab">
+          server-name
+          <input type="text" v-model="data['timings']['server-name']"/>
+        </div>
+        <div class="tab">
+          server-name-privacy
+          <input type="checkbox" v-model="data['timings']['server-name-privacy']"/>
+        </div>
+        <div class="tab">
+          url
+          <input type="text" v-model="data['timings']['url']"/>
+        </div>
+        <div class="tab">
+          verbose
+          <input type="checkbox" v-model="data['timings']['verbose']"/>
+        </div>
+
       </div>
 
       <div class="unsupported">
@@ -494,7 +529,7 @@ div {
   padding: 0.4em;
 }
 input[type=text] {
-  width: 8em;
+  width: 12em;
 }
 input[type=number] {
   width: 6em;
