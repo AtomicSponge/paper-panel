@@ -18,6 +18,9 @@ export const onSave = async (data:any) => {
   console.log('Saving Paper Global config...')
   console.log(data)
 
+  //  Convert from comma seperated list to array
+  data['timings']['hidden-config-entries'] = data['timings']['hidden-config-entries'].split(',')
+
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
