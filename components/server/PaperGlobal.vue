@@ -290,6 +290,49 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>packet-limiter</div>
+        <div class="tab">
+          all-packets
+          <div class="tab">
+            action
+            <select v-model="data['packet-limiter']['all-packets']['action']">
+              <option>DROP</option>
+              <option>KICK</option>
+            </select>
+          </div>
+          <div class="tab">
+            interval
+            <input type="number" v-model.number="data['packet-limiter']['all-packets']['interval']"/>
+          </div>
+          <div class="tab">
+            max-packet-rate
+            <input type="number" v-model.number="data['packet-limiter']['all-packets']['max-packet-rate']"/>
+          </div>
+        </div>
+        <div class="tab">
+          kick-message<br/>
+          <textarea v-model="data['packet-limiter']['kick-message']"></textarea>
+        </div>
+        <div>
+          overrides
+          <div class="tab">
+            ServerboundPlaceRecipePacket
+            <div class="tab">
+              action
+              <select v-model="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['action']">
+                <option>DROP</option>
+                <option>KICK</option>
+              </select>
+            </div>
+            <div class="tab">
+              interval
+              <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['interval']"/>
+            </div>
+            <div class="tab">
+              max-packet-rate
+              <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['max-packet-rate']"/>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div>
