@@ -422,7 +422,8 @@ const saveConfig = async ():Promise<void> => {
         </div>
 
         <div class="tab">
-          hidden-config-entries
+          hidden-config-entries (seperate with comma)<br/>
+          <textarea v-model="data['timings']['hidden-config-entries']"></textarea>
         </div>
 
         <div class="tab">
