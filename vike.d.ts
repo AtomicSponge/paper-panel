@@ -26,10 +26,6 @@ declare global {
     password:string
     confirm:string
   }
-
-  interface ServerSetupData {
-    path:string
-  }
 }
 
 export {}
