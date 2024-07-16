@@ -392,23 +392,23 @@ const saveConfig = async ():Promise<void> => {
       <div>
         <div>spam-limiter</div>
         <div class="tab">
-          rate
+          incoming-packet-threshold
           <input type="number" v-model.number="data['spam-limiter']['incoming-packet-threshold']"/>
         </div>
         <div class="tab">
-          rate
+          recipe-spam-increment
           <input type="number" v-model.number="data['spam-limiter']['recipe-spam-increment']"/>
         </div>
         <div class="tab">
-          rate
+          recipe-spam-limit
           <input type="number" v-model.number="data['spam-limiter']['recipe-spam-limit']"/>
         </div>
         <div class="tab">
-          rate
+          tab-spam-increment
           <input type="number" v-model.number="data['spam-limiter']['tab-spam-increment']"/>
         </div>
         <div class="tab">
-          rate
+          tab-spam-limit
           <input type="number" v-model.number="data['spam-limiter']['tab-spam-limit']"/>
         </div>
       </div>
