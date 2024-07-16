@@ -15,9 +15,6 @@ import { server } from '@/database/server'
  * Save server configuration
  */
 export const onSave = async (data:any) => {
-  console.log('Saving Paper Global config...')
-  console.log(data)
-
   //  Convert from comma seperated list to array
   data['timings']['hidden-config-entries'] = data['timings']['hidden-config-entries'].split(',')
 
