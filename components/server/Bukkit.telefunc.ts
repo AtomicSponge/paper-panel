@@ -15,9 +15,6 @@ import { server } from '@/database/server'
  * Save Bukkit configuration
  */
 export const onSave = async (data:any) => {
-  console.log('Saving Bukkit config...')
-  console.log(data)
-
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
@@ -26,7 +23,7 @@ export const onSave = async (data:any) => {
       if (data === undefined) throw new Error('Unable to save!  Missing data!')
       fs.writeFileSync(path.join(serverSettings.path, 'bukkit.yml'), YAML.stringify(data))
     } else {
-      throw new Error('Unable to find server path!')
+      throw new Error('Unable to save!  Cannot find server path!')
     }
   } catch (error:any) {
     console.error(error.message)
