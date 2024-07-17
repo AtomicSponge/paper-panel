@@ -7,6 +7,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './PaperNetherConfig.telefunc'
+import type { ModelRef } from 'vue'
+
+const data:ModelRef<any> = defineModel({ required: true })
 
 defineProps<{
   /** World ID */
@@ -18,7 +21,7 @@ const label = ref('Edit Nether Configuration')
 /** Reference for showing the config edit box */
 const showConfig = ref(false)
 /** Reference to the config text area */
-const configTextArea = ref('Nether Config window')
+const configTextArea = ref(data.value)
 
 /** Toggle showing the config window */
 const toggleConfig = ():void => {
