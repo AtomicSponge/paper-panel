@@ -30,7 +30,7 @@ export const onSave = async (data:any) => {
       if (data === undefined) throw new Error('Unable to save!  Missing data!')
       fs.writeFileSync(path.join(serverSettings.path, 'config', 'paper-world-defaults.yml'), YAML.stringify(data))
     } else {
-      throw new Error('Unable to find server path!')
+      throw new Error('Unable to save! Cannot find server path!')
     }
   } catch (error:any) {
     console.error(error.message)
