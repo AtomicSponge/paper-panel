@@ -38,8 +38,7 @@ export const data = async (pageContext:PageContextServer) => {
         if(fs.existsSync(worldLocation)) {
           worldConfig.push(fs.readFileSync(worldLocation).toString())
         } else {
-          const handle = fs.openSync(worldLocation, 'r+')
-          fs.closeSync(handle)
+          fs.closeSync(fs.openSync(worldLocation, 'r+'))
           worldConfig.push(fs.readFileSync(worldLocation).toString())
         }
       } catch (error:any) {
@@ -50,8 +49,7 @@ export const data = async (pageContext:PageContextServer) => {
         if(fs.existsSync(netherLocation)) {
           netherConfig.push(fs.readFileSync(netherLocation).toString())
         } else {
-          const handle = fs.openSync(netherLocation, 'r+')
-          fs.closeSync(handle)
+          fs.closeSync(fs.openSync(netherLocation, 'r+'))
           netherConfig.push(fs.readFileSync(netherLocation).toString())
         }
       } catch (error:any) {
@@ -62,8 +60,7 @@ export const data = async (pageContext:PageContextServer) => {
         if(fs.existsSync(theEndLocation)) {
           theEndConfig.push(fs.readFileSync(theEndLocation).toString())
         } else {
-          const handle = fs.openSync(theEndLocation, 'r+')
-          fs.closeSync(handle)
+          fs.closeSync(fs.openSync(theEndLocation, 'r+'))
           theEndConfig.push(fs.readFileSync(theEndLocation).toString())
         }
       } catch (error:any) {
