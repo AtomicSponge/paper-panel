@@ -84,6 +84,42 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>settings</div>
+        <div class="tab">
+          save-user-cache-on-stop-only
+          <input type="checkbox" v-model="data['settings']['save-user-cache-on-stop-only']"/>
+        </div>
+        <div class="tab">
+          sample-count
+          <input type="number" v-model="data['settings']['sample-count']"/>
+        </div>
+        <div class="tab">
+          bungeecord
+          <input type="checkbox" v-model="data['settings']['bungeecord']"/>
+        </div>
+        <div class="tab">
+          player-shuffle
+          <input type="number" v-model="data['settings']['player-shuffle']"/>
+        </div>
+        <div class="tab">
+          user-cache-size
+          <input type="number" v-model="data['settings']['user-cache-size']"/>
+        </div>
+        <div class="tab">
+          moved-wrongly-threshold
+          <input type="number" v-model="data['settings']['moved-wrongly-threshold']"/>
+        </div>
+        <div class="tab">
+          moved-too-quickly-multiplier
+          <input type="number" v-model="data['settings']['moved-too-quickly-multiplier']"/>
+        </div>
+        <div class="tab">
+          timeout-time
+          <input type="number" v-model="data['settings']['timeout-time']"/>
+        </div>
+        <div class="tab">
+          restart-on-crash
+          <input type="checkbox" v-model="data['settings']['restart-on-crash']"/>
+        </div>
       </div>
 
       <div>
