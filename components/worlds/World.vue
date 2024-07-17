@@ -11,7 +11,7 @@ import PaperNetherConfig from './PaperNetherConfig.vue'
 import PaperTheEndConfig from './PaperTheEndConfig.vue'
 import { onExport } from './World.telefunc'
 
-defineProps<{
+const props = defineProps<{
   /** World name */
   name:string
   /** World folder */
@@ -27,11 +27,13 @@ const showExportMsg = ref(false)
 
 /** Export world files */
 const doExport = async ():Promise<void> => {
-  showExportMsg.value = true
-  const res = await onExport()
-  if(res?.errorMessage) window.alert(res.errorMessage)
-  else window.alert(res.data)
-  showExportMsg.value = false
+  if(window.confirm(`Export world '${props.name}'?`)) {
+    showExportMsg.value = true
+    const res = await onExport()
+    if(res?.errorMessage) window.alert(res.errorMessage)
+    else window.alert(res.data)
+    showExportMsg.value = false
+  }
 }
 </script>
 
