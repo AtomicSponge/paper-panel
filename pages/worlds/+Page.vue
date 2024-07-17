@@ -29,7 +29,10 @@ import World from '@/components/worlds/World.vue'
       <div v-for="world in data.worlds">
         <World
           :id="world.id"
-          :name="world.name"/>
+          :name="world.name"
+          :world="data.worldConfig"
+          :nether="data.netherConfig"
+          :end="data.theEndConfig"/>
       </div>
     </main>
   </section>

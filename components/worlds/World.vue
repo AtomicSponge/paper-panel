@@ -11,12 +11,18 @@ import PaperNetherConfig from './PaperNetherConfig.vue'
 import PaperTheEndConfig from './PaperTheEndConfig.vue'
 import { onExport } from './World.telefunc'
 
+import type { ModelRef } from 'vue'
+
 defineProps<{
   /** World ID */
   id:number
   /** World name */
   name:string
 }>()
+
+const worldData:ModelRef<any> = defineModel('world', { required: true })
+const netherData:ModelRef<any> = defineModel('nether', { required: true })
+const theEndData:ModelRef<any> = defineModel('end', { required: true })
 
 /** Reference for displaying the export wait message */
 const showExportMsg = ref(false)
