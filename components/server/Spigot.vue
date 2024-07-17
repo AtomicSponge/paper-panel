@@ -140,10 +140,17 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>players</div>
+        <div class="tab">
+          disable-saving
+          <input type="checkbox" v-model="data['players']['disable-saving']"/>
+        </div>
       </div>
 
       <div>
-        <div>config-version</div>
+        <div>
+          config-version
+          <input type="number" v-model="data['config-version']"/>
+        </div>
       </div>
 
       <div>
