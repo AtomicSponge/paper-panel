@@ -15,5 +15,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  logout
+  Logging out of Paper Panel...
 </template>
