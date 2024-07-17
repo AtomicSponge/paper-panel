@@ -6,9 +6,6 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import { JSONFilePreset } from 'lowdb/node'
-
-import { server } from '@/database/server'
 
 /**
  * Resets paper-panel settings
