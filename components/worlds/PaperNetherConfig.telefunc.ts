@@ -14,9 +14,6 @@ import { server } from '@/database/server'
  * Save per nether configuration
  */
 export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
-  console.log('Saving nether config...')
-  console.log(data)
-
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 

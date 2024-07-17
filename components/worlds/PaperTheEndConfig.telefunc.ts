@@ -14,9 +14,6 @@ import { server } from '@/database/server'
  * Save per the end configuration
  */
 export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
-  console.log('Saving The End config...')
-  console.log(data)
-
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 

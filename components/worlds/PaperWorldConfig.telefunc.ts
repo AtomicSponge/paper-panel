@@ -14,9 +14,6 @@ import { server } from '@/database/server'
  * Save per world configuration
  */
 export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
-  console.log('Saving world config...')
-  console.log(data)
-
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
