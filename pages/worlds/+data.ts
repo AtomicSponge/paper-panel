@@ -29,9 +29,28 @@ export const data = async (pageContext:PageContextServer) => {
 
   if(serverPath !== undefined && fs.existsSync(serverPath)) {
     data.forEach(world => {
-      worldConfig.push(fs.readFileSync(path.join(serverPath, world.folder, 'paper-world.yml')).toString())
-      netherConfig.push(fs.readFileSync(path.join(serverPath, world.folder + '_nether', 'paper-world.yml')).toString())
-      theEndConfig.push(fs.readFileSync(path.join(serverPath, world.folder + '_the_end', 'paper-world.yml')).toString())
+      const worldLocation = path.join(serverPath, world.folder, 'paper-world.yml')
+      const netherLocation = path.join(serverPath, world.folder + '_nether', 'paper-world.yml')
+      const theEndLocation = path.join(serverPath, world.folder + '_the_end', 'paper-world.yml')
+
+      //  Read each file in or create if it does not exist
+      if(fs.existsSync(worldLocation)) {
+        worldConfig.push(fs.readFileSync(worldLocation).toString())
+      } else {
+        fs.openSync(worldLocation, 'r+')
+      }
+
+      if(fs.existsSync(netherLocation)) {
+        netherConfig.push(fs.readFileSync(netherLocation).toString())
+      } else {
+        fs.openSync(netherLocation, 'r+')
+      }
+
+      if(fs.existsSync(theEndLocation)) {
+        theEndConfig.push(fs.readFileSync(theEndLocation).toString())
+      } else {
+        fs.openSync(theEndLocation, 'r+')
+      }
     })
   }
 
