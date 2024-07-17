@@ -42,7 +42,45 @@ const saveConfig = async ():Promise<void> => {
       <div><button @click="toggleConfig">{{ label }}</button></div>
     </header>
     <main v-show="showConfig">
-      ...
+      <div>
+        <div>anticheat</div>
+        <div class="tab">
+          anti-xray
+          <div class="tab">
+            enabled
+            <input type="checkbox" v-model="data['anticheat']['anti-xray']['enabled']"/>
+          </div>
+          <div class="tab">
+            engine-mode
+            <input type="number" v-model="data['anticheat']['anti-xray']['engine-mode']"/>
+          </div>
+          <div class="tab">
+            hidden-blocks (seperate with commas)<br/>
+            <textarea v-model="data['anticheat']['anti-xray']['hidden-blocks']"></textarea>
+          </div>
+          <div class="tab">
+            lava-obscures
+            <input type="checkbox" v-model="data['anticheat']['anti-xray']['lava-obscures']"/>
+          </div>
+          <div class="tab">
+            max-block-height
+            <input type="number" v-model="data['anticheat']['anti-xray']['max-block-height']"/>
+          </div>
+          <div class="tab">
+            replacement-blocks (seperate with commas)<br/>
+            <textarea v-model="data['anticheat']['anti-xray']['replacement-blocks']"></textarea>
+          </div>
+          <div class="tab">
+            update-radius
+            <input type="number" v-model="data['anticheat']['anti-xray']['update-radius']"/>
+          </div>
+          <div class="tab">
+            use-permission
+            <input type="checkbox" v-model="data['anticheat']['anti-xray']['use-permission']"/>
+          </div>
+        </div>
+      </div>
+
     </main>
     <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
