@@ -99,6 +99,73 @@ const saveConfig = async ():Promise<void> => {
         </div>
       </div>
 
+      <div>
+        <div>chunks</div>
+      </div>
+
+      <div>
+        <div>collisions</div>
+      </div>
+
+      <div>
+        <div>command-blocks</div>
+      </div>
+
+      <div>
+        <div>entities</div>
+      </div>
+
+      <div>
+        <div>environment</div>
+      </div>
+
+      <div>
+        <div>feature-seeds</div>
+      </div>
+
+      <div>
+        <div>fishing-time-range</div>
+      </div>
+
+      <div>
+        <div>fixes</div>
+      </div>
+
+      <div>
+        <div>hopper</div>
+      </div>
+
+      <div>
+        <div>lootables</div>
+      </div>
+
+      <div>
+        <div>maps</div>
+      </div>
+
+      <div>
+        <div>max-growth-height</div>
+      </div>
+
+      <div>
+        <div>misc</div>
+      </div>
+
+      <div>
+        <div>scoreboards</div>
+      </div>
+
+      <div>
+        <div>spawn</div>
+      </div>
+
+      <div>
+        <div>tick-rates</div>
+      </div>
+
+      <div>
+        <div>unsupported-settings</div>
+      </div>
     </main>
     <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
