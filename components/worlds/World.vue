@@ -18,8 +18,11 @@ const props = defineProps<{
   folder:string
 }>()
 
+/** Data for World config */
 const worldData = defineModel('world', { required: true })
+/** Data for Nether config */
 const netherData = defineModel('nether', { required: true })
+/** Data for The End config */
 const theEndData = defineModel('end', { required: true })
 
 /** Reference for displaying the export wait message */
