@@ -42,7 +42,37 @@ const saveConfig = async ():Promise<void> => {
       <div><button @click="toggleConfig">{{ label }}</button></div>
     </header>
     <main v-show="showConfig">
-      ...
+      <div>
+        <div>messages</div>
+      </div>
+
+      <div>
+        <div>advancements</div>
+      </div>
+
+      <div>
+        <div>settings</div>
+      </div>
+
+      <div>
+        <div>commands</div>
+      </div>
+
+      <div>
+        <div>world-settings</div>
+      </div>
+
+      <div>
+        <div>players</div>
+      </div>
+
+      <div>
+        <div>config-version</div>
+      </div>
+
+      <div>
+        <div>stats</div>
+      </div>
     </main>
     <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
