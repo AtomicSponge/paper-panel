@@ -15,6 +15,10 @@ import { server } from '@/database/server'
  * Save World Defaults configuration
  */
 export const onSave = async (data:any) => {
+  //  Convert from comma seperated list to array
+  data['anticheat']['anti-xray']['hidden-blocks'] = data['anticheat']['anti-xray']['hidden-blocks'].split(',')
+  data['anticheat']['anti-xray']['replacement-blocks'] = data['anticheat']['anti-xray']['replacement-blocks'].split(',')
+
   console.log('Saving World Defaults config...')
   console.log(data)
 
