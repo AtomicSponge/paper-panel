@@ -12,6 +12,7 @@ const data = useData<Data>()
 import ServerPath from '@/components/admin/ServerPath.vue'
 import AddWorld from '@/components/admin/AddWorld.vue'
 import EditWorld from '@/components/admin/EditWorld.vue'
+import ResetSettings from '@/components/admin/ResetSettings.vue'
 </script>
 
 <template>
@@ -52,6 +53,12 @@ import EditWorld from '@/components/admin/EditWorld.vue'
         <hr/>
         <span>
           <EditWorld/>
+        </span>
+      </div>
+
+      <div class="subbox">
+        <span>
+          <ResetSettings/>
         </span>
       </div>
 
