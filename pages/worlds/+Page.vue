@@ -26,7 +26,7 @@ import World from '@/components/worlds/World.vue'
       </div>
     </header>
     <main>
-      <div v-for="(world, key, idx) in data.worlds">
+      <div v-for="(world, _key, idx) in data.worlds">
         <World
           :id="world.id"
           :name="world.name"
