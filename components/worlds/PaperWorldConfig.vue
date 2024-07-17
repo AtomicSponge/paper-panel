@@ -21,7 +21,7 @@ const label = ref('Edit World Configuration')
 /** Reference for showing the config edit box */
 const showConfig = ref(false)
 /** Reference to the config text area */
-const configTextArea = ref('World Config window')
+const configTextArea = ref(data.value)
 
 /** Toggle showing the config window */
 const toggleConfig = ():void => {
