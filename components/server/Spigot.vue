@@ -72,6 +72,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>advancements</div>
+        <div class="tab">
+          disable-saving
+          <input type="checkbox" v-model="data['advancements']['disable-saving']"/>
+        </div>
+        <div class="tab">
+          disabled (seperated by commas)<br/>
+          <textarea v-model="data['advancements']['disabled']"></textarea>
+        </div>
       </div>
 
       <div>
