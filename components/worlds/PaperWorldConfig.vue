@@ -30,7 +30,7 @@ const toggleConfig = ():void => {
 const saveConfig = async ():Promise<void> => {
   const res = await onSave()
   if(res?.errorMessage) window.alert(res.errorMessage)
-  else window.alert('Config saved')
+  else window.alert('World configuration saved!')
 }
 </script>
 
