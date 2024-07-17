@@ -20,8 +20,6 @@ defineProps<{
 const label = ref('Edit World Configuration')
 /** Reference for showing the config edit box */
 const showConfig = ref(false)
-/** Reference to the config text area */
-const configTextArea = ref(data.value)
 
 /** Toggle showing the config window */
 const toggleConfig = ():void => {
@@ -45,7 +43,7 @@ const saveConfig = async ():Promise<void> => {
     <h3>Editing World Configuration</h3>
   </div>
   <div v-show="showConfig">
-    <textarea v-model="configTextArea"></textarea>
+    <textarea v-model="data"></textarea>
   </div>
   <div v-show="showConfig">
     <button @click="saveConfig">Save Configuration</button>
