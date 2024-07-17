@@ -44,6 +44,30 @@ const saveConfig = async ():Promise<void> => {
     <main v-show="showConfig">
       <div>
         <div>messages</div>
+        <div class="tab">
+          whitelist<br/>
+          <textarea v-model="data['messages']['whitelist']"></textarea>
+        </div>
+        <div class="tab">
+          unknown-command<br/>
+          <textarea v-model="data['messages']['unknown-command']"></textarea>
+        </div>
+        <div class="tab">
+          server-full<br/>
+          <textarea v-model="data['messages']['server-full']"></textarea>
+        </div>
+        <div class="tab">
+          outdated-client<br/>
+          <textarea v-model="data['messages']['outdated-client']"></textarea>
+        </div>
+        <div class="tab">
+          outdated-server<br/>
+          <textarea v-model="data['messages']['outdated-server']"></textarea>
+        </div>
+        <div class="tab">
+          restart<br/>
+          <textarea v-model="data['messages']['restart']"></textarea>
+        </div>
       </div>
 
       <div>
