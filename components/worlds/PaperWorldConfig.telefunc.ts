@@ -7,7 +7,7 @@
 /**
  * Save world configuration
  */
-export const onSave = async () => {
+export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
   console.log('Saving world config...')
   if(false) {
     return { errorMessage: '' }

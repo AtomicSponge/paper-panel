@@ -7,10 +7,11 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './PaperWorldConfig.telefunc'
+import type { ModelRef } from 'vue'
 
-const data = defineModel({ required: true })
+const data:ModelRef<string> = defineModel({ required: true })
 
-defineProps<{
+const props = defineProps<{
   /** World folder */
   folder:string
 }>()
@@ -28,7 +29,7 @@ const toggleConfig = ():void => {
 
 /** Save the world configuration */
 const saveConfig = async ():Promise<void> => {
-  const res = await onSave()
+  const res = await onSave({ folder: props.folder, data: data.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('World configuration saved!')
 }
