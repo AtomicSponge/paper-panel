@@ -6,6 +6,7 @@
 
 <script lang="ts" setup>
 import { reload } from 'vike/client/router'
+import { navigate } from 'vike/client/router'
 
 import Navigation from '@/components/layout/Navigation.vue'
 import AdminLink from '@/components/layout/AdminLink.vue'
@@ -13,8 +14,8 @@ import AppInfo from '@/components/layout/AppInfo.vue'
 
 const logOut = async ():Promise<void> => {
   if(window.confirm('Are you sure you want to log out?')) {
-    await fetch('/logout', { method: 'POST' })
-    await reload()
+    const navigationPromise = navigate('/logout')
+    await navigationPromise
   }
 }
 </script>

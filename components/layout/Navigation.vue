@@ -15,7 +15,7 @@ const showServerLink = ref(false)
 
 onMounted(async () => {
   if(user === undefined) {
-    const navigationPromise = navigate('/')
+    const navigationPromise = navigate('/logout')
     await navigationPromise
   } else {
     if(user.serveradmin) {
