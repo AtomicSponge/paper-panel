@@ -44,15 +44,15 @@ const doExport = async ():Promise<void> => {
     </div>
     <hr/>
     <div>
-      <PaperWorldConfig :id/>
+      <PaperWorldConfig :id v-model="worldData"/>
     </div>
     <hr/>
     <div>
-      <PaperNetherConfig :id/>
+      <PaperNetherConfig :id v-model="netherData"/>
     </div>
     <hr/>
     <div>
-      <PaperTheEndConfig :id/>
+      <PaperTheEndConfig :id v-model="theEndData"/>
     </div>
     <hr/>
     <div>

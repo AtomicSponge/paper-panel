@@ -7,6 +7,9 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './PaperWorldConfig.telefunc'
+import type { ModelRef } from 'vue'
+
+const data:ModelRef<any> = defineModel({ required: true })
 
 defineProps<{
   /** World ID */
