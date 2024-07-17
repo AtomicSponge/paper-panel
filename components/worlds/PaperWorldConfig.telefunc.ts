@@ -11,7 +11,7 @@ import { JSONFilePreset } from 'lowdb/node'
 import { server } from '@/database/server'
 
 /**
- * Save world configuration
+ * Save per world configuration
  */
 export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
   console.log('Saving world config...')
@@ -25,7 +25,7 @@ export const onSave = async ({ folder, data }:{ folder:string, data:string }) =>
       if (data === undefined) throw new Error('Unable to save!  Missing data!')
       fs.writeFileSync(path.join(serverSettings.path, folder, 'paper-world.yml'), data)
     } else {
-      throw new Error('Unable to find world path!')
+      throw new Error('Unable to save!  Cannot find world path!')
     }
   } catch (error:any) {
     console.error(error.message)
