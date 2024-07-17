@@ -12,10 +12,13 @@ const resetSettings = async () => {
   if(window.confirm('Warning!  This will wipe all settings!  Do you want to continue?')) {
     if(window.prompt('Enter RESET to reset settings:') === 'RESET') {
       const res = await onResetSettings()
-      if(res?.errorMessage) window.alert(res.errorMessage)
-      else window.alert('Settings Reset!')
-      const navigationPromise = navigate('/logout')
-      await navigationPromise
+      if(res?.errorMessage) {
+        window.alert(res.errorMessage)
+      } else {
+        window.alert('Settings Reset!')
+        const navigationPromise = navigate('/logout')
+        await navigationPromise
+      }
     }
   }
 }
