@@ -120,6 +120,14 @@ const saveConfig = async ():Promise<void> => {
           restart-on-crash
           <input type="checkbox" v-model="data['settings']['restart-on-crash']"/>
         </div>
+        <div class="tab">
+          restart-script
+          <input type="text" v-model="data['settings']['restart-script']"/>
+        </div>
+        <div class="tab">
+          netty-threads
+          <input type="number" v-model="data['settings']['netty-threads']"/>
+        </div>
       </div>
 
       <div>
