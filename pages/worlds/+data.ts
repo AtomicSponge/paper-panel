@@ -34,22 +34,40 @@ export const data = async (pageContext:PageContextServer) => {
       const theEndLocation = path.join(serverPath, world.folder + '_the_end', 'paper-world.yml')
 
       //  Read each file in or create if it does not exist
-      if(fs.existsSync(worldLocation)) {
-        worldConfig.push(fs.readFileSync(worldLocation).toString())
-      } else {
-        fs.openSync(worldLocation, 'r+')
+      try {
+        if(fs.existsSync(worldLocation)) {
+          worldConfig.push(fs.readFileSync(worldLocation).toString())
+        } else {
+          const handle = fs.openSync(worldLocation, 'r+')
+          fs.closeSync(handle)
+          worldConfig.push(fs.readFileSync(worldLocation).toString())
+        }
+      } catch (error:any) {
+        worldConfig.push('Problems editing file')
       }
 
-      if(fs.existsSync(netherLocation)) {
-        netherConfig.push(fs.readFileSync(netherLocation).toString())
-      } else {
-        fs.openSync(netherLocation, 'r+')
+      try {
+        if(fs.existsSync(netherLocation)) {
+          netherConfig.push(fs.readFileSync(netherLocation).toString())
+        } else {
+          const handle = fs.openSync(netherLocation, 'r+')
+          fs.closeSync(handle)
+          netherConfig.push(fs.readFileSync(netherLocation).toString())
+        }
+      } catch (error:any) {
+        netherConfig.push('Problems editing file')
       }
 
-      if(fs.existsSync(theEndLocation)) {
-        theEndConfig.push(fs.readFileSync(theEndLocation).toString())
-      } else {
-        fs.openSync(theEndLocation, 'r+')
+      try {
+        if(fs.existsSync(theEndLocation)) {
+          theEndConfig.push(fs.readFileSync(theEndLocation).toString())
+        } else {
+          const handle = fs.openSync(theEndLocation, 'r+')
+          fs.closeSync(handle)
+          theEndConfig.push(fs.readFileSync(theEndLocation).toString())
+        }
+      } catch (error:any) {
+        theEndConfig.push('Problems editing file')
       }
     })
   }
