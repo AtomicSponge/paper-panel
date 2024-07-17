@@ -5,6 +5,7 @@
 -->
 
 <script lang="ts" setup>
+import { navigate } from 'vike/client/router'
 import { onResetSettings } from './ResetSettings.telefunc'
 
 const resetSettings = async () => {
@@ -13,6 +14,8 @@ const resetSettings = async () => {
       const res = await onResetSettings()
       if(res?.errorMessage) window.alert(res.errorMessage)
       else window.alert('Settings Reset!')
+      const navigationPromise = navigate('/')
+      await navigationPromise
     }
   }
 }
