@@ -79,6 +79,24 @@ const saveConfig = async ():Promise<void> => {
             <input type="checkbox" v-model="data['anticheat']['anti-xray']['use-permission']"/>
           </div>
         </div>
+        <div class="tab">
+          obfuscation
+          <div class="tab">
+            items
+            <div class="tab">
+              hide-durability
+              <input type="checkbox" v-model="data['anticheat']['obfuscation']['items']['hide-durability']"/>
+            </div>
+            <div class="tab">
+              hide-itemmeta
+              <input type="checkbox" v-model="data['anticheat']['obfuscation']['items']['hide-itemmeta']"/>
+            </div>
+            <div class="tab">
+              hide-itemmeta-with-visual-effects
+              <input type="checkbox" v-model="data['anticheat']['obfuscation']['items']['hide-itemmeta-with-visual-effects']"/>
+            </div>
+          </div>
+        </div>
       </div>
 
     </main>
