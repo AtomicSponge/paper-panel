@@ -12,8 +12,8 @@ import type { ModelRef } from 'vue'
 const data:ModelRef<any> = defineModel({ required: true })
 
 defineProps<{
-  /** World ID */
-  id:number
+  /** World folder */
+  folder:string
 }>()
 
 /** Label for the toggle button */

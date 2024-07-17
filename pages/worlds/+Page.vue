@@ -28,8 +28,8 @@ import World from '@/components/worlds/World.vue'
     <main>
       <div v-for="(world, _key, idx) in data.worlds">
         <World
-          :id="world.id"
           :name="world.name"
+          :folder="world.folder"
           :world="data.worldConfig.at(idx)"
           :nether="data.netherConfig.at(idx)"
           :end="data.theEndConfig.at(idx)"/>

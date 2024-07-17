@@ -14,10 +14,10 @@ import { onExport } from './World.telefunc'
 import type { ModelRef } from 'vue'
 
 defineProps<{
-  /** World ID */
-  id:number
   /** World name */
   name:string
+  /** World folder */
+  folder:string
 }>()
 
 const worldData:ModelRef<any> = defineModel('world', { required: true })
@@ -44,15 +44,15 @@ const doExport = async ():Promise<void> => {
     </div>
     <hr/>
     <div>
-      <PaperWorldConfig :id v-model="worldData"/>
+      <PaperWorldConfig :folder="folder" v-model="worldData"/>
     </div>
     <hr/>
     <div>
-      <PaperNetherConfig :id v-model="netherData"/>
+      <PaperNetherConfig :folder="folder" v-model="netherData"/>
     </div>
     <hr/>
     <div>
-      <PaperTheEndConfig :id v-model="theEndData"/>
+      <PaperTheEndConfig :folder="folder" v-model="theEndData"/>
     </div>
     <hr/>
     <div>
