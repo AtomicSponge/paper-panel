@@ -43,7 +43,7 @@ const saveConfig = async ():Promise<void> => {
     </header>
     <main v-show="showConfig">
       <div>
-        <div>messages</div>
+        <div><h3>messages</h3></div>
         <div class="tab">
           whitelist<br/>
           <textarea v-model="data['messages']['whitelist']"></textarea>
@@ -71,7 +71,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>advancements</div>
+        <div><h3>advancements</h3></div>
         <div class="tab">
           disable-saving
           <input type="checkbox" v-model="data['advancements']['disable-saving']"/>
@@ -83,7 +83,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>settings</div>
+        <div><h3>settings</h3></div>
         <div class="tab">
           save-user-cache-on-stop-only
           <input type="checkbox" v-model="data['settings']['save-user-cache-on-stop-only']"/>
@@ -167,7 +167,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>commands</div>
+        <div><h3>commands</h3></div>
         <div class="tab">
           tab-complete
           <input type="number" v-model="data['commands']['tab-complete']"/>
@@ -195,7 +195,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>world-settings</div>
+        <div><h3>world-settings</h3></div>
         <div class="tab">
           default
           <div class="tab">
@@ -656,7 +656,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>players</div>
+        <div><h3>players</h3></div>
         <div class="tab">
           disable-saving
           <input type="checkbox" v-model="data['players']['disable-saving']"/>
@@ -665,13 +665,13 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>
-          config-version
+          <h3>config-version</h3>
           <input type="number" v-model="data['config-version']"/>
         </div>
       </div>
 
       <div>
-        <div>stats</div>
+        <div><h3>stats</h3></div>
         <div class="tab">
           disable-saving
           <input type="checkbox" v-model="data['stats']['disable-saving']"/>
@@ -700,6 +700,10 @@ header {
 }
 main {
   padding: 0.4em;
+}
+h3 {
+  display: inline-block;
+  padding-right: 0.3em;
 }
 div {
   padding: 0.4em;
