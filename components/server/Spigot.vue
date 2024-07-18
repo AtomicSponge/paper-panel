@@ -451,6 +451,23 @@ const saveConfig = async ():Promise<void> => {
 
             <div class="tab">
               villagers-work-immunity-after
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['villagers-work-immunity-after']"/>
+            </div>
+            <div class="tab">
+              villagers-work-immunity-for
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['villagers-work-immunity-for']"/>
+            </div>
+            <div class="tab">
+              villagers-active-for-panic
+              <input type="checkbox" v-model="data['world-settings']['default']['entity-activation-range']['villagers-active-for-panic']"/>
+            </div>
+            <div class="tab">
+              tick-inactive-villagers
+              <input type="checkbox" v-model="data['world-settings']['default']['entity-activation-range']['tick-inactive-villagers']"/>
+            </div>
+            <div class="tab">
+              ignore-spectators
+              <input type="checkbox" v-model="data['world-settings']['default']['entity-activation-range']['ignore-spectators']"/>
             </div>
           </div>
         </div>
