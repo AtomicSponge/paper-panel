@@ -23,7 +23,7 @@ import ResetSettings from '@/components/admin/ResetSettings.vue'
     <main>
 
       <div class="subbox">
-        <span>
+        <span class="center">
           <h2>User Management</h2>
         </span>
         <hr/>
@@ -33,7 +33,7 @@ import ResetSettings from '@/components/admin/ResetSettings.vue'
       </div>
 
       <div class="subbox">
-        <span>
+        <span class="center">
           <h2>Server Management</h2>
         </span>
         <hr/>
@@ -43,7 +43,7 @@ import ResetSettings from '@/components/admin/ResetSettings.vue'
       </div>
 
       <div class="subbox">
-        <span>
+        <span class="center">
           <h2>World Management</h2>
         </span>
         <hr/>
