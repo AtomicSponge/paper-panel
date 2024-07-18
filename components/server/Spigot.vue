@@ -521,79 +521,87 @@ const saveConfig = async ():Promise<void> => {
           </div>
           <div class="tab">
             seed-village
-            <input type="number" v-model="data['world-settings']['default']['seed-village']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-village']"/>
           </div>
           <div class="tab">
             seed-desert
-            <input type="number" v-model="data['world-settings']['default']['seed-desert']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-desert']"/>
           </div>
           <div class="tab">
             seed-igloo
-            <input type="number" v-model="data['world-settings']['default']['seed-igloo']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-igloo']"/>
           </div>
           <div class="tab">
             seed-jungle
-            <input type="number" v-model="data['world-settings']['default']['seed-jungle']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-jungle']"/>
           </div>
           <div class="tab">
             seed-swamp
-            <input type="number" v-model="data['world-settings']['default']['seed-swamp']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-swamp']"/>
           </div>
           <div class="tab">
             seed-monument
-            <input type="number" v-model="data['world-settings']['default']['seed-monument']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-monument']"/>
           </div>
           <div class="tab">
             seed-shipwreck
-            <input type="number" v-model="data['world-settings']['default']['seed-shipwreck']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-shipwreck']"/>
           </div>
           <div class="tab">
             seed-ocean
-            <input type="number" v-model="data['world-settings']['default']['seed-ocean']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-ocean']"/>
           </div>
           <div class="tab">
             seed-outpost
-            <input type="number" v-model="data['world-settings']['default']['seed-outpost']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-outpost']"/>
           </div>
           <div class="tab">
             seed-endcity
-            <input type="number" v-model="data['world-settings']['default']['seed-endcity']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-endcity']"/>
           </div>
           <div class="tab">
             seed-slime
-            <input type="number" v-model="data['world-settings']['default']['seed-slime']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-slime']"/>
           </div>
           <div class="tab">
             seed-nether
-            <input type="number" v-model="data['world-settings']['default']['seed-nether']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-nether']"/>
           </div>
           <div class="tab">
             seed-mansion
-            <input type="number" v-model="data['world-settings']['default']['seed-mansion']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-mansion']"/>
           </div>
           <div class="tab">
             seed-fossil
-            <input type="number" v-model="data['world-settings']['default']['seed-fossil']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-fossil']"/>
           </div>
           <div class="tab">
             seed-portal
-            <input type="number" v-model="data['world-settings']['default']['seed-portal']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-portal']"/>
           </div>
           <div class="tab">
             seed-ancientcity
-            <input type="number" v-model="data['world-settings']['default']['seed-ancientcity']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-ancientcity']"/>
           </div>
           <div class="tab">
             seed-trailruins
-            <input type="number" v-model="data['world-settings']['default']['seed-trailruins']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-trailruins']"/>
           </div>
           <div class="tab">
             seed-trialchambers
-            <input type="number" v-model="data['world-settings']['default']['seed-trialchambers']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-trialchambers']"/>
           </div>
           <div class="tab">
             seed-buriedtreasure
-            <input type="number" v-model="data['world-settings']['default']['seed-buriedtreasure']"/>
+            <input type="text" v-model="data['world-settings']['default']['seed-buriedtreasure']"/>
+          </div>
+          <div class="tab">
+            seed-mineshaft
+            <input type="text" v-model="data['world-settings']['default']['seed-mineshaft']"/>
+          </div>
+          <div class="tab">
+            seed-stronghold
+            <input type="text" v-model="data['world-settings']['default']['seed-stronghold']"/>
           </div>
         </div>
       </div>
