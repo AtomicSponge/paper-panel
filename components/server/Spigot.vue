@@ -369,6 +369,34 @@ const saveConfig = async ():Promise<void> => {
 
           <div class="tab">
             entity-activation-range
+            <div class="tab">
+              animals
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['animals']"/>
+            </div>
+            <div class="tab">
+              monsters
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['monsters']"/>
+            </div>
+            <div class="tab">
+              raiders
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['raiders']"/>
+            </div>
+            <div class="tab">
+              misc
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['misc']"/>
+            </div>
+            <div class="tab">
+              water
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['water']"/>
+            </div>
+            <div class="tab">
+              villagers
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['villagers']"/>
+            </div>
+            <div class="tab">
+              flying-monsters
+              <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['flying-monsters']"/>
+            </div>
           </div>
         </div>
       </div>
