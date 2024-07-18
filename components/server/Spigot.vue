@@ -247,6 +247,30 @@ const saveConfig = async ():Promise<void> => {
             trident-despawn-rate
             <input type="number" v-model="data['world-settings']['default']['trident-despawn-rate']"/>
           </div>
+          <div class="tab">
+            zombie-aggressive-towards-villager
+            <input type="checkbox" v-model="data['world-settings']['default']['zombie-aggressive-towards-villager']"/>
+          </div>
+          <div class="tab">
+            nerf-spawner-mobs
+            <input type="checkbox" v-model="data['world-settings']['default']['nerf-spawner-mobs']"/>
+          </div>
+          <div class="tab">
+            enable-zombie-pigmen-portal-spawns
+            <input type="checkbox" v-model="data['world-settings']['default']['enable-zombie-pigmen-portal-spawns']"/>
+          </div>
+          <div class="tab">
+            wither-spawn-sound-radius
+            <input type="number" v-model="data['world-settings']['default']['wither-spawn-sound-radius']"/>
+          </div>
+          <div class="tab">
+            end-portal-sound-radius
+            <input type="number" v-model="data['world-settings']['default']['end-portal-sound-radius']"/>
+          </div>
+          <div class="tab">
+            hanging-tick-frequency
+            <input type="number" v-model="data['world-settings']['default']['hanging-tick-frequency']"/>
+          </div>
         </div>
       </div>
 
