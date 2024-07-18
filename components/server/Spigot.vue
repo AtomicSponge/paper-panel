@@ -602,14 +602,12 @@ const saveConfig = async ():Promise<void> => {
             seed-stronghold
             <input type="text" v-model="data['world-settings']['default']['seed-stronghold']"/>
           </div>
-
           <div class="tab">
             hunger
             <div class="tab">
               jump-walk-exhaustion
               <input type="number" v-model="data['world-settings']['default']['hunger']['jump-walk-exhaustion']"/>
             </div>
-
             <div class="tab">
               jump-sprint-exhaustion
               <input type="number" v-model="data['world-settings']['default']['hunger']['jump-sprint-exhaustion']"/>
