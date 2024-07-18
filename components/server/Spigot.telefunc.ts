@@ -15,6 +15,16 @@ import { server } from '@/database/server'
  * Save Spigot configuration
  */
 export const onSave = async (data:any) => {
+  if(typeof data['advancements']['disabled'] === 'string') {
+    data['advancements']['disabled'] = data['advancements']['disabled'].split(',')
+  }
+  if(typeof data['commands']['spam-exclusions'] === 'string') {
+    data['commands']['spam-exclusions'] = data['commands']['spam-exclusions'].split(',')
+  }
+  if(typeof data['commands']['replace-commands'] === 'string') {
+    data['commands']['replace-commands'] = data['commands']['replace-commands'].split(',')
+  }
+
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
