@@ -602,6 +602,39 @@ const saveConfig = async ():Promise<void> => {
             seed-stronghold
             <input type="text" v-model="data['world-settings']['default']['seed-stronghold']"/>
           </div>
+
+          <div class="tab">
+            hunger
+            <div class="tab">
+              jump-walk-exhaustion
+              <input type="number" v-model="data['world-settings']['default']['hunger']['jump-walk-exhaustion']"/>
+            </div>
+
+            <div class="tab">
+              jump-sprint-exhaustion
+              <input type="number" v-model="data['world-settings']['default']['hunger']['jump-sprint-exhaustion']"/>
+            </div>
+            <div class="tab">
+              combat-exhaustion
+              <input type="number" v-model="data['world-settings']['default']['hunger']['combat-exhaustion']"/>
+            </div>
+            <div class="tab">
+              regen-exhaustion
+              <input type="number" v-model="data['world-settings']['default']['hunger']['regen-exhaustion']"/>
+            </div>
+            <div class="tab">
+              swim-multiplier
+              <input type="number" v-model="data['world-settings']['default']['hunger']['swim-multiplier']"/>
+            </div>
+            <div class="tab">
+              sprint-multiplier
+              <input type="number" v-model="data['world-settings']['default']['hunger']['sprint-multiplier']"/>
+            </div>
+            <div class="tab">
+              other-multiplier
+              <input type="number" v-model="data['world-settings']['default']['hunger']['other-multiplier']"/>
+            </div>
+          </div>
         </div>
       </div>
 
