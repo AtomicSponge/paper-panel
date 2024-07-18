@@ -275,7 +275,6 @@ const saveConfig = async ():Promise<void> => {
             unload-frozen-chunks
             <input type="checkbox" v-model="data['world-settings']['default']['unload-frozen-chunks']"/>
           </div>
-
           <div class="tab">
             growth
             <div class="tab">
