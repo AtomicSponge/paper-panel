@@ -672,6 +672,13 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>stats</div>
+        <div class="tab">
+          disable-saving
+          <input type="checkbox" v-model="data['stats']['disable-saving']"/>
+        </div>
+        <div class="tab">
+          forced-stats
+        </div>
       </div>
     </main>
     <footer v-show="showConfig">
