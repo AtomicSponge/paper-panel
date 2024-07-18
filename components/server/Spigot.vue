@@ -196,6 +196,31 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>world-settings</div>
+        <div class="tab">
+          default
+          <div class="tab">
+            below-zero-generation-in-existing-chunks
+            <input type="checkbox" v-model="data['world-settings']['default']['below-zero-generation-in-existing-chunks']"/>
+          </div>
+          <div class="tab">
+            view-distance
+            <select v-model="data['world-settings']['default']['view-distance']">
+              <option>-1</option>
+              <option>default</option>
+            </select>
+          </div>
+          <div class="tab">
+            simulation-distance
+            <select v-model="data['world-settings']['default']['simulation-distance']">
+              <option>-1</option>
+              <option>default</option>
+            </select>
+          </div>
+          <div class="tab">
+            thunder-chance
+            <input type="number" v-model="data['world-settings']['default']['thunder-chance']"/>
+          </div>
+        </div>
       </div>
 
       <div>
