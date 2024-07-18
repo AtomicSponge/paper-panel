@@ -28,13 +28,13 @@ export const onSave = async (data:any) => {
       data['commands']['replace-commands'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
 
-  const checkItems = [
+  const numberCheckItems = [
     'seed-village', 'seed-desert', 'seed-igloo', 'seed-jungle', 'seed-swamp', 'seed-monument',
     'seed-shipwreck', 'seed-ocean', 'seed-outpost', 'seed-endcity', 'seed-slime', 'seed-nether',
     'seed-mansion', 'seed-fossil', 'seed-portal', 'seed-ancientcity', 'seed-trailruins',
     'seed-trialchambers', 'seed-buriedtreasure', 'seed-mineshaft', 'seed-stronghold'
   ]
-  checkItems.forEach(item => {
+  numberCheckItems.forEach(item => {
     if (data['world-settings']['default'][item] !== 'default') {
       data['world-settings']['default'][item] = Number(data['world-settings']['default'][item])
     }
