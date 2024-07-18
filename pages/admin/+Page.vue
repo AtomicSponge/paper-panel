@@ -57,7 +57,7 @@ import ResetSettings from '@/components/admin/ResetSettings.vue'
       </div>
 
       <div class="subbox">
-        <span>
+        <span class="center">
           <ResetSettings/>
         </span>
       </div>
@@ -81,5 +81,9 @@ div {
 .subbox {
   padding: 1.2em;
   margin: 1em 0;
+}
+.center {
+  display: table;
+  margin: 0 auto;
 }
 </style>

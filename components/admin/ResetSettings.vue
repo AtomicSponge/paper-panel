@@ -29,4 +29,8 @@ const resetSettings = async () => {
 </template>
 
 <style scoped>
+button {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(178,34,34);
+}
 </style>
