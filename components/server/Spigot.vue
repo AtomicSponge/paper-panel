@@ -145,7 +145,7 @@ const saveConfig = async ():Promise<void> => {
           <input type="checkbox" v-model="data['commands']['log']"/>
         </div>
         <div class="tab">
-          spam-exclusions (seperate with comma)<br/>
+          spam-exclusions (seperate with commas)<br/>
           <textarea v-model="data['commands']['spam-exclusions']"></textarea>
         </div>
         <div class="tab">
@@ -153,7 +153,7 @@ const saveConfig = async ():Promise<void> => {
           <input type="checkbox" v-model="data['commands']['silent-commandblock-console']"/>
         </div>
         <div class="tab">
-          replace-commands (seperate with comma)<br/>
+          replace-commands (seperate with commas)<br/>
           <textarea v-model="data['commands']['replace-commands']"></textarea>
         </div>
       </div>
