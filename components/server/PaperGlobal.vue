@@ -44,7 +44,7 @@ const saveConfig = async ():Promise<void> => {
 
     <main v-show="showConfig">
       <div>
-        <div>block-updates</div>
+        <div><h3>block-updates</h3></div>
         <div class="tab">
           disable-chorus-plant-updates
           <input type="checkbox" v-model="data['block-updates']['disable-chorus-plant-updates']"/>
@@ -64,7 +64,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>chunk-loading-advanced</div>
+        <div><h3>chunk-loading-advanced</h3></div>
         <div class="tab">
           auto-config-send-distance
           <input type="checkbox" v-model="data['chunk-loading-advanced']['auto-config-send-distance']"/>
@@ -80,7 +80,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>chunk-loading-basic</div>
+        <div><h3>chunk-loading-basic</h3></div>
         <div class="tab">
           player-max-chunk-generate-rate
           <input type="number" v-model.number="data['chunk-loading-basic']['player-max-chunk-generate-rate']"/>
@@ -96,7 +96,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>chunk-system</div>
+        <div><h3>chunk-system</h3></div>
         <div class="tab">
           gen-parallelism
           <select v-model="data['chunk-system']['gen-parallelism']">
@@ -116,7 +116,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>collisions</div>
+        <div><h3>collisions</h3></div>
         <div class="tab">
           enable-player-collisions
           <input type="checkbox" v-model="data['collisions']['enable-player-collisions']"/>
@@ -128,7 +128,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>commands</div>
+        <div><h3>commands</h3></div>
         <div class="tab">
           fix-target-selector-tag-completion
           <input type="checkbox" v-model="data['commands']['fix-target-selector-tag-completion']"/>
@@ -144,7 +144,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>console</div>
+        <div><h3>console</h3></div>
         <div class="tab">
           enable-brigadier-completions
           <input type="checkbox" v-model="data['console']['enable-brigadier-completions']"/>
@@ -160,7 +160,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>item-validation</div>
+        <div><h3>item-validation</h3></div>
         <div class="tab">
           book
           <div class="tab">
@@ -202,7 +202,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>logging</div>
+        <div><h3>logging</h3></div>
         <div class="tab">
           deobfuscate-stacktraces
           <input type="checkbox" v-model="data['logging']['deobfuscate-stacktraces']"/>
@@ -210,7 +210,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>messages</div>
+        <div><h3>messages</h3></div>
         <div class="tab">
           kick
           <div class="tab">
@@ -242,7 +242,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>misc</div>
+        <div><h3>misc</h3></div>
         <div class="tab">
           chat-threads
           <div class="tab">
@@ -289,7 +289,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>packet-limiter</div>
+        <div><h3>packet-limiter</h3></div>
         <div class="tab">
           all-packets
           <div class="tab">
@@ -313,30 +313,32 @@ const saveConfig = async ():Promise<void> => {
           <textarea v-model="data['packet-limiter']['kick-message']"></textarea>
         </div>
         <div>
-          overrides
           <div class="tab">
-            ServerboundPlaceRecipePacket
+            overrides
             <div class="tab">
-              action
-              <select v-model="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['action']">
-                <option>DROP</option>
-                <option>KICK</option>
-              </select>
-            </div>
-            <div class="tab">
-              interval
-              <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['interval']"/>
-            </div>
-            <div class="tab">
-              max-packet-rate
-              <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['max-packet-rate']"/>
+              ServerboundPlaceRecipePacket
+              <div class="tab">
+                action
+                <select v-model="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['action']">
+                  <option>DROP</option>
+                  <option>KICK</option>
+                </select>
+              </div>
+              <div class="tab">
+                interval
+                <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['interval']"/>
+              </div>
+              <div class="tab">
+                max-packet-rate
+                <input type="number" v-model.number="data['packet-limiter']['overrides']['ServerboundPlaceRecipePacket']['max-packet-rate']"/>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div>
-        <div>player-auto-save</div>
+        <div><h3>player-auto-save</h3></div>
         <div class="tab">
           max-per-tick
           <input type="number" v-model.number="data['player-auto-save']['max-per-tick']"/>
@@ -348,7 +350,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>proxies</div>
+        <div><h3>proxies</h3></div>
         <div class="tab">
           bungee-cord
           <div class="tab">
@@ -378,7 +380,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>scoreboards</div>
+        <div><h3>scoreboards</h3></div>
         <div class="tab">
           use-dimension-type-for-custom-spawners
           <input type="checkbox" v-model="data['scoreboards']['save-empty-scoreboard-teams']"/>
@@ -390,7 +392,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>spam-limiter</div>
+        <div><h3>spam-limiter</h3></div>
         <div class="tab">
           incoming-packet-threshold
           <input type="number" v-model.number="data['spam-limiter']['incoming-packet-threshold']"/>
@@ -414,7 +416,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>timings</div>
+        <div><h3>timings</h3></div>
         <div class="tab">
           enabled
           <input type="checkbox" v-model="data['timings']['enabled']"/>
@@ -490,7 +492,7 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>watchdog</div>
+        <div><h3>watchdog</h3></div>
         <div class="tab">
           early-warning-delay
           <input type="number" v-model.number="data['watchdog']['early-warning-delay']"/>
