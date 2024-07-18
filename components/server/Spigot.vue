@@ -469,14 +469,12 @@ const saveConfig = async ():Promise<void> => {
               <input type="checkbox" v-model="data['world-settings']['default']['entity-activation-range']['ignore-spectators']"/>
             </div>
           </div>
-
           <div class="tab">
             entity-tracking-range
             <div class="tab">
               players
               <input type="number" v-model="data['world-settings']['default']['entity-tracking-range']['players']"/>
             </div>
-
             <div class="tab">
               animals
               <input type="number" v-model="data['world-settings']['default']['entity-tracking-range']['animals']"/>
