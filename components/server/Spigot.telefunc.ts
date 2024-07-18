@@ -34,11 +34,18 @@ export const onSave = async (data:any) => {
     'seed-mansion', 'seed-fossil', 'seed-portal', 'seed-ancientcity', 'seed-trailruins',
     'seed-trialchambers', 'seed-buriedtreasure', 'seed-mineshaft', 'seed-stronghold'
   ]
-  numberCheckItems.forEach(item => {
-    if (data['world-settings']['default'][item] !== 'default') {
-      data['world-settings']['default'][item] = Number(data['world-settings']['default'][item])
-    }
-  })
+  try {
+    numberCheckItems.forEach(item => {
+      if (data['world-settings']['default'][item] !== 'default') {
+        data['world-settings']['default'][item] = Number(data['world-settings']['default'][item])
+        if (isNaN(data['world-settings']['default'][item])) {
+          throw new Error(`'${item}' is not a number or 'default'!`)
+        }
+      }
+    })
+  } catch (error:any) {
+    return { errorMessage: error.message }
+  }
 
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
