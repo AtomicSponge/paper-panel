@@ -43,7 +43,7 @@ const saveConfig = async ():Promise<void> => {
     </header>
     <main v-show="showConfig">
       <div>
-        <div>anticheat</div>
+        <div><h3>anticheat</h3></div>
         <div class="tab">
           anti-xray
           <div class="tab">
@@ -100,71 +100,71 @@ const saveConfig = async ():Promise<void> => {
       </div>
 
       <div>
-        <div>chunks</div>
+        <div><h3>chunks</h3></div>
       </div>
 
       <div>
-        <div>collisions</div>
+        <div><h3>collisions</h3></div>
       </div>
 
       <div>
-        <div>command-blocks</div>
+        <div><h3>command-blocks</h3></div>
       </div>
 
       <div>
-        <div>entities</div>
+        <div><h3>entities</h3></div>
       </div>
 
       <div>
-        <div>environment</div>
+        <div><h3>environment</h3></div>
       </div>
 
       <div>
-        <div>feature-seeds</div>
+        <div><h3>feature-seeds</h3></div>
       </div>
 
       <div>
-        <div>fishing-time-range</div>
+        <div><h3>fishing-time-range</h3></div>
       </div>
 
       <div>
-        <div>fixes</div>
+        <div><h3>fixes</h3></div>
       </div>
 
       <div>
-        <div>hopper</div>
+        <div><h3>hopper</h3></div>
       </div>
 
       <div>
-        <div>lootables</div>
+        <div><h3>lootables</h3></div>
       </div>
 
       <div>
-        <div>maps</div>
+        <div><h3>maps</h3></div>
       </div>
 
       <div>
-        <div>max-growth-height</div>
+        <div><h3>max-growth-height</h3></div>
       </div>
 
       <div>
-        <div>misc</div>
+        <div><h3>misc</h3></div>
       </div>
 
       <div>
-        <div>scoreboards</div>
+        <div><h3>scoreboards</h3></div>
       </div>
 
       <div>
-        <div>spawn</div>
+        <div><h3>spawn</h3></div>
       </div>
 
       <div>
-        <div>tick-rates</div>
+        <div><h3>tick-rates</h3></div>
       </div>
 
-      <div>
-        <div>unsupported-settings</div>
+      <div class="unsupported">
+        <div><h3>unsupported-settings</h3></div>
       </div>
     </main>
     <footer v-show="showConfig">
@@ -206,5 +206,11 @@ textarea {
 }
 .tab {
   margin-left: 2em;
+}
+.unsupported {
+  margin: 0.4em;
+  border-radius: 16px;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(178, 34, 34);
 }
 </style>
