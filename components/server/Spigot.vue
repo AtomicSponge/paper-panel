@@ -397,6 +397,61 @@ const saveConfig = async ():Promise<void> => {
               flying-monsters
               <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['flying-monsters']"/>
             </div>
+            <div class="tab">
+              wake-up-inactive
+              <div class="tab">
+                animals-max-per-tick
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['animals-max-per-tick']"/>
+              </div>
+              <div class="tab">
+                animals-every
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['animals-every']"/>
+              </div>
+              <div class="tab">
+                animals-for
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['animals-for']"/>
+              </div>
+              <div class="tab">
+                monsters-max-per-tick
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['monsters-max-per-tick']"/>
+              </div>
+              <div class="tab">
+                monsters-every
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['monsters-every']"/>
+              </div>
+              <div class="tab">
+                monsters-for
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['monsters-for']"/>
+              </div>
+              <div class="tab">
+                villagers-max-per-tick
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['villagers-max-per-tick']"/>
+              </div>
+              <div class="tab">
+                villagers-every
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['villagers-every']"/>
+              </div>
+              <div class="tab">
+                villagers-for
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['villagers-for']"/>
+              </div>
+              <div class="tab">
+                flying-monsters-max-per-tick
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['flying-monsters-max-per-tick']"/>
+              </div>
+              <div class="tab">
+                flying-monsters-every
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['flying-monsters-every']"/>
+              </div>
+              <div class="tab">
+                flying-monsters-for
+                <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['flying-monsters-for']"/>
+              </div>
+            </div>
+
+            <div class="tab">
+              villagers-work-immunity-after
+            </div>
           </div>
         </div>
       </div>
