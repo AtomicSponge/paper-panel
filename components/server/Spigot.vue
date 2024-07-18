@@ -271,6 +271,102 @@ const saveConfig = async ():Promise<void> => {
             hanging-tick-frequency
             <input type="number" v-model="data['world-settings']['default']['hanging-tick-frequency']"/>
           </div>
+          <div class="tab">
+            unload-frozen-chunks
+            <input type="checkbox" v-model="data['world-settings']['default']['unload-frozen-chunks']"/>
+          </div>
+
+          <div class="tab">
+            growth
+            <div class="tab">
+              cactus-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['cactus-modifier']"/>
+            </div>
+            <div class="tab">
+              cane-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['cane-modifier']"/>
+            </div>
+            <div class="tab">
+              melon-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['melon-modifier']"/>
+            </div>
+            <div class="tab">
+              mushroom-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['mushroom-modifier']"/>
+            </div>
+            <div class="tab">
+              pumpkin-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['pumpkin-modifier']"/>
+            </div>
+            <div class="tab">
+              sapling-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['sapling-modifier']"/>
+            </div>
+            <div class="tab">
+              beetroot-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['beetroot-modifier']"/>
+            </div>
+            <div class="tab">
+              carrot-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['carrot-modifier']"/>
+            </div>
+            <div class="tab">
+              potato-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['potato-modifier']"/>
+            </div>
+            <div class="tab">
+              torchflower-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['torchflower-modifier']"/>
+            </div>
+            <div class="tab">
+              wheat-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['wheat-modifier']"/>
+            </div>
+            <div class="tab">
+              netherwart-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['netherwart-modifier']"/>
+            </div>
+            <div class="tab">
+              vine-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['vine-modifier']"/>
+            </div>
+            <div class="tab">
+              cocoa-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['cocoa-modifier']"/>
+            </div>
+            <div class="tab">
+              bamboo-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['bamboo-modifier']"/>
+            </div>
+            <div class="tab">
+              sweetberry-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['sweetberry-modifier']"/>
+            </div>
+            <div class="tab">
+              kelp-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['kelp-modifier']"/>
+            </div>
+            <div class="tab">
+              twistingvines-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['twistingvines-modifier']"/>
+            </div>
+            <div class="tab">
+              weepingvines-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['weepingvines-modifier']"/>
+            </div>
+            <div class="tab">
+              cavevines-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['cavevines-modifier']"/>
+            </div>
+            <div class="tab">
+              glowberry-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['glowberry-modifier']"/>
+            </div>
+            <div class="tab">
+              pitcherplant-modifier
+              <input type="number" v-model="data['world-settings']['default']['growth']['pitcherplant-modifier']"/>
+            </div>
+          </div>
         </div>
       </div>
 
