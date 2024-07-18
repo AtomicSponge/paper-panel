@@ -128,6 +128,42 @@ const saveConfig = async ():Promise<void> => {
           netty-threads
           <input type="number" v-model="data['settings']['netty-threads']"/>
         </div>
+        <div class="tab">
+          attribute
+          <div class="tab">
+            maxHealth
+            <div class="tab">
+              max
+              <input type="number" v-model="data['settings']['attribute']['maxHealth']['max']"/>
+            </div>
+          </div>
+          <div class="tab">
+            movementSpeed
+            <div class="tab">
+              max
+              <input type="number" v-model="data['settings']['attribute']['movementSpeed']['max']"/>
+            </div>
+          </div>
+          <div class="tab">
+            attackDamage
+            <div class="tab">
+              max
+              <input type="number" v-model="data['settings']['attribute']['attackDamage']['max']"/>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          log-villager-deaths
+          <input type="checkbox" v-model="data['settings']['log-villager-deaths']"/>
+        </div>
+        <div class="tab">
+          log-named-deaths
+          <input type="checkbox" v-model="data['settings']['log-named-deaths']"/>
+        </div>
+        <div class="tab">
+          debug
+          <input type="checkbox" v-model="data['settings']['debug']"/>
+        </div>
       </div>
 
       <div>
