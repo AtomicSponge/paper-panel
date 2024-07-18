@@ -220,6 +220,33 @@ const saveConfig = async ():Promise<void> => {
             thunder-chance
             <input type="number" v-model="data['world-settings']['default']['thunder-chance']"/>
           </div>
+          <div class="tab">
+            merge-radius
+            <div class="tab">
+              item
+              <input type="number" v-model="data['world-settings']['default']['merge-radius']['item']"/>
+            </div>
+            <div class="tab">
+              exp
+              <input type="number" v-model="data['world-settings']['default']['merge-radius']['exp']"/>
+            </div>
+          </div>
+          <div class="tab">
+            mob-spawn-range
+            <input type="number" v-model="data['world-settings']['default']['mob-spawn-range']"/>
+          </div>
+          <div class="tab">
+            item-despawn-rate
+            <input type="number" v-model="data['world-settings']['default']['item-despawn-rate']"/>
+          </div>
+          <div class="tab">
+            arrow-despawn-rate
+            <input type="number" v-model="data['world-settings']['default']['arrow-despawn-rate']"/>
+          </div>
+          <div class="tab">
+            trident-despawn-rate
+            <input type="number" v-model="data['world-settings']['default']['trident-despawn-rate']"/>
+          </div>
         </div>
       </div>
 
