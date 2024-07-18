@@ -17,6 +17,8 @@ import { server } from '@/database/server'
 export const onSave = async (data:any) => {
   //  Convert from comma seperated list to array
   data['advancements']['disabled'] = data['advancements']['disabled'].split(',')
+  data['commands']['spam-exclusions'] = data['commands']['spam-exclusions'].split(',')
+  data['commands']['replace-commands'] = data['commands']['replace-commands'].split(',')
 
   console.log('Saving Spigot config...')
   console.log(data)

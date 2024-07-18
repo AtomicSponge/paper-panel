@@ -132,6 +132,30 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div>commands</div>
+        <div class="tab">
+          tab-complete
+          <input type="number" v-model="data['commands']['tab-complete']"/>
+        </div>
+        <div class="tab">
+          send-namespaced
+          <input type="checkbox" v-model="data['commands']['send-namespaced']"/>
+        </div>
+        <div class="tab">
+          log
+          <input type="checkbox" v-model="data['commands']['log']"/>
+        </div>
+        <div class="tab">
+          spam-exclusions (seperate with comma)<br/>
+          <textarea v-model="data['commands']['spam-exclusions']"></textarea>
+        </div>
+        <div class="tab">
+          silent-commandblock-console
+          <input type="checkbox" v-model="data['commands']['silent-commandblock-console']"/>
+        </div>
+        <div class="tab">
+          replace-commands (seperate with comma)<br/>
+          <textarea v-model="data['commands']['replace-commands']"></textarea>
+        </div>
       </div>
 
       <div>
