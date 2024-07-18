@@ -633,6 +633,25 @@ const saveConfig = async ():Promise<void> => {
               <input type="number" v-model="data['world-settings']['default']['hunger']['other-multiplier']"/>
             </div>
           </div>
+          <div class="tab">
+            max-tnt-per-tick
+            <input type="number" v-model="data['world-settings']['default']['max-tnt-per-tick']"/>
+          </div>
+          <div class="tab">
+            max-tick-time
+            <div class="tab">
+              tile
+              <input type="number" v-model="data['world-settings']['default']['max-tick-time']['tile']"/>
+            </div>
+            <div class="tab">
+              entity
+              <input type="number" v-model="data['world-settings']['default']['max-tick-time']['entity']"/>
+            </div>
+          </div>
+          <div class="tab">
+            verbose
+            <input type="checkbox" v-model="data['world-settings']['default']['verbose']"/>
+          </div>
         </div>
       </div>
 
