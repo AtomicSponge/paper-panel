@@ -448,7 +448,6 @@ const saveConfig = async ():Promise<void> => {
                 <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['wake-up-inactive']['flying-monsters-for']"/>
               </div>
             </div>
-
             <div class="tab">
               villagers-work-immunity-after
               <input type="number" v-model="data['world-settings']['default']['entity-activation-range']['villagers-work-immunity-after']"/>
