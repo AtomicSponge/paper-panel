@@ -15,7 +15,7 @@ import { server } from '@/database/server'
  * Save server configuration
  */
 export const onSave = async (data:any) => {
-  if(typeof data['timings']['hidden-config-entries'] === 'string') {
+  if (typeof data['timings']['hidden-config-entries'] === 'string') {
     data['timings']['hidden-config-entries'] = data['timings']['hidden-config-entries'].split(',')
   }
 

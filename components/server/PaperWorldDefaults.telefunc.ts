@@ -15,10 +15,10 @@ import { server } from '@/database/server'
  * Save World Defaults configuration
  */
 export const onSave = async (data:any) => {
-  if(typeof data['anticheat']['anti-xray']['hidden-blocks'] === 'string') {
+  if (typeof data['anticheat']['anti-xray']['hidden-blocks'] === 'string') {
     data['anticheat']['anti-xray']['hidden-blocks'] = data['anticheat']['anti-xray']['hidden-blocks'].split(',')
   }
-  if(typeof data['anticheat']['anti-xray']['replacement-blocks'] === 'string') {
+  if (typeof data['anticheat']['anti-xray']['replacement-blocks'] === 'string') {
     data['anticheat']['anti-xray']['replacement-blocks'] = data['anticheat']['anti-xray']['replacement-blocks'].split(',')
   }
 
