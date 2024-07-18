@@ -16,7 +16,8 @@ import { server } from '@/database/server'
  */
 export const onSave = async (data:any) => {
   if (typeof data['timings']['hidden-config-entries'] === 'string') {
-    data['timings']['hidden-config-entries'] = data['timings']['hidden-config-entries'].split(',')
+    data['timings']['hidden-config-entries'] =
+      data['timings']['hidden-config-entries'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
 
   const db = await JSONFilePreset('db.json', server)

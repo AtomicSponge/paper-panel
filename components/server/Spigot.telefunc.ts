@@ -16,13 +16,16 @@ import { server } from '@/database/server'
  */
 export const onSave = async (data:any) => {
   if (typeof data['advancements']['disabled'] === 'string') {
-    data['advancements']['disabled'] = data['advancements']['disabled'].split(',')
+    data['advancements']['disabled'] =
+      data['advancements']['disabled'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
   if (typeof data['commands']['spam-exclusions'] === 'string') {
-    data['commands']['spam-exclusions'] = data['commands']['spam-exclusions'].split(',')
+    data['commands']['spam-exclusions'] =
+      data['commands']['spam-exclusions'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
   if (typeof data['commands']['replace-commands'] === 'string') {
-    data['commands']['replace-commands'] = data['commands']['replace-commands'].split(',')
+    data['commands']['replace-commands'] =
+      data['commands']['replace-commands'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
 
   if (data['world-settings']['default']['seed-village'] !== 'default') {
