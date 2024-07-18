@@ -366,6 +366,10 @@ const saveConfig = async ():Promise<void> => {
               <input type="number" v-model="data['world-settings']['default']['growth']['pitcherplant-modifier']"/>
             </div>
           </div>
+
+          <div class="tab">
+            entity-activation-range
+          </div>
         </div>
       </div>
 
