@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './Spigot.telefunc'
-import type { Ref, ModelRef } from 'vue'
+import type { ModelRef } from 'vue'
 
 const data:ModelRef<any> = defineModel({ required: true })
 
