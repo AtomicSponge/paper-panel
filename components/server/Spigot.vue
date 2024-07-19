@@ -30,11 +30,15 @@ const saveConfig = async ():Promise<void> => {
 }
 
 const addForcedStats = () => {
-  //
+  const key = window.prompt('Enter key value:')
+  if(key === null) return
+  data.value['stats']['forced-stats'] = 
+    Object.assign(data.value['stats']['forced-stats'], { [key]: '' })
 }
 
-const removeForcedStats = (idx:number) => {
-  //
+const removeForcedStats = (key:number) => {
+  if(window.confirm(`Are you sure you want to delete ${key}?`))
+    delete data.value['stats']['forced-stats'][key]
 }
 </script>
 
@@ -688,12 +692,11 @@ const removeForcedStats = (idx:number) => {
           forced-stats
           <button class="smallbtn" @click="addForcedStats()">Add</button>
           <br/>
-          <li v-for="(item, key) in data['stats']['forced-stats']">
-            Key:
-            <input type="text" v-model="data['stats']['forced-stats'][key]">
+          <li v-for="(_item, key) in data['stats']['forced-stats']" :key="key">
+            Key: <h4>{{ key }}</h4>
             Value:
             <input type="text" v-model="data['stats']['forced-stats'][key]">
-            <button class="smallbtn" @click="">Remove</button>
+            <button class="smallbtn" @click="removeForcedStats(key)">Remove</button>
           </li>
         </div>
       </div>
@@ -741,6 +744,11 @@ textarea {
 }
 li {
   padding: 0.4em;
+}
+h4 {
+  font-size: 1em;
+  font-weight: 600;
+  display: inline-block;
 }
 .tab {
   margin-left: 2em;
