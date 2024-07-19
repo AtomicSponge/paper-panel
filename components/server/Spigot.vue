@@ -15,6 +15,8 @@ const data:ModelRef<any> = defineModel({ required: true })
 const label = ref('Edit')
 /** Reference for showing the config display */
 const showConfig = ref(false)
+/** Key for forcing forced-stat list display update */
+const forcedStatKey = ref(0)
 
 /** Toggle showing the config display */
 const toggleConfig = ():void => {
@@ -35,6 +37,7 @@ const addForcedStats = () => {
   if(key === null) return
   data.value['stats']['forced-stats'] = 
     Object.assign(data.value['stats']['forced-stats'], { [key]: '' })
+  forcedStatKey.value += 1
 }
 
 /**
@@ -42,8 +45,10 @@ const addForcedStats = () => {
  * @param key Key to delete
  */
 const removeForcedStats = (key:number) => {
-  if(window.confirm(`Are you sure you want to delete ${key}?`))
+  if(window.confirm(`Are you sure you want to delete ${key}?`)) {
     delete data.value['stats']['forced-stats'][key]
+    forcedStatKey.value += 1
+  }
 }
 </script>
 
@@ -697,7 +702,7 @@ const removeForcedStats = (key:number) => {
           forced-stats
           <button class="smallbtn" @click="addForcedStats()">Add</button>
           <br/>
-          <li v-for="(_item, key) in data['stats']['forced-stats']" :key="key">
+          <li v-for="(item, key) in data['stats']['forced-stats']" :key="forcedStatKey">
             Key: <h4>{{ key }}</h4>
             Value:
             <input type="text" v-model="data['stats']['forced-stats'][key]">
