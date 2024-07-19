@@ -29,6 +29,7 @@ const saveConfig = async ():Promise<void> => {
   else window.alert('Spigot Configuration saved!')
 }
 
+/** Add an item to forced-stats */
 const addForcedStats = () => {
   const key = window.prompt('Enter key value:')
   if(key === null) return
@@ -36,6 +37,10 @@ const addForcedStats = () => {
     Object.assign(data.value['stats']['forced-stats'], { [key]: '' })
 }
 
+/**
+ * Delete an item from forced-stats
+ * @param key Key to delete
+ */
 const removeForcedStats = (key:number) => {
   if(window.confirm(`Are you sure you want to delete ${key}?`))
     delete data.value['stats']['forced-stats'][key]
