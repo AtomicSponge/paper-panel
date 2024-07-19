@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onSave } from './Spigot.telefunc'
-import type { ModelRef } from 'vue'
+import type { Ref, ModelRef } from 'vue'
 
 const data:ModelRef<any> = defineModel({ required: true })
 
@@ -27,6 +27,14 @@ const saveConfig = async ():Promise<void> => {
   const res = await onSave(data.value)
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('Spigot Configuration saved!')
+}
+
+const addForcedStats = () => {
+  //
+}
+
+const removeForcedStats = (idx:number) => {
+  //
 }
 </script>
 
@@ -678,6 +686,15 @@ const saveConfig = async ():Promise<void> => {
         </div>
         <div class="tab">
           forced-stats
+          <button class="smallbtn" @click="addForcedStats()">Add</button>
+          <br/>
+          <li v-for="(item, key) in data['stats']['forced-stats']">
+            Key:
+            <input type="text" v-model="data['stats']['forced-stats'][key]">
+            Value:
+            <input type="text" v-model="data['stats']['forced-stats'][key]">
+            <button class="smallbtn" @click="">Remove</button>
+          </li>
         </div>
       </div>
     </main>
@@ -722,7 +739,14 @@ textarea {
   height: 2.8em;
   margin-top: 3px;
 }
+li {
+  padding: 0.4em;
+}
 .tab {
   margin-left: 2em;
+}
+.smallbtn {
+  padding: 4px;
+  margin-left: 4px;
 }
 </style>
