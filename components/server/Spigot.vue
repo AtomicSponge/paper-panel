@@ -714,7 +714,7 @@ const removeForcedStats = (key:number) => {
               <div class="cell">Key: <h4>{{ key }}</h4></div>
               <div class="cell">
                 Value:
-                <input type="text" v-model="data['stats']['forced-stats'][key]">
+                <input type="number" v-model="data['stats']['forced-stats'][key]">
                 <button class="smallbtn" @click="removeForcedStats(key)">Remove</button>
               </div>
             </div>
