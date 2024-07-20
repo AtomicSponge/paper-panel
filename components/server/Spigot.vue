@@ -35,6 +35,7 @@ const saveConfig = async ():Promise<void> => {
 const addForcedStats = () => {
   const key = window.prompt('Enter key value:')
   if(key === null || key === '') return
+
   data.value['stats']['forced-stats'] = 
     Object.assign(data.value['stats']['forced-stats'], { [key]: '' })
   forcedStatKey.value += 1
