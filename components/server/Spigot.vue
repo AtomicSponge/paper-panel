@@ -38,6 +38,13 @@ const addForcedStats = () => {
   data.value['stats']['forced-stats'] = 
     Object.assign(data.value['stats']['forced-stats'], { [key]: '' })
   forcedStatKey.value += 1
+
+  //  First key added does not always update the display
+  //  So we refresh the entire config display to force
+  if(Object.keys(data.value['stats']['forced-stats']).length === 1) {
+    showConfig.value = false
+    showConfig.value = true
+  }
 }
 
 /**
