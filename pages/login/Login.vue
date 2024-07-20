@@ -37,18 +37,18 @@ const submitLogin = async ():Promise<void> => {
   </header>
   <main>
     <div class="row">
-      <div class="col">
+      <div class="cell">
         <label for="username">Username: </label>
       </div>
-      <div class="col">
+      <div class="cell">
         <input id="username" type="text" v-model="username"/>
       </div>
     </div>
     <div class="row">
-      <div class="col">
+      <div class="cell">
         <label for="userpwd" type="userpwd">Password: </label>
       </div>
-      <div class="col">
+      <div class="cell">
         <input id="userpwd" type="password" v-model="password"/>
       </div>
     </div>
@@ -79,7 +79,7 @@ main {
 div .row {
   display: table-row;
 }
-div .col {
+div .cell {
   display: table-cell;
   padding: 4px;
 }

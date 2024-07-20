@@ -766,6 +766,18 @@ h4 {
 .tab {
   margin-left: 2em;
 }
+div .table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+div .row {
+  display: table-row;
+}
+div .cell {
+  display: table-cell;
+  padding: 4px;
+}
 .smallbtn {
   padding: 4px;
   margin-left: 4px;
