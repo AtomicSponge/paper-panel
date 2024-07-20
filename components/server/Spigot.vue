@@ -701,13 +701,16 @@ const removeForcedStats = (key:number) => {
         <div class="tab">
           forced-stats
           <button class="smallbtn" @click="addForcedStats()">Add</button>
-          <br/>
-          <li v-for="(item, key) in data['stats']['forced-stats']" :key="forcedStatKey">
-            Key: <h4>{{ key }}</h4>
-            Value:
-            <input type="text" v-model="data['stats']['forced-stats'][key]">
-            <button class="smallbtn" @click="removeForcedStats(key)">Remove</button>
-          </li>
+          <div class="table">
+            <div v-for="(item, key) in data['stats']['forced-stats']" :key="forcedStatKey" class="row">
+              <div class="cell">Key: <h4>{{ key }}</h4></div>
+              <div class="cell">
+                Value:
+                <input type="text" v-model="data['stats']['forced-stats'][key]">
+                <button class="smallbtn" @click="removeForcedStats(key)">Remove</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
@@ -762,6 +765,18 @@ h4 {
 }
 .tab {
   margin-left: 2em;
+}
+div .table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+div .row {
+  display: table-row;
+}
+div .cell {
+  display: table-cell;
+  padding: 4px;
 }
 .smallbtn {
   padding: 4px;
