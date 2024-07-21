@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onUpdate } from './Server.telefunc'
+import { onCheckUpdate, onDoUpdate } from './Server.telefunc'
 
 defineProps<{
   /** Server address */
@@ -18,15 +18,24 @@ defineProps<{
 /** Reference for displaying the update message */
 const showUpdate = ref(false)
 
+const updateMessage = ref('')
+
 /** Check for updates */
 const checkUpdates = async ():Promise<void> => {
-  if(window.confirm('This will restart the server!  Are you sure you want to continue?')) {
-    showUpdate.value = true
-    const res = await onUpdate()
-    if(res?.errorMessage) window.alert(res.errorMessage)
-    else window.alert('Update complete!')
-    showUpdate.value = false
+  showUpdate.value = true
+  updateMessage.value = 'Checking for updates, please wait...'
+  const updateAvailable = await onCheckUpdate()
+  if(updateAvailable.errorMessage) {
+    window.alert(updateAvailable.errorMessage)
+    return
   }
+  if(updateAvailable.status && window.confirm('Update available!  This will restart the server!  Are you sure you want to continue?')) {
+    updateMessage.value = 'Performing server update, please wait...'
+    const res = await onDoUpdate()
+  } else {
+    window.alert('Server is on the latest version!')
+  }
+  showUpdate.value = false
 }
 </script>
 
@@ -40,7 +49,7 @@ const checkUpdates = async ():Promise<void> => {
       <button @click="checkUpdates()">Check for updates</button>
     </div>
     <div v-show="showUpdate">
-      Checking for updates, please wait...
+      {{ updateMessage }}
     </div>
   </section>
 </template>
