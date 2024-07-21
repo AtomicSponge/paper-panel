@@ -196,6 +196,62 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>environment</h3></div>
+        <div class="tab">
+          disable-explosion-knockback
+          <input type="checkbox" v-model="data['environment']['disable-explosion-knockback']"/>
+        </div>
+        <div class="tab">
+          disable-ice-and-snow
+          <input type="checkbox" v-model="data['environment']['disable-ice-and-snow']"/>
+        </div>
+        <div class="tab">
+          disable-teleportation-suffocation-check
+          <input type="checkbox" v-model="data['environment']['disable-teleportation-suffocation-check']"/>
+        </div>
+        <div class="tab">
+          disable-thunder
+          <input type="checkbox" v-model="data['environment']['disable-thunder']"/>
+        </div>
+        <div class="tab">
+          fire-tick-delay
+          <input type="number" v-model="data['environment']['fire-tick-delay']"/>
+        </div>
+        <div class="tab">
+          frosted-ice
+          <div class="tab">
+            delay
+            <div class="tab">
+              max
+              <input type="number" v-model="data['environment']['frosted-ice']['delay']['max']"/>
+            </div>
+            <div class="tab">
+              min
+              <input type="number" v-model="data['environment']['frosted-ice']['delay']['min']"/>
+            </div>
+          </div>
+          <div class="tab">
+            enabled
+            <input type="checkbox" v-model="data['environment']['frosted-ice']['enabled']"/>
+          </div>
+        </div>
+        <div class="tab">
+          generate-flat-bedrock
+          <input type="checkbox" v-model="data['environment']['generate-flat-bedrock']"/>
+        </div>
+        <div class="tab">
+          locate-structures-outside-world-border
+          <input type="checkbox" v-model="data['environment']['locate-structures-outside-world-border']"/>
+        </div>
+        <div class="tab">
+          max-block-ticks
+          <input type="number" v-model="data['environment']['max-block-ticks']"/>
+        </div>
+        <div class="tab">
+          max-fluid-ticks
+          <input type="number" v-model="data['environment']['max-fluid-ticks']"/>
+        </div>
+
+        <!-- continue here -->
       </div>
 
       <div>
