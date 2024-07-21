@@ -331,6 +331,34 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>misc</h3></div>
+        <div class="tab">
+          disable-end-credits
+          <input type="checkbox" v-model="data['misc']['disable-end-credits']"/>
+        </div>
+        <div class="tab">
+          disable-relative-projectile-velocity
+          <input type="checkbox" v-model="data['misc']['disable-relative-projectile-velocity']"/>
+        </div>
+        <div class="tab">
+          disable-sprint-interruption-on-attack
+          <input type="checkbox" v-model="data['misc']['disable-sprint-interruption-on-attack']"/>
+        </div>
+        <div class="tab">
+          light-queue-size
+          <input type="number" v-model="data['misc']['light-queue-size']"/>
+        </div>
+        <div class="tab">
+          max-leash-distance
+          <input type="number" v-model="data['misc']['max-leash-distance']"/>
+        </div>
+        <div class="tab">
+          redstone-implementation
+          <select v-model="data['misc']['redstone-implementation']">
+            <option>VANILLA</option>
+            <option>EIGENCRAFT</option>
+            <option>ALTERNATE-CURRENT</option>
+          </select>
+        </div>
       </div>
 
       <div>
