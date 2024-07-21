@@ -24,6 +24,8 @@ export const data = async () => {
     }
   })()
 
+  const version = '1.20'
+
   let port = ''
   let serverProps = null
   let paperConfig = null
@@ -52,7 +54,7 @@ export const data = async () => {
 
   return {
     server: {
-      hostname, port
+      hostname, port, version
     },
     serverProps,
     paperConfig,

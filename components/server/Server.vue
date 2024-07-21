@@ -7,12 +7,15 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { onCheckUpdate, onDoUpdate } from './Server.telefunc'
+import { reload } from 'vike/client/router'
 
 defineProps<{
   /** Server address */
   hostname:string
   /** Server port */
   port:string
+  /** Server version */
+  version:string
 }>()
 
 /** Reference for displaying the update message */
@@ -38,7 +41,10 @@ const checkUpdates = async ():Promise<void> => {
     const res = await onDoUpdate()
     if (res?.errorMessage) {
       window.alert(res.errorMessage)
-    } else window.alert('Server update complete!')
+    } else {
+      window.alert('Server update complete!')
+      await reload()
+    }
   }
   showUpdate.value = false
 }
@@ -50,7 +56,7 @@ const checkUpdates = async ():Promise<void> => {
       <h2>{{ hostname }}:{{ port }}</h2>
     </div>
     <div>
-      <h3>Version: 1.20</h3>
+      <h3>Version: {{ version }}</h3>
       <button @click="checkUpdates()">Check for updates</button>
     </div>
     <div v-show="showUpdate">
