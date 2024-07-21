@@ -156,6 +156,26 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>collisions</h3></div>
+        <div class="tab">
+          allow-player-cramming-damage
+          <input type="checkbox" v-model="data['collisions']['allow-player-cramming-damage']"/>
+        </div>
+        <div class="tab">
+          allow-vehicle-collisions
+          <input type="checkbox" v-model="data['collisions']['allow-vehicle-collisions']"/>
+        </div>
+        <div class="tab">
+          fix-climbing-bypassing-cramming-rule
+          <input type="checkbox" v-model="data['collisions']['fix-climbing-bypassing-cramming-rule']"/>
+        </div>
+        <div class="tab">
+          max-entity-collisions
+          <input type="number" v-model="data['collisions']['max-entity-collisions']"/>
+        </div>
+        <div class="tab">
+          only-players-collide
+          <input type="checkbox" v-model="data['collisions']['only-players-collide']"/>
+        </div>
       </div>
 
       <div>
