@@ -248,6 +248,18 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>hopper</h3></div>
+        <div class="tab">
+          cooldown-when-full
+          <input type="checkbox" v-model="data['hopper']['cooldown-when-full']"/>
+        </div>
+        <div class="tab">
+          disable-move-event
+          <input type="checkbox" v-model="data['hopper']['disable-move-event']"/>
+        </div>
+        <div class="tab">
+          ignore-occluding-blocks
+          <input type="checkbox" v-model="data['hopper']['ignore-occluding-blocks']"/>
+        </div>
       </div>
 
       <div>
