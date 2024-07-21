@@ -208,6 +208,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>fishing-time-range</h3></div>
+        <div class="tab">
+          maximum
+          <input type="number" v-model="data['fishing-time-range']['maximum']"/>
+        </div>
+        <div class="tab">
+          minimum
+          <input type="number" v-model="data['fishing-time-range']['minimum']"/>
+        </div>
       </div>
 
       <div>
