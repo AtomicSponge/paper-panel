@@ -20,7 +20,7 @@ defineProps<{
 
 /** Reference for displaying the update message */
 const showUpdate = ref(false)
-
+/** Reference for the update message display */
 const updateMessage = ref('')
 
 /** Check for updates */
