@@ -395,6 +395,32 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>tick-rates</h3></div>
+        <div class="tab">
+          behavior
+          <div class="tab">
+            villager
+            <div class="tab">
+              validatenearbypoi
+              <input type="number" v-model="data['tick-rates']['behavior']['villager']['validatenearbypoi']"/>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          container-update
+          <input type="number" v-model="data['tick-rates']['container-update']"/>
+        </div>
+        <div class="tab">
+          dry-farmland
+          <input type="number" v-model="data['tick-rates']['dry-farmland']"/>
+        </div>
+        <div class="tab">
+          grass-spread
+          <input type="number" v-model="data['tick-rates']['grass-spread']"/>
+        </div>
+        <div class="tab">
+          mob-spawner
+          <input type="number" v-model="data['tick-rates']['mob-spawner']"/>
+        </div>
       </div>
 
       <div class="unsupported">
