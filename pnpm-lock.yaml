@@ -36,8 +36,8 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       hono:
-        specifier: ^4.5.0
-        version: 4.5.0
+        specifier: ^4.5.1
+        version: 4.5.1
       lowdb:
         specifier: ^7.0.1
         version: 7.0.1
@@ -68,7 +68,7 @@ importers:
     devDependencies:
       '@hono/vite-dev-server':
         specifier: ^0.13.1
-        version: 0.13.1(hono@4.5.0)
+        version: 0.13.1(hono@4.5.1)
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
@@ -804,8 +804,8 @@ packages:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
 
-  hono@4.5.0:
-    resolution: {integrity: sha512-ZbezypZfn4odyApjCCv+Fw5OgweBqRLA/EsMyc4FUknFvBJcBIKhHy4sqmD1rWpBc/3wUlaQ6tqOPjk36R1ckg==}
+  hono@4.5.1:
+    resolution: {integrity: sha512-6q8AugoWG5wlrjdGG8OFFiqEsPlPGjODjUik48sEJeko4Tae1UsLS2vUiYHLEJx1gJvOZa4BWkQC+urwDmkEvQ==}
     engines: {node: '>=16.0.0'}
 
   is-binary-path@2.1.0:
@@ -1396,10 +1396,10 @@ snapshots:
 
   '@hono/node-server@1.12.0': {}
 
-  '@hono/vite-dev-server@0.13.1(hono@4.5.0)':
+  '@hono/vite-dev-server@0.13.1(hono@4.5.1)':
     dependencies:
       '@hono/node-server': 1.12.0
-      hono: 4.5.0
+      hono: 4.5.1
       miniflare: 3.20240701.0
       minimatch: 9.0.5
     transitivePeerDependencies:
@@ -1786,7 +1786,7 @@ snapshots:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
 
-  hono@4.5.0: {}
+  hono@4.5.1: {}
 
   is-binary-path@2.1.0:
     dependencies:

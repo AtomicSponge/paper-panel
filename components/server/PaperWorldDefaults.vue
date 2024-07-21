@@ -101,6 +101,10 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>chunks</h3></div>
+        <div class="tab">
+          auto-save-interval
+          <input type="text" v-model="data['chunks']['auto-save-interval']"/>
+        </div>
       </div>
 
       <div>

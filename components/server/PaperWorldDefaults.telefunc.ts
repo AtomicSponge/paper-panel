@@ -24,6 +24,10 @@ export const onSave = async (data:any) => {
       data['anticheat']['anti-xray']['replacement-blocks'].replace(/(\r\n|\n|\r)/gm, '').split(',')
   }
 
+  if (!isNaN(Number(data['chunks']['auto-save-interval']))) {
+    data['chunks']['auto-save-interval'] = Number(data['chunks']['auto-save-interval'])
+  }
+
   console.log('Saving World Defaults config...')
   console.log(data)
 
