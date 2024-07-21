@@ -200,6 +200,10 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>feature-seeds</h3></div>
+        <div class="tab">
+          generate-random-seeds-for-all
+          <input type="checkbox" v-model="data['feature-seeds']['generate-random-seeds-for-all']"/>
+        </div>
       </div>
 
       <div>
