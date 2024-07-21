@@ -105,6 +105,53 @@ const saveConfig = async ():Promise<void> => {
           auto-save-interval
           <input type="text" v-model="data['chunks']['auto-save-interval']"/>
         </div>
+        <div class="tab">
+          delay-chunk-unloads-by
+          <input type="text" v-model="data['chunks']['delay-chunk-unloads-by']"/>
+        </div>
+        <div class="tab">
+          entity-per-chunk-save-limit
+          <div class="tab">
+            arrow
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['arrow']"/>
+          </div>
+          <div class="tab">
+            ender_pearl
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['ender_pearl']"/>
+          </div>
+          <div class="tab">
+            experience_orb
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['experience_orb']"/>
+          </div>
+          <div class="tab">
+            fireball
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['fireball']"/>
+          </div>
+          <div class="tab">
+            small_fireball
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['small_fireball']"/>
+          </div>
+          <div class="tab">
+            snowball
+            <input type="number" v-model="data['chunks']['entity-per-chunk-save-limit']['snowball']"/>
+          </div>
+        </div>
+        <div class="tab">
+          fixed-chunk-inhabited-time
+          <input type="number" v-model="data['chunks']['fixed-chunk-inhabited-time']"/>
+        </div>
+        <div class="tab">
+          flush-regions-on-save
+          <input type="checkbox" v-model="data['chunks']['flush-regions-on-save']"/>
+        </div>
+        <div class="tab">
+          max-auto-save-chunks-per-tick
+          <input type="number" v-model="data['chunks']['max-auto-save-chunks-per-tick']"/>
+        </div>
+        <div class="tab">
+          prevent-moving-into-unloaded-chunks
+          <input type="checkbox" v-model="data['chunks']['prevent-moving-into-unloaded-chunks']"/>
+        </div>
       </div>
 
       <div>
