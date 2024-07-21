@@ -27,11 +27,18 @@ export const onSave = async (data:any) => {
   if (!isNaN(Number(data['chunks']['auto-save-interval']))) {
     data['chunks']['auto-save-interval'] = Number(data['chunks']['auto-save-interval'])
   }
+  if (!isNaN(Number(data['environment']['nether-ceiling-void-damage-height']))) {
+    data['environment']['nether-ceiling-void-damage-height'] = Number(data['nether-ceiling-void-damage-height']['auto-save-interval'])
+  }
   if (!isNaN(Number(data['fixes']['falling-block-height-nerf']))) {
     data['fixes']['falling-block-height-nerf'] = Number(data['fixes']['falling-block-height-nerf'])
   }
   if (!isNaN(Number(data['fixes']['tnt-entity-height-nerf']))) {
     data['fixes']['tnt-entity-height-nerf'] = Number(data['fixes']['tnt-entity-height-nerf'])
+  }
+
+  if (data['environment']['treasure-maps']['find-already-discovered']['loot-tables'] === 'false') {
+    data['environment']['treasure-maps']['find-already-discovered']['loot-tables'] = false
   }
 
   console.log('Saving World Defaults config...')

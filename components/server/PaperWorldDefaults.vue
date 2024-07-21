@@ -250,8 +250,51 @@ const saveConfig = async ():Promise<void> => {
           max-fluid-ticks
           <input type="number" v-model="data['environment']['max-fluid-ticks']"/>
         </div>
-
-        <!-- continue here -->
+        <div class="tab">
+          nether-ceiling-void-damage-height
+          <input type="text" v-model="data['environment']['nether-ceiling-void-damage-height']"/>
+        </div>
+        <div class="tab">
+          optimize-explosions
+          <input type="checkbox" v-model="data['environment']['optimize-explosions']"/>
+        </div>
+        <div class="tab">
+          portal-create-radius
+          <input type="number" v-model="data['environment']['portal-create-radius']"/>
+        </div>
+        <div class="tab">
+          portal-search-radius
+          <input type="number" v-model="data['environment']['portal-search-radius']"/>
+        </div>
+        <div class="tab">
+          portal-search-vanilla-dimension-scaling
+          <input type="checkbox" v-model="data['environment']['portal-search-vanilla-dimension-scaling']"/>
+        </div>
+        <div class="tab">
+          treasure-maps
+          <div class="tab">
+            enabled
+            <input type="checkbox" v-model="data['environment']['treasure-maps']['enabled']"/>
+          </div>
+          <div class="tab">
+            find-already-discovered
+            <div class="tab">
+              loot-tables
+              <select v-model="data['environment']['treasure-maps']['find-already-discovered']['loot-tables']">
+                <option>default</option>
+                <option>false</option>
+              </select>
+            </div>
+            <div class="tab">
+              villager-trade
+              <input type="checkbox" v-model="data['environment']['treasure-maps']['find-already-discovered']['villager-trade']"/>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          water-over-lava-flow-speed
+          <input type="number" v-model="data['environment']['water-over-lava-flow-speed']"/>
+        </div>
       </div>
 
       <div>
