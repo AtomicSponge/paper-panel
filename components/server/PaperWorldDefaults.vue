@@ -220,6 +220,30 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>fixes</h3></div>
+        <div class="tab">
+          disable-unloaded-chunk-enderpearl-exploit
+          <input type="checkbox" v-model="data['fixes']['disable-unloaded-chunk-enderpearl-exploit']"/>
+        </div>
+        <div class="tab">
+          falling-block-height-nerf
+          <input type="text" v-model="data['fixes']['falling-block-height-nerf']"/>
+        </div>
+        <div class="tab">
+          fix-items-merging-through-walls
+          <input type="checkbox" v-model="data['fixes']['fix-items-merging-through-walls']"/>
+        </div>
+        <div class="tab">
+          prevent-tnt-from-moving-in-water
+          <input type="checkbox" v-model="data['fixes']['prevent-tnt-from-moving-in-water']"/>
+        </div>
+        <div class="tab">
+          split-overstacked-loot
+          <input type="checkbox" v-model="data['fixes']['split-overstacked-loot']"/>
+        </div>
+        <div class="tab">
+          tnt-entity-height-nerf
+          <input type="text" v-model="data['fixes']['tnt-entity-height-nerf']"/>
+        </div>
       </div>
 
       <div>

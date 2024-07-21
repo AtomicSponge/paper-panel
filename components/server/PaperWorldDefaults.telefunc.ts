@@ -27,6 +27,12 @@ export const onSave = async (data:any) => {
   if (!isNaN(Number(data['chunks']['auto-save-interval']))) {
     data['chunks']['auto-save-interval'] = Number(data['chunks']['auto-save-interval'])
   }
+  if (!isNaN(Number(data['fixes']['falling-block-height-nerf']))) {
+    data['fixes']['falling-block-height-nerf'] = Number(data['fixes']['falling-block-height-nerf'])
+  }
+  if (!isNaN(Number(data['fixes']['tnt-entity-height-nerf']))) {
+    data['fixes']['tnt-entity-height-nerf'] = Number(data['fixes']['tnt-entity-height-nerf'])
+  }
 
   console.log('Saving World Defaults config...')
   console.log(data)
