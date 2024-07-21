@@ -308,6 +308,25 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>max-growth-height</h3></div>
+        <div class="tab">
+          bamboo
+          <div class="tab">
+            max
+            <input type="number" v-model="data['max-growth-height']['bamboo']['max']"/>
+          </div>
+          <div class="tab">
+            min
+            <input type="number" v-model="data['max-growth-height']['bamboo']['min']"/>
+          </div>
+        </div>
+        <div class="tab">
+          cactus
+          <input type="number" v-model="data['max-growth-height']['cactus']"/>
+        </div>
+        <div class="tab">
+          reeds
+          <input type="number" v-model="data['max-growth-height']['reeds']"/>
+        </div>
       </div>
 
       <div>
