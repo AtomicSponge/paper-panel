@@ -400,7 +400,7 @@ const saveConfig = async ():Promise<void> => {
           <div class="tab">
             villager
             <div class="tab">
-              validatenearbypoi
+              validate-nearby-poi
               <input type="number" v-model="data['tick-rates']['behavior']['villager']['validatenearbypoi']"/>
             </div>
           </div>
@@ -420,6 +420,20 @@ const saveConfig = async ():Promise<void> => {
         <div class="tab">
           mob-spawner
           <input type="number" v-model="data['tick-rates']['mob-spawner']"/>
+        </div>
+        <div class="tab">
+          sensor
+          <div class="tab">
+            villager
+            <div class="tab">
+              secondary-poi-sensor
+              <input type="number" v-model="data['tick-rates']['sensor']['villager']['secondarypoisensor']"/>
+            </div>
+          </div>
+        </div>
+        <div class="tab">
+          wet-farmland
+          <input type="number" v-model="data['tick-rates']['wet-farmland']"/>
         </div>
       </div>
 
