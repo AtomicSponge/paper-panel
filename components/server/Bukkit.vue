@@ -166,13 +166,6 @@ const saveConfig = async ():Promise<void> => {
           <input type="number" v-model="data['ticks-per']['autosave']"/>
         </div>
       </div>
-
-      <div>
-        <div>
-          aliases
-          <input type="text" v-model="data['aliases']"/>
-        </div>
-      </div>
     </main>
     <footer v-show="showConfig">
       <button @click="saveConfig">Save Configuration</button>
