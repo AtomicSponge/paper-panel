@@ -25,11 +25,11 @@ const checkUpdates = async ():Promise<void> => {
   showUpdate.value = true
   updateMessage.value = 'Checking for updates, please wait...'
   const updateAvailable = await onCheckUpdate()
-  if(updateAvailable.errorMessage) {
+  if (updateAvailable.errorMessage) {
     window.alert(updateAvailable.errorMessage)
     return
   }
-  if(updateAvailable.status && window.confirm('Update available!  This will restart the server!  Are you sure you want to continue?')) {
+  if (updateAvailable.status && window.confirm('Update available!  This will restart the server!  Are you sure you want to continue?')) {
     updateMessage.value = 'Performing server update, please wait...'
     const res = await onDoUpdate()
   } else {
