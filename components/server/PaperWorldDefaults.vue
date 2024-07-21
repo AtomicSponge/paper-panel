@@ -359,14 +359,38 @@ const saveConfig = async ():Promise<void> => {
             <option>ALTERNATE-CURRENT</option>
           </select>
         </div>
+        <div class="tab">
+          shield-blocking-delay
+          <input type="number" v-model="data['misc']['shield-blocking-delay']"/>
+        </div>
+        <div class="tab">
+          show-sign-click-command-failure-msgs-to-player
+          <input type="checkbox" v-model="data['misc']['show-sign-click-command-failure-msgs-to-player']"/>
+        </div>
+        <div class="tab">
+          update-pathfinding-on-block-update
+          <input type="checkbox" v-model="data['misc']['update-pathfinding-on-block-update']"/>
+        </div>
       </div>
 
       <div>
         <div><h3>scoreboards</h3></div>
+        <div class="tab">
+          allow-non-player-entities-on-scoreboards
+          <input type="checkbox" v-model="data['scoreboards']['allow-non-player-entities-on-scoreboards']"/>
+        </div>
+        <div class="tab">
+          use-vanilla-world-scoreboard-name-coloring
+          <input type="checkbox" v-model="data['scoreboards']['use-vanilla-world-scoreboard-name-coloring']"/>
+        </div>
       </div>
 
       <div>
         <div><h3>spawn</h3></div>
+        <div class="tab">
+          allow-using-signs-inside-spawn-protection
+          <input type="checkbox" v-model="data['spawn']['allow-using-signs-inside-spawn-protection']"/>
+        </div>
       </div>
 
       <div>
@@ -375,6 +399,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div class="unsupported">
         <div><h3>unsupported-settings</h3></div>
+        <div class="tab">
+          disable-world-ticking-when-empty
+          <input type="checkbox" v-model="data['unsupported-settings']['disable-world-ticking-when-empty']"/>
+        </div>
+        <div class="tab">
+          fix-invulnerable-end-crystal-exploit
+          <input type="checkbox" v-model="data['unsupported-settings']['fix-invulnerable-end-crystal-exploit']"/>
+        </div>
       </div>
     </main>
     <footer v-show="showConfig">
