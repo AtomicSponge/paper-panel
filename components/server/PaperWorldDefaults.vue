@@ -180,6 +180,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>command-blocks</h3></div>
+        <div class="tab">
+          force-follow-perm-level
+          <input type="checkbox" v-model="data['command-blocks']['force-follow-perm-level']"/>
+        </div>
+        <div class="tab">
+          permissions-level
+          <input type="number" v-model="data['command-blocks']['permissions-level']"/>
+        </div>
       </div>
 
       <div>
