@@ -264,6 +264,34 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>lootables</h3></div>
+        <div class="tab">
+          auto-replenish
+          <input type="checkbox" v-model="data['lootables']['auto-replenish']"/>
+        </div>
+        <div class="tab">
+          max-refills
+          <input type="number" v-model="data['lootables']['max-refills']"/>
+        </div>
+        <div class="tab">
+          refresh-max
+          <input type="text" v-model="data['lootables']['refresh-max']"/>
+        </div>
+        <div class="tab">
+          refresh-min
+          <input type="text" v-model="data['lootables']['refresh-min']"/>
+        </div>
+        <div class="tab">
+          reset-seed-on-fill
+          <input type="checkbox" v-model="data['lootables']['reset-seed-on-fill']"/>
+        </div>
+        <div class="tab">
+          restrict-player-reloot
+          <input type="checkbox" v-model="data['lootables']['restrict-player-reloot']"/>
+        </div>
+        <div class="tab">
+          restrict-player-reloot-time
+          <input type="text" v-model="data['lootables']['restrict-player-reloot-time']"/>
+        </div>
       </div>
 
       <div>
