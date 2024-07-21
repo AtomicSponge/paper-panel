@@ -296,6 +296,14 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>maps</h3></div>
+        <div class="tab">
+          item-frame-cursor-limit
+          <input type="number" v-model="data['maps']['item-frame-cursor-limit']"/>
+        </div>
+        <div class="tab">
+          item-frame-cursor-update-interval
+          <input type="number" v-model="data['maps']['item-frame-cursor-update-interval']"/>
+        </div>
       </div>
 
       <div>
