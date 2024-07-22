@@ -4,9 +4,10 @@
  * See LICENSE.md
  */
 
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
 import util from 'node:util'
+import { existsSync } from 'node:fs'
 import { exec as execAsync } from 'node:child_process'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
@@ -37,19 +38,24 @@ export const data = async () => {
   let bukkitConfig = null
   let spigotConfig = null
 
-  if(data !== undefined && fs.existsSync(data.path)) {
+  if(data !== undefined && existsSync(data.path)) {
     try {
-      paperConfig = fs.readFileSync(path.join(data.path, 'config', 'paper-global.yml'))
-      paperWorldDefaults = fs.readFileSync(path.join(data.path, 'config', 'paper-world-defaults.yml'))
-      bukkitConfig = fs.readFileSync(path.join(data.path, 'bukkit.yml'))
-      spigotConfig = fs.readFileSync(path.join(data.path, 'spigot.yml'))
+      {const file = await fs.open(path.join(data.path, 'config', 'paper-global.yml'))
+      paperConfig = YAML.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'config', 'paper-world-defaults.yml'))
+      paperWorldDefaults = YAML.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'bukkit.yml'))
+      bukkitConfig = YAML.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'spigot.yml'))
+      spigotConfig = YAML.parse((await file.readFile()).toString())
+      await file.close()}
 
-      paperConfig = YAML.parse(paperConfig.toString())
-      paperWorldDefaults = YAML.parse(paperWorldDefaults.toString())
-      bukkitConfig = YAML.parse(bukkitConfig.toString())
-      spigotConfig = YAML.parse(spigotConfig.toString())
-
-      serverProps = fs.readFileSync(path.join(data.path, 'server.properties')).toString()
+      {const file = await fs.open(path.join(data.path, 'server.properties'))
+      serverProps = (await file.readFile()).toString()
+      await file.close()}
       port = <string>serverProps.match(/(?<=server-port=).*/m)?.at(0)
     } catch (error:any) {
       console.error(error.message)
