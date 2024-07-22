@@ -192,6 +192,135 @@ const saveConfig = async ():Promise<void> => {
 
       <div>
         <div><h3>entities</h3></div>
+        <div class="tab">
+          armor-stands
+          <div class="tab">
+            do-collision-entity-lookups
+            <input type="checkbox" v-model="data['entities']['armor-stands']['do-collision-entity-lookups']"/>
+          </div>
+          <div class="tab">
+            tick
+            <input type="checkbox" v-model="data['entities']['armor-stands']['tick']"/>
+          </div>
+        </div>
+        <div class="tab">
+          behavior
+          <div class="tab">
+            allow-spider-world-border-climbing
+            <input type="checkbox" v-model="data['entities']['behavior']['allow-spider-world-border-climbing']"/>
+          </div>
+          <div class="tab">
+            baby-zombie-movement-modifier
+            <input type="number" v-model="data['entities']['behavior']['baby-zombie-movement-modifier']"/>
+          </div>
+          <div class="tab">
+            disable-chest-cat-detection
+            <input type="checkbox" v-model="data['entities']['behavior']['disable-chest-cat-detection']"/>
+          </div>
+          <div class="tab">
+            disable-creeper-lingering-effect
+            <input type="checkbox" v-model="data['entities']['behavior']['disable-creeper-lingering-effect']"/>
+          </div>
+          <div class="tab">
+            disable-player-crits
+            <input type="checkbox" v-model="data['entities']['behavior']['disable-player-crits']"/>
+          </div>
+          <div class="tab">
+            door-breaking-difficulty
+            <div class="tab">
+              <h4>husk</h4>
+              <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['husk']">
+                <option>PEACEFUL</option>
+                <option>EASY</option>
+                <option>NORMAL</option>
+                <option>HARD</option>
+              </select>
+            </div>
+            <div class="tab">
+              <h4>vindicator</h4>
+              <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['vindicator']">
+                <option>PEACEFUL</option>
+                <option>EASY</option>
+                <option>NORMAL</option>
+                <option>HARD</option>
+              </select>
+            </div>
+            <div class="tab">
+              <h4>zombie</h4>
+              <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['zombie']">
+                <option>PEACEFUL</option>
+                <option>EASY</option>
+                <option>NORMAL</option>
+                <option>HARD</option>
+              </select>
+            </div>
+            <div class="tab">
+              <h4>zombie_villager</h4>
+              <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['zombie_villager']">
+                <option>PEACEFUL</option>
+                <option>EASY</option>
+                <option>NORMAL</option>
+                <option>HARD</option>
+              </select>
+            </div>
+            <div class="tab">
+              <h4>zombified_piglin</h4>
+              <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['zombified_piglin']">
+                <option>PEACEFUL</option>
+                <option>EASY</option>
+                <option>NORMAL</option>
+                <option>HARD</option>
+              </select>
+            </div>
+          </div>
+          <div class="tab">
+            ender-dragons-death-always-places-dragon-egg
+            <input type="checkbox" v-model="data['entities']['behavior']['ender-dragons-death-always-places-dragon-egg']"/>
+          </div>
+          <div class="tab">
+            experience-merge-max-value
+            <input type="number" v-model="data['entities']['behavior']['experience-merge-max-value']"/>
+          </div>
+          <div class="tab">
+            mobs-can-always-pick-up-loot
+            <div class="tab">
+              skeletons
+              <input type="checkbox" v-model="data['entities']['behavior']['mobs-can-always-pick-up-loot']['skeletons']"/>
+            </div>
+            <div class="tab">
+              zombies
+              <input type="checkbox" v-model="data['entities']['behavior']['mobs-can-always-pick-up-loot']['zombies']"/>
+            </div>
+          </div>
+          <div class="tab">
+            nerf-pigmen-from-nether-portals
+            <input type="checkbox" v-model="data['entities']['behavior']['nerf-pigmen-from-nether-portals']"/>
+          </div>
+          <div class="tab">
+            parrots-are-unaffected-by-player-movement
+            <input type="checkbox" v-model="data['entities']['behavior']['parrots-are-unaffected-by-player-movement']"/>
+          </div>
+          <div class="tab">
+            phantoms-do-not-spawn-on-creative-players
+            <input type="checkbox" v-model="data['entities']['behavior']['phantoms-do-not-spawn-on-creative-players']"/>
+          </div>
+          <div class="tab">
+            phantoms-only-attack-insomniacs
+            <input type="checkbox" v-model="data['entities']['behavior']['phantoms-only-attack-insomniacs']"/>
+          </div>
+          <div class="tab">
+            phantoms-spawn-attempt-max-seconds
+            <input type="number" v-model="data['entities']['behavior']['phantoms-spawn-attempt-max-seconds']"/>
+          </div>
+          <div class="tab">
+            phantoms-spawn-attempt-min-seconds
+            <input type="number" v-model="data['entities']['behavior']['phantoms-spawn-attempt-min-seconds']"/>
+          </div>
+          <div class="tab">
+            piglins-guard-chests
+            <input type="checkbox" v-model="data['entities']['behavior']['piglins-guard-chests']"/>
+          </div>
+        </div>
       </div>
 
       <div>

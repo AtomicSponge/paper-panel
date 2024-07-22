@@ -767,8 +767,6 @@ li {
   padding: 0.4em;
 }
 h4 {
-  font-size: 1em;
-  font-weight: 600;
   display: inline-block;
 }
 .tab {
