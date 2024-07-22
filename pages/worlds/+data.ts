@@ -45,7 +45,8 @@ export const data = async (pageContext:PageContextServer) => {
           worldConfig.push((await fs.readFile(worldLocation)).toString())
         }
       } catch (error:any) {
-        worldConfig.push('Problems editing file')
+        console.error(error.message)
+        worldConfig.push(`Problems opening file\n${error.message}`)
       }
 
       try {
@@ -56,7 +57,8 @@ export const data = async (pageContext:PageContextServer) => {
           netherConfig.push((await fs.readFile(netherLocation)).toString())
         }
       } catch (error:any) {
-        netherConfig.push('Problems editing file')
+        console.error(error.message)
+        worldConfig.push(`Problems opening file\n${error.message}`)
       }
 
       try {
@@ -67,7 +69,8 @@ export const data = async (pageContext:PageContextServer) => {
           theEndConfig.push((await fs.readFile(theEndLocation)).toString())
         }
       } catch (error:any) {
-        theEndConfig.push('Problems editing file')
+        console.error(error.message)
+        worldConfig.push(`Problems opening file\n${error.message}`)
       }
     })
   }
