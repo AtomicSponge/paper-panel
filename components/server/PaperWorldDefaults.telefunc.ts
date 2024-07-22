@@ -41,9 +41,6 @@ export const onSave = async (data:any) => {
     data['environment']['treasure-maps']['find-already-discovered']['loot-tables'] = false
   }
 
-  console.log('Saving World Defaults config...')
-  console.log(data)
-
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
