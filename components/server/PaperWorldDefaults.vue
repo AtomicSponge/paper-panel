@@ -374,6 +374,10 @@ const saveConfig = async ():Promise<void> => {
             <input type="checkbox" v-model="data['entities']['behavior']['zombies-target-turtle-eggs']"/>
           </div>
         </div>
+        <div class="tab">
+          entities-target-with-follow-range
+          <input type="checkbox" v-model="data['entities']['entities-target-with-follow-range']"/>
+        </div>
       </div>
 
       <div>
