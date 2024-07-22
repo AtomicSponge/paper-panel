@@ -255,7 +255,7 @@ const saveConfig = async ():Promise<void> => {
               </select>
             </div>
             <div class="tab">
-              <h4>zombie_villager</h4>
+              <h4>zombie-villager</h4>
               <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['zombie_villager']">
                 <option>PEACEFUL</option>
                 <option>EASY</option>
@@ -264,7 +264,7 @@ const saveConfig = async ():Promise<void> => {
               </select>
             </div>
             <div class="tab">
-              <h4>zombified_piglin</h4>
+              <h4>zombified-piglin</h4>
               <select multiple v-model="data['entities']['behavior']['door-breaking-difficulty']['zombified_piglin']">
                 <option>PEACEFUL</option>
                 <option>EASY</option>
