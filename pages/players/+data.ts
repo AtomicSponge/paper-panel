@@ -4,8 +4,9 @@
  * See LICENSE.md
  */
 
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
+import { existsSync } from 'node:fs'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
@@ -19,17 +20,20 @@ export const data = async () => {
   let bannedPlayers = null
   let whitelist = null
 
-  if(data !== undefined && fs.existsSync(data.path)) {
+  if(data !== undefined && existsSync(data.path)) {
     try {
-      operators = fs.readFileSync(path.join(data.path, 'ops.json'))
-      bannedIps = fs.readFileSync(path.join(data.path, 'banned-ips.json'))
-      bannedPlayers = fs.readFileSync(path.join(data.path, 'banned-players.json'))
-      whitelist = fs.readFileSync(path.join(data.path, 'whitelist.json'))
-
-      operators = JSON.parse(operators.toString())
-      bannedIps = JSON.parse(bannedIps.toString())
-      bannedPlayers = JSON.parse(bannedPlayers.toString())
-      whitelist = JSON.parse(whitelist.toString())
+      {const file = await fs.open(path.join(data.path, 'ops.json'))
+      operators = JSON.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'banned-ips.json'))
+      bannedIps = JSON.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'banned-players.json'))
+      bannedPlayers = JSON.parse((await file.readFile()).toString())
+      await file.close()}
+      {const file = await fs.open(path.join(data.path, 'whitelist.json'))
+      whitelist = JSON.parse((await file.readFile()).toString())
+      await file.close()}
     } catch (error:any) {
       console.error(error.message)
     }
