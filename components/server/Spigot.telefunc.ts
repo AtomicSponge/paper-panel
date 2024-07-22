@@ -4,8 +4,9 @@
  * See LICENSE.md
  */
 
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
+import { existsSync } from 'node:fs'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
 
@@ -51,9 +52,9 @@ export const onSave = async (data:any) => {
   const serverSettings = db.data.server.at(0)
 
   try {
-    if (serverSettings !== undefined && fs.existsSync(serverSettings.path)) {
+    if (serverSettings !== undefined && existsSync(serverSettings.path)) {
       if (data === undefined) throw new Error('Unable to save!  Missing data!')
-      fs.writeFileSync(path.join(serverSettings.path, 'spigot.yml'), YAML.stringify(data))
+      await fs.writeFile(path.join(serverSettings.path, 'spigot.yml'), YAML.stringify(data))
     } else {
       throw new Error('Unable to find server path!')
     }
