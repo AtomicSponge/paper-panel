@@ -14,6 +14,9 @@ importers:
       '@hono/node-server':
         specifier: ^1.12.0
         version: 1.12.0
+      '@spongex/async-for-each':
+        specifier: ^1.0.1
+        version: 1.0.1
       '@vitejs/plugin-vue':
         specifier: ^5.0.5
         version: 5.0.5(vite@5.3.4(@types/node@20.14.11))(vue@3.4.33(typescript@5.5.3))
@@ -579,6 +582,9 @@ packages:
     resolution: {integrity: sha512-yjk2MAkQmoaPYCSu35RLJ62+dz358nE83VfTePJRp8CG7aMg25mEJYpXFiD+NcevhX8LxD5OP5tktPXnXN7GDw==}
     cpu: [x64]
     os: [win32]
+
+  '@spongex/async-for-each@1.0.1':
+    resolution: {integrity: sha512-fRaswiv7VpDKfRadrCE7jOUfwmKEw9fvQTnFu1lxE57bU7fdwxxRfcv8EJPQfMNVTkd9i/p0pqE5tCXU4HKV1g==}
 
   '@ts-morph/common@0.20.0':
     resolution: {integrity: sha512-7uKjByfbPpwuzkstL3L5MQyuXPSKdoNG93Fmi2JoDcTf3pEP731JdRFAduRVkOs8oqxPsXKA+ScrWkdQ8t/I+Q==}
@@ -1501,6 +1507,8 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.18.1':
     optional: true
+
+  '@spongex/async-for-each@1.0.1': {}
 
   '@ts-morph/common@0.20.0':
     dependencies:
