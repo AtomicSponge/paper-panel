@@ -378,6 +378,7 @@ const saveConfig = async ():Promise<void> => {
           entities-target-with-follow-range
           <input type="checkbox" v-model="data['entities']['entities-target-with-follow-range']"/>
         </div>
+        <!-- continue here -->
       </div>
 
       <div>
