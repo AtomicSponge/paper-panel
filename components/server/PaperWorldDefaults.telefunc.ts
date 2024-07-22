@@ -4,8 +4,9 @@
  * See LICENSE.md
  */
 
-import fs from 'node:fs'
+import fs from 'node:fs/promises'
 import path from 'node:path'
+import { existsSync } from 'node:fs'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
 
@@ -46,8 +47,8 @@ export const onSave = async (data:any) => {
 
   try {
     if (data === undefined) throw new Error('Unable to save!  Missing data!')
-    if (serverSettings !== undefined && fs.existsSync(serverSettings.path)) {
-      fs.writeFileSync(path.join(serverSettings.path, 'config', 'paper-world-defaults.yml'), YAML.stringify(data))
+    if (serverSettings !== undefined && existsSync(serverSettings.path)) {
+      await fs.writeFile(path.join(serverSettings.path, 'config', 'paper-world-defaults.yml'), YAML.stringify(data))
     } else {
       throw new Error('Unable to save! Cannot find server path!')
     }
