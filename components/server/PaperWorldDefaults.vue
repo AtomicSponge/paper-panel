@@ -320,6 +320,59 @@ const saveConfig = async ():Promise<void> => {
             piglins-guard-chests
             <input type="checkbox" v-model="data['entities']['behavior']['piglins-guard-chests']"/>
           </div>
+          <div class="tab">
+            pillager-patrols
+            <div class="tab">
+              disable
+              <input type="checkbox" v-model="data['entities']['behavior']['pillager-patrols']['disable']"/>
+            </div>
+            <div class="tab">
+              spawn-chance
+              <input type="number" v-model="data['entities']['behavior']['pillager-patrols']['spawn-chance']"/>
+            </div>
+            <div class="tab">
+              spawn-delay
+              <div class="tab">
+                per-player
+                <input type="checkbox" v-model="data['entities']['behavior']['pillager-patrols']['spawn-delay']['per-player']"/>
+              </div>
+              <div class="tab">
+                ticks
+                <input type="number" v-model="data['entities']['behavior']['pillager-patrols']['spawn-delay']['ticks']"/>
+              </div>
+            </div>
+            <div class="tab">
+              start
+              <div class="tab">
+                day
+                <input type="number" v-model="data['entities']['behavior']['pillager-patrols']['start']['day']"/>
+              </div>
+              <div class="tab">
+                per-player
+                <input type="checkbox" v-model="data['entities']['behavior']['pillager-patrols']['start']['per-player']"/>
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            player-insomnia-start-ticks
+            <input type="number" v-model="data['entities']['behavior']['player-insomnia-start-ticks']"/>
+          </div>
+          <div class="tab">
+            should-remove-dragon
+            <input type="checkbox" v-model="data['entities']['behavior']['should-remove-dragon']"/>
+          </div>
+          <div class="tab">
+            spawner-nerfed-mobs-should-jump
+            <input type="checkbox" v-model="data['entities']['behavior']['spawner-nerfed-mobs-should-jump']"/>
+          </div>
+          <div class="tab">
+            zombie-villager-infection-chance
+            <input type="text" v-model="data['entities']['behavior']['zombie-villager-infection-chance']"/>
+          </div>
+          <div class="tab">
+            zombies-target-turtle-eggs
+            <input type="checkbox" v-model="data['entities']['behavior']['zombies-target-turtle-eggs']"/>
+          </div>
         </div>
       </div>
 
