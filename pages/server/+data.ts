@@ -6,21 +6,25 @@
 
 import fs from 'node:fs'
 import path from 'node:path'
-import { execSync } from 'node:child_process'
+import util from 'node:util'
+import { exec as execAsync } from 'node:child_process'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
 
+const exec = util.promisify(execAsync)
+
 export const data = async () => {
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
-  const hostname = (() => {
+  const hostname = await (async () => {
     try {
-      return execSync('hostname').toString().trim()
+      const { stdout } = await exec('hostname', { windowsHide: true })
+      return stdout.toString().trim()
     } catch (error:any) {
-      return 'null'
+      return 'hostname'
     }
   })()
 
