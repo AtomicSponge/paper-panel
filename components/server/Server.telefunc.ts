@@ -41,13 +41,14 @@ export const onCheckUpdate = async () => {
         currentBuild: build
       }
     } catch (error:any) {
+      console.error(error.message)
       return {
         currentVersion: null,
         currentBuild: null
       }
     }
   })()
-  if(currentVersion === null) {
+  if(currentVersion === null || currentBuild === null) {
     return { errorMessage: 'Unable to determine current version!' }
   }
 
@@ -56,12 +57,26 @@ export const onCheckUpdate = async () => {
 
   //  Query Paper API for latest version and build
   const latestVersion = await (async () => {
-    return '1.21'
+    try {
+      //
+    } catch (error:any) {
+      console.error(error.message)
+      return null
+    }
   })()
 
   const latestBuild = await (async () => {
-    return '100'
+    try {
+      //
+    } catch (error:any) {
+      console.error(error.message)
+      return null
+    }
   })()
+
+  if(latestVersion === null || latestBuild === null) {
+    return { errorMessage: 'Unable to determine latest version!' }
+  }
 
   /*return {
     status: false,
