@@ -378,7 +378,46 @@ const saveConfig = async ():Promise<void> => {
           entities-target-with-follow-range
           <input type="checkbox" v-model="data['entities']['entities-target-with-follow-range']"/>
         </div>
-        <!-- continue here -->
+        <div class="tab">
+          markers
+          <div class="tab">
+            tick
+            <input type="checkbox" v-model="data['entities']['markers']['tick']"/>
+          </div>
+        </div>
+        <div class="tab">
+          mob-effects
+          <div class="tab">
+            immune-to-wither-effect
+            <div class="tab">
+              wither
+              <input type="checkbox" v-model="data['entities']['mob-effects']['immune-to-wither-effect']['wither']"/>
+            </div>
+            <div class="tab">
+              wither-skeleton
+              <input type="checkbox" v-model="data['entities']['mob-effects']['immune-to-wither-effect']['wither-skeleton']"/>
+            </div>
+          </div>
+          <div class="tab">
+            spiders-immune-to-poison-effect
+            <input type="checkbox" v-model="data['entities']['mob-effects']['spiders-immune-to-poison-effect']"/>
+          </div>
+        </div>
+        <div class="tab">
+          sniffer
+          <div class="tab">
+            boosted-hatch-time
+            <input type="text" v-model="data['entities']['sniffer']['boosted-hatch-time']"/>
+          </div>
+          <div class="tab">
+            hatch-time
+            <input type="text" v-model="data['entities']['sniffer']['hatch-time']"/>
+          </div>
+        </div>
+        <div class="tab">
+          spawning
+          <!-- here -->
+        </div>
       </div>
 
       <div>

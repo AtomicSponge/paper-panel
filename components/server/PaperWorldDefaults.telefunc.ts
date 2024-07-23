@@ -31,6 +31,12 @@ export const onSave = async (data:any) => {
   if (!isNaN(Number(data['entities']['behavior']['zombie-villager-infection-chance']))) {
     data['entities']['behavior']['zombie-villager-infection-chance'] = Number(data['entities']['behavior']['zombie-villager-infection-chance'])
   }
+  if (!isNaN(Number(data['entities']['sniffer']['boosted-hatch-time']))) {
+    data['entities']['sniffer']['boosted-hatch-time'] = Number(data['entities']['sniffer']['boosted-hatch-time'])
+  }
+  if (!isNaN(Number(data['entities']['sniffer']['hatch-time']))) {
+    data['entities']['sniffer']['hatch-time'] = Number(data['entities']['sniffer']['hatch-time'])
+  }
   if (!isNaN(Number(data['environment']['nether-ceiling-void-damage-height']))) {
     data['environment']['nether-ceiling-void-damage-height'] = Number(data['nether-ceiling-void-damage-height']['auto-save-interval'])
   }
