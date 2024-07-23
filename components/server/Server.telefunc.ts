@@ -36,7 +36,7 @@ export const onCheckUpdate = async () => {
         { cwd: data.path, windowsHide: true }
       )
       const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
-      const currentVer = version.substring(0, version.indexOf('-'))
+      let currentVer = version.substring(0, version.indexOf('-'))
       const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
       return { 
         currentVersion: currentVer,
@@ -54,9 +54,6 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Unable to determine current version!' }
   }
 
-  console.log(currentVersion)
-  console.log(currentBuild)
-
   //  Query Paper API for latest version and build
   const latestVersion = await (async () => {
     try {
@@ -73,7 +70,6 @@ export const onCheckUpdate = async () => {
     try {
       const res = await fetch(`${paperURL}versions/${latestVersion}`)
       const json = await res.json()
-      console.log(json)
       return json['builds'].at(-1)
     } catch (error:any) {
       console.error(error.message)
@@ -85,8 +81,18 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Unable to determine latest version!' }
   }
 
-  if(semver.gt(currentVersion, latestVersion) || semver.eq(currentVersion, latestVersion)) {
-    if (currentBuild > latestBuild) {
+  //  Number fixes for semver comparison
+  let curVerCom = currentVersion
+  if(currentVersion.split('.').length < 3) {
+    curVerCom += '.0'
+  }
+  let latVerCom = latestVersion
+  if(latestVersion.split('.').length < 3) {
+    latVerCom += '.0'
+  }
+
+  if(semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
+    if (Number(currentBuild) > Number(latestBuild)) {
       return {
         status: false,
         message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
