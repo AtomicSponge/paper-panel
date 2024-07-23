@@ -20,6 +20,11 @@ declare global {
     worlds:Array<World>
   }
 
+  interface ServerSetupData {
+    path:string
+    filename:string
+  }
+
   interface AdminSetupData {
     username:string
     display:string

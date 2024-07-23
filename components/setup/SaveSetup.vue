@@ -11,12 +11,12 @@ import { onSave } from './SaveSetup.telefunc'
 import type { ModelRef } from 'vue'
 
 const adminData:ModelRef<AdminSetupData> = defineModel('admin', { required: true })
-const serverConfig:ModelRef<{path:string}> = defineModel('server', { required: true })
+const serverData:ModelRef<ServerSetupData> = defineModel('server', { required: true })
 
 const saveConfig = async () => {
   const res = await onSave({
     adminData: adminData.value,
-    paperPath: serverConfig.value.path
+    serverData: serverData.value
   })
   if(res?.errorMessage) window.alert(res.errorMessage)
   else {

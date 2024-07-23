@@ -6,6 +6,7 @@
 
 export interface Server {
   path:string
+  filename:string
 }
 
 export const server:{ server:Array<Server> } = { server: [] }

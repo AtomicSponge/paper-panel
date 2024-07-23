@@ -20,6 +20,10 @@ const data:ModelRef<{path:string}> = defineModel({ required: true })
         <label for="path">Path:</label>
         <input type="text" id="path" v-model="data.path"/>
       </div>
+      <div>
+        <label for="filename">Filename:</label>
+        <input type="text" id="filename" v-model="data.path"/>
+      </div>
     </main>
   </section>
 </template>

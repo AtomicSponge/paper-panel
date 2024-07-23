@@ -11,7 +11,7 @@ import bcrypt from 'bcryptjs'
 /**
  * Save first time configuration
  */
-export const onSave = async ({ adminData, paperPath }:{ adminData:AdminSetupData, paperPath:string }) => {
+export const onSave = async ({ adminData, serverData }:{ adminData:AdminSetupData, serverData:ServerSetupData }) => {
   /** Admin configuration */
   if(adminData.password.toLowerCase().includes('password')) {
     return { errorMessage: `Password should not contain the word 'password'!` }
@@ -46,23 +46,28 @@ export const onSave = async ({ adminData, paperPath }:{ adminData:AdminSetupData
   }
 
   /** Server configuration */
-  if(!fs.existsSync(paperPath)) {
+  if(!fs.existsSync(serverData.path)) {
     return { errorMessage: 'Unable to access path!  Does it exist?' }
   }
   try {
-    fs.accessSync(paperPath, constants.R_OK)
+    fs.accessSync(serverData.path, constants.R_OK)
   } catch (error:any) {
     return { errorMessage: 'Unable to read from path!' }
   }
   try {
-    fs.accessSync(paperPath, constants.W_OK)
+    fs.accessSync(serverData.path, constants.W_OK)
   } catch (error:any) {
     return { errorMessage: 'Unable to write to path!' }
+  }
+
+  const serverDbData = {
+    path: serverData.path,
+    filename: serverData.filename
   }
 
   /** Create initial database */
   const dbDefaultData = { server: [], users: [], worlds: [] }
   const db = await JSONFilePreset<Database>('db.json', dbDefaultData)
-  await db.update(({ server }) => { server.push({ path: paperPath }) })
+  await db.update(({ server }) => { server.push(serverDbData) })
   await db.update(({ users }) => { users.push(admin) })
 }

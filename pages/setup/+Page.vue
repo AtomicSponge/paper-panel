@@ -17,7 +17,10 @@ const adminData = ref({
   password: '',
   confirm: ''
 })
-const serverData = ref({ path: '/home/minecraft/paper' })
+const serverData = ref({
+  path: '/home/minecraft/paper',
+  filename: 'server.jar'
+})
 </script>
 
 <template>
