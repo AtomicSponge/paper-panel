@@ -22,7 +22,7 @@ export const data = async () => {
 
   const hostname = await (async () => {
     try {
-      const { stdout } = await exec('hostname', { windowsHide: true })
+      const { stdout } = await exec('hostname')
       return stdout.toString().trim()
     } catch (error:any) {
       return 'hostname'
