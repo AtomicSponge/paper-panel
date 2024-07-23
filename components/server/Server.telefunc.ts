@@ -123,6 +123,12 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
   }
 
   //  Stop server
+  try {
+    //
+  } catch (error:any) {
+    console.error(error.message)
+    return { errorMessage: 'Unable to stop the server!' }
+  }
 
   //  Download latest release
   const filename = await (async () => {
@@ -157,6 +163,12 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
   }
 
   //  Start server
+  try {
+    //
+  } catch (error:any) {
+    console.error(error.message)
+    return { errorMessage: 'Unable to resart the server!' }
+  }
 
   return { status: true }
 }
