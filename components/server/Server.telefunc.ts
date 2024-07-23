@@ -81,7 +81,7 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Unable to determine latest version!' }
   }
 
-  //  Number fixes for semver comparison
+  //  Version number fixes for semver comparison
   let curVerCom = currentVersion
   if(currentVersion.split('.').length < 3) {
     curVerCom += '.0'
