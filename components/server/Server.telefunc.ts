@@ -25,16 +25,23 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Missing database settings!' }
   }
 
-  const currentVersion = await (async () => {
+  const { currentVersion, currentBuild } = await (async () => {
     try {
       const { stdout } = await exec(
         `java -jar ${data.filename} --version`,
         { cwd: data.path, windowsHide: true }
       )
       const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
-      return version.substring(0, version.indexOf('-'))
+      const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
+      return { 
+        currentVersion: version.substring(0, version.indexOf('-')),
+        currentBuild: build
+      }
     } catch (error:any) {
-      return null
+      return {
+        currentVersion: null,
+        currentBuild: null
+      }
     }
   })()
   if(currentVersion === null) {
@@ -42,6 +49,7 @@ export const onCheckUpdate = async () => {
   }
 
   console.log(currentVersion)
+  console.log(currentBuild)
 
   return { status: true }
 }
