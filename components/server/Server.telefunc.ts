@@ -8,6 +8,7 @@ import path from 'node:path'
 import util from 'node:util'
 import { existsSync } from 'node:fs'
 import { exec as execAsync } from 'node:child_process'
+import semver from 'semver'
 import { JSONFilePreset } from 'lowdb/node'
 
 import { server } from '@/database/server'
@@ -35,9 +36,10 @@ export const onCheckUpdate = async () => {
         { cwd: data.path, windowsHide: true }
       )
       const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
+      const currentVer = version.substring(0, version.indexOf('-'))
       const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
       return { 
-        currentVersion: version.substring(0, version.indexOf('-')),
+        currentVersion: currentVer,
         currentBuild: build
       }
     } catch (error:any) {
@@ -58,7 +60,9 @@ export const onCheckUpdate = async () => {
   //  Query Paper API for latest version and build
   const latestVersion = await (async () => {
     try {
-      //
+      const res = await fetch(paperURL)
+      const json = await res.json()
+      return json['versions'].at(-1)
     } catch (error:any) {
       console.error(error.message)
       return null
@@ -67,7 +71,10 @@ export const onCheckUpdate = async () => {
 
   const latestBuild = await (async () => {
     try {
-      //
+      const res = await fetch(`${paperURL}versions/${latestVersion}`)
+      const json = await res.json()
+      console.log(json)
+      return json['builds'].at(-1)
     } catch (error:any) {
       console.error(error.message)
       return null
@@ -78,10 +85,15 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Unable to determine latest version!' }
   }
 
-  /*return {
-    status: false,
-    message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
-  }*/
+  if(semver.gt(currentVersion, latestVersion) || semver.eq(currentVersion, latestVersion)) {
+    if (currentBuild > latestBuild) {
+      return {
+        status: false,
+        message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
+      }
+    }
+  }
+
   return {
     status: true,
     message: `Update available!  This will restart the server!  Are you sure you want to continue?  ` +

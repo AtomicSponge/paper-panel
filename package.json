@@ -24,6 +24,7 @@
     "@hono/vite-dev-server": "^0.13.1",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20.14.11",
+    "@types/semver": "^7.5.8",
     "typescript": "^5.5.4"
   },
   "dependencies": {
@@ -39,6 +40,7 @@
     "dotenv": "^16.4.5",
     "hono": "^4.5.1",
     "lowdb": "^7.0.1",
+    "semver": "^7.6.3",
     "telefunc": "^0.1.76",
     "tsx": "^4.16.2",
     "unplugin-vue-markdown": "^0.26.2",
