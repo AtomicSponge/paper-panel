@@ -15,7 +15,7 @@ import { server } from '@/database/server'
 const exec = util.promisify(execAsync)
 
 /**
- * Run an update on paper server
+ * Check for Paper server updates
  */
 export const onCheckUpdate = async () => {
   const db = await JSONFilePreset('db.json', server)
@@ -54,6 +54,9 @@ export const onCheckUpdate = async () => {
   return { status: true }
 }
 
+/**
+ * Update the paper server
+ */
 export const onDoUpdate = async () => {
   console.log('running update!')
   await new Promise(r => setTimeout(r, 2000))
