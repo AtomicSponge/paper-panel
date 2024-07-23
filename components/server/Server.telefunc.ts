@@ -108,11 +108,17 @@ export const onCheckUpdate = async () => {
  * Update the paper server
  */
 export const onDoUpdate = async () => {
-  console.log('running update!')
-  await new Promise(r => setTimeout(r, 2000))
-  console.log('update simulation wait done!')
+  //  Stop server
+
+  //  Download latest release
+
+  //  Perform file rename
+
+  //  Start server
 
   if(false) {
-    return { errorMessage: 'Update available' }
+    return { errorMessage: 'error' }
   }
+
+  return { status: true }
 }
