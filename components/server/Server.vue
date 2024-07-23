@@ -16,6 +16,8 @@ defineProps<{
   port:string
   /** Server version */
   version:string
+  /** Build version */
+  build:string
 }>()
 
 /** Reference for displaying the update message */
@@ -56,7 +58,7 @@ const checkUpdates = async ():Promise<void> => {
       <h2>{{ hostname }}:{{ port }}</h2>
     </div>
     <div>
-      <h3>Version: {{ version }}</h3>
+      <h3>Version: {{ version }}-{{ build }}</h3>
       <button @click="checkUpdates()">Check for updates</button>
     </div>
     <div v-show="showUpdate">

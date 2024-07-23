@@ -26,7 +26,8 @@ import Spigot from '@/components/server/Spigot.vue'
       <Server
         :hostname="data.server.hostname"
         :port="data.server.port"
-        :version="data.server.version"/>
+        :version="data.server.version"
+        :build="data.server.build"/>
       <ServerProperties v-model="data.serverProps"/>
       <PaperGlobal v-model="data.paperConfig"/>
       <PaperWorldDefaults v-model="data.paperWorldDefaults"/>

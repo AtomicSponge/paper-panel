@@ -33,7 +33,7 @@ export const onCheckUpdate = async () => {
     try {
       const { stdout } = await exec(`java -jar ${data.filename} --version`, { cwd: data.path })
       const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
-      let currentVer = version.substring(0, version.indexOf('-'))
+      const currentVer = version.substring(0, version.indexOf('-'))
       const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
       return { 
         currentVersion: currentVer,

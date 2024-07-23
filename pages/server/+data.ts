@@ -29,7 +29,25 @@ export const data = async () => {
     }
   })()
 
-  const version = '1.20'
+  //  Get the current version and build number
+  const { version, build } = await (async () => {
+    try {
+      const { stdout } = await exec(`java -jar ${data?.filename} --version`, { cwd: data?.path })
+      const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
+      const currentVer = version.substring(0, version.indexOf('-'))
+      const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
+      return { 
+        version: currentVer,
+        build: build
+      }
+    } catch (error:any) {
+      console.error(error.message)
+      return {
+        version: '',
+        build: ''
+      }
+    }
+  })()
 
   let port = ''
   let serverProps = null
@@ -64,7 +82,7 @@ export const data = async () => {
 
   return {
     server: {
-      hostname, port, version
+      hostname, port, version, build
     },
     serverProps,
     paperConfig,
