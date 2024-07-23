@@ -25,6 +25,11 @@ const showUpdate = ref(false)
 /** Reference for the update message display */
 const updateMessage = ref('')
 
+/** Check for latest build */
+const checkBuild = async ():Promise<void> => {
+  //
+}
+
 /** Check for updates */
 const checkUpdates = async ():Promise<void> => {
   showUpdate.value = true
@@ -59,6 +64,8 @@ const checkUpdates = async ():Promise<void> => {
     </div>
     <div>
       <h3>Version: {{ version }}-{{ build }}</h3>
+      <button @click="checkBuild()">Update Build</button>
+      &nbsp;
       <button @click="checkUpdates()">Check for updates</button>
     </div>
     <div v-show="showUpdate">
