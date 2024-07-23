@@ -58,7 +58,7 @@ export const data = async () => {
   let bukkitConfig = null
   let spigotConfig = null
 
-  if(data !== undefined && existsSync(data.path)) {
+  if (data !== undefined && existsSync(data.path)) {
     try {
       {const file = await fs.open(path.join(data.path, 'config', 'paper-global.yml'))
       paperConfig = YAML.parse((await file.readFile()).toString())

@@ -24,7 +24,7 @@ export const onCheckUpdate = async () => {
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
-  if(data === undefined || data === null) {
+  if (data === undefined || data === null) {
     return { errorMessage: 'Missing database settings!' }
   }
 
@@ -47,7 +47,7 @@ export const onCheckUpdate = async () => {
       }
     }
   })()
-  if(currentVersion === null || currentBuild === null) {
+  if (currentVersion === null || currentBuild === null) {
     return { errorMessage: 'Unable to determine current version!' }
   }
 
@@ -72,22 +72,22 @@ export const onCheckUpdate = async () => {
       return null
     }
   })()
-  if(latestVersion === null || latestBuild === null) {
+  if (latestVersion === null || latestBuild === null) {
     return { errorMessage: 'Unable to determine latest version!' }
   }
 
   //  Version number fixes for semver comparison
   let curVerCom = currentVersion
-  if(currentVersion.split('.').length < 3) {
+  if (currentVersion.split('.').length < 3) {
     curVerCom += '.0'
   }
   let latVerCom = latestVersion
-  if(latestVersion.split('.').length < 3) {
+  if (latestVersion.split('.').length < 3) {
     latVerCom += '.0'
   }
 
   //  Compare versions
-  if(semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
+  if (semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
     if (Number(currentBuild) > Number(latestBuild)) {
       return {
         status: false,
