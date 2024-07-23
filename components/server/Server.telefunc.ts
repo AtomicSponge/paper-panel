@@ -16,6 +16,13 @@ const exec = util.promisify(execAsync)
 const paperURL = 'https://api.papermc.io/v2/projects/paper/'
 
 /**
+ * Check for Paper server build updates
+ */
+export const onCheckBuild = async () => {
+  //
+}
+
+/**
  * Check for Paper server updates
  */
 export const onCheckUpdate = async () => {

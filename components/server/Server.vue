@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onCheckUpdate, onDoUpdate } from './Server.telefunc'
+import { onCheckBuild, onCheckUpdate, onDoUpdate } from './Server.telefunc'
 import { reload } from 'vike/client/router'
 
 defineProps<{
