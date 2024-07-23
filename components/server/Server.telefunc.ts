@@ -19,7 +19,64 @@ const paperURL = 'https://api.papermc.io/v2/projects/paper/'
  * Check for Paper server build updates
  */
 export const onCheckBuild = async () => {
-  //
+  const db = await JSONFilePreset('db.json', server)
+  const data = db.data.server.at(0)
+
+  if (data === undefined || data === null) {
+    return { errorMessage: 'Missing database settings!' }
+  }
+
+  //  Get the current version and build number
+  const { currentVersion, currentBuild } = await (async () => {
+    try {
+      const { stdout } = await exec(`java -jar ${data.filename} --version`, { cwd: data.path })
+      const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
+      const currentVer = version.substring(0, version.indexOf('-'))
+      const build = version.substring(version.indexOf('-') + 1, version.lastIndexOf('-'))
+      return { 
+        currentVersion: currentVer,
+        currentBuild: build
+      }
+    } catch (error:any) {
+      console.error(error.message)
+      return {
+        currentVersion: null,
+        currentBuild: null
+      }
+    }
+  })()
+  if (currentVersion === null || currentBuild === null) {
+    return { errorMessage: 'Unable to determine current version!' }
+  }
+
+  //  Query Paper API and get latest build
+  const latestBuild = await (async () => {
+    try {
+      const res = await fetch(`${paperURL}versions/${currentVersion}`)
+      const json = await res.json()
+      return json['builds'].at(-1)
+    } catch (error:any) {
+      console.error(error.message)
+      return null
+    }
+  })()
+
+  //  Compare versions
+  if (Number(currentBuild) >= Number(latestBuild)) {
+    return {
+      status: false,
+      message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
+    }
+  }
+
+  return {
+    status: true,
+    version: currentVersion,
+    build: latestBuild,
+    message: `Update available!  This will restart the server!  Are you sure you want to continue?  ` +
+      `Current:  ${currentVersion}-${currentBuild}  ` +
+      `Latest:  ${currentVersion}-${latestBuild}`
+  }
 }
 
 /**
@@ -93,7 +150,7 @@ export const onCheckUpdate = async () => {
 
   //  Compare versions
   if (semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
-    if (Number(currentBuild) > Number(latestBuild)) {
+    if (Number(currentBuild) >= Number(latestBuild)) {
       return {
         status: false,
         message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
