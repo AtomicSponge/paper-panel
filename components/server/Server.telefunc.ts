@@ -146,7 +146,7 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
     await exec(`mv ${filename} ${data.filename}`, { cwd: data.path })
   } catch (error:any) {
     console.error(error.message)
-    return { errorMessage: 'error' }
+    return { errorMessage: 'Error completing the update!' }
   }
 
   //  Start server
