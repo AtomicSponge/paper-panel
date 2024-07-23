@@ -26,6 +26,7 @@ export const data = async () => {
       const { stdout } = await exec('hostname')
       return stdout.toString().trim()
     } catch (error:any) {
+      console.error(error.message)
       return 'hostname'
     }
   })()
