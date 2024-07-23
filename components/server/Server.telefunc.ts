@@ -98,6 +98,8 @@ export const onCheckUpdate = async () => {
 
   return {
     status: true,
+    version: latestVersion,
+    build: latestBuild,
     message: `Update available!  This will restart the server!  Are you sure you want to continue?  ` +
       `Current:  ${currentVersion}-${currentBuild}  ` +
       `Latest:  ${latestVersion}-${latestBuild}`
@@ -107,7 +109,7 @@ export const onCheckUpdate = async () => {
 /**
  * Update the paper server
  */
-export const onDoUpdate = async () => {
+export const onDoUpdate = async ({ version, build }:{ version:string, build:string }) => {
   //  Stop server
 
   //  Download latest release
