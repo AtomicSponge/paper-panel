@@ -31,7 +31,8 @@ export const onCheckUpdate = async () => {
         `java -jar ${data.filename} --version`,
         { cwd: data.path, windowsHide: true }
       )
-      return stdout.toString().trim()
+      const version = stdout.toString().substring(stdout.indexOf('\n')).trim()
+      return version.substring(0, version.indexOf('-'))
     } catch (error:any) {
       return null
     }
