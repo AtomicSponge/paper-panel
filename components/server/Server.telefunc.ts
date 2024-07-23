@@ -18,10 +18,6 @@ const exec = util.promisify(execAsync)
  * Run an update on paper server
  */
 export const onCheckUpdate = async () => {
-  console.log('checking for update!')
-  await new Promise(r => setTimeout(r, 2000))
-  console.log('update check simulation wait done!')
-
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
