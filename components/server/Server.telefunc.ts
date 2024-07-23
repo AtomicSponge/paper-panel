@@ -14,6 +14,8 @@ import { server } from '@/database/server'
 
 const exec = util.promisify(execAsync)
 
+const paperURL = 'https://api.papermc.io/v2/projects/paper/'
+
 /**
  * Check for Paper server updates
  */
@@ -25,6 +27,7 @@ export const onCheckUpdate = async () => {
     return { errorMessage: 'Missing database settings!' }
   }
 
+  //  Get the current version and build number
   const { currentVersion, currentBuild } = await (async () => {
     try {
       const { stdout } = await exec(
@@ -51,7 +54,25 @@ export const onCheckUpdate = async () => {
   console.log(currentVersion)
   console.log(currentBuild)
 
-  return { status: true }
+  //  Query Paper API for latest version and build
+  const latestVersion = await (async () => {
+    return '1.21'
+  })()
+
+  const latestBuild = await (async () => {
+    return '100'
+  })()
+
+  /*return {
+    status: false,
+    message: `You are on the latest version!  ${currentVersion}-${currentBuild}`
+  }*/
+  return {
+    status: true,
+    message: `Update available!  This will restart the server!  Are you sure you want to continue?  ` +
+      `Current:  ${currentVersion}-${currentBuild}  ` +
+      `Latest:  ${latestVersion}-${latestBuild}`
+  }
 }
 
 /**
