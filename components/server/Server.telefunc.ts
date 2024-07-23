@@ -79,11 +79,11 @@ export const onCheckUpdate = async () => {
   //  Version number fixes for semver comparison
   let curVerCom = currentVersion
   if (currentVersion.split('.').length < 3) {
-    curVerCom += '.0'
+    curVerCom += '.0'  //  format 0.0.0
   }
   let latVerCom = latestVersion
   if (latestVersion.split('.').length < 3) {
-    latVerCom += '.0'
+    latVerCom += '.0'  //  format 0.0.0
   }
 
   //  Compare versions
