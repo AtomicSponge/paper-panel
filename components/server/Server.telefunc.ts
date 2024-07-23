@@ -141,7 +141,7 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
     console.log(stdout)
   } catch (error:any) {
     console.error(error.message)
-    return { errorMessage: 'error' }
+    return { errorMessage: 'Unable to download latest release!' }
   }
 
   //  Perform file rename & replace
