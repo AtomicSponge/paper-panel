@@ -110,17 +110,43 @@ export const onCheckUpdate = async () => {
  * Update the paper server
  */
 export const onDoUpdate = async ({ version, build }:{ version:string, build:string }) => {
+  const db = await JSONFilePreset('db.json', server)
+  const data = db.data.server.at(0)
+
+  if (data === undefined || data === null) {
+    return { errorMessage: 'Missing database settings!' }
+  }
+
   //  Stop server
 
   //  Download latest release
+  const filename = await (async () => {
+    try {
+      const res = await fetch(`${paperURL}versions/${version}/builds/${build}/`)
+      const json = await res.json()
+      return json['downloads']['application']['name']
+    } catch (error:any) {
+      console.error(error.message)
+      return null
+    }
+  })()
+  if(filename === null) {
+    return { errorMessage: 'Unable to fetch filename of latest release!' }
+  }
 
-  //  Perform file rename
-
-  //  Start server
-
-  if(false) {
+  try {
+    const run = `wget ${paperURL}versions/${version}/builds/${build}/downloads/${filename}`
+    const { stdout } = await exec(run, { cwd: data.path })
+    //  Log result of download
+    console.log(stdout)
+  } catch (error:any) {
+    console.error(error.message)
     return { errorMessage: 'error' }
   }
+
+  //  Perform file rename & replace
+
+  //  Start server
 
   return { status: true }
 }
