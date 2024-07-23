@@ -65,7 +65,6 @@ export const onCheckUpdate = async () => {
       return null
     }
   })()
-
   const latestBuild = await (async () => {
     try {
       const res = await fetch(`${paperURL}versions/${latestVersion}`)
@@ -76,7 +75,6 @@ export const onCheckUpdate = async () => {
       return null
     }
   })()
-
   if(latestVersion === null || latestBuild === null) {
     return { errorMessage: 'Unable to determine latest version!' }
   }
@@ -90,7 +88,6 @@ export const onCheckUpdate = async () => {
   if(latestVersion.split('.').length < 3) {
     latVerCom += '.0'
   }
-
   if(semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
     if (Number(currentBuild) > Number(latestBuild)) {
       return {
