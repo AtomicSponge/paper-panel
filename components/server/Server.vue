@@ -27,7 +27,31 @@ const updateMessage = ref('')
 
 /** Check for latest build */
 const checkBuild = async ():Promise<void> => {
-  //
+  showUpdate.value = true
+  updateMessage.value = 'Checking for updates, please wait...'
+  const updateAvailable = await onCheckBuild()
+  if (updateAvailable.errorMessage) {
+    window.alert(updateAvailable.errorMessage)
+    return
+  }
+  if (!updateAvailable.status) {
+    window.alert(updateAvailable.message)
+    return
+  }
+  if (updateAvailable.status && window.confirm(updateAvailable.message)) {
+    updateMessage.value = 'Performing server update, please wait...'
+    const res = await onDoUpdate({
+      version: <string>updateAvailable.version,
+      build: updateAvailable.build
+    })
+    if (res?.errorMessage) {
+      window.alert(res.errorMessage)
+    } else {
+      window.alert('Server update complete!')
+      await reload()
+    }
+  }
+  showUpdate.value = false
 }
 
 /** Check for updates */
