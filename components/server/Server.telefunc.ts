@@ -88,6 +88,8 @@ export const onCheckUpdate = async () => {
   if(latestVersion.split('.').length < 3) {
     latVerCom += '.0'
   }
+
+  //  Compare versions
   if(semver.gt(curVerCom, latVerCom) || semver.eq(curVerCom, latVerCom)) {
     if (Number(currentBuild) > Number(latestBuild)) {
       return {
