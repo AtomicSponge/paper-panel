@@ -169,7 +169,7 @@ export const onCheckUpdate = async () => {
 }
 
 /**
- * Update the paper server
+ * Update the Paper server
  */
 export const onDoUpdate = async ({ version, build }:{ version:string, build:string }) => {
   const db = await JSONFilePreset('db.json', server)
