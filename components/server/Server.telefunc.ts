@@ -27,7 +27,10 @@ export const onCheckUpdate = async () => {
 
   const currentVersion = await (async () => {
     try {
-      const { stdout } = await exec(`java -jar ${data.filename} --version`, { cwd: data.path, windowsHide: true })
+      const { stdout } = await exec(
+        `java -jar ${data.filename} --version`,
+        { cwd: data.path, windowsHide: true }
+      )
       return stdout.toString().trim()
     } catch (error:any) {
       return null
