@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import type { ModelRef } from 'vue'
 
-const data:ModelRef<{path:string}> = defineModel({ required: true })
+const data:ModelRef<ServerSetupData> = defineModel({ required: true })
 </script>
 
 <template>
@@ -22,7 +22,7 @@ const data:ModelRef<{path:string}> = defineModel({ required: true })
       </div>
       <div>
         <label for="filename">Filename:</label>
-        <input type="text" id="filename" v-model="data.path"/>
+        <input type="text" id="filename" v-model="data.filename"/>
       </div>
     </main>
   </section>
