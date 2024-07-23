@@ -20,6 +20,7 @@ export const data = async () => {
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
+  //  Get server hostname
   const hostname = await (async () => {
     try {
       const { stdout } = await exec('hostname')
