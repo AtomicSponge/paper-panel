@@ -4,9 +4,7 @@
  * See LICENSE.md
  */
 
-import path from 'node:path'
 import util from 'node:util'
-import { existsSync } from 'node:fs'
 import { exec as execAsync } from 'node:child_process'
 import semver from 'semver'
 import { JSONFilePreset } from 'lowdb/node'
