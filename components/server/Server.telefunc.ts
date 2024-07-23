@@ -131,7 +131,7 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
     }
   })()
   if(filename === null) {
-    return { errorMessage: 'Unable to fetch filename of latest release!' }
+    return { errorMessage: 'Unable to fetch filename of release!' }
   }
 
   try {
@@ -139,12 +139,13 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
     await exec(run, { cwd: data.path })
   } catch (error:any) {
     console.error(error.message)
-    return { errorMessage: 'Unable to download latest release!' }
+    return { errorMessage: 'Unable to download the server file!' }
   }
 
   //  Perform file rename & replace
   try {
-    //
+    await exec(`rm ${data.filename}`, { cwd: data.path })
+    await exec(`mv ${filename} ${data.filename}`, { cwd: data.path })
   } catch (error:any) {
     console.error(error.message)
     return { errorMessage: 'error' }
