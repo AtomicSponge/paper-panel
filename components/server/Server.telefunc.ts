@@ -198,7 +198,7 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
       return null
     }
   })()
-  if(filename === null) {
+  if (filename === null) {
     return { errorMessage: 'Unable to fetch filename of release!' }
   }
 
