@@ -136,15 +136,19 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
 
   try {
     const run = `wget ${paperURL}versions/${version}/builds/${build}/downloads/${filename}`
-    const { stdout } = await exec(run, { cwd: data.path })
-    //  Log result of download
-    console.log(stdout)
+    await exec(run, { cwd: data.path })
   } catch (error:any) {
     console.error(error.message)
     return { errorMessage: 'Unable to download latest release!' }
   }
 
   //  Perform file rename & replace
+  try {
+    //
+  } catch (error:any) {
+    console.error(error.message)
+    return { errorMessage: 'error' }
+  }
 
   //  Start server
 
