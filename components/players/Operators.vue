@@ -121,6 +121,7 @@ div {
 }
 select {
   overflow: hidden;
+  min-width: 12em;
 }
 hr {
   width: 90%;
