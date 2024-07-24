@@ -17,6 +17,8 @@ const showConfig = ref(false)
 const selected = ref([])
 /** Reference to the multi select, only used for size calc */
 const size = ref()
+/** Key value to force select display updates */
+const selectKey = ref(0)
 /** Reference to the add item input box */
 const newItem = ref('')
 
@@ -58,6 +60,7 @@ const removeItems = ():void => {
   selected.value.forEach(item => {
     data.value.splice(data.value.indexOf(item), 1)
   })
+  selectKey.value += 1
 }
 
 /** Set selection size on update */
@@ -88,7 +91,7 @@ onUpdated(() => {
           <div>&nbsp;</div>
         </div>
         <div class="left">
-          <select multiple v-model="selected" ref="size">
+          <select multiple v-model="selected" ref="size" :key="selectKey">
             <option v-for="item in data" :value="item">{{ item }}</option>
           </select>
         </div>
