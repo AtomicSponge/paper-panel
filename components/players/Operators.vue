@@ -65,8 +65,8 @@ const removeItems = ():void => {
 
 /** Set selection size on update */
 onUpdated(() => {
-  if(size.value.childElementCount < 5)
-    size.value.setAttribute('size', 5)
+  if(size.value.childElementCount < 7)
+    size.value.setAttribute('size', 7)
   else
     size.value.setAttribute('size', size.value.childElementCount)
 })
@@ -88,7 +88,6 @@ onUpdated(() => {
           <div>
             <button @click="removeItems()">Remove</button>
           </div>
-          <div>&nbsp;</div>
         </div>
         <div class="left">
           <select multiple v-model="selected" ref="size" :key="selectKey">
