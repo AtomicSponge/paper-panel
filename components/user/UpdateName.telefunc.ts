@@ -15,7 +15,7 @@ import { users } from '@/database/users'
  */
 export const onNameUpdate = async ({ id, name }:{ id:number, name:string }) => {
   const db = await JSONFilePreset('db.json', users)
-  const elem = db.data.user.find(user => user.id === id)
+  const elem = db.data.users.find(user => user.id === id)
   if(elem === undefined) return { errorMessage: 'User not found!' }
   await db.update(() => { elem.name = name })
 }
