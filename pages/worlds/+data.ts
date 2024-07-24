@@ -46,7 +46,7 @@ export const data = async (pageContext:PageContextServer) => {
         }
       } catch (error:any) {
         console.error(error.message)
-        worldConfig.push(`Problems opening file\n${error.message}`)
+        worldConfig.push(`Problems opening file:  ${error.message}`)
       }
 
       try {
@@ -58,7 +58,7 @@ export const data = async (pageContext:PageContextServer) => {
         }
       } catch (error:any) {
         console.error(error.message)
-        worldConfig.push(`Problems opening file\n${error.message}`)
+        worldConfig.push(`Problems opening file:  ${error.message}`)
       }
 
       try {
@@ -70,7 +70,7 @@ export const data = async (pageContext:PageContextServer) => {
         }
       } catch (error:any) {
         console.error(error.message)
-        worldConfig.push(`Problems opening file\n${error.message}`)
+        worldConfig.push(`Problems opening file:  ${error.message}`)
       }
     })
   }
