@@ -37,6 +37,7 @@ const updateConfig = async ():Promise<void> => {
 
 /** Add an item to the list */
 const addItem = ():void => {
+  if(newItem.value === undefined || newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
       if(newItem.value === item) {
