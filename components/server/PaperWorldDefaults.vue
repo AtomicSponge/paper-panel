@@ -434,14 +434,113 @@ const saveConfig = async ():Promise<void> => {
               </div>
             </div>
           </div>
+          <div class="tab">
+            count-all-mobs-for-spawning
+            <input type="checkbox" v-model="data['entities']['spawning']['count-all-mobs-for-spawning']"/>
+          </div>
+          <div class="tab">
+            creative-arrow-despawn-rate
+            <input type="text" v-model="data['entities']['spawning']['creative-arrow-despawn-rate']"/>
+          </div>
+          <div class="tab">
+            despawn-ranges
+            <div class="tab">
+              ambient
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['ambient']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['ambient']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              axolotls
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['axolotls']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['axolotls']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              creature
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['creature']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['creature']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              misc
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['misc']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['misc']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              monster
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['monster']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['monster']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              underground-water-creature
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['underground_water_creature']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['underground_water_creature']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              water-ambient
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['water_ambient']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['water_ambient']['soft']"/>
+              </div>
+            </div>
+            <div class="tab">
+              water-creature
+              <div class="tab">
+                hard
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['water_creature']['hard']"/>
+              </div>
+              <div class="tab">
+                soft
+                <input type="number" v-model="data['entities']['spawning']['despawn-ranges']['water_creature']['soft']"/>
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            disable-mob-spawner-spawn-egg-transformation
+            <!-- here -->
+          </div>
         </div>
+
         <div class="tab">
-          count-all-mobs-for-spawning
-          <input type="checkbox" v-model="data['entities']['spawning']['count-all-mobs-for-spawning']"/>
-        </div>
-        <div class="tab">
-          creative-arrow-despawn-rate
-          <input type="text" v-model="data['entities']['spawning']['creative-arrow-despawn-rate']"/>
+          tracking-range-y
         </div>
       </div>
 
