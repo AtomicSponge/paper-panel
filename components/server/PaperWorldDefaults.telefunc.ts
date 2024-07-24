@@ -37,6 +37,9 @@ export const onSave = async (data:any) => {
   if (!isNaN(Number(data['entities']['sniffer']['hatch-time']))) {
     data['entities']['sniffer']['hatch-time'] = Number(data['entities']['sniffer']['hatch-time'])
   }
+  if (!isNaN(Number(data['entities']['spawning']['creative-arrow-despawn-rate']))) {
+    data['entities']['spawning']['creative-arrow-despawn-rate'] = Number(data['entities']['spawning']['creative-arrow-despawn-rate'])
+  }
   if (!isNaN(Number(data['environment']['nether-ceiling-void-damage-height']))) {
     data['environment']['nether-ceiling-void-damage-height'] = Number(data['nether-ceiling-void-damage-height']['auto-save-interval'])
   }
