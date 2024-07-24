@@ -13,9 +13,9 @@ import type { ModelRef } from 'vue'
 const label = ref('Edit')
 /** Reference for showing the config display */
 const showConfig = ref(false)
-/** Reference to the multi select */
+/** Reference to the multi select data*/
 const selected = ref([])
-/** Reference to the size of the multi select */
+/** Reference to the multi select, only used for size calc */
 const size = ref()
 /** Reference to the add item input box */
 const newItem = ref('')
