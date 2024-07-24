@@ -8,7 +8,7 @@
 import { onUpdate } from './BannedPlayers.telefunc'
 import type { ModelRef } from 'vue'
 
-const data:ModelRef<any> = defineModel({ required: true })
+const data:ModelRef<Array<string>> = defineModel({ required: true })
 
 /** Update the Banned IPs */
 const updateConfig = async ():Promise<void> => {
@@ -22,6 +22,12 @@ const updateConfig = async ():Promise<void> => {
   <section class="subbox">
     <div>
       <h2>Banned Players</h2>
+    </div>
+    <div>
+      Seperate with commas
+    </div>
+    <div>
+      <textarea v-model="data"></textarea>
     </div>
     <div>
       <button @click="updateConfig">Update</button>
