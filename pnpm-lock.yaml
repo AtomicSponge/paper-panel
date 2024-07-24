@@ -17,6 +17,9 @@ importers:
       '@spongex/async-for-each':
         specifier: ^1.0.1
         version: 1.0.1
+      '@spongex/system-locale':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@vitejs/plugin-vue':
         specifier: ^5.1.0
         version: 5.1.0(vite@5.3.4(@types/node@20.14.12))(vue@3.4.33(typescript@5.5.4))
@@ -591,6 +594,9 @@ packages:
 
   '@spongex/async-for-each@1.0.1':
     resolution: {integrity: sha512-fRaswiv7VpDKfRadrCE7jOUfwmKEw9fvQTnFu1lxE57bU7fdwxxRfcv8EJPQfMNVTkd9i/p0pqE5tCXU4HKV1g==}
+
+  '@spongex/system-locale@1.0.0':
+    resolution: {integrity: sha512-Pd/EgNEnXLWMUNL+GhwErMG7P2nbXBEyGCNHJolXnprUQCIzw8RMNBgh7ZG+y9K4/dJL3hIuD/Rqd8e3tX0+cA==}
 
   '@ts-morph/common@0.20.0':
     resolution: {integrity: sha512-7uKjByfbPpwuzkstL3L5MQyuXPSKdoNG93Fmi2JoDcTf3pEP731JdRFAduRVkOs8oqxPsXKA+ScrWkdQ8t/I+Q==}
@@ -1518,6 +1524,8 @@ snapshots:
     optional: true
 
   '@spongex/async-for-each@1.0.1': {}
+
+  '@spongex/system-locale@1.0.0': {}
 
   '@ts-morph/common@0.20.0':
     dependencies:

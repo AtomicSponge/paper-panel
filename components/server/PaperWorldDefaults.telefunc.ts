@@ -9,6 +9,7 @@ import path from 'node:path'
 import { existsSync } from 'node:fs'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
+import { __locale } from '@spongex/system-locale'
 
 import { server } from '@/database/server'
 
@@ -79,6 +80,8 @@ export const onSave = async (data:any) => {
     if (data === undefined) throw new Error('Unable to save!  Missing data!')
     if (serverSettings !== undefined && existsSync(serverSettings.path)) {
       await fs.writeFile(path.join(serverSettings.path, 'config', 'paper-world-defaults.yml'), YAML.stringify(data))
+      const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
+      console.log(`Paper World Defaults updated on ${updateDate}`)
     } else {
       throw new Error('Unable to save! Cannot find server path!')
     }

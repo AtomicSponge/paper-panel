@@ -31,6 +31,7 @@
     "@auth/core": "^0.34.1",
     "@hono/node-server": "^1.12.0",
     "@spongex/async-for-each": "^1.0.1",
+    "@spongex/system-locale": "^1.0.0",
     "@vitejs/plugin-vue": "^5.1.0",
     "@vue/compiler-sfc": "^3.4.33",
     "@vue/server-renderer": "^3.4.33",
