@@ -434,14 +434,14 @@ const saveConfig = async ():Promise<void> => {
               </div>
             </div>
           </div>
-          <div>
-            count-all-mobs-for-spawning
-            <input type="checkbox" v-model="data['entities']['spawning']['count-all-mobs-for-spawning']"/>
-          </div>
-          <div>
-            creative-arrow-despawn-rate
-            <input type="text" v-model="data['entities']['spawning']['creative-arrow-despawn-rate']"/>
-          </div>
+        </div>
+        <div class="tab">
+          count-all-mobs-for-spawning
+          <input type="checkbox" v-model="data['entities']['spawning']['count-all-mobs-for-spawning']"/>
+        </div>
+        <div class="tab">
+          creative-arrow-despawn-rate
+          <input type="text" v-model="data['entities']['spawning']['creative-arrow-despawn-rate']"/>
         </div>
       </div>
 
