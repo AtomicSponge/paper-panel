@@ -32,10 +32,12 @@ const checkBuild = async ():Promise<void> => {
   const updateAvailable = await onCheckBuild()
   if (updateAvailable.errorMessage) {
     window.alert(updateAvailable.errorMessage)
+    showUpdate.value = false
     return
   }
   if (!updateAvailable.status) {
     window.alert(updateAvailable.message)
+    showUpdate.value = false
     return
   }
   if (updateAvailable.status && window.confirm(updateAvailable.message)) {
@@ -46,12 +48,13 @@ const checkBuild = async ():Promise<void> => {
     })
     if (res?.errorMessage) {
       window.alert(res.errorMessage)
+      showUpdate.value = false
     } else {
       window.alert('Server update complete!')
+      showUpdate.value = false
       await reload()
     }
   }
-  showUpdate.value = false
 }
 
 /** Check for updates */
@@ -61,10 +64,12 @@ const checkUpdates = async ():Promise<void> => {
   const updateAvailable = await onCheckUpdate()
   if (updateAvailable.errorMessage) {
     window.alert(updateAvailable.errorMessage)
+    showUpdate.value = false
     return
   }
   if (!updateAvailable.status) {
     window.alert(updateAvailable.message)
+    showUpdate.value = false
     return
   }
   if (updateAvailable.status && window.confirm(updateAvailable.message)) {
@@ -75,12 +80,13 @@ const checkUpdates = async ():Promise<void> => {
     })
     if (res?.errorMessage) {
       window.alert(res.errorMessage)
+      showUpdate.value = false
     } else {
       window.alert('Server update complete!')
+      showUpdate.value = false
       await reload()
     }
   }
-  showUpdate.value = false
 }
 </script>
 
@@ -93,7 +99,7 @@ const checkUpdates = async ():Promise<void> => {
       <h3>Version: {{ version }}-{{ build }}</h3>
       <button @click="checkBuild()">Update Build</button>
       &nbsp;
-      <button @click="checkUpdates()">Check for updates</button>
+      <button @click="checkUpdates()">Check for Updates</button>
     </div>
     <div v-show="showUpdate">
       {{ updateMessage }}
