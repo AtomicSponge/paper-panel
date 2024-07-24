@@ -40,6 +40,24 @@ export const onSave = async (data:any) => {
   if (!isNaN(Number(data['entities']['spawning']['creative-arrow-despawn-rate']))) {
     data['entities']['spawning']['creative-arrow-despawn-rate'] = Number(data['entities']['spawning']['creative-arrow-despawn-rate'])
   }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['animal']))) {
+    data['entities']['tracking-range-y']['animal'] = Number(data['entities']['tracking-range-y']['animal'])
+  }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['display']))) {
+    data['entities']['tracking-range-y']['display'] = Number(data['entities']['tracking-range-y']['display'])
+  }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['misc']))) {
+    data['entities']['tracking-range-y']['misc'] = Number(data['entities']['tracking-range-y']['misc'])
+  }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['monster']))) {
+    data['entities']['tracking-range-y']['monster'] = Number(data['entities']['tracking-range-y']['monster'])
+  }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['other']))) {
+    data['entities']['tracking-range-y']['other'] = Number(data['entities']['tracking-range-y']['other'])
+  }
+  if (!isNaN(Number(data['entities']['tracking-range-y']['player']))) {
+    data['entities']['tracking-range-y']['player'] = Number(data['entities']['tracking-range-y']['player'])
+  }
   if (!isNaN(Number(data['environment']['nether-ceiling-void-damage-height']))) {
     data['environment']['nether-ceiling-void-damage-height'] = Number(data['nether-ceiling-void-damage-height']['auto-save-interval'])
   }
