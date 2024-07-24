@@ -31,7 +31,7 @@ const toggleConfig = ():void => {
 
 /** Update the Banned IPs */
 const updateConfig = async ():Promise<void> => {
-  const res = await onUpdate(data.value)
+  const res = await onUpdate({ data: data.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('Operators updated!')
 }
