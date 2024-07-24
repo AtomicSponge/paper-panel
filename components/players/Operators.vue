@@ -17,6 +17,7 @@ const showConfig = ref(false)
 const selected = ref([])
 /** Reference to the size of the multi select */
 const size = ref()
+const newItem = ref()
 
 /** Form data */
 const data:ModelRef<Array<string>> = defineModel({ required: true })
@@ -36,13 +37,24 @@ const updateConfig = async ():Promise<void> => {
 
 /** Add an item to the list */
 const addItem = ():void => {
-  //
+  try {
+    data.value.forEach(item => {
+      if(newItem.value === item) {
+        throw new Error(`${item} already in list!`)
+      }
+    })
+  } catch (error:any) {
+    window.alert(error.message)
+    return
+  }
+  data.value.push(newItem.value)
+  newItem.value = ''
 }
 
 /** Remove an item from the list */
 const removeItems = ():void => {
-  selected.value.forEach(idx => {
-    data.value.splice(idx, 1)
+  selected.value.forEach(item => {
+    data.value.splice(data.value.indexOf(item), 1)
   })
 }
 
@@ -75,12 +87,12 @@ onUpdated(() => {
         </div>
         <div class="left">
           <select multiple v-model="selected" ref="size">
-            <option v-for="(item, idx) in data" :value="idx">{{ item }}</option>
+            <option v-for="item in data" :value="item">{{ item }}</option>
           </select>
         </div>
       </div>
       <div>
-        <input type="text"/>
+        <input type="text" v-model="newItem"/>
       </div>
       <div>
         <button @click="addItem()">Add</button>
