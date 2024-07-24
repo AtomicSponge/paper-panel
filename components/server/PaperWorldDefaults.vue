@@ -416,7 +416,28 @@ const saveConfig = async ():Promise<void> => {
         </div>
         <div class="tab">
           spawning
-          <!-- here -->
+          <div class="tab">
+            all-chunks-are-slime-chunks
+            <input type="checkbox" v-model="data['entities']['spawning']['all-chunks-are-slime-chunks']"/>
+          </div>
+          <div class="tab">
+            alt-item-despawn-rate
+            <div class="tab">
+              enabled
+              <input type="checkbox" v-model="data['entities']['spawning']['alt-item-despawn-rate']['enabled']"/>
+            </div>
+            <div class="tab">
+              items
+              <div class="tab">
+                cobblestone
+                <input type="number" v-model="data['entities']['spawning']['alt-item-despawn-rate']['items']['cobblestone']"/>
+              </div>
+            </div>
+          </div>
+          <div>
+            count-all-mobs-for-spawning
+            <input type="checkbox" v-model="data['entities']['spawning']['count-all-mobs-for-spawning']"/>
+          </div>
         </div>
       </div>
 
