@@ -14,7 +14,7 @@ const label = ref('Edit')
 /** Reference for showing the config display */
 const showConfig = ref(false)
 /** Reference to the multi select */
-const selected = ref()
+const selected = ref([])
 /** Reference to the size of the multi select */
 const size = ref()
 
@@ -32,6 +32,18 @@ const updateConfig = async ():Promise<void> => {
   const res = await onUpdate(data.value)
   if(res?.errorMessage) window.alert(res.errorMessage)
   else window.alert('Operators updated!')
+}
+
+/** Add an item to the list */
+const addItem = ():void => {
+  //
+}
+
+/** Remove an item from the list */
+const removeItems = ():void => {
+  selected.value.forEach(idx => {
+    data.value.splice(idx, 1)
+  })
 }
 
 /** Set selection size on update */
@@ -57,13 +69,13 @@ onUpdated(() => {
         <div class="right">
           <div>&nbsp;</div>
           <div>
-            <button>Remove</button>
+            <button @click="removeItems()">Remove</button>
           </div>
           <div>&nbsp;</div>
         </div>
         <div class="left">
           <select multiple v-model="selected" ref="size">
-            <option v-for="item in data">{{ item }}</option>
+            <option v-for="(item, idx) in data" :value="idx">{{ item }}</option>
           </select>
         </div>
       </div>
@@ -71,7 +83,7 @@ onUpdated(() => {
         <input type="text"/>
       </div>
       <div>
-        <button>Add</button>
+        <button @click="addItem()">Add</button>
       </div>
       <hr/>
       <div>
