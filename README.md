@@ -3,4 +3,4 @@
   <td><h1>Paper Panel<h1></td>
 </tr></table>
 
-## Control Panel software for the [Paper MC](https://papermc.io/software/paper) server.
+## Control Panel Software for the [Paper MC](https://papermc.io/software/paper) Server
