@@ -7,7 +7,7 @@
 /**
  * Update the Banned Players
  */
-export const onUpdate = async (data:any) => {
+export const onUpdate = async ({ data }:{ data:Array<string> }) => {
   console.log('Updating banned players...')
   console.log(data)
 

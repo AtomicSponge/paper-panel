@@ -7,7 +7,7 @@
 /**
  * Update the Whitelist
  */
-export const onUpdate = async (data:any) => {
+export const onUpdate = async ({ data }:{ data:Array<string> }) => {
   console.log('Upadting whitelist...')
   console.log(data)
 
