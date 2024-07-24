@@ -17,7 +17,8 @@ const showConfig = ref(false)
 const selected = ref([])
 /** Reference to the size of the multi select */
 const size = ref()
-const newItem = ref()
+/** Reference to the add item input box */
+const newItem = ref('')
 
 /** Form data */
 const data:ModelRef<Array<string>> = defineModel({ required: true })
@@ -37,7 +38,7 @@ const updateConfig = async ():Promise<void> => {
 
 /** Add an item to the list */
 const addItem = ():void => {
-  if(newItem.value === undefined || newItem.value.length === 0) return
+  if(newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
       if(newItem.value === item) {
