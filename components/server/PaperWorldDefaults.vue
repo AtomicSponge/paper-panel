@@ -541,6 +541,34 @@ const saveConfig = async ():Promise<void> => {
 
         <div class="tab">
           tracking-range-y
+          <div class="tab">
+            enabled
+            <input type="checkbox" v-model="data['entities']['tracking-range-y']['enabled']"/>
+          </div>
+          <div class="tab">
+            animal
+            <input type="text" v-model="data['entities']['tracking-range-y']['animal']"/>
+          </div>
+          <div class="tab">
+            display
+            <input type="text" v-model="data['entities']['tracking-range-y']['display']"/>
+          </div>
+          <div class="tab">
+            misc
+            <input type="text" v-model="data['entities']['tracking-range-y']['misc']"/>
+          </div>
+          <div class="tab">
+            monster
+            <input type="text" v-model="data['entities']['tracking-range-y']['monster']"/>
+          </div>
+          <div class="tab">
+            other
+            <input type="text" v-model="data['entities']['tracking-range-y']['other']"/>
+          </div>
+          <div class="tab">
+            player
+            <input type="text" v-model="data['entities']['tracking-range-y']['player']"/>
+          </div>
         </div>
       </div>
 
