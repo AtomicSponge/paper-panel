@@ -10,4 +10,17 @@
 </tr>
 </table>
 
-description
+This is still a work in progress but most of the core items are complete.
+
+Current set of features are:
+- First-run configuration
+- Ability to edit server YAML configuration files
+- Ability to edit player JSON configuration files
+- Ability to edit world YAML configuration files
+- Update the server to latest build or version
+
+Items in progress:
+- Ability to import and export worlds
+- Implement authentication
+- Build & production testing
+- Documentation & configuration steps
