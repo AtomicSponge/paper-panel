@@ -535,7 +535,10 @@ const saveConfig = async ():Promise<void> => {
           </div>
           <div class="tab">
             disable-mob-spawner-spawn-egg-transformation
-            <!-- here -->
+            <input type="checkbox" v-model="data['entities']['spawning']['disable-mob-spawner-spawn-egg-transformation']"/>
+          </div>
+          <div class="tab">
+            duplicate-uuid
           </div>
         </div>
 
