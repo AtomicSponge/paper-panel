@@ -13,6 +13,7 @@ import { server } from '@/database/server'
 
 const exec = util.promisify(execAsync)
 
+/** Paper download location */
 const paperURL = 'https://api.papermc.io/v2/projects/paper/'
 
 /**
