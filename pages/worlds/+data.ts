@@ -26,11 +26,11 @@ export const data = async (pageContext:PageContextServer) => {
   const db = await JSONFilePreset('db.json', worlds)
   const data = isAdmin ? db.data.worlds : db.data.worlds.filter(world => world.users.includes(userId))
 
-  let nameRef:Array<string> = []
-  let folderRef:Array<string> = []
-  let worldConfig:Array<string> = []
-  let netherConfig:Array<string> = []
-  let theEndConfig:Array<string> = []
+  const nameRef:Array<string> = []
+  const folderRef:Array<string> = []
+  const worldConfig:Array<string> = []
+  const netherConfig:Array<string> = []
+  const theEndConfig:Array<string> = []
 
   if(serverPath !== undefined && existsSync(serverPath)) {
     await asyncForEach(data, async (world:World) => {
