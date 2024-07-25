@@ -43,7 +43,7 @@ export const data = async (pageContext:PageContextServer) => {
       folderRef.push(world.folder)
 
       //  Make sure the world exists
-      if(!existsSync(world.folder)) {
+      if(!existsSync(path.join(serverPath, world.folder))) {
         worldConfig.push('World does not exist!')
         netherConfig.push('World does not exist!')
         theEndConfig.push('World does not exist!')
