@@ -9,6 +9,7 @@ import path from 'node:path'
 import { existsSync } from 'node:fs'
 import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
+import { getContext, Abort } from 'telefunc'
 import { __locale } from '@spongex/system-locale'
 
 import { server } from '@/database/server'
@@ -17,6 +18,9 @@ import { server } from '@/database/server'
  * Save Bukkit configuration
  */
 export const onSave = async (data:any) => {
+  const { user } = getContext()
+  console.log(user)
+
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 

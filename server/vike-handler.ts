@@ -4,12 +4,14 @@ import { renderPage } from 'vike/server'
 export async function vikeHandler<
   Context extends Record<string | number | symbol, unknown>,
 >(request: Request, context?: Context): Promise<Response> {
+  /* TEST DATA */
   const user = {
     id: 0,
     name: 'Administrator',
     admin: true,
     serveradmin: true
   }
+  /* TEST DATA */
 
   const pageContextInit = {
     ...context,

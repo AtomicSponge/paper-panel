@@ -3,14 +3,18 @@ import { User } from '@/database/users'
 import { World } from '@/database/worlds'
 
 declare global {
+  interface User {
+    id:number
+    name:string
+    admin:boolean
+    serveradmin:boolean
+    login:string
+    password:string
+  }
+
   namespace Vike {
     interface PageContext {
-      user?: {
-        id:number
-        name:string
-        admin:boolean
-        serveradmin:boolean
-      }
+      user?:User
     }
   }
 
@@ -30,6 +34,14 @@ declare global {
     display:string
     password:string
     confirm:string
+  }
+}
+
+declare module 'telefunc' {
+  namespace Telefunc {
+    interface Context {
+      user?:User
+    }
   }
 }
 
