@@ -1,3 +1,5 @@
+import { authjsHandler, authjsSessionMiddleware } from "./server/authjs-handler"
+
 import { vikeHandler } from './server/vike-handler'
 import { telefuncHandler } from './server/telefunc-handler'
 import { Hono } from 'hono'
@@ -35,13 +37,13 @@ export function handlerAdapter<
 
 const app = new Hono()
 
-//app.use(handlerAdapter(authjsSessionMiddleware))
+app.use(handlerAdapter(authjsSessionMiddleware))
 
 /**
  * Auth.js route
  * @link {@see https://authjs.dev/getting-started/installation}
  **/
-//app.use('/api/auth/**', handlerAdapter(authjsHandler))
+app.use('/api/auth/**', handlerAdapter(authjsHandler))
 
 app.post('/_telefunc', handlerAdapter(telefuncHandler))
 
