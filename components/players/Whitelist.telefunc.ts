@@ -20,8 +20,8 @@ export const onUpdate = async ({ data }:{ data:Array<string> }) => {
   const serverSettings = db.data.server.at(0)
 
   try {
+    if (data === undefined) throw new Error('Unable to save!  Missing data!')
     if (serverSettings !== undefined && existsSync(serverSettings.path)) {
-      if (data === undefined) throw new Error('Unable to save!  Missing data!')
       await fs.writeFile(path.join(serverSettings.path, 'whitelist.json'), JSON.stringify(data))
       const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
       console.log(`Whitelist updated on ${updateDate}`)
