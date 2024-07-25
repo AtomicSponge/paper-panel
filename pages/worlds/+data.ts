@@ -26,6 +26,8 @@ export const data = async (pageContext:PageContextServer) => {
   const db = await JSONFilePreset('db.json', worlds)
   const data = isAdmin ? db.data.worlds : db.data.worlds.filter(world => world.users.includes(userId))
 
+  let nameRef:Array<string> = []
+  let folderRef:Array<string> = []
   let worldConfig:Array<string> = []
   let netherConfig:Array<string> = []
   let theEndConfig:Array<string> = []
@@ -35,6 +37,18 @@ export const data = async (pageContext:PageContextServer) => {
       const worldLocation = path.join(serverPath, world.folder, 'paper-world.yml')
       const netherLocation = path.join(serverPath, world.folder + '_nether', 'paper-world.yml')
       const theEndLocation = path.join(serverPath, world.folder + '_the_end', 'paper-world.yml')
+
+      //  Track name and folder here for idx matching
+      nameRef.push(world.name)
+      folderRef.push(world.folder)
+
+      //  Make sure the world exists
+      if(!existsSync(world.folder)) {
+        worldConfig.push('World does not exist!')
+        netherConfig.push('World does not exist!')
+        theEndConfig.push('World does not exist!')
+        return
+      }
 
       //  Read each file in or create if it does not exist
       try {
@@ -58,7 +72,7 @@ export const data = async (pageContext:PageContextServer) => {
         }
       } catch (error:any) {
         console.error(error.message)
-        worldConfig.push(`Problems opening file:  ${error.message}`)
+        netherConfig.push(`Problems opening file:  ${error.message}`)
       }
 
       try {
@@ -70,13 +84,14 @@ export const data = async (pageContext:PageContextServer) => {
         }
       } catch (error:any) {
         console.error(error.message)
-        worldConfig.push(`Problems opening file:  ${error.message}`)
+        theEndConfig.push(`Problems opening file:  ${error.message}`)
       }
     })
   }
 
   return {
-    worlds: data,
+    nameRef,
+    folderRef,
     worldConfig,
     netherConfig,
     theEndConfig

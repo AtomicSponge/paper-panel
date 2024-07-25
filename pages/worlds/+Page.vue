@@ -26,14 +26,13 @@ import World from '@/components/worlds/World.vue'
       </div>
     </header>
     <main>
-      <div v-for="(world, key, idx) in data.worlds">
+      <div v-for="(name, idx) in data.nameRef">
         <World
-          :name="world.name"
-          :folder="world.folder"
+          :name="name"
+          :folder="data.folderRef.at(idx)!"
           :world="data.worldConfig.at(idx)"
           :nether="data.netherConfig.at(idx)"
-          :end="data.theEndConfig.at(idx)"
-          :key="key"/>
+          :end="data.theEndConfig.at(idx)"/>
       </div>
     </main>
   </section>
