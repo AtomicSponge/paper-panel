@@ -10,7 +10,7 @@
 </tr>
 </table>
 
-This is still a work in progress but most of the core items are complete.
+This is still a work in progress.
 
 Current set of features are:
 - First-run configuration
