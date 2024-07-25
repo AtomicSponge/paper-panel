@@ -4,14 +4,32 @@
  * See LICENSE.md
  */
 
+import fs from 'node:fs/promises'
+import path from 'node:path'
+import { existsSync } from 'node:fs'
+import { JSONFilePreset } from 'lowdb/node'
+import { __locale } from '@spongex/system-locale'
+
+import { server } from '@/database/server'
+
 /**
  * Update the Banned Players
  */
 export const onUpdate = async ({ data }:{ data:Array<string> }) => {
-  console.log('Updating banned players...')
-  console.log(data)
+  const db = await JSONFilePreset('db.json', server)
+  const serverSettings = db.data.server.at(0)
 
-  if(false) {
-    return { errorMessage: '' }
+  try {
+    if (serverSettings !== undefined && existsSync(serverSettings.path)) {
+      if (data === undefined) throw new Error('Unable to save!  Missing data!')
+      await fs.writeFile(path.join(serverSettings.path, 'banned-players.json'), JSON.stringify(data))
+      const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
+      console.log(`Banned Players updated on ${updateDate}`)
+    } else {
+      throw new Error('Unable to save!  Cannot find server path!')
+    }
+  } catch (error:any) {
+    console.error(error.message)
+    return { errorMessage: error.message }
   }
 }
