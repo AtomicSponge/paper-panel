@@ -8,7 +8,8 @@ import fs, { constants } from 'node:fs'
 import path from 'node:path'
 import { JSONFilePreset } from 'lowdb/node'
 import { getContext, Abort } from 'telefunc'
-import bcrypt from 'bcryptjs'
+
+import { hashPass } from '@/auth/hashPass'
 
 /**
  * Save first time configuration
@@ -40,9 +41,7 @@ export const onSave = async ({ adminData, serverData }:{ adminData:AdminSetupDat
     return { errorMessage: 'Passwords do not match!' }
   }
 
-  const saltRounds = 12
-  const salt = await bcrypt.genSalt(saltRounds)
-  const password = await bcrypt.hash(adminData.password, salt)
+  const password = await hashPass(adminData.password)
 
   const admin = {
     id: 0,
