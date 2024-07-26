@@ -5,14 +5,22 @@
  */
 
 import fs, { constants } from 'node:fs'
+import path from 'node:path'
 import { JSONFilePreset } from 'lowdb/node'
+import { getContext, Abort } from 'telefunc'
 import bcrypt from 'bcryptjs'
 
 /**
  * Save first time configuration
  */
 export const onSave = async ({ adminData, serverData }:{ adminData:AdminSetupData, serverData:ServerSetupData }) => {
-  /** Admin configuration */
+  //  If logged in or db exists, abort
+  const { user } = getContext()
+  if(user || fs.existsSync(path.join(process.cwd(), 'db.json'))) {
+    throw Abort()
+  }
+
+  /** Admin configuration */  
   if(adminData.password.toLowerCase().includes('password')) {
     return { errorMessage: `Password should not contain the word 'password'!` }
   }

@@ -9,7 +9,9 @@ export async function telefuncHandler<Context extends Record<string | number | s
     id: 0,
     name: 'Administrator',
     admin: true,
-    serveradmin: true
+    serveradmin: true,
+    login: '',
+    password: ''
   }
   /* TEST DATA */
 
@@ -18,7 +20,7 @@ export async function telefuncHandler<Context extends Record<string | number | s
     method: request.method,
     body: await request.text(),
     context: {
-      context,
+      ...context,
       user
     },
   })
