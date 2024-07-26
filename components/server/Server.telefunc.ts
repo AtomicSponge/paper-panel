@@ -9,6 +9,7 @@ import { exec as execAsync } from 'node:child_process'
 import semver from 'semver'
 import { JSONFilePreset } from 'lowdb/node'
 
+import { getUser } from '@/auth/getUser'
 import { server } from '@/database/server'
 
 const exec = util.promisify(execAsync)
@@ -20,6 +21,8 @@ const paperURL = 'https://api.papermc.io/v2/projects/paper/'
  * Check for Paper server build updates
  */
 export const onCheckBuild = async () => {
+  const user = getUser()
+
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
@@ -84,6 +87,8 @@ export const onCheckBuild = async () => {
  * Check for Paper server updates
  */
 export const onCheckUpdate = async () => {
+  const user = getUser()
+
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 
@@ -173,6 +178,8 @@ export const onCheckUpdate = async () => {
  * Update the Paper server
  */
 export const onDoUpdate = async ({ version, build }:{ version:string, build:string }) => {
+  const user = getUser()
+
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
 

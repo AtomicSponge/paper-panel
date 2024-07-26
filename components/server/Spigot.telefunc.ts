@@ -11,12 +11,15 @@ import YAML from 'yaml'
 import { JSONFilePreset } from 'lowdb/node'
 import { __locale } from '@spongex/system-locale'
 
+import { getUser } from '@/auth/getUser'
 import { server } from '@/database/server'
 
 /**
  * Save Spigot configuration
  */
 export const onSave = async (data:any) => {
+  const user = getUser()
+
   if (typeof data['advancements']['disabled'] === 'string') {
     data['advancements']['disabled'] =
       data['advancements']['disabled'].replace(/(\r\n|\n|\r)/gm, '').split(',')

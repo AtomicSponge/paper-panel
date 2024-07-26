@@ -7,7 +7,11 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { getUser } from '@/auth/getUser'
+
 export const onSave = async (data:any) => {
+  const user = getUser()
+
   try {
     console.log('Saving server properties...')
   } catch (error:any) {
