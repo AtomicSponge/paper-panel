@@ -10,12 +10,15 @@ import { existsSync } from 'node:fs'
 import { JSONFilePreset } from 'lowdb/node'
 import { __locale } from '@spongex/system-locale'
 
+import { getUser } from '@/auth/getUser'
 import { server } from '@/database/server'
 
 /**
  * Save per the end configuration
  */
 export const onSave = async ({ folder, data }:{ folder:string, data:string }) => {
+  const user = getUser()
+
   const db = await JSONFilePreset('db.json', server)
   const serverSettings = db.data.server.at(0)
 
