@@ -6,7 +6,6 @@
 
 export interface World {
   id:number
-  users:Array<number>
   name:string
   folder:string
 }

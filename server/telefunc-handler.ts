@@ -9,7 +9,6 @@ export async function telefuncHandler<Context extends Record<string | number | s
     id: 0,
     name: 'Administrator',
     admin: true,
-    serveradmin: true,
     login: '',
     password: ''
   }

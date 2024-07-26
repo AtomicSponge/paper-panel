@@ -10,7 +10,6 @@ export interface User {
   login:string
   password:string
   admin:boolean
-  serveradmin:boolean
 }
 
 export const users:{ users:Array<User> } = { users: [] }

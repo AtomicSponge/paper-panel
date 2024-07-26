@@ -8,8 +8,7 @@ export async function vikeHandler<
   const user = {
     id: 0,
     name: 'Administrator',
-    admin: true,
-    serveradmin: true
+    admin: true
   }
   /* TEST DATA */
 

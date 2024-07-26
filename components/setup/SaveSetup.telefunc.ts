@@ -49,8 +49,7 @@ export const onSave = async ({ adminData, serverData }:{ adminData:AdminSetupDat
     name: adminData.display,
     login: adminData.username,
     password: password,
-    admin: true,
-    serveradmin: true
+    admin: true
   }
 
   /** Server configuration */
