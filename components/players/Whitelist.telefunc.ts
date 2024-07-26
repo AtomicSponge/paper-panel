@@ -27,7 +27,7 @@ export const onUpdate = async ({ data }:{ data:Array<string> }) => {
     if (serverSettings !== undefined && existsSync(serverSettings.path)) {
       await fs.writeFile(path.join(serverSettings.path, 'whitelist.json'), JSON.stringify(data))
       const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
-      console.log(`Whitelist updated on ${updateDate}`)
+      console.log(`Whitelist updated on ${updateDate} by ${user.login}`)
     } else {
       throw new Error('Unable to save!  Cannot find server path!')
     }

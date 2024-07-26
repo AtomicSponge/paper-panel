@@ -84,7 +84,7 @@ export const onSave = async (data:any) => {
     if (serverSettings !== undefined && existsSync(serverSettings.path)) {
       await fs.writeFile(path.join(serverSettings.path, 'config', 'paper-world-defaults.yml'), YAML.stringify(data))
       const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
-      console.log(`Paper World Defaults updated on ${updateDate}`)
+      console.log(`Paper World Defaults updated on ${updateDate} by ${user.login}`)
     } else {
       throw new Error('Unable to save! Cannot find server path!')
     }

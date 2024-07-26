@@ -8,6 +8,7 @@ import util from 'node:util'
 import { exec as execAsync } from 'node:child_process'
 import semver from 'semver'
 import { JSONFilePreset } from 'lowdb/node'
+import { __locale } from '@spongex/system-locale'
 
 import { getUser } from '@/auth/getUser'
 import { server } from '@/database/server'
@@ -234,6 +235,9 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
     console.error(error.message)
     return { errorMessage: 'Unable to resart the server!' }
   }
+
+  const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
+  console.log(`Server was updated to ${version}-${build} on ${updateDate} by ${user.login}`)
 
   return { status: true }
 }

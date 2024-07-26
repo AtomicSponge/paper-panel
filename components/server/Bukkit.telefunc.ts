@@ -28,7 +28,7 @@ export const onSave = async (data:any) => {
       if (data === undefined) throw new Error('Unable to save!  Missing data!')
       await fs.writeFile(path.join(serverSettings.path, 'bukkit.yml'), YAML.stringify(data))
       const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
-      console.log(`Bukkit Configuration updated on ${updateDate}`)
+      console.log(`Bukkit Configuration updated on ${updateDate} by ${user.login}`)
     } else {
       throw new Error('Unable to save!  Cannot find server path!')
     }
