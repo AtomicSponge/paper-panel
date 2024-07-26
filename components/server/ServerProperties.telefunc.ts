@@ -9,7 +9,7 @@ import path from 'node:path'
 
 import { getUser } from '@/auth/getUser'
 
-export const onSave = async (data:any) => {
+export const onSave = async ({ data }:{ data:any }) => {
   const user = getUser()
 
   try {

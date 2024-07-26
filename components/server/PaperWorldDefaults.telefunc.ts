@@ -17,7 +17,7 @@ import { server } from '@/database/server'
 /**
  * Save World Defaults configuration
  */
-export const onSave = async (data:any) => {
+export const onSave = async ({ data }:{ data:any }) => {
   const user = getUser()
 
   if (typeof data['anticheat']['anti-xray']['hidden-blocks'] === 'string') {

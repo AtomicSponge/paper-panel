@@ -17,7 +17,7 @@ import { server } from '@/database/server'
 /**
  * Save Bukkit configuration
  */
-export const onSave = async (data:any) => {
+export const onSave = async ({ data }:{ data:any }) => {
   const user = getUser()
 
   const db = await JSONFilePreset('db.json', server)

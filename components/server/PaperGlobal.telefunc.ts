@@ -17,7 +17,7 @@ import { server } from '@/database/server'
 /**
  * Save server configuration
  */
-export const onSave = async (data:any) => {
+export const onSave = async ({ data }:{ data:any }) => {
   const user = getUser()
 
   if (typeof data['timings']['hidden-config-entries'] === 'string') {
