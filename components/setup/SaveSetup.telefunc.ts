@@ -67,7 +67,7 @@ export const onSave = async ({ adminData, serverData }:{ adminData:AdminSetupDat
   } catch (error:any) {
     return { errorMessage: 'Unable to write to path!' }
   }
-  if(serverData.filename.length < 1) {
+  if(serverData.filename.length < 5) {
     return { errorMessage: 'Enter a server filename!' }
   }
   if(!serverData.filename.endsWith('.jar')) {
