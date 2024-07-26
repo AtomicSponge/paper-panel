@@ -5,7 +5,6 @@
 -->
 
 <script lang="ts" setup>
-import { reload } from 'vike/client/router'
 import { navigate } from 'vike/client/router'
 
 import Navigation from '@/components/layout/Navigation.vue'

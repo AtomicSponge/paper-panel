@@ -17,14 +17,11 @@ import { World, worlds } from '@/database/worlds'
 import type { PageContextServer } from 'vike/types'
 
 export const data = async (pageContext:PageContextServer) => {
-  const isAdmin = Boolean(pageContext.user?.admin) || Boolean(pageContext.user?.serveradmin)
-  const userId = Number(pageContext.user?.id)
-
   const serverDb = await JSONFilePreset('db.json', server)
   const serverPath = serverDb.data.server.at(0)?.path
 
   const db = await JSONFilePreset('db.json', worlds)
-  const data = isAdmin ? db.data.worlds : db.data.worlds.filter(world => world.users.includes(userId))
+  const data = db.data.worlds
 
   const nameRef:Array<string> = []
   const folderRef:Array<string> = []
