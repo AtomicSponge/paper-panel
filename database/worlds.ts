@@ -5,7 +5,6 @@
  */
 
 export interface World {
-  id:number
   name:string
   folder:string
 }

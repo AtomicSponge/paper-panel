@@ -6,11 +6,9 @@ export async function telefuncHandler<Context extends Record<string | number | s
 ): Promise<Response> {
   /* TEST DATA */
   const user = {
-    id: 0,
     name: 'Administrator',
-    admin: true,
-    login: '',
-    password: ''
+    login: 'admin',
+    admin: true
   }
   /* TEST DATA */
 

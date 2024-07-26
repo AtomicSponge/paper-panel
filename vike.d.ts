@@ -5,7 +5,11 @@ import { World } from '@/database/worlds'
 declare module 'telefunc' {
   namespace Telefunc {
     interface Context {
-      user?:User
+      user?:{
+        name:string
+        login:string
+        admin:boolean
+      }
     }
   }
 }
@@ -13,7 +17,11 @@ declare module 'telefunc' {
 declare global {
   namespace Vike {
     interface PageContext {
-      user?:User
+      user?:{
+        name:string
+        login:string
+        admin:boolean
+      }
     }
   }
 
