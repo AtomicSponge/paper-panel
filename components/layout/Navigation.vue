@@ -21,7 +21,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <span><a :href="`/user/${user!.id}`">{{ user!.name }}</a></span>
+  <span><a :href="`/user/${user!.login}`">{{ user!.name }}</a></span>
   <span> > <a href="/server">Server</a></span>
   <span> > <a href="/players">Players</a></span>
   <span> > <a href="/worlds">Worlds</a></span>
