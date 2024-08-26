@@ -190,7 +190,7 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
 
   //  Stop server
   try {
-    //await exec('systemctl stop minecraft')
+    await exec('systemctl stop minecraft')
   } catch (error:any) {
     console.error(error.message)
     return { errorMessage: 'Unable to stop the server!' }
@@ -230,10 +230,10 @@ export const onDoUpdate = async ({ version, build }:{ version:string, build:stri
 
   //  Start server
   try {
-    //await exec('systemctl start minecraft')
+    await exec('systemctl start minecraft')
   } catch (error:any) {
     console.error(error.message)
-    return { errorMessage: 'Unable to resart the server!' }
+    return { errorMessage: 'Unable to restart the server!' }
   }
 
   const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
