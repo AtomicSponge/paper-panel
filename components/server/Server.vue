@@ -54,7 +54,7 @@ const checkBuild = async ():Promise<void> => {
       showUpdate.value = false
       await reload()
     }
-  }
+  } else showUpdate.value = false
 }
 
 /** Check for updates */
@@ -86,7 +86,7 @@ const checkUpdates = async ():Promise<void> => {
       showUpdate.value = false
       await reload()
     }
-  }
+  } else showUpdate.value = false
 }
 </script>
 
