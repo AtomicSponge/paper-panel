@@ -6,8 +6,17 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { navigate, reload } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import { onCheckBuild, onCheckUpdate, onDoUpdate } from './Server.telefunc'
-import { reload } from 'vike/client/router'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 defineProps<{
   /** Server address */
