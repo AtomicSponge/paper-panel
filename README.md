@@ -22,5 +22,5 @@ Current set of features are:
 Items in progress:
 - Ability to import and export worlds
 - Implement authentication & user management
-- Build & production testing
-- Documentation & configuration steps
+- Documentation & configuration steps (wiki)
+- Plugin support

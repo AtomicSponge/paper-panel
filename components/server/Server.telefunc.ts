@@ -22,7 +22,7 @@ const paperURL = 'https://api.papermc.io/v2/projects/paper/'
  * Check for Paper server build updates
  */
 export const onCheckBuild = async () => {
-  const user = getUser()
+  getUser()
 
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
@@ -88,7 +88,7 @@ export const onCheckBuild = async () => {
  * Check for Paper server updates
  */
 export const onCheckUpdate = async () => {
-  const user = getUser()
+  getUser()
 
   const db = await JSONFilePreset('db.json', server)
   const data = db.data.server.at(0)
