@@ -6,9 +6,18 @@
 
 <script lang="ts" setup>
 import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import { onResetSettings } from './ResetSettings.telefunc'
 
-const resetSettings = async () => {
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
+
+const resetSettings = async ():Promise<void> => {
   if(window.confirm('Warning!  This will wipe all settings!  Do you want to continue?')) {
     if(window.prompt('Enter RESET to reset settings:') === 'RESET') {
       const res = await onResetSettings()
