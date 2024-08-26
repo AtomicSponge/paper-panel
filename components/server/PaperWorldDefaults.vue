@@ -6,8 +6,19 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { onSave } from './PaperWorldDefaults.telefunc'
+import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import type { ModelRef } from 'vue'
+
+import { onSave } from './PaperWorldDefaults.telefunc'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 const data:ModelRef<any> = defineModel({ required: true })
 

@@ -7,6 +7,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
 
 import type { ModelRef } from 'vue'
 
