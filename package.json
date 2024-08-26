@@ -39,7 +39,7 @@
     "cross-env": "^7.0.3",
     "cross-fetch": "^4.0.0",
     "dotenv": "^16.4.5",
-    "hono": "^4.5.8",
+    "hono": "^4.5.9",
     "lowdb": "^7.0.1",
     "semver": "^7.6.3",
     "telefunc": "^0.1.78",
