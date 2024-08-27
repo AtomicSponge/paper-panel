@@ -6,8 +6,19 @@
 
 <script lang="ts" setup>
 import { ref, onUpdated } from 'vue'
+import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import { onUpdate } from './BannedPlayers.telefunc'
+
 import type { ModelRef } from 'vue'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 /** Label for the toggle button */
 const label = ref('Edit')

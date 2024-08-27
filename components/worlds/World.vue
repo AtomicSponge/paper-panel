@@ -6,10 +6,20 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import PaperWorldConfig from '@/components/worlds/PaperWorldConfig.vue'
 import PaperNetherConfig from './PaperNetherConfig.vue'
 import PaperTheEndConfig from './PaperTheEndConfig.vue'
 import { onExport } from './World.telefunc'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 const props = defineProps<{
   /** World name */

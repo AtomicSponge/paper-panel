@@ -5,7 +5,17 @@
 -->
 
 <script lang="ts" setup>
+import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import { onScan } from './WorldScan.telefunc'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 const doWorldScan = async ():Promise<void> => {
   const res = await onScan()

@@ -6,7 +6,17 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+import { navigate } from 'vike/client/router'
+import { onAbort } from 'telefunc/client'
+
 import { onWorldImport } from './WorldImport.telefunc'
+
+onAbort(async (err) => {
+  if (err.abortValue.notLoggedIn) {
+    const navigationPromise = navigate('/login')
+    await navigationPromise
+  }
+})
 
 const filePicker = ref<HTMLInputElement | null>(null)
 
