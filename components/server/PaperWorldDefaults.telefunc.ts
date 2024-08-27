@@ -44,6 +44,21 @@ export const onSave = async ({ data }:{ data:any }) => {
   if (!isNaN(Number(data['entities']['spawning']['creative-arrow-despawn-rate']))) {
     data['entities']['spawning']['creative-arrow-despawn-rate'] = Number(data['entities']['spawning']['creative-arrow-despawn-rate'])
   }
+  if (!isNaN(Number(data['entities']['spawning']['monster-spawn-max-light-level']))) {
+    data['entities']['spawning']['monster-spawn-max-light-level'] = Number(data['entities']['spawning']['monster-spawn-max-light-level'])
+  }
+  if (!isNaN(Number(data['entities']['spawning']['non-player-arrow-despawn-rate']))) {
+    data['entities']['spawning']['non-player-arrow-despawn-rate'] = Number(data['entities']['spawning']['non-player-arrow-despawn-rate'])
+  }
+  if (!isNaN(Number(data['entities']['spawning']['skeleton-horse-thunder-spawn-chance']))) {
+    data['entities']['spawning']['skeleton-horse-thunder-spawn-chance'] = Number(data['entities']['spawning']['skeleton-horse-thunder-spawn-chance'])
+  }
+  if (!isNaN(Number(data['entities']['spawning']['wateranimal-spawn-height']['maximum']))) {
+    data['entities']['spawning']['wateranimal-spawn-height']['maximum'] = Number(data['entities']['spawning']['wateranimal-spawn-height']['maximum'])
+  }
+  if (!isNaN(Number(data['entities']['spawning']['wateranimal-spawn-height']['minimum']))) {
+    data['entities']['spawning']['wateranimal-spawn-height']['minimum'] = Number(data['entities']['spawning']['wateranimal-spawn-height']['minimum'])
+  }
   if (!isNaN(Number(data['entities']['tracking-range-y']['animal']))) {
     data['entities']['tracking-range-y']['animal'] = Number(data['entities']['tracking-range-y']['animal'])
   }

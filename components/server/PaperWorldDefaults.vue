@@ -550,6 +550,168 @@ const saveConfig = async ():Promise<void> => {
           </div>
           <div class="tab">
             duplicate-uuid
+            <div class="tab">
+              mode
+              <select v-model="data['entities']['spawning']['duplicate-uuid']['mode']">
+                <option>SAFE_REGEN</option>
+                <option>DELETE</option>
+                <option>SILENT</option>
+                <option>WARN</option>
+              </select>
+            </div>
+            <div class="tab">
+              safe-regen-delete-range
+              <input type="number" v-model="data['entities']['spawning']['duplicate-uuid']['safe-regen-delete-range']"/>
+            </div>
+          </div>
+          <div class="tab">
+            filter-bad-tile-entity-nbt-from-falling-blocks
+            <input type="checkbox" v-model="data['entities']['spawning']['filter-bad-tile-entity-nbt-from-falling-blocks']"/>
+          </div>
+          <div class="tab">
+            filtered-entity-tag-nbt-paths (seperate with commas)<br/>
+            <textarea v-model="data['entities']['spawning']['filtered-entity-tag-nbt-paths']"></textarea>
+          </div>
+          <div class="tab">
+            iron-golems-can-spawn-in-air
+            <input type="checkbox" v-model="data['entities']['spawning']['iron-golems-can-spawn-in-air']"/>
+          </div>
+          <div class="tab">
+            monster-spawn-max-light-level
+            <input type="text" v-model="data['entities']['spawning']['monster-spawn-max-light-level']"/>
+          </div>
+          <div class="tab">
+            non-player-arrow-despawn-rate
+            <input type="text" v-model="data['entities']['spawning']['non-player-arrow-despawn-rate']"/>
+          </div>
+          <div class="tab">
+            per-player-mob-spawns
+            <input type="checkbox" v-model="data['entities']['spawning']['per-player-mob-spawns']"/>
+          </div>
+          <div class="tab">
+            scan-for-legacy-ender-dragon
+            <input type="checkbox" v-model="data['entities']['spawning']['scan-for-legacy-ender-dragon']"/>
+          </div>
+          <div class="tab">
+            skeleton-horse-thunder-spawn-chance
+            <input type="text" v-model="data['entities']['spawning']['skeleton-horse-thunder-spawn-chance']"/>
+          </div>
+          <div class="tab">
+            slime-spawn-height
+            <div class="tab">
+              slime-chunk
+              <div class="tab">
+                maximum
+                <input type="number" v-model="data['entities']['spawning']['slime-spawn-height']['slime-chunk']['maximum']"/>
+              </div>
+            </div>
+            <div class="tab">
+              surface-biome
+              <div class="tab">
+                maximum
+                <input type="number" v-model="data['entities']['spawning']['slime-spawn-height']['surface-biome']['maximum']"/>
+              </div>
+              <div class="tab">
+                minimum
+                <input type="number" v-model="data['entities']['spawning']['slime-spawn-height']['surface-biome']['minimum']"/>
+              </div>
+            </div>
+          </div>
+          <div class="tab">
+            spawn-limits
+            <div class="tab">
+              ambient
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['ambient']"/>
+            </div>
+            <div class="tab">
+              axolotls
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['axolotls']"/>
+            </div>
+            <div class="tab">
+              creature
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['creature']"/>
+            </div>
+            <div class="tab">
+              monster
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['monster']"/>
+            </div>
+            <div class="tab">
+              underground_water_creature
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['underground_water_creature']"/>
+            </div>
+            <div class="tab">
+              water_ambient
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['water_ambient']"/>
+            </div>
+            <div class="tab">
+              water_creature
+              <input type="number" v-model="data['entities']['spawning']['spawn-limits']['water_creature']"/>
+            </div>
+          </div>
+          <div class="tab">
+            ticks-per-spawn
+            <div class="tab">
+              ambient
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['ambient']"/>
+            </div>
+            <div class="tab">
+              axolotls
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['axolotls']"/>
+            </div>
+            <div class="tab">
+              creature
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['creature']"/>
+            </div>
+            <div class="tab">
+              monster
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['monster']"/>
+            </div>
+            <div class="tab">
+              underground_water_creature
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['underground_water_creature']"/>
+            </div>
+            <div class="tab">
+              water_ambient
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['water_ambient']"/>
+            </div>
+            <div class="tab">
+              water_creature
+              <input type="number" v-model="data['entities']['spawning']['ticks-per-spawn']['water_creature']"/>
+            </div>
+          </div>
+          <div class="tab">
+            wandering-trader
+            <div class="tab">
+              spawn-chance-failure-increment
+              <input type="number" v-model="data['entities']['spawning']['wandering-trader']['spawn-chance-failure-increment']"/>
+            </div>
+            <div class="tab">
+              spawn-chance-max
+              <input type="number" v-model="data['entities']['spawning']['wandering-trader']['spawn-chance-max']"/>
+            </div>
+            <div class="tab">
+              spawn-chance-min
+              <input type="number" v-model="data['entities']['spawning']['wandering-trader']['spawn-chance-min']"/>
+            </div>
+            <div class="tab">
+              spawn-day-length
+              <input type="number" v-model="data['entities']['spawning']['wandering-trader']['spawn-day-length']"/>
+            </div>
+            <div class="tab">
+              spawn-minute-length
+              <input type="number" v-model="data['entities']['spawning']['wandering-trader']['spawn-minute-length']"/>
+            </div>
+          </div>
+          <div class="tab">
+            wateranimal-spawn-height
+            <div class="tab">
+              maximum
+              <input type="text" v-model="data['entities']['spawning']['wateranimal-spawn-height']['maximum']"/>
+            </div>
+            <div class="tab">
+              minimum
+              <input type="text" v-model="data['entities']['spawning']['wateranimal-spawn-height']['minimum']"/>
+            </div>
           </div>
         </div>
 
