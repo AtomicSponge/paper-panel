@@ -14,8 +14,8 @@ import PaperNetherConfig from './PaperNetherConfig.vue'
 import PaperTheEndConfig from './PaperTheEndConfig.vue'
 import { onExport } from './World.telefunc'
 
-onAbort(async (err) => {
-  if (err.abortValue.notLoggedIn) {
+onAbort(async (error:any) => {
+  if (error.abortValue.notLoggedIn) {
     const navigationPromise = navigate('/login')
     await navigationPromise
   }

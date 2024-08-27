@@ -11,8 +11,8 @@ import { onAbort } from 'telefunc/client'
 
 import { onCheckBuild, onCheckUpdate, onDoUpdate } from './Server.telefunc'
 
-onAbort(async (err) => {
-  if (err.abortValue.notLoggedIn) {
+onAbort(async (error:any) => {
+  if (error.abortValue.notLoggedIn) {
     const navigationPromise = navigate('/login')
     await navigationPromise
   }
