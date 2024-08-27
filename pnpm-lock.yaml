@@ -12,8 +12,8 @@ importers:
         specifier: ^0.34.2
         version: 0.34.2
       '@hono/node-server':
-        specifier: ^1.12.1
-        version: 1.12.1
+        specifier: ^1.12.2
+        version: 1.12.2(hono@4.5.9)
       '@spongex/async-for-each':
         specifier: ^1.0.2
         version: 1.0.2
@@ -54,8 +54,8 @@ importers:
         specifier: ^0.1.78
         version: 0.1.78(@babel/parser@7.24.8)(@babel/types@7.24.8)
       tsx:
-        specifier: ^4.18.0
-        version: 4.18.0
+        specifier: ^4.19.0
+        version: 4.19.0
       unplugin-vue-markdown:
         specifier: ^0.26.2
         version: 0.26.2(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0))
@@ -462,9 +462,11 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@hono/node-server@1.12.1':
-    resolution: {integrity: sha512-C9l+08O8xtXB7Ppmy8DjBFH1hYji7JKzsU32Yt1poIIbdPp6S7aOI8IldDHD9YFJ55lv2c21ovNrmxatlHfhAg==}
+  '@hono/node-server@1.12.2':
+    resolution: {integrity: sha512-xjzhqhSWUE/OhN0g3KCNVzNsQMlFUAL+/8GgPUr3TKcU7cvgZVBGswFofJ8WwGEHTqobzze1lDpGJl9ZNckDhA==}
     engines: {node: '>=18.14.1'}
+    peerDependencies:
+      hono: ^4
 
   '@hono/vite-dev-server@0.14.0':
     resolution: {integrity: sha512-rhd+hxIIG6wSS73WQxXF7/CiOHBlxdynrRUihSwEszpysB0HWOMN2Q7QprnPHsZSNmGohoTXZxwo7iM4hukGzw==}
@@ -1095,8 +1097,8 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  tsx@4.18.0:
-    resolution: {integrity: sha512-a1jaKBSVQkd6yEc1/NI7G6yHFfefIcuf3QJST7ZEyn4oQnxLYrZR5uZAM8UrwUa3Ge8suiZHcNS1gNrEvmobqg==}
+  tsx@4.19.0:
+    resolution: {integrity: sha512-bV30kM7bsLZKZIOCHeMNVMJ32/LuJzLVajkQI/qf92J2Qr08ueLQvW00PUZGiuLPP760UINwupgUj8qrSCPUKg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -1430,11 +1432,13 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@hono/node-server@1.12.1': {}
+  '@hono/node-server@1.12.2(hono@4.5.9)':
+    dependencies:
+      hono: 4.5.9
 
   '@hono/vite-dev-server@0.14.0(hono@4.5.9)':
     dependencies:
-      '@hono/node-server': 1.12.1
+      '@hono/node-server': 1.12.2(hono@4.5.9)
       hono: 4.5.9
       miniflare: 3.20240701.0
       minimatch: 9.0.5
@@ -2068,7 +2072,7 @@ snapshots:
 
   tslib@2.6.3: {}
 
-  tsx@4.18.0:
+  tsx@4.19.0:
     dependencies:
       esbuild: 0.23.0
       get-tsconfig: 4.7.5
