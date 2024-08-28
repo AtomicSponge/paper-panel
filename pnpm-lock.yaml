@@ -22,7 +22,7 @@ importers:
         version: 1.0.1
       '@vitejs/plugin-vue':
         specifier: ^5.1.2
-        version: 5.1.2(vite@5.4.2(@types/node@22.5.0))(vue@3.4.38(typescript@5.5.4))
+        version: 5.1.2(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))
       '@vue/compiler-sfc':
         specifier: ^3.4.38
         version: 3.4.38
@@ -58,16 +58,16 @@ importers:
         version: 4.19.0
       unplugin-vue-markdown:
         specifier: ^0.26.2
-        version: 0.26.2(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0))
+        version: 0.26.2(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.1))
       vike:
         specifier: ^0.4.193
-        version: 0.4.193(vite@5.4.2(@types/node@22.5.0))
+        version: 0.4.193(vite@5.4.2(@types/node@22.5.1))
       vike-vue:
         specifier: ^0.8.3
-        version: 0.8.3(vike@0.4.193(vite@5.4.2(@types/node@22.5.0)))(vue@3.4.38(typescript@5.5.4))
+        version: 0.8.3(vike@0.4.193(vite@5.4.2(@types/node@22.5.1)))(vue@3.4.38(typescript@5.5.4))
       vite:
         specifier: ^5.4.2
-        version: 5.4.2(@types/node@22.5.0)
+        version: 5.4.2(@types/node@22.5.1)
       vue:
         specifier: ^3.4.38
         version: 3.4.38(typescript@5.5.4)
@@ -76,14 +76,14 @@ importers:
         version: 2.5.0
     devDependencies:
       '@hono/vite-dev-server':
-        specifier: ^0.14.0
-        version: 0.14.0(hono@4.5.9)
+        specifier: ^0.15.0
+        version: 0.15.0(hono@4.5.9)(miniflare@3.20240701.0)
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
       '@types/node':
-        specifier: ^22.5.0
-        version: 22.5.0
+        specifier: ^22.5.1
+        version: 22.5.1
       '@types/semver':
         specifier: ^7.5.8
         version: 7.5.8
@@ -468,11 +468,18 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@hono/vite-dev-server@0.14.0':
-    resolution: {integrity: sha512-rhd+hxIIG6wSS73WQxXF7/CiOHBlxdynrRUihSwEszpysB0HWOMN2Q7QprnPHsZSNmGohoTXZxwo7iM4hukGzw==}
+  '@hono/vite-dev-server@0.15.0':
+    resolution: {integrity: sha512-z4sg1Kvcon7U20eb6StgRXAwNayPFcUJ+LTuMXzNw3JttxSGWkS9B3A8Tw0p8bsAdbR/I896QNVdKgWRbL3h1w==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
+      miniflare: '*'
+      wrangler: '*'
+    peerDependenciesMeta:
+      miniflare:
+        optional: true
+      wrangler:
+        optional: true
 
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
@@ -627,8 +634,8 @@ packages:
   '@types/mdurl@2.0.0':
     resolution: {integrity: sha512-RGdgjQUZba5p6QEFAVx2OGb8rQDL/cPRG7GiedRzMcJ1tYnUANBncjbSB1NRGwbvjcPeikRABz2nshyPk1bhWg==}
 
-  '@types/node@22.5.0':
-    resolution: {integrity: sha512-DkFrJOe+rfdHTqqMg0bSNlGlQ85hSoh2TPzZyhHsXnMtligRWpxUySiyw8FY14ITt24HVCiQPWxS3KO/QlGmWg==}
+  '@types/node@22.5.1':
+    resolution: {integrity: sha512-KkHsxej0j9IW1KKOOAA/XBA0z08UFSrRQHErzEfA3Vgq57eXIMYboIlHJuYIfd+lwCQjtKqUu3UnmKbtUc9yRw==}
 
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
@@ -1288,6 +1295,7 @@ snapshots:
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
+    optional: true
 
   '@esbuild/aix-ppc64@0.21.5':
     optional: true
@@ -1430,24 +1438,23 @@ snapshots:
   '@esbuild/win32-x64@0.23.0':
     optional: true
 
-  '@fastify/busboy@2.1.1': {}
+  '@fastify/busboy@2.1.1':
+    optional: true
 
   '@hono/node-server@1.12.2(hono@4.5.9)':
     dependencies:
       hono: 4.5.9
 
-  '@hono/vite-dev-server@0.14.0(hono@4.5.9)':
+  '@hono/vite-dev-server@0.15.0(hono@4.5.9)(miniflare@3.20240701.0)':
     dependencies:
       '@hono/node-server': 1.12.2(hono@4.5.9)
       hono: 4.5.9
-      miniflare: 3.20240701.0
       minimatch: 9.0.5
-    transitivePeerDependencies:
-      - bufferutil
-      - supports-color
-      - utf-8-validate
+    optionalDependencies:
+      miniflare: 3.20240701.0
 
-  '@jridgewell/resolve-uri@3.1.2': {}
+  '@jridgewell/resolve-uri@3.1.2':
+    optional: true
 
   '@jridgewell/sourcemap-codec@1.5.0': {}
 
@@ -1455,6 +1462,7 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
+    optional: true
 
   '@mdit-vue/plugin-component@2.1.3':
     dependencies:
@@ -1568,15 +1576,15 @@ snapshots:
 
   '@types/mdurl@2.0.0': {}
 
-  '@types/node@22.5.0':
+  '@types/node@22.5.1':
     dependencies:
       undici-types: 6.19.8
 
   '@types/semver@7.5.8': {}
 
-  '@vitejs/plugin-vue@5.1.2(vite@5.4.2(@types/node@22.5.0))(vue@3.4.38(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.2(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))':
     dependencies:
-      vite: 5.4.2(@types/node@22.5.0)
+      vite: 5.4.2(@types/node@22.5.1)
       vue: 3.4.38(typescript@5.5.4)
 
   '@vue/compiler-core@3.4.38':
@@ -1636,6 +1644,7 @@ snapshots:
   acorn-walk@8.3.3:
     dependencies:
       acorn: 8.12.1
+    optional: true
 
   acorn@8.12.1: {}
 
@@ -1653,6 +1662,7 @@ snapshots:
   as-table@1.0.55:
     dependencies:
       printable-characters: 1.0.42
+    optional: true
 
   balanced-match@1.0.2: {}
 
@@ -1678,6 +1688,7 @@ snapshots:
       tslib: 2.6.3
     transitivePeerDependencies:
       - supports-color
+    optional: true
 
   chokidar@3.6.0:
     dependencies:
@@ -1693,7 +1704,8 @@ snapshots:
 
   code-block-writer@12.0.0: {}
 
-  cookie@0.5.0: {}
+  cookie@0.5.0:
+    optional: true
 
   cookie@0.6.0: {}
 
@@ -1715,11 +1727,13 @@ snapshots:
 
   csstype@3.1.3: {}
 
-  data-uri-to-buffer@2.0.2: {}
+  data-uri-to-buffer@2.0.2:
+    optional: true
 
   debug@4.3.5:
     dependencies:
       ms: 2.1.2
+    optional: true
 
   dotenv@16.4.5: {}
 
@@ -1784,7 +1798,8 @@ snapshots:
 
   estree-walker@2.0.2: {}
 
-  exit-hook@2.2.1: {}
+  exit-hook@2.2.1:
+    optional: true
 
   extend-shallow@2.0.1:
     dependencies:
@@ -1813,6 +1828,7 @@ snapshots:
     dependencies:
       data-uri-to-buffer: 2.0.2
       source-map: 0.6.1
+    optional: true
 
   get-tsconfig@4.7.5:
     dependencies:
@@ -1822,7 +1838,8 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  glob-to-regexp@0.4.1: {}
+  glob-to-regexp@0.4.1:
+    optional: true
 
   gray-matter@4.0.3:
     dependencies:
@@ -1906,6 +1923,7 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
+    optional: true
 
   minimatch@7.4.6:
     dependencies:
@@ -1919,9 +1937,11 @@ snapshots:
 
   mrmime@2.0.0: {}
 
-  ms@2.1.2: {}
+  ms@2.1.2:
+    optional: true
 
-  mustache@4.2.0: {}
+  mustache@4.2.0:
+    optional: true
 
   nanoid@3.3.7: {}
 
@@ -1962,7 +1982,8 @@ snapshots:
 
   pretty-format@3.8.0: {}
 
-  printable-characters@1.0.42: {}
+  printable-characters@1.0.42:
+    optional: true
 
   punycode.js@2.3.1: {}
 
@@ -2036,10 +2057,12 @@ snapshots:
     dependencies:
       as-table: 1.0.55
       get-source: 2.0.12
+    optional: true
 
   steno@4.0.2: {}
 
-  stoppable@1.1.0: {}
+  stoppable@1.1.0:
+    optional: true
 
   strip-bom-string@1.0.0: {}
 
@@ -2070,7 +2093,8 @@ snapshots:
       '@ts-morph/common': 0.20.0
       code-block-writer: 12.0.0
 
-  tslib@2.6.3: {}
+  tslib@2.6.3:
+    optional: true
 
   tsx@4.19.0:
     dependencies:
@@ -2088,8 +2112,9 @@ snapshots:
   undici@5.28.4:
     dependencies:
       '@fastify/busboy': 2.1.1
+    optional: true
 
-  unplugin-vue-markdown@0.26.2(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.0)):
+  unplugin-vue-markdown@0.26.2(rollup@4.21.0)(vite@5.4.2(@types/node@22.5.1)):
     dependencies:
       '@mdit-vue/plugin-component': 2.1.3
       '@mdit-vue/plugin-frontmatter': 2.1.3
@@ -2098,7 +2123,7 @@ snapshots:
       '@types/markdown-it': 14.1.1
       markdown-it: 14.1.0
       unplugin: 1.11.0
-      vite: 5.4.2(@types/node@22.5.0)
+      vite: 5.4.2(@types/node@22.5.1)
     transitivePeerDependencies:
       - rollup
 
@@ -2109,12 +2134,12 @@ snapshots:
       webpack-sources: 3.2.3
       webpack-virtual-modules: 0.6.2
 
-  vike-vue@0.8.3(vike@0.4.193(vite@5.4.2(@types/node@22.5.0)))(vue@3.4.38(typescript@5.5.4)):
+  vike-vue@0.8.3(vike@0.4.193(vite@5.4.2(@types/node@22.5.1)))(vue@3.4.38(typescript@5.5.4)):
     dependencies:
-      vike: 0.4.193(vite@5.4.2(@types/node@22.5.0))
+      vike: 0.4.193(vite@5.4.2(@types/node@22.5.1))
       vue: 3.4.38(typescript@5.5.4)
 
-  vike@0.4.193(vite@5.4.2(@types/node@22.5.0)):
+  vike@0.4.193(vite@5.4.2(@types/node@22.5.1)):
     dependencies:
       '@brillout/import': 0.2.3
       '@brillout/json-serializer': 0.5.13
@@ -2129,15 +2154,15 @@ snapshots:
       semver: 7.6.3
       sirv: 2.0.4
       source-map-support: 0.5.21
-      vite: 5.4.2(@types/node@22.5.0)
+      vite: 5.4.2(@types/node@22.5.1)
 
-  vite@5.4.2(@types/node@22.5.0):
+  vite@5.4.2(@types/node@22.5.1):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.41
       rollup: 4.21.0
     optionalDependencies:
-      '@types/node': 22.5.0
+      '@types/node': 22.5.1
       fsevents: 2.3.3
 
   vue@3.4.38(typescript@5.5.4):
@@ -2172,8 +2197,10 @@ snapshots:
       '@cloudflare/workerd-linux-64': 1.20240701.0
       '@cloudflare/workerd-linux-arm64': 1.20240701.0
       '@cloudflare/workerd-windows-64': 1.20240701.0
+    optional: true
 
-  ws@8.18.0: {}
+  ws@8.18.0:
+    optional: true
 
   yaml@2.5.0: {}
 
@@ -2182,5 +2209,7 @@ snapshots:
       cookie: 0.5.0
       mustache: 4.2.0
       stacktracey: 2.1.8
+    optional: true
 
-  zod@3.23.8: {}
+  zod@3.23.8:
+    optional: true
