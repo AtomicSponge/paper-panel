@@ -23,4 +23,4 @@ Items in progress:
 - Ability to import and export worlds
 - Implement authentication & user management
 - Documentation & configuration steps ([wiki](https://github.com/AtomicSponge/paper-panel/wiki))
-- Plugin support
+- Plugin support (at minimum add/remove ability)
