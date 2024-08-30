@@ -21,8 +21,8 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
       '@vitejs/plugin-vue':
-        specifier: ^5.1.2
-        version: 5.1.2(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))
+        specifier: ^5.1.3
+        version: 5.1.3(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))
       '@vue/compiler-sfc':
         specifier: ^3.4.38
         version: 3.4.38
@@ -76,8 +76,8 @@ importers:
         version: 2.5.0
     devDependencies:
       '@hono/vite-dev-server':
-        specifier: ^0.15.0
-        version: 0.15.0(hono@4.5.9)(miniflare@3.20240701.0)
+        specifier: ^0.15.2
+        version: 0.15.2(hono@4.5.9)(miniflare@3.20240701.0)
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
@@ -468,8 +468,8 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@hono/vite-dev-server@0.15.0':
-    resolution: {integrity: sha512-z4sg1Kvcon7U20eb6StgRXAwNayPFcUJ+LTuMXzNw3JttxSGWkS9B3A8Tw0p8bsAdbR/I896QNVdKgWRbL3h1w==}
+  '@hono/vite-dev-server@0.15.2':
+    resolution: {integrity: sha512-mGnXHze5Qh9jAEayREBlA1ExM+QTpC+peramm/kXIEhaDWUfpfZvAe4mJyDNIdXXn/B1wy9m8TgWhzN1mgPaqQ==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: '*'
@@ -640,8 +640,8 @@ packages:
   '@types/semver@7.5.8':
     resolution: {integrity: sha512-I8EUhyrgfLrcTkzV3TSsGyl1tSuPrEDzr0yd5m90UgNxQkyDXULk3b6MlQqTCpZpNtWe1K0hzclnZkTcLBe2UQ==}
 
-  '@vitejs/plugin-vue@5.1.2':
-    resolution: {integrity: sha512-nY9IwH12qeiJqumTCLJLE7IiNx7HZ39cbHaysEUd+Myvbz9KAqd2yq+U01Kab1R/H1BmiyM2ShTYlNH32Fzo3A==}
+  '@vitejs/plugin-vue@5.1.3':
+    resolution: {integrity: sha512-3xbWsKEKXYlmX82aOHufFQVnkbMC/v8fLpWwh6hWOUrK5fbbtBh9Q/WWse27BFgSy2/e2c0fz5Scgya9h2GLhw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     peerDependencies:
       vite: ^5.0.0
@@ -1445,7 +1445,7 @@ snapshots:
     dependencies:
       hono: 4.5.9
 
-  '@hono/vite-dev-server@0.15.0(hono@4.5.9)(miniflare@3.20240701.0)':
+  '@hono/vite-dev-server@0.15.2(hono@4.5.9)(miniflare@3.20240701.0)':
     dependencies:
       '@hono/node-server': 1.12.2(hono@4.5.9)
       hono: 4.5.9
@@ -1582,7 +1582,7 @@ snapshots:
 
   '@types/semver@7.5.8': {}
 
-  '@vitejs/plugin-vue@5.1.2(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))':
+  '@vitejs/plugin-vue@5.1.3(vite@5.4.2(@types/node@22.5.1))(vue@3.4.38(typescript@5.5.4))':
     dependencies:
       vite: 5.4.2(@types/node@22.5.1)
       vue: 3.4.38(typescript@5.5.4)
