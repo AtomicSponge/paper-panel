@@ -13,7 +13,7 @@ importers:
         version: 0.34.2
       '@hono/node-server':
         specifier: ^1.12.2
-        version: 1.12.2(hono@4.5.9)
+        version: 1.12.2(hono@4.5.10)
       '@spongex/async-for-each':
         specifier: ^1.0.2
         version: 1.0.2
@@ -42,8 +42,8 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
       hono:
-        specifier: ^4.5.9
-        version: 4.5.9
+        specifier: ^4.5.10
+        version: 4.5.10
       lowdb:
         specifier: ^7.0.1
         version: 7.0.1
@@ -77,7 +77,7 @@ importers:
     devDependencies:
       '@hono/vite-dev-server':
         specifier: ^0.15.2
-        version: 0.15.2(hono@4.5.9)(miniflare@3.20240701.0)
+        version: 0.15.2(hono@4.5.10)(miniflare@3.20240701.0)
       '@types/bcryptjs':
         specifier: ^2.4.6
         version: 2.4.6
@@ -837,8 +837,8 @@ packages:
     resolution: {integrity: sha512-5v6yZd4JK3eMI3FqqCouswVqwugaA9r4dNZB1wwcmrD02QkV5H0y7XBQW8QwQqEaZY1pM9aqORSORhJRdNK44Q==}
     engines: {node: '>=6.0'}
 
-  hono@4.5.9:
-    resolution: {integrity: sha512-zz8ktqMDRrZETjxBrv8C5PQRFbrTRCLNVAjD1SNQyOzv4VjmX68Uxw83xQ6oxdAB60HiWnGEatiKA8V3SZLDkQ==}
+  hono@4.5.10:
+    resolution: {integrity: sha512-az6tdU1U8o/l0v8O37FIQuc+ER/TeD9vHt/qs8JnBDgMxw6Zu5L2AixUyHeXZNcu87r7iYo8Ey85R7IogOINKA==}
     engines: {node: '>=16.0.0'}
 
   is-binary-path@2.1.0:
@@ -1441,14 +1441,14 @@ snapshots:
   '@fastify/busboy@2.1.1':
     optional: true
 
-  '@hono/node-server@1.12.2(hono@4.5.9)':
+  '@hono/node-server@1.12.2(hono@4.5.10)':
     dependencies:
-      hono: 4.5.9
+      hono: 4.5.10
 
-  '@hono/vite-dev-server@0.15.2(hono@4.5.9)(miniflare@3.20240701.0)':
+  '@hono/vite-dev-server@0.15.2(hono@4.5.10)(miniflare@3.20240701.0)':
     dependencies:
-      '@hono/node-server': 1.12.2(hono@4.5.9)
-      hono: 4.5.9
+      '@hono/node-server': 1.12.2(hono@4.5.10)
+      hono: 4.5.10
       minimatch: 9.0.5
     optionalDependencies:
       miniflare: 3.20240701.0
@@ -1848,7 +1848,7 @@ snapshots:
       section-matter: 1.0.0
       strip-bom-string: 1.0.0
 
-  hono@4.5.9: {}
+  hono@4.5.10: {}
 
   is-binary-path@2.1.0:
     dependencies:
