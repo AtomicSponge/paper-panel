@@ -21,6 +21,12 @@ onMounted(() => {
 
 <template>
   <div v-show="showAdminLink">
-    <a href="/admin">Admin Panel</a>
+    <a href="/admin">Admin Panel</a>&nbsp;|&nbsp;
   </div>
 </template>
+
+<style scoped>
+div {
+  display:inline-block;
+}
+</style>

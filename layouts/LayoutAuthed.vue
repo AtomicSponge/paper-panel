@@ -26,6 +26,7 @@ const logOut = async ():Promise<void> => {
         <Navigation/>
       </nav>
       <nav class="right">
+        <AdminLink/>
         <a href="#" @click="logOut()">Log Out</a>
       </nav>
     </header>
@@ -36,7 +37,7 @@ const logOut = async ():Promise<void> => {
 
     <footer>
       <nav class="left">
-        <AdminLink/>
+        Server Status:
       </nav>
       <nav class="right">
         <AppInfo/>
