@@ -42,7 +42,7 @@ const toggleConfig = ():void => {
   label.value = showConfig.value ? 'Hide' : 'Edit'
 }
 
-/** Update the Banned IPs */
+/** Update the Whitelist */
 const updateConfig = async ():Promise<void> => {
   const res = await onUpdate({ data: data.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
@@ -108,13 +108,7 @@ onUpdated(() => {
       </div>
       <div>
         <input type="text" v-model="newItem"/>
-      </div>
-      <div>
         <button @click="addItem()">Add</button>
-      </div>
-      <hr/>
-      <div>
-        <button @click="updateConfig">Update</button>
       </div>
     </main>
   </section>
@@ -136,8 +130,8 @@ select {
   overflow: hidden;
   min-width: 12em;
 }
-hr {
-  width: 90%;
+input {
+  margin-right: 0.6em;
 }
 .left {
   float: left;
