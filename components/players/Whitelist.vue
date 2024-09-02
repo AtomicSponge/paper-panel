@@ -9,7 +9,7 @@ import { ref, onUpdated } from 'vue'
 import { navigate } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
-import { onUpdate } from './Whitelist.telefunc'
+import { onAddUser } from './Whitelist.telefunc'
 
 import type { ModelRef } from 'vue'
 
@@ -42,13 +42,6 @@ const toggleConfig = ():void => {
   label.value = showConfig.value ? 'Hide' : 'Edit'
 }
 
-/** Update the Whitelist */
-const updateConfig = async ():Promise<void> => {
-  const res = await onUpdate({ data: data.value })
-  if(res?.errorMessage) window.alert(res.errorMessage)
-  else window.alert('Whitelist updated!')
-}
-
 /** Add an item to the list */
 const addItem = ():void => {
   if(newItem.value.length === 0) return
@@ -62,7 +55,7 @@ const addItem = ():void => {
     window.alert(error.message)
     return
   }
-  //data.value.push(newItem.value)
+  onAddUser({ data: newItem.value })
   newItem.value = ''
 }
 
