@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref, onUpdated } from 'vue'
-import { navigate } from 'vike/client/router'
+import { navigate, reload } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
 import { onAddUser, onRemoveUser } from './Whitelist.telefunc'
@@ -59,20 +59,15 @@ const addItem = async ():Promise<void> => {
   if(res?.errorMessage) window.alert(res.errorMessage)
   newItem.value = ''
 
-  //  Refresh page
+  await reload()
 }
 
 /** Remove an item from the list */
 const removeItems = async ():Promise<void> => {
-  selected.value.forEach(item => {
-    data.value.splice(data.value.indexOf(item), 1)
-  })
-  selectKey.value += 1
-
-  const res = await onRemoveUser({ data: data.value })
+  const res = await onRemoveUser({ data: selected.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
 
-  //  Refresh page
+  await reload()
 }
 
 /** Set selection size on update */
