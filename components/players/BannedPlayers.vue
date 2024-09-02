@@ -13,8 +13,8 @@ import { onUpdate } from './BannedPlayers.telefunc'
 
 import type { ModelRef } from 'vue'
 
-onAbort(async (err) => {
-  if (err.abortValue.notLoggedIn) {
+onAbort(async (error:any) => {
+  if (error.abortValue.notLoggedIn) {
     const navigationPromise = navigate('/login')
     await navigationPromise
   }
