@@ -21,6 +21,7 @@ export const onAddUser = async ({ data }:{ data:string }) => {
 
   try {
     await exec(`minecraft whitelist add ${data}`)
+    console.log(`User ${data} added to the Whitelist.`)
     const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
     console.log(`Whitelist updated on ${updateDate} by ${user.login}`)
   } catch (error:any) {
@@ -38,6 +39,7 @@ export const onRemoveUser = async ({ data }:{ data:Array<Whitelist> }) => {
   try {
     await asyncForEach(data, async (item:Whitelist) => {
       await exec(`minecraft whitelist remove ${item.name}`)
+      console.log(`User ${item.name} removed from the Whitelist.`)
     })
     const updateDate = new Date().toLocaleString(__locale, { timeZoneName: 'short' })
     console.log(`Whitelist updated on ${updateDate} by ${user.login}`)
