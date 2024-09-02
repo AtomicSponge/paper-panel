@@ -34,7 +34,7 @@ const selectKey = ref(0)
 const newItem = ref('')
 
 /** Form data */
-const data:ModelRef<Array<string>> = defineModel({ required: true })
+const data:ModelRef<Array<Whitelist>> = defineModel({ required: true })
 
 /** Toggle showing the config display */
 const toggleConfig = ():void => {
@@ -54,15 +54,15 @@ const addItem = ():void => {
   if(newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
-      if(newItem.value === item) {
-        throw new Error(`${item} already in list!`)
+      if(newItem.value === item.name) {
+        throw new Error(`${item.name} already in list!`)
       }
     })
   } catch (error:any) {
     window.alert(error.message)
     return
   }
-  data.value.push(newItem.value)
+  //data.value.push(newItem.value)
   newItem.value = ''
 }
 
@@ -102,7 +102,7 @@ onUpdated(() => {
         </div>
         <div class="left">
           <select multiple v-model="selected" ref="size" :key="selectKey">
-            <option v-for="item in data" :value="item">{{ item }}</option>
+            <option v-for="item in data" :value="item">{{ item.name }}</option>
           </select>
         </div>
       </div>

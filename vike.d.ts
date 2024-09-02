@@ -23,6 +23,18 @@ declare global {
     }
   }
 
+  interface Operators {
+    uuid:string
+    name:string
+    level:number
+    bypassesPlayerLimit:boolean
+  }
+
+  interface Whitelist {
+    uuid:string
+    name:string
+  }
+
   interface Database {
     server:Array<Server>
     users:Array<User>
