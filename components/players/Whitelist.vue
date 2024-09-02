@@ -9,7 +9,7 @@ import { ref, onUpdated } from 'vue'
 import { navigate } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
-import { onAddUser } from './Whitelist.telefunc'
+import { onAddUser, onRemoveUser } from './Whitelist.telefunc'
 
 import type { ModelRef } from 'vue'
 
@@ -43,7 +43,7 @@ const toggleConfig = ():void => {
 }
 
 /** Add an item to the list */
-const addItem = ():void => {
+const addItem = async ():Promise<void> => {
   if(newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
@@ -55,16 +55,24 @@ const addItem = ():void => {
     window.alert(error.message)
     return
   }
-  onAddUser({ data: newItem.value })
+  const res = await onAddUser({ data: newItem.value })
+  if(res?.errorMessage) window.alert(res.errorMessage)
   newItem.value = ''
+
+  //  Refresh page
 }
 
 /** Remove an item from the list */
-const removeItems = ():void => {
+const removeItems = async ():Promise<void> => {
   selected.value.forEach(item => {
     data.value.splice(data.value.indexOf(item), 1)
   })
   selectKey.value += 1
+
+  const res = await onRemoveUser({ data: data.value })
+  if(res?.errorMessage) window.alert(res.errorMessage)
+
+  //  Refresh page
 }
 
 /** Set selection size on update */
