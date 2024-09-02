@@ -23,7 +23,7 @@
   "devDependencies": {
     "@hono/vite-dev-server": "^0.15.2",
     "@types/bcryptjs": "^2.4.6",
-    "@types/node": "^22.5.1",
+    "@types/node": "^22.5.2",
     "@types/semver": "^7.5.8",
     "typescript": "^5.5.4"
   },
