@@ -5,7 +5,7 @@
 -->
 
 <script lang="ts" setup>
-import { ref, onUpdated } from 'vue'
+import { ref } from 'vue'
 import { navigate } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
@@ -24,12 +24,6 @@ onAbort(async (error:any) => {
 const label = ref('Edit')
 /** Reference for showing the config display */
 const showConfig = ref(false)
-/** Reference to the multi select data*/
-const selected = ref([])
-/** Reference to the multi select, only used for size calc */
-const size = ref()
-/** Key value to force select display updates */
-const selectKey = ref(0)
 /** Reference to the add item input box */
 const newItem = ref('')
 
@@ -42,19 +36,12 @@ const toggleConfig = ():void => {
   label.value = showConfig.value ? 'Hide' : 'Edit'
 }
 
-/** Update the Banned IPs */
-const updateConfig = async ():Promise<void> => {
-  const res = await onUpdate({ data: data.value })
-  if(res?.errorMessage) window.alert(res.errorMessage)
-  else window.alert('Operators updated!')
-}
-
 /** Add an item to the list */
 const addItem = ():void => {
   if(newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
-      if(newItem.value === item) {
+      if(newItem.value === item.name) {
         throw new Error(`${item} already in list!`)
       }
     })
@@ -62,25 +49,14 @@ const addItem = ():void => {
     window.alert(error.message)
     return
   }
-  data.value.push(newItem.value)
+  //data.value.push(newItem.value)
   newItem.value = ''
 }
 
 /** Remove an item from the list */
-const removeItems = ():void => {
-  selected.value.forEach(item => {
-    data.value.splice(data.value.indexOf(item), 1)
-  })
-  selectKey.value += 1
+const removeItem = ():void => {
+  //
 }
-
-/** Set selection size on update */
-onUpdated(() => {
-  if(size.value.childElementCount < 7)
-    size.value.setAttribute('size', 7)
-  else
-    size.value.setAttribute('size', size.value.childElementCount)
-})
 </script>
 
 <template>
@@ -115,7 +91,7 @@ onUpdated(() => {
               </select>
             </div>
             <div class="cell">
-              <button @click="">Remove</button>
+              <button @click="removeItem()">Remove</button>
             </div>
           </div>
         </div>
