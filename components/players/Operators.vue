@@ -50,10 +50,9 @@ const addItem = async ():Promise<void> => {
     return
   }
   const res = await onAddUser({ data: newItem.value })
-  if(res?.errorMessage) window.alert(res.errorMessage)
-
   newItem.value = ''
-  await reload()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else await reload()
 }
 
 /** Remove an item from the list */
@@ -61,8 +60,7 @@ const removeItem = async (idx:number):Promise<void> => {
   if (window.confirm(`Remove ${data.value[idx].name} from the Operator list?`)) {
     const res = await onRemoveUser({ data: data.value[idx].name })
     if(res?.errorMessage) window.alert(res.errorMessage)
-
-    await reload()
+    else await reload()
   }
 }
 
@@ -70,8 +68,7 @@ const removeItem = async (idx:number):Promise<void> => {
 const updateItems = async ():Promise<void> => {
   const res = await onUpdate({ data: data.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
-
-  await reload()
+  else await reload()
 }
 </script>
 
