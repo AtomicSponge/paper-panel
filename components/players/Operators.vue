@@ -34,7 +34,7 @@ const selectKey = ref(0)
 const newItem = ref('')
 
 /** Form data */
-const data:ModelRef<Array<string>> = defineModel({ required: true })
+const data:ModelRef<Array<Operators>> = defineModel({ required: true })
 
 /** Toggle showing the config display */
 const toggleConfig = ():void => {
@@ -97,24 +97,32 @@ onUpdated(() => {
         <div class="right">
           <div>&nbsp;</div>
           <div>
-            <button @click="removeItems()">Remove</button>
+            <button>Update</button>
           </div>
         </div>
-        <div class="left">
-          <select multiple v-model="selected" ref="size" :key="selectKey">
-            <option v-for="item in data" :value="item">{{ item }}</option>
-          </select>
+        <div class="left table">
+          <div v-for="item in data" class="row">
+            <div class="cell">
+              <h3>{{ item.name }}</h3>
+            </div>
+            <div class="cell">
+              Level:
+              <select v-model="item.level">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="cell">
+              <button @click="">Remove</button>
+            </div>
+          </div>
         </div>
       </div>
       <div>
         <input type="text" v-model="newItem"/>
-      </div>
-      <div>
         <button @click="addItem()">Add</button>
-      </div>
-      <hr/>
-      <div>
-        <button @click="updateConfig">Update</button>
       </div>
     </main>
   </section>
@@ -132,9 +140,24 @@ div {
   text-align: center;
   padding: 0.4em;
 }
+div .table {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+div .row {
+  display: table-row;
+}
+div .cell {
+  display: table-cell;
+  padding: 4px;
+}
 select {
   overflow: hidden;
-  min-width: 12em;
+  min-width: 4em;
+}
+input {
+  margin-right: 0.6em;
 }
 hr {
   width: 90%;
