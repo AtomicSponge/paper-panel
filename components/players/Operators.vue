@@ -9,7 +9,7 @@ import { ref } from 'vue'
 import { navigate, reload } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
-import { onUpdate } from './Operators.telefunc'
+import { onAddUser, onRemoveUser, onUpdate } from './Operators.telefunc'
 
 import type { ModelRef } from 'vue'
 
@@ -49,7 +49,9 @@ const addItem = async ():Promise<void> => {
     window.alert(error.message)
     return
   }
-  // add item telefunc
+  const res = await onAddUser({ data: newItem.value })
+  if(res?.errorMessage) window.alert(res.errorMessage)
+
   newItem.value = ''
   await reload()
 }
@@ -57,7 +59,9 @@ const addItem = async ():Promise<void> => {
 /** Remove an item from the list */
 const removeItem = async (idx:number):Promise<void> => {
   if (window.confirm(`Remove ${data.value[idx].name} from the Operator list?`)) {
-    // remove item telefunc
+    const res = await onRemoveUser({ data: data.value[idx].name })
+    if(res?.errorMessage) window.alert(res.errorMessage)
+
     await reload()
   }
 }
