@@ -93,7 +93,7 @@ onUpdated(() => {
         <div class="right">
           <div>&nbsp;</div>
           <div>
-            <button @click="removeItems()">Remove</button>
+            <button class="remove" @click="removeItems()">Remove</button>
           </div>
         </div>
         <div class="left">
@@ -128,6 +128,10 @@ select {
 }
 input {
   margin-right: 0.6em;
+}
+.remove {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(178, 34, 34);
 }
 .left {
   float: left;

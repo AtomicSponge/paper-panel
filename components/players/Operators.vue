@@ -61,6 +61,11 @@ const removeItem = async (idx:number):Promise<void> => {
     await reload()
   }
 }
+
+/** Update all items */
+const updateItems = async ():Promise<void> => {
+  //
+}
 </script>
 
 <template>
@@ -73,22 +78,30 @@ const removeItem = async (idx:number):Promise<void> => {
     </div>
     <main v-show="showConfig">
       <hr/>
-      <div class="table">
-        <div v-for="item, idx in data" :key="idx" class="row">
-          <div class="cell">
-            <h3>{{ item.name }}</h3>
+      <div>
+        <div class="right">
+          <div>&nbsp;</div>
+          <div>
+            <button @click="updateItems()">Update</button>
           </div>
-          <div class="cell">
-            Level:
-            <select v-model="item.level">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-          </div>
-          <div class="cell">
-            <button @click="removeItem(idx)">Remove</button>
+        </div>
+        <div class="left table">
+          <div v-for="item, idx in data" :key="idx" class="row">
+            <div class="cell">
+              <h3>{{ item.name }}</h3>
+            </div>
+            <div class="cell">
+              Level:
+              <select v-model="item.level">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+              </select>
+            </div>
+            <div class="cell">
+              <button class="remove" @click="removeItem(idx)">Remove</button>
+            </div>
           </div>
         </div>
       </div>
@@ -130,6 +143,10 @@ select {
 }
 input {
   margin-right: 0.6em;
+}
+.remove {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: rgb(178, 34, 34);
 }
 hr {
   width: 90%;
