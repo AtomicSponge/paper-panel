@@ -42,7 +42,7 @@ const addItem = async ():Promise<void> => {
   try {
     data.value.forEach(item => {
       if(newItem.value === item.name) {
-        throw new Error(`${item} already in list!`)
+        throw new Error(`${newItem.value} already in list!`)
       }
     })
   } catch (error:any) {
