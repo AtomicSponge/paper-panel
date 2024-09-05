@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { navigate } from 'vike/client/router'
+import { navigate, reload } from 'vike/client/router'
 import { onAbort } from 'telefunc/client'
 
 import { onUpdate } from './Operators.telefunc'
@@ -37,7 +37,7 @@ const toggleConfig = ():void => {
 }
 
 /** Add an item to the list */
-const addItem = ():void => {
+const addItem = async ():Promise<void> => {
   if(newItem.value.length === 0) return
   try {
     data.value.forEach(item => {
@@ -49,13 +49,17 @@ const addItem = ():void => {
     window.alert(error.message)
     return
   }
-  //data.value.push(newItem.value)
+  // add item telefunc
   newItem.value = ''
+  await reload()
 }
 
 /** Remove an item from the list */
-const removeItem = ():void => {
-  //
+const removeItem = async (idx:number):Promise<void> => {
+  if (window.confirm(`Remove ${data.value[idx].name} from the Operator list?`)) {
+    // remove item telefunc
+    await reload()
+  }
 }
 </script>
 
@@ -69,30 +73,22 @@ const removeItem = ():void => {
     </div>
     <main v-show="showConfig">
       <hr/>
-      <div>
-        <div class="right">
-          <div>&nbsp;</div>
-          <div>
-            <button>Update</button>
+      <div class="table">
+        <div v-for="item, idx in data" :key="idx" class="row">
+          <div class="cell">
+            <h3>{{ item.name }}</h3>
           </div>
-        </div>
-        <div class="left table">
-          <div v-for="item in data" class="row">
-            <div class="cell">
-              <h3>{{ item.name }}</h3>
-            </div>
-            <div class="cell">
-              Level:
-              <select v-model="item.level">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-              </select>
-            </div>
-            <div class="cell">
-              <button @click="removeItem()">Remove</button>
-            </div>
+          <div class="cell">
+            Level:
+            <select v-model="item.level">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+            </select>
+          </div>
+          <div class="cell">
+            <button @click="removeItem(idx)">Remove</button>
           </div>
         </div>
       </div>
