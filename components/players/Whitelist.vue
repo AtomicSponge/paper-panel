@@ -56,18 +56,16 @@ const addItem = async ():Promise<void> => {
     return
   }
   const res = await onAddUser({ data: newItem.value })
-  if(res?.errorMessage) window.alert(res.errorMessage)
   newItem.value = ''
-
-  await reload()
+  if(res?.errorMessage) window.alert(res.errorMessage)
+  else await reload()
 }
 
 /** Remove an item from the list */
 const removeItems = async ():Promise<void> => {
   const res = await onRemoveUser({ data: selected.value })
   if(res?.errorMessage) window.alert(res.errorMessage)
-
-  await reload()
+  else await reload()
 }
 
 /** Set selection size on update */
