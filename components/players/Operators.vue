@@ -64,7 +64,10 @@ const removeItem = async (idx:number):Promise<void> => {
 
 /** Update all items */
 const updateItems = async ():Promise<void> => {
-  //
+  const res = await onUpdate({ data: data.value })
+  if(res?.errorMessage) window.alert(res.errorMessage)
+
+  await reload()
 }
 </script>
 

@@ -16,7 +16,7 @@ import { server } from '@/database/server'
 /**
  * Update the Banned IPs
  */
-export const onUpdate = async ({ data }:{ data:Array<string> }) => {
+export const onUpdate = async ({ data }:{ data:Array<Operators> }) => {
   const user = getUser()
 
   const db = await JSONFilePreset('db.json', server)
