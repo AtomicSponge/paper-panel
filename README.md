@@ -1,3 +1,5 @@
+I started this as I was interested in Vue SSR and wanted to play around with some of the newer tools to get a hang of them.  Well I did and now I see this as more work than a fun engaging challenge to learn from, and I'm not really sure just how useful a tool like this is really anyway. :sweat_smile:  So here it is, if anyone else wants to continue this.  But otherwise I'm retiring this for now.  I want to focus on my game engine when I have the time again.
+
 <table align="center">
 <tr>
   <td><img src="./assets/logo/paper-panel-logo-512-512.png" width="64"/></td>
